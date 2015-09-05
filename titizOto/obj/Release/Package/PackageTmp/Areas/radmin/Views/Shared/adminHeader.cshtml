@@ -1,0 +1,54 @@
+﻿@model  AdminVariable
+
+<div id="topNav">
+    <div class="fixed">
+        <div class="wrapper">
+            <div class="welcome">
+
+                <img src="@Url.Content("~/Areas/radmin/Content/images/userPic.png")" alt="" />
+                <span>@Model.name, @Model.surname</span>
+
+            </div>
+
+            <div class="userNav">
+                <ul>
+
+                    <li>
+                        <a href="~/radmin/contact/index" title="">
+                            <img src="@Url.Content("~/Areas/radmin/Content/images/icons/topnav/messages.png")" alt="" /><span>Messages</span><span
+                                class="numberTop">@Model.messageCount.ToString()</span></a>
+
+                    </li>
+
+                    <li><a href="~/radmin/logout/index" title="">
+                        <img src="@Url.Content("~/Areas/radmin/Content/images/icons/topnav/logout.png")" alt="" /><span>Logout</span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="fix"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Header -->
+<div id="header" class="wrapper">
+    <div class="logo">
+        <a href="~/radmin/" title="">
+            <img src="@Url.Content("~/Areas/radmin/Content/images/titizLogo.png")" alt="" /></a>
+    </div>
+    <div class="middleNav">
+        <ul>
+
+            <li class="iUserAll"><a href="@Url.Content("~/")radmin/NewsletterUser" title=""><span>
+                Bülten Aboneleri</span></a></li>
+            <li class="iUser"><a href="@Url.Content("~/")radmin/AdminUser" title=""><span>Panel
+                Kullanıcıları</span></a></li>
+            <li class="iVault"><a href="@Url.Content("~/")radmin/Module" title=""><span>Modül Yönetimi</span></a>
+            </li>
+            <li class="iSettings"><a href="@Url.Content("~/")radmin/settings" title=""><span>Genel
+                Ayarlar</span></a></li>
+
+        </ul>
+    </div>
+    <div class="fix"></div>
+</div>

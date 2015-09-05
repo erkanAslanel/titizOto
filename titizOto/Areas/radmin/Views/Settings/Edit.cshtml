@@ -1,0 +1,269 @@
+﻿@model tbl_settings
+
+@{
+    ViewBag.Title = tbl_settings.getClassTitle() + " Düzenle";
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml"; 
+}
+
+@if (ViewBag.success != null)
+{
+    
+    @Html.Raw(ViewBag.resultHtml)
+}
+
+@using (Html.BeginForm("Edit", "Settings", FormMethod.Post, new { @class = "mainForm" }))
+{  
+    @Html.ValidationSummary(null, new { @class = "validationInfo hideit" }) 
+    
+    <div class="title">
+        <h5>@tbl_settings.getClassTitle() Düzenleme(
+            
+            @if (Model.langId == 1)
+            {
+                @:Türkçe
+	}
+            else
+            {
+                @:İngilizce                                           
+	}
+            )</h5>
+    </div> 
+
+    <!--Upload-->
+    @Html.AntiForgeryToken()
+
+    <!--urlControl-->
+    @Html.HiddenFor(a => a.settingsId, new { @id = "primaryKey" })
+
+    <fieldset>
+        <div class="widget">
+
+            <!--Tabs-->
+            <ul class="tabs">
+
+                <li><a href="#tab2">Mail</a></li>
+                <li><a href="#tab3">Seo</a></li>
+                <li><a href="#tab4">Üyelik</a></li>
+                <li><a href="#tab5">Ödeme Ayarları</a></li>
+            </ul>
+
+            <!--Column-->
+            <div class="tab_container">
+
+
+                <div id="tab2" class="tab_content">
+
+                    @Html.HiddenFor(a => a.langId)
+
+                    <div class="rowElem">
+                        @Html.LabelFor(a => a.mailSmtpServer)
+                        <div class="formRight">
+                            @Html.TextBoxFor(a => a.mailSmtpServer)
+
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--mailIsEnableSSL -->
+                    <div class="rowElem">@Html.LabelFor(a => a.mailIsEnableSSL)<div class="formRight">@Html.StatuDropDown(a => a.mailIsEnableSSL)<label class="error">@Html.ValidationMessageFor(a => a.mailIsEnableSSL)</label></div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <div class="rowElem">
+                        @Html.LabelFor(a => a.mailPort)
+                        <div class="formRight">
+                            @Html.TextBoxFor(a => a.mailPort)
+
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <div class="rowElem">
+                        @Html.LabelFor(a => a.mailUserName)
+                        <div class="formRight">
+                            @Html.TextBoxFor(a => a.mailUserName)
+
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <div class="rowElem">
+                        @Html.LabelFor(a => a.mailPassword)
+                        <div class="formRight">
+                            @Html.TextBoxFor(a => a.mailPassword)
+
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <div class="rowElem">
+                        @Html.LabelFor(a => a.mailSentName)
+                        <div class="formRight">
+                            @Html.TextBoxFor(a => a.mailSentName)
+
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <div class="rowElem">
+                        @Html.LabelFor(a => a.mailSentAddress)
+                        <div class="formRight">
+                            @Html.TextBoxFor(a => a.mailSentAddress)
+
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <div class="rowElem">
+                        @Html.LabelFor(a => a.mailReceiverAddress)
+                        <div class="formRight">
+                            @Html.TextBoxFor(a => a.mailReceiverAddress)
+
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                </div>
+
+                <div id="tab3" class="tab_content">
+
+                    <!-- Alt Sayfa -->
+                    <div class="rowElem">
+                        @Html.LabelFor(a => a.mainPageTitle)
+                        <div class="formRight">
+                            @Html.TextBoxFor(a => a.mainPageTitle)
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+
+                    <!-- Alt Sayfa -->
+                    <div class="rowElem">
+                        @Html.LabelFor(a => a.allPageTitle)
+                        <div class="formRight">
+                            @Html.TextBoxFor(a => a.allPageTitle)
+
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+
+
+                    <!-- Meta -->
+                    <div class="rowElem">
+                        @Html.LabelFor(a => a.metaDescription)
+                        <div class="formRight">
+                            @Html.TextAreaFor(a => a.metaDescription, new { style = "height:100px;" })
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!-- Meta -->
+                    <div class="rowElem">
+                        @Html.LabelFor(a => a.metaDescriptionAdditional)
+                        <div class="formRight">
+                            @Html.TextAreaFor(a => a.metaDescriptionAdditional, new { style = "height:100px;" })
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--metaKeyword -->
+                    <div class="rowElem">@Html.LabelFor(a => a.metaKeyword)<div class="formRight">@Html.TextBoxFor(a => a.metaKeyword, new { @class = "tags" })
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+                </div>
+
+                <div id="tab4" class="tab_content">
+
+                    <!--registerIsActivationExist -->
+                    <div class="rowElem">@Html.LabelFor(a => a.registerIsActivationExist)<div class="formRight">@Html.StatuDropDown(a => a.registerIsActivationExist)<label
+                        class="error">@Html.ValidationMessageFor(a => a.registerIsActivationExist)</label>
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--registerIsThankMessageSend -->
+                    <div class="rowElem">@Html.LabelFor(a => a.registerIsThankMessageSend)<div class="formRight">@Html.StatuDropDown(a => a.registerIsThankMessageSend)<label
+                        class="error">@Html.ValidationMessageFor(a => a.registerIsThankMessageSend)</label>
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+
+                </div>
+
+                <div id="tab5" class="tab_content">
+
+                    <!--isTransferDiscount -->
+                    <div class="rowElem">@Html.LabelFor(a => a.isTransferDiscount)<div class="formRight">@Html.StatuDropDown(a => a.isTransferDiscount)<label class="error">@Html.ValidationMessageFor(a => a.isTransferDiscount)</label></div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--transferDiscountType -->
+                    <div class="rowElem">@Html.LabelFor(a => a.transferDiscountType)<div class="formRight">@Html.DropDownList("transferDiscountType", new SelectList(Model.transferDiscountTypeList(), "key", "value"))</div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--transferDiscountAmount -->
+                    <div class="rowElem">@Html.LabelFor(a => a.transferDiscountAmount)<div class="formRight">
+
+                        @if (Model.transferDiscountAmount.HasValue)
+                        {
+                            @Html.TextBox("transferDiscountAmount", Model.transferDiscountAmount.Value.ToString("F2", System.Globalization.CultureInfo.CreateSpecificCulture("en-US")))
+                        }
+                        else
+                        {
+                            @Html.TextBox("transferDiscountAmount", 0)
+                        }
+
+
+                        <label class="error">@Html.ValidationMessageFor(a => a.transferDiscountAmount)</label>
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--isTransferEnable -->
+                    <div class="rowElem">@Html.LabelFor(a => a.isTransferEnable)<div class="formRight">@Html.StatuDropDown(a => a.isTransferEnable)<label class="error">@Html.ValidationMessageFor(a => a.isTransferEnable)</label></div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--isCrediCardEnable -->
+                    <div class="rowElem">@Html.LabelFor(a => a.isCrediCardEnable)<div class="formRight">@Html.StatuDropDown(a => a.isCrediCardEnable)<label class="error">@Html.ValidationMessageFor(a => a.isCrediCardEnable)</label></div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--testAccountEmail -->
+                    <div class="rowElem">@Html.LabelFor(a => a.testAccountEmail)<div class="formRight">@Html.TextBoxFor(a => a.testAccountEmail)<label class="error">@Html.ValidationMessageFor(a => a.testAccountEmail)</label></div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--testSuccessfulCard -->
+                    <div class="rowElem">@Html.LabelFor(a => a.testSuccessfulCard)<div class="formRight">@Html.TextBoxFor(a => a.testSuccessfulCard)<label class="error">@Html.ValidationMessageFor(a => a.testSuccessfulCard)</label></div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--testValidCard -->
+                    <div class="rowElem">@Html.LabelFor(a => a.testValidCard)<div class="formRight">@Html.TextBoxFor(a => a.testValidCard)<label class="error">@Html.ValidationMessageFor(a => a.testValidCard)</label></div>
+                        <div class="fix"></div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+            <div class="fix"></div>
+        </div>
+    </fieldset>  
+    
+    <div class="fix" style="height: 20px"></div>
+   
+    <!--Buttons-->
+                      
+    <input type="submit" value="Kaydet" class="redBtn submitForm" />
+                       
+    <a class="greyishBtn button floatright" href="@Url.Action("Index")" >Geri Dön </a>    
+    
+}

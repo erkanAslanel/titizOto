@@ -1,0 +1,65 @@
+﻿@model ViewModel.Checkout.Payment.cardOption
+
+
+<div class="optionList">
+
+    <h4>@Resources.lang.checkoutCreditInfoOptionList</h4>
+
+    @if (!Model.isErrorExist)
+    {
+        if (Model != null && Model.optionList != null && Model.optionList.Count > 0)
+        {
+        
+        <div class="title">
+            <div class="row" style="width: 50px;">@Resources.lang.choose</div>
+            <div class="row">@Resources.lang.installmentCount</div>
+            <div class="row">@Resources.lang.installmentAmount</div>
+            <div class="row">@Resources.lang.totalAmount</div>
+
+        </div>
+        
+        <div class="clearfix"></div>
+        
+        <ul class="cardOptionList">
+
+            @foreach (var item in Model.optionList)
+            { 
+                <li>
+
+                    <div class="ch fLeft">@Html.RadioButtonFor(a => a.creditOptionId, item.bankPosOptionId)</div>
+                    <div class="t1">@item.monthStr</div>
+                    <div class="t2">@item.monthPriceStr</div>
+                    <div class="t3">@item.totalPriceStr</div>
+                </li>
+            }
+
+        </ul>
+        
+        <label class="error mLeft20">@Html.ValidationMessageFor(a => a.creditOptionId)</label>
+        <div class="clearfix"></div>
+
+        <div class="submit mTop40">
+            <a class="btn redBg clickDisable save" data-checkvalidation=".checkoutForm form">@Resources.lang.saveAndContinue</a>
+        </div>
+
+        }
+        else
+        {
+      
+        <p>@Resources.lang.checkoutCreditInfoOptionListNoOption</p>
+        
+        }
+    }
+    else
+    {
+        <p>@Resources.lang.checkoutCreditInfoOptionListError</p>
+        
+    }
+
+</div>
+
+
+
+
+
+

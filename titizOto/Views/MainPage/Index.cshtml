@@ -1,0 +1,73 @@
+﻿@model ViewModel.MainPage.helperMainPage
+
+@{   
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+
+
+@section cssArea{
+
+    <link href="~/Content/js/plugin/slider/stylesheets/superslides.css" rel="stylesheet" />
+
+     <meta name="p:domain_verify" content="c6e9e006aa67ba107f5f46ba97c253e0"/>    
+
+
+    <script type="application/ld+json">
+{
+  "@@context": "http://schema.org",
+  "@@type": "WebSite",
+  "url": "http://www.titizkromaksesuar.com/",
+  "potentialAction": {
+    "@@type": "SearchAction",
+    "target": "http://www.titizkromaksesuar.com/tr/arama-sonuclari.html?keyWord={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+}
+
+
+@Html.Action("slider")
+
+<div class="wrapper">
+    <div class="newProduct">
+        <div class="header">
+            <table>
+                <tr>
+                    <td>
+                        <h2>@Resources.lang.newProducts</h2>
+                    </td>
+                    <td class="dottedParent">
+                        <div class="dotted"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    @if (Model.newProductList != null)
+    {
+        @Html.Partial("newProductList", Model.newProductList)
+    
+    }
+
+
+    <section class="brandList">
+        @Html.Action("brandList", new { lang = ViewData["langCode"] })
+
+        <div class="clearfix"></div>
+        <a href="@Model.brandUrl" class="btn">@Resources.lang.allBrandSee Modeller</a>
+
+    </section>
+    <div class="clearfix"></div>
+</div>
+
+@section scriptArea{
+
+    <script src="~/Content/js/plugin/jquery.easing.1.3.js"></script>
+    <script src="~/Content/js/plugin/jquery.animate-enhanced.min.js"></script>
+    <script src="~/Content/js/plugin/slider/jquery.superslides.min.js"></script>
+    <script id="titizJs" src="~/Content/js/core.js?modul=index&v=3"></script>
+
+}

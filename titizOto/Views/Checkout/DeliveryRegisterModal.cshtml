@@ -1,0 +1,75 @@
+﻿@model ViewModel.Checkout.Delivery.helperRegisterDelivery
+
+<form>
+    @if (Model.isMessageExist)
+    {
+        @Html.Raw(Model.message)
+    }
+
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(a => a.pageId)
+
+       @Html.Hidden("addressId",0)
+
+    <div class="registerDeliveryForm">
+
+        <a class="newAddress chromeBtn">@Resources.lang.newAddressAdd</a>
+
+     
+
+        <div class="rowElem">
+            <div class="formRight mBottom10">
+             
+                @Html.DropDownListFor(a => a.selectedDeliveryAddressId, Model.getAddressDropDown(), new { @class = "deliveryRegisterSelect ddlItemId" })
+                 
+                <label class="error">@Html.ValidationMessageFor(a => a.selectedDeliveryAddressId)</label>
+
+            </div>
+
+        </div>
+
+        @Html.HiddenFor(a => a.userguid)
+
+        <div class="adressHidenDetailList">
+
+            @foreach (var item in Model.addressList)
+            {
+                <div class="addresBox">
+                    <div class="table">
+                        <div class="tableCellVertical">
+                            <div class="t1">@item.name (@item.type)</div>
+                            <div class="t2">@Html.Raw(item.content)</div>
+                            <div class="t3"  data-addressid="@item.addressId">
+                                <a class="adresLink detail">Ayrıntılı Göster</a> | <a class="adresLink edit">Düzenle</a>
+                                | <a class="adresLink delete">Sil</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+        </div>
+
+          <div class="clearfix"></div>
+
+        <!--isSameBillingAddress -->
+        <div class="rowElem">
+            <div class="formRight">@Html.CheckBoxFor(a => a.isSameBillingAddress, new { @class = "fLeft mRight10 mTop5" })
+                @Html.LabelFor(a => a.isSameBillingAddress)
+            </div>
+
+        </div>
+        <div class="clearfix"></div>
+         
+
+        <div class="submit mTop40">
+            <a class="btn redBg clickDisable save" data-checkvalidation=".checkoutForm form">@Resources.lang.saveAndContinue</a>
+        </div>
+
+    </div>
+
+
+
+</form>

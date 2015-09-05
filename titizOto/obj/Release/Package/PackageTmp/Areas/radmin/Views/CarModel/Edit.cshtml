@@ -1,0 +1,99 @@
+﻿@model tbl_carModel
+@{
+    ViewBag.Title = @Model.classTitle + " Düzenle";
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml"; 
+}
+
+@if (ViewBag.success != null)
+{ 
+    @Html.Raw(ViewBag.resultHtml)
+}
+
+
+@using (Html.BeginForm("Edit", "CarModel", FormMethod.Post, new { @class = "mainForm" }))
+{  
+    @Html.ValidationSummary(null, new { @class = "validationInfo hideit" }) 
+    
+    <div class="title">
+        <h5>@Model.classTitle Düzenle(@Model.name)</h5>
+    </div> 
+
+    <!--Upload-->
+    @Html.AntiForgeryToken()
+
+   
+    <fieldset>
+        <div class="widget">
+
+            <!--Tabs-->
+            <ul class="tabs">
+                <li><a href="#tab3">Genel İçerik</a></li>
+                <li><a href="#tab1">Yazı İçerik</a></li> 
+            </ul>
+
+            <!--Column-->
+            <div class="tab_container">
+                <div id="tab3" class="tab_content">
+
+                    <!--langId -->
+                    <div class="rowElem">@Html.LabelFor(a => a.langId)<div class="formRight">@Html.LangDropDown(a => a.langId)<label
+                        class="error">@Html.ValidationMessageFor(a => a.langId)</label>
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--statu -->
+                    <div class="rowElem">@Html.LabelFor(a => a.statu)<div class="formRight">@Html.StatuDropDown(a => a.statu)<label
+                        class="error">@Html.ValidationMessageFor(a => a.statu)</label>
+                        </div>
+                        <div class="fix"></div>
+                    </div> 
+
+                </div>
+                <div id="tab1" class="tab_content">
+
+                    <!--carModelId -->
+                    @Html.HiddenFor(a => a.carModelId, new { @id = "primaryKey" })
+
+                    <!--name -->
+                    <div class="rowElem">@Html.LabelFor(a => a.name)
+                        <div class="formRight">@Html.TextBoxFor(a => a.name, new { @class = "changeUrl" })<label
+                            class="error">@Html.ValidationMessageFor(a => a.name)</label>
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--url -->
+                    <div class="rowElem">@Html.LabelFor(a => a.url)<div class="formRight">@Html.TextBoxFor(a => a.url, new { @class = "pageUrl", @readonly = true, @data_action = Url.Action("UrlControl") })
+                        <span class="mt5 ml10 inlineBlock">Sayfa Adresini Kendim Oluşturmak İstiyorum</span>
+                        @Html.CheckBox("isManuelUrl", Model.isManuelUrl, new { @class = "manuelUrl" })<label
+                            class="error">@Html.ValidationMessageFor(a => a.url)</label>
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--carBrandId -->
+                    <div class="rowElem">@Html.LabelFor(a => a.carBrandId)
+                        <div class="formRight">@Html.DropDownList("carBrandId", new SelectList(Model.carBrandList(Model.langId), "key", "value"))<label
+                            class="error">@Html.ValidationMessageFor(a => a.carBrandId)</label>
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                </div> 
+            </div>
+
+            <div class="fix"></div>
+        </div>
+    </fieldset>
+    
+    <div class="fix" style="height: 20px"></div>
+   
+    <!--Buttons-->
+                       
+    <input type="submit" value="Kaydet" class="redBtn submitForm" />
+                       
+    <a class="greyishBtn button floatright" href="@Url.Action("Index")" >Geri Dön </a>    
+    
+}
+

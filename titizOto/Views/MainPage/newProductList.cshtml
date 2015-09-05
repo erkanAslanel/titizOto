@@ -1,0 +1,33 @@
+﻿@model List<productSmall>
+ 
+<div class="newProductList">
+    <ul> 
+        @foreach (var item in Model)
+        { 
+            <li>
+                <div class="photo">
+                    <a href="@item.url" title="@item.name">
+                        <img src="~/@item.photo" /></a>
+                </div>
+                <div class="info">
+                    <div class="productName">@item.name</div>
+                    <div class="clearfix"></div>
+                    <div class="c1">@Resources.lang.brand</div>
+                    <div class="sep">:</div>
+                    <div class="c2">@item.brand</div>
+                    <div class="clearfix"></div>
+                    <div class="c1">@Resources.lang.model</div>
+                    <div class="sep">:</div>
+                    <div class="c2">@item.model</div>
+                    <div class="clearfix"></div>
+                    <div class="c1">@Resources.lang.price</div>
+                    <div class="sep">:</div>
+                    <div class="c2">@item.withoutTaxPrice @item.currency + KDV </div>
+                    <div class="clearfix"></div>
+
+                    <a class="btn" href="@item.url">@Resources.lang.detail</a>
+                </div>
+            </li>
+        }  
+    </ul> 
+</div>

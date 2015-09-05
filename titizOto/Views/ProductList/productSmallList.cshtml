@@ -1,0 +1,37 @@
+﻿@model List<productSmall>
+
+<ul data-lang="@ViewData["langCode"]">
+    @{ int productOrder = 1; }
+
+    @foreach (var item in Model)
+    {
+        <li class="@(productOrder % 3 == 1 ? "clearLeft" : null)">
+            <a href="~/@item.url">
+                <img src="~/@item.photo" width="@item.width" height="@item.height" /></a>
+            <div class="t1">
+                @item.t1
+            </div>
+            @if (!string.IsNullOrWhiteSpace(item.shortDescription))
+            {
+                <div class="t2">@item.shortDescription</div>
+            }
+
+            <div class="price mBottom10">@item.withoutTaxPrice @item.currency + KDV</div>
+            <div class="btnContainer">
+                <a class="btn redBg addProduct" data-productid="@item.productId" href="#">Sepete Ekle</a>
+                <a class="btn detailBtn" href="~/@item.url">Detay</a>
+               
+            </div>
+             <div class="productLoader">
+                    <img src="~/Content/images/productLoader.gif" /></div>
+
+            @{  productOrder = productOrder + 1; }
+        </li> 
+    }
+
+</ul>
+
+
+
+
+

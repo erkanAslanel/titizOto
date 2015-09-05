@@ -1,0 +1,11 @@
+﻿@model  List<topMenu>
+<nav>
+    <ul>
+
+        @foreach (var item in Model)
+        {
+            <li><a href="~/@item.url">@item.name</a></li>
+        }
+
+    </ul>
+</nav>

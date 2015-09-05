@@ -1,0 +1,106 @@
+﻿@model IEnumerable<tbl_order>
+
+<div class="head">
+</div>
+@using (Html.BeginForm("Index", "Order"))
+{
+
+    @Html.Hidden("controlName", ViewContext.RouteData.Values["Controller"])
+
+    @Html.AntiForgeryToken() 
+
+    <table id="indexTable" border="0" cellpadding="0" cellspacing="0" class="display">
+        <thead>
+            <tr>
+                <th class="nosortable"></th>
+
+                <th>Sipariş No
+                </th>
+                <th>Adı - Soyadı 
+                </th>
+                <th>Sipariş Tutarı
+                </th>
+                <th>Ödeme 
+                </th>
+                
+                <th>Durum
+                </th>
+                <th>Son Giden Mail
+                </th>
+                <th>İşlem</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @{ int index = 1;
+               System.Globalization.CultureInfo trCultureInfo = System.Globalization.CultureInfo.CreateSpecificCulture("tr-TR");
+               System.Globalization.CultureInfo enCultureInfo = System.Globalization.CultureInfo.CreateSpecificCulture("en-US");
+            }
+
+            @foreach (var item in Model)
+            {
+                
+                
+                <tr class="gradeA">
+
+                    <td class="center">
+                        @Html.CheckBox("selectedItem", new { value = item.orderId })
+                    </td>
+
+                    <td class="center">@item.orderNo</td>
+
+                    <td class="center">@item.getOrderUserNameSurname()</td>
+
+                    <td class="center">
+                        @item.totalCheckoutPrice.ToString("F2", enCultureInfo)
+                    </td>
+
+                    <td class="center">
+                        @item.orderTypeAndBank
+
+                        <hr />
+
+                            @item.createDate.ToString(trCultureInfo)
+                    </td>
+
+                   
+
+                    <td class="center">
+
+                        @Html.DropDownList("orderStatuUpdateDrop_" + item.orderId, new SelectList(item.orderStatuList(), "key", "value", item.orderStatu))
+                        <button class="mt10 btn14" name="@("orderStatuUpdateBtn_" + item.orderId)">Güncelle</button>
+
+                    </td>
+
+                    <td class="center">
+
+                        @Html.DropDownList("mailStatuUpdateDrop_" + item.orderId, new SelectList(item.orderMailStatuList(), "key", "value", item.orderMailStatu))
+
+
+                        <button class="mt10 btn14" name="@("mailStatuUpdateBtn_" + item.orderId)">Mail Gönder</button>
+
+                    </td>
+
+                    <td class="center editBtn" data-id="@item.orderId">
+
+                        <a title="Kargo Numarası Gir" class="btn14 mr5" href="@Url.Action("UpdateCargo", new { id = item.orderId })">
+                            <img  src="@Url.Content("~/Areas/radmin/Content/images/icons/dark/truck.png")"/></a>
+
+
+                        <a title="Detayı Görüntüle" class="btn14 mr5" href="@Url.Action("Detail", new { id = item.orderId })">
+                            <img  src="@Url.Content("~/Areas/radmin/Content/images/icons/dark/pencil.png")"/></a>
+
+
+
+                        <a class="btn14 mr5" data-action="delete" title="Sil" href="@Url.Action("DeleteOrder", new { id = item.orderId })">
+                            <img  src="@Url.Content("~/Areas/radmin/Content/images/icons/dark/trash.png")"/></a>
+                    </td>
+
+                </tr>
+                
+                index = index + 1;
+            }
+
+        </tbody>
+    </table>
+}

@@ -1,0 +1,95 @@
+﻿@model tbl_bankPosOption
+
+@{
+    ViewBag.Title = Model.classTitle + " Ekle";
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml";
+
+    int bankPosId = 0; 
+}
+
+@if (ViewBag.success != null)
+{ 
+    @Html.Raw(ViewBag.resultHtml)
+}
+
+@if (ViewContext.RouteData.Values["filterId"] != null)
+{
+    bankPosId = int.Parse(ViewContext.RouteData.Values["filterId"].ToString());
+}
+
+@using (Html.BeginForm("Create", "PosOption", FormMethod.Post, new { @class = "mainForm" }))
+{  
+    @Html.ValidationSummary(null, new { @class = "validationInfo hideit" }) 
+    
+    <div class="title">
+        <h5>@Model.classTitle Ekleme</h5>
+        <a></a>
+    </div> 
+
+    <!--Upload-->
+    @Html.AntiForgeryToken()
+
+   
+    <fieldset>
+        <div class="widget">
+
+            <!--Tabs-->
+            <ul class="tabs">
+                <li><a href="#tab1">Genel</a></li>
+
+            </ul>
+
+            <!--Column-->
+            <div class="tab_container">
+
+                <div id="tab1" class="tab_content"> 
+
+                    <!--bankPosOptionId -->
+                    @Html.HiddenFor(a => a.bankPosOptionId, new { @id = "primaryKey" })
+
+                    @Html.Hidden("bankPosId", bankPosId) 
+
+                    <!--paymentCount -->
+                    <div class="rowElem">@Html.LabelFor(a => a.paymentCount)<div class="formRight">@Html.TextBoxFor(a => a.paymentCount)<label
+                        class="error">@Html.ValidationMessageFor(a => a.paymentCount)</label></div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--minBasketAmount -->
+                    <div class="rowElem">@Html.LabelFor(a => a.minBasketAmount)<div class="formRight">@Html.TextBox("minBasketAmount",Model.minBasketAmount.ToString("F2", System.Globalization.CultureInfo.CreateSpecificCulture("en-US")))<label
+                        class="error">@Html.ValidationMessageFor(a => a.minBasketAmount)</label></div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--additionalAmount -->
+                    <div class="rowElem">@Html.LabelFor(a => a.additionalAmount)<div class="formRight">@Html.TextBox("additionalAmount",Model.additionalAmount.ToString("F2", System.Globalization.CultureInfo.CreateSpecificCulture("en-US")))<label
+                        class="error">@Html.ValidationMessageFor(a => a.additionalAmount)</label></div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--statu -->
+                    <div class="rowElem">@Html.LabelFor(a => a.statu)<div class="formRight">@Html.StatuDropDown(a => a.statu)<label
+                        class="error">@Html.ValidationMessageFor(a => a.statu)</label></div>
+                        <div class="fix"></div>
+                    </div> 
+                </div>
+
+
+            </div>
+
+            <div class="fix"></div>
+        </div>
+    </fieldset>  
+    
+    <div class="fix" style="height: 20px"></div>
+   
+    <!--Buttons-->
+    if (ViewBag.success == null || !(bool)ViewBag.success)
+    {
+    <input type="submit" value="Kaydet" class="redBtn submitForm" />
+    }
+    <a class="greyishBtn button floatright" href="@Url.Action("IndexWithFilter", new { filterId = bankPosId.ToString() })" >
+        Geri Dön </a>    
+    
+}
+

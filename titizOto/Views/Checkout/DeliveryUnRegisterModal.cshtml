@@ -1,0 +1,181 @@
+﻿@model ViewModel.Checkout.Delivery.helperUnRegisterDelivery
+
+<form>
+    @if (Model.isMessageExist)
+    {
+        @Html.Raw(Model.message)
+    }
+
+    @Html.AntiForgeryToken()
+
+    <div class="unRegisterDeliveryForm">
+
+        <div class="orderTrackForm">
+
+            <h2 class="subTitle">@Resources.lang.checkoutDeliveryTrackInfo
+            </h2>
+
+            <!--name -->
+            <div class="rowElem">@Html.LabelFor(a => a.trackInfoItem.name)
+                <div class="formRight">@Html.TextBoxFor(a => a.trackInfoItem.name)<label
+                    class="error">@Html.ValidationMessageFor(a => a.trackInfoItem.name)</label>
+                </div>
+
+            </div>
+
+            <!--surname -->
+            <div class="rowElem">@Html.LabelFor(a => a.trackInfoItem.surname)
+                <div class="formRight">@Html.TextBoxFor(a => a.trackInfoItem.surname)<label
+                    class="error">@Html.ValidationMessageFor(a => a.trackInfoItem.surname)</label>
+                </div>
+
+            </div>
+
+
+            <div class="clearfix"></div>
+
+            <!--surname -->
+            <div class="rowElem">@Html.LabelFor(a => a.trackInfoItem.email)
+                <div class="formRight">@Html.TextBoxFor(a => a.trackInfoItem.email)<label
+                    class="error">@Html.ValidationMessageFor(a => a.trackInfoItem.email)</label>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="addressForm deliveryAddressForm" data-ispersonal="@Model.addressItem.isPersonal">
+
+            <h2 class="subTitle">@Resources.lang.checkoutAddressInfo
+            </h2>
+
+            <!--name -->
+            <div class="rowElem">@Html.LabelFor(a => a.addressItem.name)<div class="formRight">@Html.TextBoxFor(a => a.addressItem.name)<label
+                class="error">@Html.ValidationMessageFor(a => a.addressItem.name)</label>
+            </div>
+
+            </div>
+
+            <!--isPersonal -->
+            <div class="rowElem">@Html.LabelFor(a => a.addressItem.isPersonal)<div class="formRight">
+
+                <input type="radio" name="addressItem.isPersonal" checked="@(Model.addressItem.isPersonal ? "checked" : null)"  value="True">&nbsp;@Resources.lang.personal
+                &nbsp;&nbsp;
+            <input type="radio" name="addressItem.isPersonal" checked="@(!Model.addressItem.isPersonal ? "checked" : null)" value="False">&nbsp;@Resources.lang.corporate
+
+                <label
+                    class="error">@Html.ValidationMessageFor(a => a.addressItem.isPersonal)</label>
+            </div>
+
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!--deliverPerson -->
+            <div class="rowElem bigItem">@Html.LabelFor(a => a.addressItem.deliverPerson)<div
+                class="formRight">@Html.TextBoxFor(a => a.addressItem.deliverPerson)<label
+                    class="error">@Html.ValidationMessageFor(a => a.addressItem.deliverPerson)</label>
+            </div>
+
+            </div>
+
+            <div class="clearfix"></div>
+
+
+            <div class="tcNoContainer" style="@(Model.addressItem.isPersonal ? null : "display:none")">
+
+                <!--tcNo -->
+                <div class="rowElem">@Html.LabelFor(a => a.addressItem.tcNo)<div class="formRight">@Html.TextBoxFor(a => a.addressItem.tcNo, new { @class = "addressTc", data_required = Resources.lang.addressTcNoRequired })<label
+                    class="error">@Html.ValidationMessageFor(a => a.addressItem.tcNo)</label>
+                </div>
+
+                </div>
+
+            </div>
+
+            <div class="companyContainer" style="@(!Model.addressItem.isPersonal ? null : "display:none")">
+
+                <!--companyName -->
+                <div class="rowElem">@Html.LabelFor(a => a.addressItem.companyName)<div class="formRight">@Html.TextBoxFor(a => a.addressItem.companyName, new { @class = "addressCompanyName", data_required = Resources.lang.addressCompanyNameRequired })<label
+                    class="error">@Html.ValidationMessageFor(a => a.addressItem.companyName)</label>
+                </div>
+
+                </div>
+
+                <!--taxOffice -->
+                <div class="rowElem">@Html.LabelFor(a => a.addressItem.taxOffice)<div class="formRight">@Html.TextBoxFor(a => a.addressItem.taxOffice, new { @class = "addresstaxOffice", data_required = Resources.lang.addressTaxOfficeRequired })<label
+                    class="error">@Html.ValidationMessageFor(a => a.addressItem.taxOffice)</label>
+                </div>
+
+                </div>
+
+                <!--taxNo -->
+                <div class="rowElem">@Html.LabelFor(a => a.addressItem.taxNo)<div class="formRight">@Html.TextBoxFor(a => a.addressItem.taxNo, new { @class = "addressTax", data_required = Resources.lang.addressTaxNoRequired })<label
+                    class="error">@Html.ValidationMessageFor(a => a.addressItem.taxNo)</label>
+                </div>
+
+                </div>
+
+            </div>
+
+            <!--city -->
+            <div class="rowElem">@Html.LabelFor(a => a.addressItem.city)<div class="formRight">@Html.TextBoxFor(a => a.addressItem.city)<label
+                class="error">@Html.ValidationMessageFor(a => a.addressItem.city)</label>
+            </div>
+
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!--district -->
+            <div class="rowElem">@Html.LabelFor(a => a.addressItem.district)<div class="formRight">@Html.TextBoxFor(a => a.addressItem.district)<label
+                class="error">@Html.ValidationMessageFor(a => a.addressItem.district)</label>
+            </div>
+
+            </div>
+
+            <!--postCode -->
+            <div class="rowElem">@Html.LabelFor(a => a.addressItem.postCode)<div class="formRight">@Html.TextBoxFor(a => a.addressItem.postCode, new { @class = "addressPost" })<label
+                class="error">@Html.ValidationMessageFor(a => a.addressItem.postCode)</label>
+            </div>
+
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!--phone -->
+            <div class="rowElem">@Html.LabelFor(a => a.addressItem.phone)<div class="formRight">@Html.TextBoxFor(a => a.addressItem.phone, new { @class = "addressPhone" })<label
+                class="error">@Html.ValidationMessageFor(a => a.addressItem.phone)</label>
+            </div>
+
+            </div>
+            <div class="clearfix"></div>
+
+            <!--address -->
+            <div class="rowElem bigItem">@Html.LabelFor(a => a.addressItem.address)<div class="formRight">@Html.TextAreaFor(a => a.addressItem.address, new { style = "height:100px" })<label
+                class="error">@Html.ValidationMessageFor(a => a.addressItem.address)</label>
+            </div>
+
+            </div>
+
+            <!--isSameBillingAddress -->
+            <div class="rowElem">
+                <div class="formRight">@Html.CheckBoxFor(a => a.isSameBillingAddress, new { @class = "fLeft mRight10 mTop5" })
+                    @Html.LabelFor(a => a.isSameBillingAddress)
+                </div>
+
+            </div>
+            <div class="clearfix"></div>
+
+
+        </div>
+         
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="submit mTop20">
+        <a class="btn redBg clickDisable save" data-checkvalidation=".checkoutForm form">@Resources.lang.saveAndContinue</a>
+    </div>
+
+</form>

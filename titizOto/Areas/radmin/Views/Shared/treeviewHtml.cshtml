@@ -1,0 +1,54 @@
+﻿@model  TreeviewOption
+
+<script type="text/javascript">
+    $(function () { 
+
+        $hiddenIdList= $('#@Model.fieldName');
+        console.log(@Model.jsonData);
+
+        $("#tree").dynatree({
+            checkbox:true,
+            selectMode:@{ int select = (int)Model.selectMode;
+                              
+                               } @select,
+            onCreate: function() {
+                   
+                var selectedArray=[];
+
+                var selNodes =  $("#tree").dynatree("getSelectedNodes");
+                $.map(selNodes, function(node){
+                    selectedArray.push(node.data.key.replace("category",""));
+                });
+
+                $hiddenIdList.val(selectedArray);
+                
+            },
+            onSelect: function(select, node) {
+                    
+                var selectedArray=[];
+
+                var selNodes = node.tree.getSelectedNodes(); 
+                $.map(selNodes, function(node){
+                      
+                    selectedArray.push(node.data.key.replace("category",""));
+                });
+
+                $hiddenIdList.val(selectedArray);
+                  
+            },
+            classNames: {checkbox: "dynatree-radio"},
+            children: @Model.jsonData
+            });
+
+             
+      
+         
+        $(".ddlLang").parent().find("ul li a").click(function(){
+
+            langChangeTreeview();
+            return false; //prevent default browser action
+
+        }); 
+
+    });
+</script>

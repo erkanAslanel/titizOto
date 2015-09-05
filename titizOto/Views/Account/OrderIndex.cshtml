@@ -1,0 +1,93 @@
+﻿@model ViewModel.Account.Order.helperOrder
+
+@{
+   
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+
+<div class="wrapper">
+    <div class="generalMainContainer">
+        <div class="generalMainHeader contentBg"></div>
+        <div class="generalMainContent contentBg">
+            <div class="innerContent">
+
+                @Html.Partial("breadCrumb", Model.breadCrumbItem)
+
+
+                <ul class="leftMenu">
+
+                    @foreach (var item in Model.leftMenuList)
+                    {
+                        <li class="@item.className"><a href="~/@item.url">@item.name</a></li>
+                    }
+
+                </ul>
+
+                <div id="accountContainer">
+                    <h1 class="accountTitle">@Model.title</h1>
+                    <div class="pageContent mBottom0 mLeft0 mTop10">
+                        @Html.Raw(Model.detail)
+                    </div>
+
+                    @if (Model.orderList != null && Model.orderList.Count > 0)
+                    {
+
+                        
+                        <table width="100%" class="stdtable orderDetailTable">
+                            <thead>
+                                <tr>
+                                    <th style="width: 120px">@Resources.lang.orderListOrderNo</th>
+                                    <th style="width: 110px">@Resources.lang.orderListDate</th>
+                                    <th style="width: 140px">@Resources.lang.orderListTotalPrice</th>
+                                    <th style="width: 140px">@Resources.lang.orderListStatu</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+
+                            @foreach (var item in Model.orderList)
+                            {
+                                
+                                
+                                <tr>
+                                    <td>@item.orderNo</td>
+                                    <td>@item.orderDateStr</td>
+                                    <td>@item.totalPriceStr</td>
+                                    <td class="colorGray bold">@Html.Raw(item.orderStatu)</td>
+                                    <td class="bold">
+                                        <a href="~/@item.orderDetailLink">
+                                            @Resources.lang.detailSee
+                                        </a>
+
+                                    </td>
+                                </tr>
+                            }
+
+
+                        </table>
+                    }
+
+                    else
+                    {
+                        <p>@Resources.lang.noOrderFind</p>
+                    }
+
+
+
+
+
+
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="generalMainFooter contentBg"></div>
+    </div>
+</div>
+
+
+@section scriptArea{
+
+    <script id="titizJs" src="~/Content/js/core.js?modul=accountOrder"></script>
+
+}

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<tbl_page>
+
+@{
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml";
+    ViewBag.Title = tbl_page.getClassTitle() + " Yönetimi";
+}
+
+<div class="title">
+    <h5>Sistem Sayfaları Yönetimi</h5>
+</div>
+
+<div class="body alignLeft">
+    <div class="proccess floatright">
+        <select>
+            <option value="-1">İşlem Seçiniz</option>
+            <option>Sil</option>
+            <option>Sırala</option>
+            <option>Aktif</option>
+            <option>Pasif</option>
+        </select>
+    </div>
+
+    <span style="margin-top:10px;display:inline-block;"><b>Önemli Uyarı </b> : Sistem sayfalarını değiştirmeden önce yöneticinize başvurunuz. </span>    
+    <div class="fix"></div>
+</div>
+
+<div class="table">
+    @Html.Partial("Table", Model)
+</div>

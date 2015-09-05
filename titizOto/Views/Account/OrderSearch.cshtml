@@ -1,0 +1,97 @@
+﻿@model ViewModel.Account.Order.helperOrderSearch
+
+@{
+   
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+
+
+<div class="wrapper">
+    <div class="generalMainContainer">
+        <div class="generalMainHeader contentBg">
+        </div>
+        <div class="generalMainContent contentBg">
+            <div class="innerContent">
+
+                @Html.Partial("breadCrumb", Model.breadCrumbItem)
+
+
+
+                <ul class="leftMenu">
+
+                    @foreach (var item in Model.leftMenuList)
+                    {
+                        <li class="@item.className"><a href="@item.url">@item.name</a></li>
+                    }
+
+                </ul>
+
+                <h1 class="mainHeader staticHeader">@Model.title</h1>
+
+                <div class="pageContent orderSearchContainer">
+
+                    @Html.Raw(Model.detail)
+
+
+
+                    <div class="subContent unregister">
+
+                        @using (Html.BeginForm())
+                        {
+
+                            <h2>@Resources.lang.orderSearchWithoutRegister</h2>
+
+
+                            if (Model.isMessageExist)
+                            {
+                                @Html.Raw(Model.message)
+                            }
+                            
+                            <!--orderNo -->
+                            <div class="rowElem">@Html.LabelFor(a => a.orderNo)<div class="formRight">@Html.TextBoxFor(a => a.orderNo)<label class="error">@Html.ValidationMessageFor(a => a.orderNo)</label></div>
+                                <div class="fix"></div>
+                            </div>
+
+                            <!--email -->
+                            <div class="rowElem">@Html.LabelFor(a => a.email)<div class="formRight">@Html.TextBoxFor(a => a.email)<label class="error">@Html.ValidationMessageFor(a => a.email)</label></div>
+                                <div class="fix"></div>
+                            </div>
+
+
+                            <div class="clearfix"></div>
+                            <button class="btn mTop10"  value="isActive">@Resources.lang.getOrder</button>
+                            @Html.AntiForgeryToken()
+                        }
+
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <div class="subContent register">
+
+                        @using (Html.BeginForm())
+                        {
+                            <h2>@Resources.lang.orderSearchRigister</h2>
+
+                            <button name="toLogin"  class="btn" value="isActive">@Resources.lang.orderSearchToLogin</button>
+                            
+                            @Html.AntiForgeryToken()
+                        }
+                    </div>
+
+
+
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="generalMainFooter contentBg">
+        </div>
+    </div>
+</div>
+
+@section scriptArea{
+
+    <script id="titizJs" src="~/Content/js/core.js?modul=staticPage"></script>
+
+}

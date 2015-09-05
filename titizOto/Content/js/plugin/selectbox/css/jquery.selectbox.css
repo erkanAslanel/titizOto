@@ -1,0 +1,127 @@
+@CHARSET "UTF-8";
+.sbHolder{
+	background-color: #2d2d2d;
+	border: solid 1px #515151;
+	font-family: SUILight, sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	height: 30px;
+	position: relative;
+	width: 200px;
+}
+.sbHolder:focus .sbSelector{
+	
+}
+.sbSelector{
+	display: block;
+	height: 40px;
+	left: 0;
+	line-height: 40px;
+	outline: none;
+	overflow: hidden;
+	position: absolute;
+	text-indent: 10px;
+	top: 0;
+	width: 287px;
+}
+.sbSelector:link, .sbSelector:visited, .sbSelector:hover{
+	/*color: #EBB52D;
+	outline: none;
+	text-decoration: none;*/
+}
+.sbToggle{
+	background: url(../img/select-icons.png) 0 -116px no-repeat;
+	display: block;
+	height: 30px;
+	outline: none;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 30px;
+}
+.sbToggle:hover{
+	/*background: url(../img/select-icons.png) 0 -167px no-repeat;*/
+}
+.sbToggleOpen{
+	background: url(../img/select-icons.png) 0 -16px no-repeat;
+}
+.sbToggleOpen:hover{
+	/*background: url(../img/select-icons.png) 0 -66px no-repeat;*/
+}
+.sbHolderDisabled{
+	background-color: #3C3C3C;
+	border: solid 1px #515151;
+}
+.sbHolderDisabled .sbHolder{
+	
+}
+.sbHolderDisabled .sbToggle{
+	
+}
+.sbOptions{
+ 
+	border: solid 1px #2275bf;
+	list-style: none;
+	left: -1px;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 30px;
+	width: 419px;
+	z-index: 1;
+	overflow-y: auto;
+background-color:white;
+}
+.sbOptions li{
+
+}
+sbOptions li :hover{
+background-color:#004f95;
+}
+
+sbOptions li :hover a{
+color:white;
+}
+.sbOptions a{
+	border-bottom: dotted 1px #515151;
+	display: block;
+	outline: none;
+	padding: 12px 0 12px 10px;
+color:#414141;
+}
+.sbOptions a:link, .sbOptions a:visited{
+	color: #414141;
+	text-decoration: none;
+}
+.sbOptions a:hover,
+.sbOptions a:focus,
+.sbOptions a.sbFocus{
+	/*color: #EBB52D;*/
+}
+.sbOptions li.last a{
+	border-bottom: none;
+}
+.sbOptions .sbDisabled{
+	border-bottom: dotted 1px #515151;
+	color: #999;
+	display: block;
+	padding: 7px 0 7px 3px;
+}
+.sbOptions .sbGroup{
+	border-bottom: dotted 1px #515151;
+	color: #EBB52D;
+	display: block;
+	font-weight: bold;
+	padding: 7px 0 7px 3px;
+}
+.sbOptions .sbSub{
+	padding-left: 17px;
+}
+
+.sbHolder:hover { 
+
+ border: 1px solid #2275bf; background-color: transparent;
+
+}
+
+.sbOptions a:hover { background-color:#004f95; color:white;}

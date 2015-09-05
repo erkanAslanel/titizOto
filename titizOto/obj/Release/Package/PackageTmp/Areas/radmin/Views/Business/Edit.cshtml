@@ -1,0 +1,64 @@
+﻿@model tbl_business
+
+@{
+    ViewBag.Title = Model.getClassTitle() + " Düzenle";
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml"; 
+}
+
+@if (ViewBag.success != null)
+{
+    
+    @Html.Raw(ViewBag.resultHtml)
+}
+
+
+@using (Html.BeginForm("Edit", "Business", FormMethod.Post, new { @class = "mainForm" }))
+{  
+    @Html.ValidationSummary(null, new { @class = "validationInfo hideit" }) 
+    
+    <div class="title">
+        <h5>@Model.classTitle Düzenleme(@Model.name)</h5>
+    </div> 
+
+    <!--Upload-->
+    @Html.AntiForgeryToken()
+
+   
+
+    <fieldset>
+        <div class="widget">
+
+            <!--Tabs-->
+            <ul class="tabs">
+                <li><a href="#tab1">İçerik</a></li>
+            </ul>
+
+            <!--Column-->
+            <div class="tab_container">
+                <div id="tab1" class="tab_content">
+
+                    <!--businessId -->
+                    @Html.HiddenFor(a => a.businessId, new { @id = "primaryKey" })
+
+                    <!--name -->
+                    <div class="rowElem">@Html.LabelFor(a => a.name)<div class="formRight">@Html.TextBoxFor(a => a.name)<label
+                        class="error">@Html.ValidationMessageFor(a => a.name)</label>
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="fix"></div>
+        </div>
+    </fieldset>  
+    
+    <div class="fix" style="height: 20px"></div>
+   
+    <!--Buttons-->
+                      
+    <input type="submit" value="Submit form" class="redBtn submitForm" />
+                       
+    <a class="greyishBtn button floatright" href="@Url.Action("Index")" >Geri Dön </a>    
+    
+}

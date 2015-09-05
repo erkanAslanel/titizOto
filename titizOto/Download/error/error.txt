@@ -1,0 +1,293 @@
+﻿
+24.07.2014--Order Ekleme -- {
+  "classTitle": "Siprişler",
+  "orderId": 0,
+  "orderNo": "1163486",
+  "cargoId": 1,
+  "userId": 1,
+  "deliveryAddressId": 5,
+  "billingAddressId": 5,
+  "paymentTypeId": 1,
+  "cargoPrice": 0.0,
+  "orderStatu": 1,
+  "orderMailStatu": 0,
+  "totalProductPrice": 140.00,
+  "trackInfoId": 0,
+  "discountCode": null,
+  "discountAmount": 0.0,
+  "transferDiscount": 0.0,
+  "additionalPrice": 0.0,
+  "totalCheckoutPrice": 140.00,
+  "creditPaymentCount": 0,
+  "isRegisteredOrder": true,
+  "createDate": "2014-07-24T04:59:27.4137694+03:00",
+  "salesAgreement": "<div>\r\n<div><strong>MESAFELİ SATIŞ S&Ouml;ZLEŞMESİ</strong></div>\r\n\r\n<div>&nbsp;</div>\r\n\r\n<div><strong>MADDE 1 - TARAFLAR</strong></div>\r\n\r\n<div>&nbsp;</div>\r\n\r\n<div>1.1 SATICI</div>\r\n\r\n<div>&nbsp;</div>\r\n\r\n<div>&Uuml;nvanı : Titiz Otomotiv</div>\r\n\r\n<div>Adresi : Arpaemini Yokuşu Dr. Nasırbey Sok. Sefabostanı 2/4 Topkapı/İSTANBUL</div>\r\n\r\n<div>Telefon : 0212 533 90 53</div>\r\n\r\n<div>E-posta Adresi : info@titizkromaksesuar.com</div>\r\n\r\n<div>&nbsp;</div>\r\n\r\n<div>\r\n<div>1.2 ALICI</div>\r\n\r\n<div>&nbsp;</div>\r\n\r\n<div>Adı Soyadı : Erkan Aslanel</div>\r\n\r\n<div>Adresi : Test<br />Üsküdar-İstanbul</div>\r\n\r\n<div>Telefon : (539)892-01-12</div>\r\n\r\n<div>E-posta Adresi : erkan.aslanel@gmail.com</div>\r\n​\r\n\r\n<div><strong>MADDE 2 - KONU&nbsp;</strong><br />\r\n&nbsp;</div>\r\n\r\n<div>İşbu S&ouml;zleşmenin konusu, ALICI&rsquo;nın SATICI&rsquo;ya ait&nbsp;<a href=\"http://www.titizkromaksesuar.com/\" target=\"_blank\">www.titizkromaksesuar.com</a>&nbsp;İnternet sitesinden elektronik ortamda siparişini yaptığı aşağıda nitelikleri ve satış fiyatı belirtilen &uuml;r&uuml;n&uuml;n satışı ve teslimi ile ilgili olarak 4077 sayılı T&uuml;keticilerin Korunması Hakkındaki Kanun ve Mesafeli S&ouml;zleşmeler Uygulama Esas ve Usulleri Hakkında Y&ouml;netmelik h&uuml;k&uuml;mleri gereğince tarafların hak ve y&uuml;k&uuml;ml&uuml;l&uuml;klerinin saptanmasıdır.</div>\r\n\r\n<div>&nbsp;</div>\r\n\r\n<div>\r\n<div><strong>MADDE 3 - S&Ouml;ZLEŞME KONUSU &Uuml;R&Uuml;N</strong></div>\r\n\r\n<div><br />\r\n<span style=\"line-height: 1.6em;\">&Uuml;r&uuml;nlerin Cinsi ve T&uuml;r&uuml;, Miktarı, Marka/Modeli, Rengi ve Satış Bedeli ve Teslimat Bilgileri aşağıda belirtildiği gibidir.</span></div>\r\n\r\n<p>​\r\n    <table>\r\n\r\n        <thead>\r\n            <tr>\r\n                <td style=\"width:300px\"><b>Ürün </b>\r\n                </td>\r\n                <td style=\"width:60px\">  <b>Fiyat </b>\r\n                </td>\r\n                <td style=\"width:60px\">  <b>Adet </b>\r\n                </td>\r\n                <td style=\"width:60px\">   <b>Toplam </b>\r\n                </td>\r\n            </tr>\r\n        </thead>\r\n\r\n        <tbody>\r\n\r\n                <tr>\r\n                    <td>AUDI Q7 KROM KAPI DİREĞİ 10 PARÇA PASLANMAZ ÇELİK</td>\r\n                    <td>70.00 TL</td>\r\n                    <td>1</td>\r\n                    <td>70.00 TL</td>\r\n\r\n                </tr>\r\n                <tr>\r\n                    <td>BMW X1 KROM KAPI DİREĞİ 6 PARÇA PASLANMAZ ÇELİK</td>\r\n                    <td>70.00 TL</td>\r\n                    <td>1</td>\r\n                    <td>70.00 TL</td>\r\n\r\n                </tr>\r\n\r\n\r\n            <tr><td colspan=\"4\">\r\n                <br />\r\n                 \r\n                </td></tr>\r\n\r\n            <tr>\r\n                <td colspan=\"2\"><b>Ürün Toplam (Kdv Dahil)</b>\r\n                </td>\r\n\r\n\r\n                <td colspan=\"2\">140.00 TL</td>\r\n            </tr>\r\n\r\n            <tr>\r\n                <td colspan=\"2\"><b>Kargo &#252;creti</b>\r\n                </td>\r\n\r\n\r\n                <td colspan=\"2\">Kargo &#252;creti alıcıya ait.</td>\r\n            </tr>\r\n\r\n            <tr>\r\n                <td colspan=\"2\"><b>&#214;deme Tipi</b>\r\n                </td>\r\n\r\n\r\n                <td colspan=\"2\">Havale</td>\r\n            </tr>\r\n\r\n\r\n            <tr>\r\n                <td colspan=\"2\"><b>&#214;deme Tutarı</b>\r\n                </td>\r\n\r\n\r\n                <td colspan=\"2\">140.00 TL</td>\r\n            </tr>\r\n\r\n\r\n               <tr><td colspan=\"4\">\r\n                <br />\r\n                 \r\n                </td></tr>\r\n        </tbody>\r\n\r\n\r\n    </table>\r\n\r\n\r\n</p>\r\n\r\n<p><span style=\"line-height: 1.6em;\"><strong>MADDE 4- GENEL H&Uuml;K&Uuml;MLER</strong>&nbsp;</span><br />\r\n<br />\r\n<span style=\"line-height: 1.6em;\">4.1- ALICI, SATICI &#39;ya ait </span><a href=\"http://www.titizkromaksesuar.com/\" style=\"line-height: 1.6em;\" target=\"_blank\">www.titizkromaksesuar.com</a><span style=\"line-height: 1.6em;\"> alan adlı internet sitesinde s&ouml;zleşme konusu &uuml;r&uuml;n&uuml;n temel nitelikleri, satış fiyatı ve &ouml;deme şekli ile teslimata ilişkin &ouml;n bilgileri okuyup bilgi sahibi olduğunu ve elektronik ortamda gerekli teyidi verdiğini beyan eder.</span></p>\r\n\r\n<p>4.2- S&ouml;zleşme konusu &uuml;r&uuml;n, yasal 30 g&uuml;nl&uuml;k s&uuml;reyi aşmamak koşulu ile her bir &uuml;r&uuml;n i&ccedil;in ALICI&#39;nın yerleşim yerinin uzaklığına bağlı olarak internet sitesinde &ouml;n bilgiler i&ccedil;inde a&ccedil;ıklanan s&uuml;re i&ccedil;inde ALICI veya g&ouml;sterdiği adresteki kişi/kuruluşa teslim edilir.<br />\r\n4.3- S&ouml;zleşme konusu &uuml;r&uuml;n, ALICI&#39;dan başka bir kişi/kuruluşa teslim edilecek ise, teslim edilecek kişi/kuruluşun teslimatı kabul etmemesinden SATICI sorumlu tutulamaz.<br />\r\n4.4- SATICI, s&ouml;zleşme konusu &uuml;r&uuml;n&uuml;n sağlam, eksiksiz, siparişte belirtilen niteliklere uygun ve varsa garanti belgeleri ve kullanım kılavuzları ile teslim edilmesinden sorumludur.<br />\r\n4.5- S&ouml;zleşme konusu &uuml;r&uuml;n&uuml;n teslimatı i&ccedil;in işbu s&ouml;zleşmenin imzalı n&uuml;shasının SATICI&#39;ya ulaştırılmış olması ve bedelinin ALICI&#39;nın tercih ettiği &ouml;deme şekli ile &ouml;denmiş olması şarttır. Herhangi bir nedenle &uuml;r&uuml;n bedeli &ouml;denmez veya banka kayıtlarında iptal edilir ise, SATICI &uuml;r&uuml;n&uuml;n teslimi y&uuml;k&uuml;ml&uuml;l&uuml;ğ&uuml;nden kurtulmuş kabul edilir.<br />\r\n4.6- &Uuml;r&uuml;n&uuml;n tesliminden sonra ALICI&#39;ya ait kredi kartının ALICI&#39;nın kusurundan kaynaklanmayan bir şekilde yetkisiz kişilerce haksız veya hukuka aykırı olarak kullanılması nedeni ile ilgili banka veya finans kuruluşun &uuml;r&uuml;n bedelini SATICI&#39;ya &ouml;dememesi halinde, ALICI&#39;nın kendisine teslim edilmiş olması kaydıyla &uuml;r&uuml;n&uuml;n 3 g&uuml;n i&ccedil;inde SATICI&#39;ya g&ouml;nderilmesi zorunludur. Bu takdirde nakliye giderleri ALICI&#39;ya aittir.<br />\r\n4.7- SATICI m&uuml;cbir sebepler veya nakliyeyi engelleyen hava muhalefeti, ulaşımın kesilmesi gibi olağan&uuml;st&uuml; durumlar nedeni ile s&ouml;zleşme konusu &uuml;r&uuml;n&uuml; s&uuml;resi i&ccedil;inde teslim edemez ise, durumu ALICI&#39;ya bildirmekle y&uuml;k&uuml;ml&uuml;d&uuml;r. Bu takdirde ALICI siparişin iptal edilmesini, s&ouml;zleşme konusu &uuml;r&uuml;n&uuml;n varsa emsali ile değiştirilmesini, ve/veya teslimat s&uuml;resinin engelleyici durumun ortadan kalkmasına kadar ertelenmesi haklarından birini kullanabilir. ALICI&#39;nın siparişi iptal etmesi halinde &ouml;dediği tutar 10 g&uuml;n i&ccedil;inde kendisine nakten ve defaten &ouml;denir.<br />\r\n4.8- Garanti belgesi ile satılan &uuml;r&uuml;nlerden olan veya olmayan &uuml;r&uuml;nlerin arızalı veya bozuk olanlar, garanti şartları i&ccedil;inde gerekli onarımın yapılması i&ccedil;in SATICI&#39;ya g&ouml;nderilebilir, bu takdirde kargo giderleri SATICI tarafından karşılanacaktır.&nbsp;<br />\r\n4.9- İşbu s&ouml;zleşme, ALICI tarafından imzalanıp SATICI&#39;ya faks veya posta yolu ile ulaştırılmasından sonra ge&ccedil;erlilik kazanır.</p>\r\n\r\n<p><strong>MADDE 5- CAYMA HAKKI&nbsp;</strong></p>\r\n\r\n<p>ALICI, s&ouml;zleşme konusu &uuml;r&uuml;r&uuml;n&uuml;n kendisine veya g&ouml;sterdiği adresteki kişi/kuruluşa tesliminden itibaren 7 g&uuml;n i&ccedil;inde cayma hakkına sahiptir. Cayma hakkının kullanılması i&ccedil;in bu s&uuml;re i&ccedil;inde SATICI&#39;ya faks, e-mail veya telefon ile bildirimde bulunulması ve &uuml;r&uuml;n&uuml;n 6. madde h&uuml;k&uuml;mleri &ccedil;er&ccedil;evesinde kullanılmamış olması şarttır. Bu hakkın kullanılması halinde, 3. kişiye veya ALICI&#39;ya teslim edilen &uuml;r&uuml;n&uuml;n SATICI&#39;ya g&ouml;nderildiğine ilişkin kargo teslim tutanağı &ouml;rneği ile fatura aslının iadesi zorunludur. Bu belgelerin ulaşmasını takip eden 7 g&uuml;n i&ccedil;inde &uuml;r&uuml;n bedeli ALICI&#39;ya iade edilir. Fatura aslı g&ouml;nderilmez ise KDV ve varsa sair yasal y&uuml;k&uuml;ml&uuml;l&uuml;kler iade edilemez. Cayma hakkı nedeni ile iade edilen &uuml;r&uuml;n&uuml;n kargo bedeli SATICI tarafından karşılanır.</p>\r\n\r\n<p><strong>MADDE 6- CAYMA HAKKI KULLANILAMAYACAK &Uuml;R&Uuml;NLER</strong>&nbsp;</p>\r\n\r\n<p>Niteliği itibarıyla iade edilemeyecek &uuml;r&uuml;nler, tek kullanımlık &uuml;r&uuml;nler, kopyalanabilir yazılım ve programlar, sarf malzemeleri, hızlı bozulan veya son kullanım tarihi ge&ccedil;en &uuml;r&uuml;nler ve hizmet i&ccedil;in cayma hakkı kullanılamaz.</p>\r\n\r\n<p><strong>MADDE 7- GENEL H&Uuml;K&Uuml;MLER</strong></p>\r\n\r\n<p>7.1- 18 yaşından k&uuml;&ccedil;&uuml;kkişiler SATICI&rsquo;dan alış-veriş yapamaz.</p>\r\n\r\n<p>7.2- Dizgi ve sistem hatalarından meydana gelen fiyat yanlışlıklarından SATICI sorumlu değildir</p>\r\n\r\n<p><strong>MADDE 8- YETKİLİ MAHKEME&nbsp;</strong></p>\r\n\r\n<p>İşbu s&ouml;zleşmenin uygulanmasında, Sanayi ve Ticaret Bakanlığınca ilan edilen değere kadar T&uuml;ketici Hakem Heyetleri ile ALICI&#39;nın veya SATICI&#39;nın yerleşim yerindeki T&uuml;ketici Mahkemeleri yetkilidir.</p>\r\n\r\n<p>Siparişin ger&ccedil;ekleşmesi durumunda ALICI işbu s&ouml;zleşmenin t&uuml;m koşullarını kabul etmiş sayılır.<br />\r\n&nbsp;</p>\r\n\r\n<div><strong>SATICI&nbsp;</strong></div>\r\n\r\n<div>Titiz Otomotiv</div>\r\n\r\n<div>&nbsp;</div>\r\n\r\n<div><strong>ALICI&nbsp;</strong></div>\r\n\r\n<div>Erkan Aslanel</div>\r\n\r\n<div>&nbsp;</div>\r\n\r\n<div><strong>TARİH&nbsp;</strong></div>\r\n\r\n<div>24.59.2014</div>\r\n</div>\r\n</div>\r\n</div>\r\n",
+  "preSalesAgreement": "<p><strong>T&Uuml;KETİCİ MEVZUATI GEREĞİNCE &Ouml;N BİLGİLENDİRME FORMU</strong></p>\r\n\r\n<p><strong>1. SATICIYA İLİŞKİN BİLGİLER</strong></p>\r\n\r\n<p>&Uuml;nvanı : Titiz Otomotiv<br />\r\nAdresi : Arpaemini Yokuşu Dr. Nasırbey Sok. Sefabostanı 2/4 Topkapı/İSTANBUL<br />\r\nTelefon : 0212 533 90 53<br />\r\nE-posta Adresi : info@titizkromaksesuar.com<br />\r\n&nbsp;</p>\r\n\r\n<p><strong>2. ALICIYA İLİŞKİN BİLGİLER​</strong><br />\r\nAdı Soyadı : Erkan Aslanel<br />\r\nAdresi : Test<br />Üsküdar-İstanbul<br />\r\nTelefon : (539)892-01-12<br />\r\nE-posta Adresi : erkan.aslanel@gmail.com<strong>&nbsp;&nbsp;</strong><br />\r\n<br />\r\n<strong>3. KONU</strong><br />\r\nİşbu &Ouml;n Bilgilendirme Formu&rsquo;nun konusu; Alıcının, aşağıda nitelik ve satış fiyatı belirtilen &uuml;r&uuml;n ya da &uuml;r&uuml;nlerin satışı ve teslimi ile ilgili olarak 4077 sayılı T&uuml;keticilerin Korunması Hakkında Kanun ve 6 Mart 2011 tarihli ve 27866 sayılı Resmi Gazete&rsquo;de yayınlanan Mesafeli S&ouml;zleşmelere Dair Y&ouml;netmelik h&uuml;k&uuml;mleri gereğince bilgilendirilmesidir.<br />\r\n<br />\r\n<strong>4. S&Ouml;ZLEŞME KONUSU &Uuml;R&Uuml;N&Uuml;N TEMEL &Ouml;ZELLİKLERİ ve &Ouml;DEME BİLGİLERİ</strong><br />\r\nİşbu kısımda s&ouml;zleşme konusu &uuml;r&uuml;n ya da &uuml;r&uuml;nlerin temel &ouml;zellikleri a&ccedil;ıklanmaktadır.<br />\r\n​\r\n    <table>\r\n\r\n        <thead>\r\n            <tr>\r\n                <td style=\"width:300px\"><b>Ürün </b>\r\n                </td>\r\n                <td style=\"width:60px\">  <b>Fiyat </b>\r\n                </td>\r\n                <td style=\"width:60px\">  <b>Adet </b>\r\n                </td>\r\n                <td style=\"width:60px\">   <b>Toplam </b>\r\n                </td>\r\n            </tr>\r\n        </thead>\r\n\r\n        <tbody>\r\n\r\n                <tr>\r\n                    <td>AUDI Q7 KROM KAPI DİREĞİ 10 PARÇA PASLANMAZ ÇELİK</td>\r\n                    <td>70.00 TL</td>\r\n                    <td>1</td>\r\n                    <td>70.00 TL</td>\r\n\r\n                </tr>\r\n                <tr>\r\n                    <td>BMW X1 KROM KAPI DİREĞİ 6 PARÇA PASLANMAZ ÇELİK</td>\r\n                    <td>70.00 TL</td>\r\n                    <td>1</td>\r\n                    <td>70.00 TL</td>\r\n\r\n                </tr>\r\n\r\n\r\n            <tr><td colspan=\"4\">\r\n                <br />\r\n                 \r\n                </td></tr>\r\n\r\n            <tr>\r\n                <td colspan=\"2\"><b>Ürün Toplam (Kdv Dahil)</b>\r\n                </td>\r\n\r\n\r\n                <td colspan=\"2\">140.00 TL</td>\r\n            </tr>\r\n\r\n            <tr>\r\n                <td colspan=\"2\"><b>Kargo &#252;creti</b>\r\n                </td>\r\n\r\n\r\n                <td colspan=\"2\">Kargo &#252;creti alıcıya ait.</td>\r\n            </tr>\r\n\r\n            <tr>\r\n                <td colspan=\"2\"><b>&#214;deme Tipi</b>\r\n                </td>\r\n\r\n\r\n                <td colspan=\"2\">Havale</td>\r\n            </tr>\r\n\r\n\r\n            <tr>\r\n                <td colspan=\"2\"><b>&#214;deme Tutarı</b>\r\n                </td>\r\n\r\n\r\n                <td colspan=\"2\">140.00 TL</td>\r\n            </tr>\r\n\r\n\r\n               <tr><td colspan=\"4\">\r\n                <br />\r\n                 \r\n                </td></tr>\r\n        </tbody>\r\n\r\n\r\n    </table>\r\n\r\n\r\n</p>\r\n\r\n<p><strong>5. MAL/HİZMETİN TESLİM ZAMANI</strong><br />\r\nTeslimat, stokun m&uuml;sait olması ve mal bedelinin Satıcının hesabına ge&ccedil;mesinden sonra m&uuml;mk&uuml;n olan en kısa s&uuml;rede yapılır. Doğal afetler, hava muhalefeti vs. gibi m&uuml;cbir sebeplerle gecikmeler olabilir. Satıcı, malı/hizmeti siparişinden itibaren 30 (Otuz) g&uuml;n i&ccedil;inde teslim eder ve bu s&uuml;re i&ccedil;inde yazılı bildirimle ek 10 (on) g&uuml;nl&uuml;k s&uuml;re uzatım hakkini saklı tutar.<br />\r\n<br />\r\n<strong>6. MAL/HİZMETİN TESLİMATI</strong><br />\r\nMal/hizmetin teslimi alıcının talep ettiği adreste kendisine yapılır. Alıcı, kendisinden başka birine ve de kendi adresinden başka bir adrese teslimat yapılmasını isterse, bu talebi doğrultusunda teslimat yapılır. Teslimat masrafları Alıcıya aittir. Satıcı, web sitesinde, ilan ettiği rakamın &uuml;zerinde alışveriş yapanların veya kimi kampanyalarında teslimat &uuml;cretinin kendisince karşılanacağını beyan etmişse, teslimat masrafı Satıcıya (satıcı ) tarafından karşılanır. Mal/hizmet teslimatı kargo firmalarınca yapılmaktadır.<br />\r\n<br />\r\nAlıcının teslim &ouml;ncesi malı muayene sorumluluğu vardır. Alıcı, malı teslim almadan &ouml;nce kargo firması yetkilisinin bulunduğu bir ortamda, malın muayenesini yapmalı, ayıplı ve hasarlı malı teslim almayarak ilgili ayıp ve hasarı a&ccedil;ıklayan tutanak tutturmalıdır. Alıcı kargodan teslim alınan &uuml;r&uuml;n&uuml;n sağlam ve hasarsız olduğu(olduğunu) kabul eder.<br />\r\n<br />\r\nSipariş konusu mal/hizmetin teslimatı i&ccedil;in mesafeli satış s&ouml;zleşmesinin imzalı bir n&uuml;shasının Satıcıya ulaştırılmış olması ve bedelinin Alıcının tercih ettiği &ouml;deme sekli ile &ouml;denmiş olması şarttır. Herhangi bir nedenle mal/hizmet bedeli &ouml;denmez veya banka kayıtlarında iptal edilir ise, Satıcı mal/hizmetin teslimi y&uuml;k&uuml;ml&uuml;l&uuml;ğ&uuml;nden kurtulmuş kabul edilir.<br />\r\n<br />\r\n<strong>7. &Ouml;DEME ŞEKLİ</strong><br />\r\n&Ouml;demeler kredi kartı, EFT veya havale y&ouml;ntemlerinden birisi kullanılarak yapılabilir.<br />\r\n<br />\r\n<strong>8. GE&Ccedil;ERLİLİK S&Uuml;RESİ</strong><br />\r\nListelenen ve siteden ilan edilen fiyatlar satış fiyatıdır. (KDV, vergiler dahil ibaresi eklenmeli )&nbsp; İlan edilen fiyatlar ve vaatler g&uuml;ncelleme yapılana ve değiştirilene kadar ge&ccedil;erlidir. S&uuml;reli olarak ilan edilen fiyatlar ise belirtilen s&uuml;re sonuna kadar ge&ccedil;erliliğini korur. Ancak hatayla yanlış yazılan, tedarik&ccedil;inin ge&ccedil; bildirmesi ile g&uuml;ncellenmemiş olan fiyat farklılıklarında Satıcının m&uuml;şteriye bildireceği g&uuml;ncel fiyat ge&ccedil;erli kabul edilecektir. Hata durumlarında mal/hizmet bedelinden fazla &ccedil;ekim yapılmışsa farkı iade edilir. Mal/hizmetin ger&ccedil;ek fiyatı ilan edilenden farklı ise Alıcıya ger&ccedil;ek fiyat bildirilir. M&uuml;şterinin talebi doğrultusunda ger&ccedil;ek fiyat &uuml;zerinden satış ger&ccedil;ekleştirilir ya da satış iptal edilir.<br />\r\n<br />\r\n<strong>9. CAYMA HAKKI</strong><br />\r\nAlıcı; mal satışına ilişkin mesafeli s&ouml;zleşmelerde, malı teslim aldığı tarihten itibaren yedi g&uuml;n i&ccedil;erisinde hi&ccedil;bir hukuki ve cezai sorumluluk &uuml;stlenmeksizin ve hi&ccedil;bir gerek&ccedil;e g&ouml;stermeksizin malı reddederek s&ouml;zleşmeden cayma hakkına sahiptir. Hizmet sunumuna ilişkin mesafeli s&ouml;zleşmelerde ise, bu s&uuml;re s&ouml;zleşmenin imzalandığı tarihte başlar. S&ouml;zleşmede, hizmetin ifasının yedi g&uuml;nl&uuml;k s&uuml;re dolmadan yapılması kararlaştırılmışsa, t&uuml;ketici ifanın başlayacağı tarihe kadar cayma hakkını kullanabilir. Cayma hakkının kullanımından kaynaklanan masraflar satıcıya aittir.<br />\r\n<br />\r\nCayma hakkının kullanılması i&ccedil;in Alıcı tarafından yedi g&uuml;nl&uuml;k s&uuml;re i&ccedil;inde Satıcıya yukarıda bildirilen faks, telefon veya elektronik posta ile bildirimde bulunulması ve mal/hizmetin Mesafeli Satış S&ouml;zleşmesi&rsquo;nin 15. Madde h&uuml;k&uuml;mleri &ccedil;er&ccedil;evesinde ve işbu S&ouml;zleşmenin ayrılmaz par&ccedil;ası olan ve www.vioteknoloji.com web sitesinde yayınlanmış olan &ouml;nbilgiler gereğince, ambalaj ve i&ccedil;eriğinin mal denenirken hasar g&ouml;rmemiş olması ve Satıcı tarafından tekrar satışa arz edilebilir nitelikte olması şarttır. Cayma Hakkı kapsamında yer alan iade usulleri Mesafeli Satış S&ouml;zleşmesinde yer almaktadır. Bu hakkın kullanılması halinde, 3. kişiye veya Alıcıya teslim edilen mal/hizmete ilişkin fatura aslinin iadesi zorunludur. Cayma hakkına ilişkin ihbarın ulaşmasını takip eden en ge&ccedil; 10 (on) g&uuml;n i&ccedil;inde mal/hizmet bedeli Alıcıya iade edilir ve 20 (yirmi) g&uuml;nl&uuml;k s&uuml;re i&ccedil;inde mal/hizmet iade alınır. Fatura asli g&ouml;nderilmezse Alıcıya KDV ve varsa diğer yasal y&uuml;k&uuml;ml&uuml;l&uuml;kler iade edilemez. Cayma hakkı ile iade edilen mal/hizmetin teslimat bedeli Satıcı tarafından karşılanır.<br />\r\n<br />\r\nAlıcının kusurundan kaynaklanan bir nedenle malın değerinde bir azalma olursa veya iade imkansızlaşırsa Alıcı kusur oranında Satıcının zararını tazmin etmekle y&uuml;k&uuml;ml&uuml;d&uuml;r.&Ouml;demeler kredi kartı, EFT veya havale y&ouml;ntemlerinden birisi kullanılarak yapılabilir.(&ouml;demeler ne suretle yapıldıysa, aynı şekilde iade edilebilir )<br />\r\n<br />\r\n<strong>10. CAYMA HAKKININ KULLANILAMAYACAĞI MAL/HİZMETLER</strong><br />\r\nNiteliği itibarıyla iade edilemeyecek mal/hizmetler, hızla bozulan ve son kullanma tarihi ge&ccedil;en mal/hizmetler, tek kullanımlık mal/hizmetler, kopyalanabilir her t&uuml;rl&uuml; yazılım ve programlardır. Ayrıca, her t&uuml;rl&uuml; yazılım ve programlarında, DVD, DIVX, VCD, CD, MD, videokasetlerde, bilgisayar ve kırtasiye sarf malzemelerinde (toner, kartuş, şerit ve benzeri) ile kozmetik malzemelerinde cayma hakkının kullanılabilmesi i&ccedil;in mal/hizmetin ambalajının a&ccedil;ılmamış, bozulmamış ve kullanılmamış olmaları şartı bulunmaktadır.<br />\r\n<br />\r\n<strong>11. GE&Ccedil;ERLİLİK</strong><br />\r\nİşbu &ouml;n bilgilendirme formu, elektronik ortamda Alıcı tarafından okunarak kabul edildikten sonra Mesafeli Satış S&ouml;zleşmesi kurulması aşamasına ge&ccedil;ilecektir.<br />\r\n<br />\r\n<strong>12. YETKİLİ MAHKEME</strong><br />\r\nT&uuml;ketici; şik&acirc;yet ve itirazları konusunda başvurularını, T.C. G&uuml;mr&uuml;k ve Ticaret Bakanlığı tarafından her yıl Aralık ayında belirlenen parasal sınırlar d&acirc;hilinde t&uuml;keticinin mal veya hizmeti satın aldığı veya ikametg&acirc;hının bulunduğu yerdeki t&uuml;ketici sorunları hakem heyetine veya t&uuml;ketici mahkemesine yapabilir.<br />\r\n<br />\r\n<strong>13. SON H&Uuml;K&Uuml;MLER</strong><br />\r\nSiparişe ilişkin verilen belge ve bilgilerin eksik, sahte ve/veya yanlış olduğunun saptanması veya siparişin k&ouml;t&uuml; niyetle/veya ticari ve/veya kazan&ccedil; elde etmek amacıyla yapılmış olduğuna dair ş&uuml;phenin varlığı ya da tespiti halinde, herhangi bir zamanda, Alıcı&rsquo;yı bilgilendirmek koşuluyla sipariş başvurusunu, gerekli incelemelerin yapılmasını teminen durdurma ve/veya iptal etme hakkını saklı tutar. İptal halinde, &ouml;deme i&ccedil;in iade s&uuml;reci yine Alıcı&rsquo;ya bildirilmek kaydıyla yapılabilir.<br />\r\n<br />\r\nAlıcı; 4822 S. K. ile değişik 4077 S.K.&rsquo;un M. 9/A, f.2 ve Mes. S&ouml;z. Y&ouml;n. 5. ve 6. maddeleri gereğince &Ouml;n Bilgileri okuyup bilgi sahibi olduğunu ve elektronik ortamda gerekli teyidi verdiğini kabul, taahh&uuml;t ve beyan eder.</p>\r\n",
+  "orderGuid": "7d09fb22-ec08-4bd3-b824-ac25d56f3941",
+  "eftId": 1,
+  "orderNote": "Sipariş Notu",
+  "tbl_cargo": {
+    "tbl_order": [],
+    "classTitle": "Kargo Firması",
+    "cargoId": 1,
+    "price": 0.00,
+    "freeCargoPrice": 0.00,
+    "photo": "2014070477833yurticikargo.jpg",
+    "photoCoordinate": "0,8,350,241.33333333333334,350,233.33333333333334",
+    "name": "Yurtiçi Kargo",
+    "statu": true,
+    "detail": "<p>Yurti&ccedil;i Kargo&nbsp;g&uuml;vencesiyle, siparişin en kısa s&uuml;rede elinde.</p>\r\n",
+    "sequence": 1,
+    "langId": 1,
+    "isCargoPriceOnCustomer": true
+  },
+  "tbl_orderDetail": []
+}--Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+24.07.2014--{
+  "registerOption": 0,
+  "currentStep": 5,
+  "lastSuccessStep": 4,
+  "cartItem": {
+    "isRegisteredUser": true,
+    "productCount": 2,
+    "nameSurname": "Erkan Aslanel",
+    "guestGuid": null,
+    "userId": 1,
+    "registerUrl": "kayit-ol--giris-yap.html",
+    "basketUrl": "sepetim.html",
+    "userGuid": "2842ab6b-a26e-42cc-a272-2d2cfffd84f7",
+    "basketIdString": "21,28"
+  },
+  "isCartItemChange": false,
+  "stepLinkList": [
+    {
+      "url": "tr/odeme-sayfasi/uye-olun-avantajlari-yakalayin-.html",
+      "name": "Üye olun avantajları yakalayın !",
+      "step": 0
+    },
+    {
+      "url": "tr/odeme-sayfasi/teslimat-adresi.html",
+      "name": "Teslimat Adresi",
+      "step": 1
+    },
+    {
+      "url": "tr/odeme-sayfasi/fatura-adresi.html",
+      "name": "Fatura Adresi",
+      "step": 2
+    },
+    {
+      "url": "tr/odeme-sayfasi/kargo-secimi.html",
+      "name": "Kargo Seçimi",
+      "step": 3
+    },
+    {
+      "url": "tr/odeme-sayfasi/odeme-secenekleri.html",
+      "name": "Ödeme Seçenekleri",
+      "step": 4
+    },
+    {
+      "url": "tr/odeme-sayfasi/siparis-onayi.html",
+      "name": "Sipariş Onayı",
+      "step": 5
+    },
+    {
+      "url": "tr/odeme-sayfasi/siparis-kaydinda-hata.html",
+      "name": "Sipariş Kaydında Hata",
+      "step": 7
+    },
+    {
+      "url": "tr/odeme-sayfasi/siparis-tamamlandi.html",
+      "name": "Sipariş Tamamlandı",
+      "step": 6
+    }
+  ],
+  "trackInfo": null,
+  "deliveryAddressId": 5,
+  "deliveryAddress": null,
+  "isBillingSameAddress": true,
+  "billingAddressId": 5,
+  "billingAddress": null,
+  "cargoId": 1,
+  "paymentOptionChoose": 1,
+  "transferInfo": {
+    "transferDiscount": {
+      "isDiscountExist": false,
+      "discountType": 0,
+      "amount": 0.0
+    },
+    "selectedTransferId": 1,
+    "eftList": [],
+    "isMessageExist": false,
+    "message": null
+  },
+  "cardInfo": {
+    "creditCard": "",
+    "month": 0,
+    "year": 0,
+    "cvv": 0,
+    "nameSurname": null,
+    "monthList": {
+      "0": "Ay",
+      "1": "01",
+      "2": "02",
+      "3": "03",
+      "4": "04",
+      "5": "05",
+      "6": "06",
+      "7": "07",
+      "8": "08",
+      "9": "09",
+      "10": "10",
+      "11": "11",
+      "12": "12"
+    },
+    "yearList": {
+      "0": "Yıl",
+      "2014": "2014",
+      "2015": "2015",
+      "2016": "2016",
+      "2017": "2017",
+      "2018": "2018",
+      "2019": "2019",
+      "2020": "2020",
+      "2021": "2021",
+      "2022": "2022",
+      "2023": "2023"
+    },
+    "cardOption": {
+      "creditOptionId": -1,
+      "optionList": null,
+      "isErrorExist": false
+    },
+    "totalPriceStr": null,
+    "isErrorExist": false,
+    "message": null
+  },
+  "orderNote": "Sipariş Notu"
+}--ErrorProcess
+24.07.2014--{
+  "registerOption": 0,
+  "currentStep": 0,
+  "lastSuccessStep": -1,
+  "cartItem": {
+    "isRegisteredUser": true,
+    "productCount": 2,
+    "nameSurname": "Erkan Aslanel",
+    "guestGuid": null,
+    "userId": 1,
+    "registerUrl": "kayit-ol--giris-yap.html",
+    "basketUrl": "sepetim.html",
+    "userGuid": "2842ab6b-a26e-42cc-a272-2d2cfffd84f7",
+    "basketIdString": "21,28"
+  },
+  "isCartItemChange": false,
+  "stepLinkList": [
+    {
+      "url": "tr/odeme-sayfasi/uye-olun-avantajlari-yakalayin-.html",
+      "name": "Üye olun avantajları yakalayın !",
+      "step": 0
+    },
+    {
+      "url": "tr/odeme-sayfasi/teslimat-adresi.html",
+      "name": "Teslimat Adresi",
+      "step": 1
+    },
+    {
+      "url": "tr/odeme-sayfasi/fatura-adresi.html",
+      "name": "Fatura Adresi",
+      "step": 2
+    },
+    {
+      "url": "tr/odeme-sayfasi/kargo-secimi.html",
+      "name": "Kargo Seçimi",
+      "step": 3
+    },
+    {
+      "url": "tr/odeme-sayfasi/odeme-secenekleri.html",
+      "name": "Ödeme Seçenekleri",
+      "step": 4
+    },
+    {
+      "url": "tr/odeme-sayfasi/siparis-onayi.html",
+      "name": "Sipariş Onayı",
+      "step": 5
+    },
+    {
+      "url": "tr/odeme-sayfasi/siparis-kaydinda-hata.html",
+      "name": "Sipariş Kaydında Hata",
+      "step": 7
+    },
+    {
+      "url": "tr/odeme-sayfasi/siparis-tamamlandi.html",
+      "name": "Sipariş Tamamlandı",
+      "step": 6
+    }
+  ],
+  "trackInfo": null,
+  "deliveryAddressId": 0,
+  "deliveryAddress": null,
+  "isBillingSameAddress": false,
+  "billingAddressId": 0,
+  "billingAddress": null,
+  "cargoId": 0,
+  "paymentOptionChoose": 0,
+  "transferInfo": {
+    "transferDiscount": {
+      "isDiscountExist": false,
+      "discountType": 0,
+      "amount": 0.0
+    },
+    "selectedTransferId": 0,
+    "eftList": [],
+    "isMessageExist": false,
+    "message": null
+  },
+  "cardInfo": {
+    "creditCard": "",
+    "month": 0,
+    "year": 0,
+    "cvv": 0,
+    "nameSurname": null,
+    "monthList": {
+      "0": "Ay",
+      "1": "01",
+      "2": "02",
+      "3": "03",
+      "4": "04",
+      "5": "05",
+      "6": "06",
+      "7": "07",
+      "8": "08",
+      "9": "09",
+      "10": "10",
+      "11": "11",
+      "12": "12"
+    },
+    "yearList": {
+      "0": "Yıl",
+      "2014": "2014",
+      "2015": "2015",
+      "2016": "2016",
+      "2017": "2017",
+      "2018": "2018",
+      "2019": "2019",
+      "2020": "2020",
+      "2021": "2021",
+      "2022": "2022",
+      "2023": "2023"
+    },
+    "cardOption": {
+      "creditOptionId": -1,
+      "optionList": null,
+      "isErrorExist": false
+    },
+    "totalPriceStr": null,
+    "isErrorExist": false,
+    "message": null
+  },
+  "orderNote": null
+}--ErrorProcess
+28.07.2014-- Order Mail Statu Update İşlemi--Nesne başvurusu bir nesnenin örneğine ayarlanmadı.
+28.07.2014-- Order Mail Statu Update İşlemi--Nesne başvurusu bir nesnenin örneğine ayarlanmadı.
+28.07.2014-- Order Mail Statu Update İşlemi--Nesne başvurusu bir nesnenin örneğine ayarlanmadı.
+28.07.2014--tbl_order_133C89462730EF98D024CDE762E39028F5C5AC3E4A26028FD9D5F7083A57DCA0 Silme İşlemi--İşlem başarısız oldu: Yabancı anahtar özelliklerinden bir veya birkaçı null olamayan türde olduğundan ilişki değiştirilemedi. Bir ilişkide değişiklik yapıldığında, ilgili yabancı anahtar özelliği bir null değere ayarlanır. Yabancı anahtar null değerleri desteklemiyorsa, yeni bir ilişki tanımlanmalıdır, yabancı anahtar özelliğine null olmayan başka bir değer atanmalıdır veya ilgili olmayan nesne silinmelidir.

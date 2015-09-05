@@ -1,0 +1,60 @@
+﻿@model tbl_order
+
+@{
+    ViewBag.Title = "Sipariş Kargo Takip";
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml"; 
+}
+
+@if (ViewBag.success != null)
+{ 
+    @Html.Raw(ViewBag.resultHtml)
+}
+
+
+@using (Html.BeginForm("UpdateCargo", "Order", FormMethod.Post, new { @class = "mainForm" }))
+{  
+  
+    
+    <div class="title">
+        <h5>Sipariş Kargo Takip(@Model.orderNo)</h5>
+    </div> 
+
+    <!--Upload-->
+    @Html.AntiForgeryToken()
+
+   
+    <fieldset>
+        <div class="widget">
+
+            <!--Tabs-->
+            <ul class="tabs">
+                <li><a href="#tab3">Kargo Takip No</a></li>
+            </ul>
+
+            <!--Column-->
+            <div class="tab_container">
+                <div id="tab3" class="tab_content"> 
+
+                    <!--cargoUpdate -->
+                    <div class="rowElem">
+                        <label>Kargo Takip Numarası </label>
+                        <div class="formRight">@Html.TextBox("shipmentNo", Model.shipmentNo)
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+
+                    <div class="fix"></div> 
+                </div> 
+            </div>
+
+            <div class="fix"></div>
+        </div>
+    </fieldset>
+    
+    <div class="fix" style="height: 20px"></div>  
+    <input type="submit" value="Kaydet" class="redBtn submitForm" /> 
+    <a class="greyishBtn button floatright" href="@Url.Action("Index")" >Geri Dön </a>    
+    
+}
+

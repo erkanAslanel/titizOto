@@ -1,0 +1,329 @@
+﻿@model ViewModel.Account.Order.helperOrderDetail
+
+@{
+ 
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+
+
+@section cssArea{
+
+    <link href="~/Content/js/plugin/pop-up/magnific-popup.css" rel="stylesheet" />
+}
+
+
+<div class="wrapper">
+    <div class="generalMainContainer">
+        <div class="generalMainHeader contentBg"></div>
+        <div class="generalMainContent contentBg">
+            <div class="innerContent">
+
+                <div class="clearfix"></div>
+                <div id="accountContainer" class="mLeft0">
+                    <h1 class="accountTitle">@Model.title ( @Resources.lang.orderListOrderNo #@Model.orderNo  )</h1>
+                    <div class="pageContent mBottom0 mLeft0 mTop10">
+                        @Html.Raw(Model.detail)
+                    </div>
+
+                  
+
+
+                    <div class="orderStatuContainer">
+
+                        
+                        <span class="orderNo">@Resources.lang.orderStatu : <b>@Html.Raw(Model.orderStatuHtml) </b></span>
+                       
+                          @if (Model.isGoBackExist)
+                    {
+                        <a class="goBackOrders btn" href="~/@Model.goBackLink">@Resources.lang.goBackOrder</a>
+                    }
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="summary orderDetailContainer">
+                        <div class="basketContent">
+
+                            <div class="header">
+                                <div class="item text photo"><span>Ürün</span> </div>
+                                <div class="item text description"><span>Açıklama</span></div>
+                                <div class="item text price"><span>Fiyat</span></div>
+                                <div class="item text count"><span>Adet</span></div>
+                                <div class="item text total"><span>Toplam</span></div>
+                            </div>
+
+                            <div class="clearfix"></div>
+
+                            <div class="tableContent">
+
+                                @foreach (var item in Model.orderSummary.basketItem.basketList)
+                                {
+                                    <div class="itemContainer">
+
+                                        <div class="item photo">
+                                            <div class="table">
+                                                <div class="tableCellVertical">
+                                                    <img src="~/@item.photo" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="item description">
+                                            <div class="table">
+                                                <div class="tableCellVertical">@Html.Raw(item.description)</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="item price">
+
+                                            <div class="table">
+                                                <div class="tableCellVertical">@item.productPriceDec.ToString("F2", Model.orderSummary.basketItem.priceStringFormat)
+                                                    TL
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="item count">
+
+
+                                            <div class="table">
+                                                <div class="tableCellVertical">
+                                                    <input type="text" class="quantityBox"  value="@item.quantity" readonly="readonly" />
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="item total">
+                                            <div class="table">
+                                                <div class="tableCellVertical">@item.productTotalPriceDec.ToString("F2", Model.orderSummary.basketItem.priceStringFormat)
+                                                    TL
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                }
+
+                            </div>
+
+                            <div class="clearfix"></div>
+
+                            @if (Model.orderSummary.isDiscountExist)
+                            {
+                                <div class="tableFooter">
+                                    <div class="itemContainer">
+
+
+                                        <div class="total">
+
+                                            <div class="price">
+                                                <span>@Model.orderSummary.productDiscountPriceStr</span>
+                                            </div>
+
+                                            <div class="text">
+
+
+                                                <span>@Resources.lang.discountCupon (@Model.orderSummary.discountCodeString)</span>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            }
+
+
+                            <div class="clearfix"></div>
+
+                            @if (Model.orderSummary.basketItem.isBasketExist)
+                            {
+                                     
+                                <div class="tableFooter">
+                                    <div class="itemContainer">
+                                        <div class="total">
+                                            <div class="price firstRow">
+
+
+                                                <span>@Model.orderSummary.productPriceStr TL</span>
+                                            </div>
+                                            <div class="text firstRow">
+
+
+                                                <span>Ürün Toplam (Kdv Dahil)</span>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="total">
+
+                                            <div class="price">
+                                                <span>@Model.orderSummary.cargoPriceStr</span>
+                                            </div>
+
+                                            <div class="text">
+
+
+                                                <span>@Resources.lang.cargoPrice</span>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="total">
+
+                                            <div class="price">
+
+
+                                                <span>@Model.orderSummary.paymentOptionChooseStr </span>
+                                            </div>
+
+                                            <div class="text">
+
+
+                                                <span>@Resources.lang.paymentType</span>
+                                            </div>
+
+                                        </div>
+
+                                        @if (Model.orderSummary.paymentOptionChoose == ViewModel.Checkout.Payment.paymentOption.creditCard)
+                                        {
+                                            <div class="total">
+
+                                                <div class="price">
+
+                                                    <span>@Model.orderSummary.additionalPriceStr </span>
+                                                </div>
+                                                <div class="text">
+
+
+                                                    <span>@Resources.lang.additionalPrice</span>
+                                                </div>
+
+                                            </div>
+                                        }
+
+                                        @if (Model.orderSummary.paymentOptionChoose == ViewModel.Checkout.Payment.paymentOption.transfer && Model.orderSummary.isTransferDiscountExist)
+                                        {
+                                                   
+                                            <div class="total">
+
+                                                <div class="price">
+
+                                                    <span>@Model.orderSummary.transferDiscountStr </span>
+                                                </div>
+                                                <div class="text">
+
+
+                                                    <span>@Resources.lang.transferDiscount</span>
+                                                </div>
+
+                                            </div>
+                                        }
+
+                                        <div class="total">
+
+                                            <div class="price lastRow">
+
+                                                <span>@Model.orderSummary.allTotalPriceStr TL</span>
+                                            </div>
+                                            <div class="text lastRow">
+
+
+                                                <span>@Resources.lang.allPrice</span>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div> 
+                            }
+
+                        </div>
+                    </div>
+
+                      <div class="clearfix"></div>
+
+                    <div class="orderAddress delivery">
+                        <div class="c1">@Resources.lang.deliveryAddress</div>
+                        <div class="c2">
+                            @Html.Raw(Model.deliveryAddress)
+
+                        </div>
+
+                    </div>
+
+                    <div class="orderAddress billing">
+                        <div class="c1">@Resources.lang.billingAddress</div>
+                        <div class="c2">
+
+                            @Html.Raw(Model.billingAddress)
+                        </div>
+
+                    </div>
+                      <div class="clearfix"></div>
+
+                    @if (!string.IsNullOrWhiteSpace(Model.orderNote))
+                    {
+                        <div class="orderNote ">
+                            <div><b>@Resources.lang.orderNote</b></div>
+                            <div>
+                                @Model.orderNote
+
+                            </div>
+
+                        </div>
+
+                    }
+                     
+                      <div class="clearfix"></div>
+                    <div class="approveList">
+
+                        <div class="item">
+
+                            <a href="#">@Resources.lang.salesAgreement</a>
+
+
+                            <div class="agreement">
+                                <div class="agreementContainer modelContainer">
+
+                                    <div class="detail">
+                                        @Html.Raw(Model.salesAgreement)
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="item">
+
+                            <a href="#">@Resources.lang.preSalesAgreement</a>
+
+
+                            <div class="agreement">
+                                <div class="agreementContainer modelContainer">
+                                    <div class="detail">
+                                        @Html.Raw(Model.preSalesAgreement)
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="generalMainFooter contentBg"></div>
+    </div>
+</div>
+
+
+@section scriptArea{
+
+    <script src="~/Content/js/plugin/pop-up/jquery.magnific-popup.min.js"></script>
+    <script id="titizJs" src="~/Content/js/core.js?modul=accountOrder"></script>
+
+}

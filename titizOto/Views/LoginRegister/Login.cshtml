@@ -1,0 +1,46 @@
+﻿@model ViewModel.LoginRegister.loginItem
+
+@using titizOto.App_GlobalResources
+
+<h2>@lang.loginRegisterPageLogin</h2>
+
+<form>
+
+    @if (Model.isMessageExist)
+    {
+        @Html.Raw(Model.message)
+    }
+
+    <div class="item mRight20">
+        @Html.LabelFor(a => a.email)
+
+        <div class="inputContainer">
+            @Html.TextBoxFor(a => a.email, new { data_onenter=".loginForm .submitBtn .btn" })
+        </div>
+        <div class="error">
+            @Html.ValidationMessageFor(a => a.email)
+        </div>
+    </div>
+
+
+    <div class="item">
+        @Html.LabelFor(a => a.password)
+
+        <div class="inputContainer">
+            @Html.PasswordFor(a => a.password,new { data_onenter=".loginForm .submitBtn .btn" })
+        </div>
+        <div class="error">
+            @Html.ValidationMessageFor(a => a.password)
+        </div>
+    </div>
+    <div class="rememberMe">@Html.CheckBoxFor(a => a.isRememberMe) Beni Hatırla
+    </div>
+    
+    <div class="submitBtn">
+        <div class="forgetPassword"><a href="~/@Model.forgetPasswordUrl">Şifremi Unuttum</a></div>
+        <a class="btn btnMiddle redBg" data-lang="@ViewData["langCode"]">Giriş Yap</a>
+        <div class="loadingForm">
+            <img src="~/Content/images/productLoader.GIF" />
+        </div>
+    </div>
+</form>

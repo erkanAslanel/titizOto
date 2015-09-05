@@ -1,0 +1,26 @@
+﻿@model List<Tuple<int, string>>
+
+<table>
+    <thead>
+        <tr>
+            <th>Ürün Id</th>
+            <th>Ürün Adı</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Item1</td>
+                <td>@item.Item2</td>
+
+            </tr>
+            
+        }
+
+
+
+    </tbody>
+
+</table>

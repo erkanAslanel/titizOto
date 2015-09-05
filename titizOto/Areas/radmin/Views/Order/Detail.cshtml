@@ -1,0 +1,108 @@
+﻿@model tbl_order
+
+
+@{
+    ViewBag.Title = "Sipariş Detay";
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml"; 
+}
+
+@if (ViewBag.success != null)
+{ 
+    @Html.Raw(ViewBag.resultHtml)
+}
+
+@section cssArea{
+
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+        rel="stylesheet" />
+
+    <link href="~/Content/js/plugin/pop-up/magnific-popup.css" rel="stylesheet" />
+
+    <style>
+
+        .orderDetailTable td { padding:5px; vertical-align:middle; }
+          .orderDetailTable th { padding:5px; }
+
+          .modelContainer { background-color: white; background-color: white; display: table; margin: auto; padding: 20px; position: relative; z-index: 999999; }
+    .modelContainer h6 { text-align: left; font-size: 21px; color: #4b4b4b; margin-bottom: 10px; }
+
+    .modelContainer button.mfp-close { background-color: #740610; color: white; }
+
+    .sharedAddress { width: 520px; }
+
+       
+        .sharedAddress .formRight { width:auto;  padding:0px; }
+    .sharedAddress .rowElem { width: 210px; display: inline-block; margin-right: 20px; margin-bottom: 10px; }
+        .sharedAddress .rowElem.bigItem { width: 520px; }
+        .sharedAddress .rowElem label { font-size: 14px; display: block; margin-bottom: 5px;  padding:0px; margin:0px; width:auto; }
+        .sharedAddress .rowElem input[type="text"] { border: solid 1px gray; height: 20px; width: 190px; font-size: 14px; padding: 3px; padding-left: 5px; background-color: #F8F8F8; }
+        .sharedAddress .rowElem.bigItem input[type="text"] { width: 500px; }
+        .sharedAddress .rowElem.bigItem textarea { width: 500px; padding: 5px; }
+
+        .agreementContainer { width: 600px; }
+    .agreementContainer .detail { height: 400px; overflow: auto; padding-right: 10px; }
+        .agreementContainer .detail * { }
+        .agreementContainer .detail p { margin-bottom: 10px; }
+
+    </style>
+ 
+
+
+}
+
+
+
+@using (Html.BeginForm("AdminOrderDetail", "Order", FormMethod.Post, new { @class = "mainForm" }))
+{  
+    @Html.ValidationSummary(null, new { @class = "validationInfo hideit" }) 
+    
+    <div class="title">
+        <h5>Sipariş Detayı (@Model.orderNo)</h5>
+        <a></a>
+    </div> 
+
+    <!--Upload-->
+    @Html.AntiForgeryToken()
+
+   
+    <fieldset>
+        <div class="widget">
+
+            <!--Tabs-->
+            <ul class="tabs">
+                <li><a href="#tab1">Sipariş Bilgisi</a></li>
+
+            </ul>
+
+            <!--Column-->
+            <div class="tab_container">
+                <div id="tab1" class="tab_content">
+
+                    @Html.Action("OrderAdminDetail", new { orderGuid = Model.orderGuid })
+
+                    <div class="fix"></div>
+                </div>
+            </div>
+
+            <div class="fix"></div>
+        </div>
+    </fieldset>  
+    
+    <div class="fix" style="height: 20px"></div>
+   
+    <!--Buttons-->
+    
+ 
+    
+    <a class="greyishBtn button floatright" href="@Url.Action("Index")">Geri Dön </a>    
+    
+}
+
+@section scriptArea{
+
+    <script src="~/Content/js/plugin/fancy/jquery.fancybox.js"></script>
+    <script src="~/Content/js/plugin/pop-up/jquery.magnific-popup.min.js"></script>
+    <script id="titizJs" src="~/Content/js/core.js?modul=adminOrder"></script>
+
+}

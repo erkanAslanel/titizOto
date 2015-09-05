@@ -1,0 +1,120 @@
+﻿@model tbl_slider
+
+@{
+    ViewBag.Title = @Model.classTitle + " Düzenle";
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml"; 
+}
+
+@if (ViewBag.success != null)
+{ 
+    @Html.Raw(ViewBag.resultHtml)
+}
+
+
+@using (Html.BeginForm("Edit", "Slider", FormMethod.Post, new { @class = "mainForm" }))
+{  
+    @Html.ValidationSummary(null, new { @class = "validationInfo hideit" }) 
+    
+    <div class="title">
+        <h5>@Model.classTitle Düzenle(@Model.name)</h5>
+    </div> 
+
+    <!--Upload-->
+    @Html.AntiForgeryToken()
+
+   
+    <fieldset>
+        <div class="widget">
+
+            <!--Tabs-->
+            <ul class="tabs">
+                <li><a href="#tab3">Genel İçerik</a></li>
+                <li><a href="#tab1">Yazı İçerik</a></li>
+                <li><a href="#tab2">Fotoğraf</a></li>
+            </ul>
+
+            <!--Column-->
+            <div class="tab_container">
+                <div id="tab3" class="tab_content">
+
+                    <!--sliderId -->
+                    @Html.HiddenFor(a => a.sliderId, new { @id = "primaryKey" })
+
+                    <!--statu -->
+                    <div class="rowElem">@Html.LabelFor(a => a.statu)<div class="formRight">@Html.StatuDropDown(a => a.statu)<label
+                        class="error">@Html.ValidationMessageFor(a => a.statu)</label>
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--langId -->
+                    <div class="rowElem">@Html.LabelFor(a => a.langId)<div class="formRight">@Html.LangDropDown(a => a.langId)<label
+                        class="error">@Html.ValidationMessageFor(a => a.langId)</label>
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                </div>
+                <div id="tab1" class="tab_content"> 
+
+                    <!--name -->
+                    <div class="rowElem">@Html.LabelFor(a => a.name)<div class="formRight">@Html.TextBoxFor(a => a.name)<label
+                        class="error">@Html.ValidationMessageFor(a => a.name)</label>
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--title -->
+                    <div class="rowElem">@Html.LabelFor(a => a.title)<div class="formRight">@Html.TextBoxFor(a => a.title)<label
+                        class="error">@Html.ValidationMessageFor(a => a.title)</label>
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--subTitle -->
+                    <div class="rowElem">@Html.LabelFor(a => a.subTitle)<div class="formRight">@Html.TextBoxFor(a => a.subTitle)<label
+                        class="error">@Html.ValidationMessageFor(a => a.subTitle)</label>
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--isUrlActive -->
+                    <div class="rowElem">@Html.LabelFor(a => a.isUrlActive)<div class="formRight">@Html.StatuDropDown(a => a.isUrlActive)<label
+                        class="error">@Html.ValidationMessageFor(a => a.isUrlActive)</label>
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--urlText -->
+                    <div class="rowElem">@Html.LabelFor(a => a.urlText)<div class="formRight">@Html.TextBoxFor(a => a.urlText)<label
+                        class="error">@Html.ValidationMessageFor(a => a.urlText)</label>
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                </div>
+
+                <div id="tab2" class="tab_content">
+
+                    <!--photo -->
+                    @Html.Uploader(a => a.photo, "slider")<label class="error">@Html.ValidationMessageFor(a => a.photo)</label><div
+                        class="fix">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="fix"></div>
+        </div>
+    </fieldset>
+    
+    <div class="fix" style="height: 20px"></div>
+   
+    <!--Buttons-->
+                       
+    <input type="submit" value="Kaydet" class="redBtn submitForm" />
+                       
+    <a class="greyishBtn button floatright" href="@Url.Action("Index")" >Geri Dön </a>    
+    
+}
+

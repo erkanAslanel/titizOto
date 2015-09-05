@@ -1,0 +1,41 @@
+﻿@model IEnumerable<tbl_productCritear>
+
+@{
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml";
+    ViewBag.Title = tbl_productCritear.getClassTitle() + " Yönetimi";
+}
+
+<div class="title">
+    <h5>@tbl_productCritear.getClassTitle() Yönetimi</h5>
+</div>
+
+<div class="body alignLeft">
+    <div class="proccess floatright">
+        <select>
+            <option value="-1">İşlem Seçiniz</option>
+            <option>Sil</option>
+            <option>Sırala</option>
+            <option>Aktif</option>
+            <option>Pasif</option>
+        </select>
+    </div>
+
+    @*-------------&&& Create &&&-------------  *@ 
+    <a href="@Url.Action("create", new { filterId = ViewContext.RouteData.Values["filterId"].ToString() })" title="" class="btnIconLeft mr10 mt5">
+        <img src="@Url.Content("~/Areas/radmin/Content/images/icons/dark/add.png")" alt="" class="icon" /><span>Yeni
+            @tbl_productCritear.getClassTitle() Ekle</span></a>
+
+    @*-------------&&& Sorting &&&-------------  *@ 
+    <a href="@Url.Action("GeneralSortingWithFilter", new { filterId = ViewContext.RouteData.Values["filterId"].ToString() })" title="" class="btnIconLeft mr10 mt5">
+        <img src="@Url.Content("~/Areas/radmin/Content/images/icons/dark/podium.png")" alt="" class="icon" /><span>Genel
+            @tbl_productCritear.getClassTitle() Sıralama</span></a>
+    <div class="fix"></div>
+
+    @*-------------&&& Back &&&-------------  *@ 
+    <a href="@Url.Action("Index", new { controller = "Product" })" title="" class="btnIconLeft mr10 mt5">
+        <img src="@Url.Content("~/Areas/radmin/Content/images/icons/dark/arrowLeft.png")" alt="" class="icon" /><span>Ürünlere Geri Dön</span></a>
+</div>
+
+<div class="table">
+    @Html.Partial("Table", Model)
+</div>

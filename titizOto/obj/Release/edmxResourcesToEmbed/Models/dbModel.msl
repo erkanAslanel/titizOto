@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="titizOtoModelStoreContainer" CdmEntityContainer="titizOtoEntities">
+    <EntitySetMapping Name="tbl_address">
+      <EntityTypeMapping TypeName="titizOtoModel.tbl_address">
+        <MappingFragment StoreEntitySet="tbl_address">
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="isPersonal" ColumnName="isPersonal" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="addressId" ColumnName="addressId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_adminRole">
+      <EntityTypeMapping TypeName="titizOtoModel.tbl_adminRole">
+        <MappingFragment StoreEntitySet="tbl_adminRole">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="roleId" ColumnName="roleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_adminUser">
+      <EntityTypeMapping TypeName="titizOtoModel.tbl_adminUser">
+        <MappingFragment StoreEntitySet="tbl_adminUser">
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="adminRoleId" ColumnName="adminRoleId" />
+          <ScalarProperty Name="enterDate" ColumnName="enterDate" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_bank">
+      <EntityTypeMapping TypeName="titizOtoModel.tbl_bank">
+        <MappingFragment StoreEntitySet="tbl_bank">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="bankId" ColumnName="bankId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_bankEft">
+      <EntityTypeMapping TypeName="titizOtoModel.tbl_bankEft">
+        <MappingFragment StoreEntitySet="tbl_bankEft">
+          <ScalarProperty Name="bankId" ColumnName="bankId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="bankEftId" ColumnName="bankEftId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_bankPos">
+      <EntityTypeMapping TypeName="titizOtoModel.tbl_bankPos">
+        <MappingFragment StoreEntitySet="tbl_bankPos">
+          <ScalarProperty Name="bankId" ColumnName="bankId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="bankPosId" ColumnName="bankPosId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_brand">
+      <EntityTypeMapping TypeName="titizOtoModel.tbl_brand">
+        <MappingFragment StoreEntitySet="tbl_brand">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="brandId" ColumnName="brandId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_business">
+      <EntityTypeMapping TypeName="titizOtoModel.tbl_business">
+        <MappingFragment StoreEntitySet="tbl_business">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="businessId" ColumnName="businessId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_carBrand">
+      <EntityTypeMapping TypeName="titizOtoModel.tbl_carBrand">
+        <MappingFragment StoreEntitySet="tbl_carBrand">
+          <ScalarProperty Name="isMainPageShown" ColumnName="isMainPageShown" />
+          <ScalarProperty Name="langId" ColumnName="langId" />
+          <ScalarProperty Name="photoCoordinate" ColumnName="photoCoordinate" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="isManuelUrl" ColumnName="isManuelUrl" />
+          <ScalarProperty Name="sequence" ColumnName="sequence" />
+          <ScalarProperty Name="statu" ColumnName="statu" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="carBrandId" ColumnName="carBrandId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_cargo">
+      <EntityTypeMapping TypeName="titizOtoModel.tbl_cargo">
+        <MappingFragment StoreEntitySet="tbl_cargo">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="photoCoordinate" ColumnName="photoCoordinate" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="freeCargoPrice" ColumnName="freeCargoPrice" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="cargoId" ColumnName="cargoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_carModel">
+      <EntityTypeMapping TypeName="titizOtoModel.tbl_carModel">
+        <MappingFragment StoreEntitySet="tbl_carModel">
+          <ScalarProperty Name="langId" ColumnName="langId" />
+          <ScalarProperty Name="isManuelUrl" ColumnName="isManuelUrl" />
+          <ScalarProperty Name="sequence" ColumnName="sequence" />
+          <ScalarProperty Name="statu" ColumnName="statu" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="carBrandId" ColumnName="carBrandId" />
+          <ScalarProperty Name="carModelId" ColumnName="carModelId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_carModelProduct">
+      <EntityTypeMapping TypeName="titizOtoModel.tbl_carModelProduct">
+        <MappingFragment StoreEntitySet="tbl_carModelProduct">
+          <ScalarProperty Name="sequence" ColumnName="sequence" />
+          <ScalarProperty Name="carModelId" ColumnName="carModelId" />
+          <ScalarProperty Name="productId" ColumnName="productId" />
+          <ScalarProperty Name="carModelProductId" ColumnName="carModelProductId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_cart">
+      <EntityTypeMapping TypeName="titizOtoModel.tbl_cart">
+        <MappingFragment StoreEntitySet="tbl_cart">
+          <ScalarProperty Name="critearId" ColumnName="critearId" />
+          <ScalarProperty Name="productCount" ColumnName="productCount" />
+          <ScalarProperty Name="productId" ColumnName="productId" />
+          <ScalarProperty Name="guestGuid" ColumnName="guestGuid" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="cartId" ColumnName="cartId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_category">
+      <EntityTypeMapping TypeName="titizOtoModel.tbl_category">
+        <MappingFragment StoreEntitySet="tbl_category">
+          <ScalarProperty Name="isFooterMenuShown" ColumnName="isFooterMenuShown" />
+          <ScalarProperty Name="isMainMenuShown" ColumnName="isMainMenuShown" />
+          <ScalarProperty Name="statu" ColumnName="statu" />
+          <ScalarProperty Name="sequence" ColumnName="sequence" />
+          <ScalarProperty Name="parentId" ColumnName="parentId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="langId" ColumnName="langId" />
+          <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_gallery">
+      <EntityTypeMapping TypeName="titizOtoModel.tbl_gallery">
+        <MappingFragment StoreEntitySet="tbl_gallery">
+          <ScalarProperty Name="critearId" ColumnName="critearId" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="statu" ColumnName="statu" />
+          <ScalarProperty Name="sequence" ColumnName="sequence" />
+          <ScalarProperty Name="photoCoordinate" ColumnName="photoCoordinate" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="productId" ColumnName="productId" />
+          <ScalarProperty Name="galleryId" ColumnName="galleryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_order">
+      <EntityTypeMapping TypeName="titizOtoModel.tbl_order">
+        <MappingFragment StoreEntitySet="tbl_order">
+          <ScalarProperty Name="totalPrice" ColumnName="totalPrice" />
+          <ScalarProperty Name="orderMailStatu" ColumnName="orderMailStatu" />
+          <ScalarProperty Name="orderStatu" ColumnName="orderStatu" />
+          <ScalarProperty Name="cargoPrice" ColumnName="cargoPrice" />
+          <ScalarProperty Name="paymentTypeId" ColumnName="paymentTypeId" />
+          <ScalarProperty Name="addressId" ColumnName="addressId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="cargoId" ColumnName="cargoId" />
+          <ScalarProperty Name="orderNo" ColumnName="orderNo" />
+          <ScalarProperty Name="orderId" ColumnName="orderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_orderDetail">
+      <EntityTypeMapping TypeName="titizOtoModel.tbl_orderDetail">
+        <MappingFragment StoreEntitySet="tbl_orderDetail">
+          <ScalarProperty Name="critearId" ColumnName="critearId" />
+          <ScalarProperty Name="orderId" ColumnName="orderId" />
+          <ScalarProperty Name="productPrice" ColumnName="productPrice" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="productId" ColumnName="productId" />
+          <ScalarProperty Name="orderDetailId" ColumnName="orderDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_page">
+      <EntityTypeMapping TypeName="titizOtoModel.tbl_page">
+        <MappingFragment StoreEntitySet="tbl_page">
+          <ScalarProperty Name="isHelperUrl" ColumnName="isHelperUrl" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+          <ScalarProperty Name="isManuelUrl" ColumnName="isManuelUrl" />
+          <ScalarProperty Name="redirectPageUrl" ColumnName="redirectPageUrl" />
+          <ScalarProperty Name="pageTypeId" ColumnName="pageTypeId" />
+          <ScalarProperty Name="statu" ColumnName="statu" />
+          <ScalarProperty Name="sequence" ColumnName="sequence" />
+          <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+          <ScalarProperty Name="metaDescription" ColumnName="metaDescription" />
+          <ScalarProperty Name="metaKeyword" ColumnName="metaKeyword" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="langId" ColumnName="langId" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="pageId" ColumnName="pageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_payInfo">
+      <EntityTypeMapping TypeName="titizOtoModel.tbl_payInfo">
+        <MappingFragment StoreEntitySet="tbl_payInfo">
+          <ScalarProperty Name="processId" ColumnName="processId" />
+          <ScalarProperty Name="payTime" ColumnName="payTime" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="payInfoId" ColumnName="payInfoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_product">
+      <EntityTypeMapping TypeName="titizOtoModel.tbl_product">
+        <MappingFragment StoreEntitySet="tbl_product">
+          <ScalarProperty Name="isShowCase" ColumnName="isShowCase" />
+          <ScalarProperty Name="langId" ColumnName="langId" />
+          <ScalarProperty Name="isManuelUrl" ColumnName="isManuelUrl" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="metaDescription" ColumnName="metaDescription" />
+          <ScalarProperty Name="metaKeyword" ColumnName="metaKeyword" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+          <ScalarProperty Name="shortDescription" ColumnName="shortDescription" />
+          <ScalarProperty Name="isDiscountPriceActive" ColumnName="isDiscountPriceActive" />
+          <ScalarProperty Name="discountPrice" ColumnName="discountPrice" />
+          <ScalarProperty Name="taxPercent" ColumnName="taxPercent" />
+          <ScalarProperty Name="isTaxInclude" ColumnName="isTaxInclude" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="sequence" ColumnName="sequence" />
+          <ScalarProperty Name="statu" ColumnName="statu" />
+          <ScalarProperty Name="businessId" ColumnName="businessId" />
+          <ScalarProperty Name="brandId" ColumnName="brandId" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="productId" ColumnName="productId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_settings">
+      <EntityTypeMapping TypeName="titizOtoModel.tbl_settings">
+        <MappingFragment StoreEntitySet="tbl_settings">
+          <ScalarProperty Name="allPageTitle" ColumnName="allPageTitle" />
+          <ScalarProperty Name="mainPageTitle" ColumnName="mainPageTitle" />
+          <ScalarProperty Name="metaDescriptionAdditional" ColumnName="metaDescriptionAdditional" />
+          <ScalarProperty Name="metaDescription" ColumnName="metaDescription" />
+          <ScalarProperty Name="mailSmtpServer" ColumnName="mailSmtpServer" />
+          <ScalarProperty Name="mailReceiverAddress" ColumnName="mailReceiverAddress" />
+          <ScalarProperty Name="mailSentAddress" ColumnName="mailSentAddress" />
+          <ScalarProperty Name="mailSentName" ColumnName="mailSentName" />
+          <ScalarProperty Name="mailPort" ColumnName="mailPort" />
+          <ScalarProperty Name="mailPassword" ColumnName="mailPassword" />
+          <ScalarProperty Name="mailUserName" ColumnName="mailUserName" />
+          <ScalarProperty Name="langId" ColumnName="langId" />
+          <ScalarProperty Name="settingsId" ColumnName="settingsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_slider">
+      <EntityTypeMapping TypeName="titizOtoModel.tbl_slider">
+        <MappingFragment StoreEntitySet="tbl_slider">
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="sequence" ColumnName="sequence" />
+          <ScalarProperty Name="statu" ColumnName="statu" />
+          <ScalarProperty Name="urlText" ColumnName="urlText" />
+          <ScalarProperty Name="isUrlActive" ColumnName="isUrlActive" />
+          <ScalarProperty Name="subTitle" ColumnName="subTitle" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="langId" ColumnName="langId" />
+          <ScalarProperty Name="sliderId" ColumnName="sliderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_user">
+      <EntityTypeMapping TypeName="titizOtoModel.tbl_user">
+        <MappingFragment StoreEntitySet="tbl_user">
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_module">
+      <EntityTypeMapping TypeName="titizOtoModel.tbl_module">
+        <MappingFragment StoreEntitySet="tbl_module">
+          <ScalarProperty Name="tag" ColumnName="tag" />
+          <ScalarProperty Name="htmlContent" ColumnName="htmlContent" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="moduleId" ColumnName="moduleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_critear">
+      <EntityTypeMapping TypeName="titizOtoModel.tbl_critear">
+        <MappingFragment StoreEntitySet="tbl_critear">
+          <ScalarProperty Name="statu" ColumnName="statu" />
+          <ScalarProperty Name="sequence" ColumnName="sequence" />
+          <ScalarProperty Name="parentId" ColumnName="parentId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="critearId" ColumnName="critearId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_productCritear">
+      <EntityTypeMapping TypeName="titizOtoModel.tbl_productCritear">
+        <MappingFragment StoreEntitySet="tbl_productCritear">
+          <ScalarProperty Name="sequence" ColumnName="sequence" />
+          <ScalarProperty Name="critearId" ColumnName="critearId" />
+          <ScalarProperty Name="productId" ColumnName="productId" />
+          <ScalarProperty Name="productCritearId" ColumnName="productCritearId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_stock">
+      <EntityTypeMapping TypeName="titizOtoModel.tbl_stock">
+        <MappingFragment StoreEntitySet="tbl_stock">
+          <ScalarProperty Name="sequence" ColumnName="sequence" />
+          <ScalarProperty Name="minCount" ColumnName="minCount" />
+          <ScalarProperty Name="critearId" ColumnName="critearId" />
+          <ScalarProperty Name="productId" ColumnName="productId" />
+          <ScalarProperty Name="stockCount" ColumnName="stockCount" />
+          <ScalarProperty Name="stockId" ColumnName="stockId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_newsletterUser">
+      <EntityTypeMapping TypeName="titizOtoModel.tbl_newsletterUser">
+        <MappingFragment StoreEntitySet="tbl_newsletterUser">
+          <ScalarProperty Name="createTime" ColumnName="createTime" />
+          <ScalarProperty Name="ipNo" ColumnName="ipNo" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="newsletterUserId" ColumnName="newsletterUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

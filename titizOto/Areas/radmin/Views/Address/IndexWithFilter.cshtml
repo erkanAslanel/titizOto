@@ -1,0 +1,35 @@
+﻿@model IEnumerable<tbl_address>
+
+@{
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml";
+    ViewBag.Title = tbl_address.getClassTitle() + " Yönetimi";
+}
+
+<div class="title">
+    <h5>@tbl_address.getClassTitle() Yönetimi</h5>
+</div>
+
+<div class="body alignLeft">
+
+    <div class="proccess floatright">
+        <select>
+            <option value="-1">İşlem Seçiniz</option>
+            <option>Sil</option> 
+        </select>
+    </div>
+
+    @*-------------&&& Create &&&-------------  *@
+    <a href="@Url.Action("create", new { filterId = ViewContext.RouteData.Values["filterId"].ToString() })" title="" class="btnIconLeft mr10 mt5">
+        <img src="@Url.Content("~/Areas/radmin/Content/images/icons/dark/add.png")" alt="" class="icon" /><span>Yeni
+            @tbl_address.getClassTitle() Ekle</span></a>
+             
+
+    @*-------------&&& Back &&&-------------  *@
+    <a href="@Url.Action("Index", new { controller = "User" })" title="" class="btnIconLeft mr10 mt5">
+        <img src="@Url.Content("~/Areas/radmin/Content/images/icons/dark/arrowLeft.png")" alt="" class="icon" /><span>Kullanıcılara
+            Geri Dön</span></a>
+</div>
+
+<div class="table">
+    @Html.Partial("Table", Model)
+</div>

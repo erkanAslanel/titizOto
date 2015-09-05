@@ -1,0 +1,72 @@
+﻿@model ViewModel.LoginRegister.helperLoginRegister
+
+@using titizOto.App_GlobalResources
+
+@{ 
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+
+
+@section cssArea{
+
+    <link href="~/Content/js/plugin/pop-up/magnific-popup.css" rel="stylesheet" />
+}
+
+<div id="fb-root"></div>
+ 
+<div class="wrapper">
+    <div class="generalMainContainer">
+        <div class="generalMainHeader contentBg">
+        </div>
+        <div class="generalMainContent contentBg">
+            <div class="innerContent">
+
+                @Html.Partial("breadCrumb", Model.breadCrumbItem) 
+
+                <div class="loginRegister">
+
+                    @if (Model.isLoginRequeredShown)
+                    {
+                        @Html.Raw(Model.isLoginRequeredMessage)
+                    }
+                    <div class="registerForm">
+
+                        @Html.Partial("Register", Model.register)
+                    </div>
+
+                    <div class="fLeft">
+                        <div class="loginForm">
+
+                            @Html.Partial("Login", Model.login)
+
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="facebookLogin">
+
+                            <h2>@lang.loginRegisterPageFacebook</h2>
+
+                            @if (Model.isFacebookError)
+                            {
+                                @Html.Raw(Model.facebookErrorMessage)
+                            }
+
+
+                            <div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-scope="email" data-auto-logout-link="false"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="generalMainFooter contentBg">
+        </div>
+    </div>
+</div>
+
+@section scriptArea{
+
+     <script src="~/Content/js/plugin/pop-up/jquery.magnific-popup.min.js"></script>
+    <script src="~/Content/js/facebook.js"></script>
+    <script id="titizJs" src="~/Content/js/core.js?modul=loginRegister&v=2"></script>
+
+}

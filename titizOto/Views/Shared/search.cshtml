@@ -1,0 +1,35 @@
+﻿@model ViewModel.Search.searchKey
+
+<div class="searchBox">
+    <form action="@Model.searchLink" method="get">
+        <div class="keyBox">
+            @Html.TextBoxFor(a => a.keyWord, new { autocomplete = "off" })
+
+            <button>
+                <img src="~/Content/images/searchIcon.png" /></button>
+
+        </div>
+
+        @Html.AntiForgeryToken()
+
+    </form>
+    <div class="searchResult">
+        <a class="close" href="#">@Resources.lang.close
+        
+        </a>
+        <div class="clearfix"></div>
+        <div class="loading">
+            <div class="text"><span>Sonuçlar getiriliyor .. </span></div>
+            <div class="img">
+                <img src="~/Content/js/plugin/fancy/712.gif" />
+            </div>
+
+
+        </div>
+        <div class="container">
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</div>

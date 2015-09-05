@@ -1,0 +1,22 @@
+﻿@model ViewModel.Newsletter.newsletterItem
+<div class="c3">
+    <form id="newsletterForm">
+        <div class="eBulten">
+            <div class="title">
+                @Resources.lang.newsletter
+            </div>
+            <div class="inputContainer">
+                @Html.TextBoxFor(a => a.email)
+
+              
+            </div>
+
+              <label class="error">@Html.ValidationMessageFor(a => a.email)</label>
+
+            <div class="submitBtn">
+                <a class="btn redBg" data-waiting="@Resources.lang.waiting" data-save="@Resources.lang.save">@Resources.lang.save</a>
+
+            </div>
+        </div>
+    </form>
+</div>

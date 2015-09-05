@@ -1,0 +1,175 @@
+﻿@model tbl_discount
+
+@{
+    ViewBag.Title = tbl_discount.getClassTitle() + " Ekle";
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml"; 
+}
+
+@if (ViewBag.success != null)
+{
+    
+    @Html.Raw(ViewBag.resultHtml)
+}
+
+
+@using (Html.BeginForm("Create", "Discount", FormMethod.Post, new { @class = "mainForm" }))
+{  
+    @Html.ValidationSummary(null, new { @class = "validationInfo hideit" }) 
+    
+    <div class="title">
+        <h5>@Model.classTitle Ekleme</h5>
+    </div> 
+
+    <!--Upload-->
+    @Html.AntiForgeryToken()
+
+  
+
+    <fieldset>
+        <div class="widget">
+
+            <!--Tabs-->
+            <ul class="tabs">
+                <li><a href="#tab1">Genel</a></li>
+
+                <li><a href="#tab2">Kısıtlama</a></li>
+            </ul>
+
+            <!--Column-->
+            <div class="tab_container">
+
+                <div id="tab1" class="tab_content">
+
+                    <!--discountId -->
+                    @Html.HiddenFor(a => a.discountId, new { @id = "primaryKey" })
+
+
+
+                    <!--statu -->
+                    <div class="rowElem">@Html.LabelFor(a => a.statu)<div class="formRight">@Html.StatuDropDown(a => a.statu)<label
+                        class="error">@Html.ValidationMessageFor(a => a.statu)</label>
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--code -->
+                    <div class="rowElem">@Html.LabelFor(a => a.code)<div class="formRight">@Html.TextBoxFor(a => a.code)<label
+                        class="error">@Html.ValidationMessageFor(a => a.code)</label>
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--description -->
+                    <div class="rowElem">@Html.LabelFor(a => a.description)<div class="formRight">@Html.TextBoxFor(a => a.description)<label
+                        class="error">@Html.ValidationMessageFor(a => a.description)</label>
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--typeId -->
+                    <div class="rowElem">@Html.LabelFor(a => a.typeId)<div class="formRight">@Html.DropDownList("typeId", new SelectList(Model.typeIdList(), "key", "value"))
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+
+                    <!--amount -->
+                    <div class="rowElem">
+                        <label>Tutar / Yüzde</label><div class="formRight">@Html.TextBox("amountPercent", Model.amountPercent.ToString("F2", System.Globalization.CultureInfo.CreateSpecificCulture("en-US")))
+                            <label class="error">@Html.ValidationMessageFor(a => a.amountPercent)</label>
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+
+
+
+                </div>
+
+                <div id="tab2" class="tab_content">
+
+                    <!--product -->
+                    <div class="rowElem botDir" title="Boş Bıraktığınızda Ürün Kısıtlaması Olmayacak">@Html.LabelFor(a => a.productList)<div
+                        class="formRight">@Html.ListBox("strProductList", new MultiSelectList(Model.productIdList(), "key", "value", Model.productList != null ? Model.productList.Split(',').ToList() : null), new { Multiple = "multiple", @class = "chosen-select", data_placeholder = "Seçenek Seçimi" })
+                    </div>
+
+                    </div>
+
+                    <!--exculudeProductList -->
+                    <div class="rowElem botDir" title="Boş Bıraktığınızda Ürün Kısıtlaması Olmayacak">@Html.LabelFor(a => a.exculudeProductList)<div
+                        class="formRight">@Html.ListBox("strExculudeProductList", new MultiSelectList(Model.productIdList(), "key", "value", Model.exculudeProductList != null ? Model.exculudeProductList.Split(',').ToList() : null), new { Multiple = "multiple", @class = "chosen-select", data_placeholder = "Seçenek Seçimi" })
+                    </div>
+
+                    </div>
+
+                    <!--isOtherCombine -->
+                    <div class="rowElem">@Html.LabelFor(a => a.isOtherCombine)<div class="formRight">@Html.StatuDropDown(a => a.isOtherCombine)<label
+                        class="error">@Html.ValidationMessageFor(a => a.isOtherCombine)</label>
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--repTime -->
+                    <div class="rowElem botDir" title="Tekrar kullanma sayısı , sınırsız için 0 girişi yapınız.">@Html.LabelFor(a => a.repTime)<div
+                        class="formRight">@Html.TextBoxFor(a => a.repTime)<label
+                            class="error">@Html.ValidationMessageFor(a => a.repTime)</label>
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+
+
+                    <!--minBasketAmount -->
+                    <div class="rowElem botDir" title="İndirim belli bir tutar yukardaysa uygulanır,devre dışı bırakmak için 0 girişi yapınız.">@Html.LabelFor(a => a.minBasketAmount)<div
+                        class="formRight">@Html.TextBox("minBasketAmount", Model.minBasketAmount.ToString("F2", System.Globalization.CultureInfo.CreateSpecificCulture("en-US")))<label
+                            class="error">@Html.ValidationMessageFor(a => a.minBasketAmount)</label>
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--minBasketCount -->
+                    <div class="rowElem botDir" title="İndirim belli bir ürün sayısı sepete eklenirse uygulanır,devre dışı bırakmak için 0 girişi yapınız.">@Html.LabelFor(a => a.minBasketCount)<div
+                        class="formRight">@Html.TextBoxFor(a => a.minBasketCount)<label
+                            class="error">@Html.ValidationMessageFor(a => a.minBasketCount)</label>
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--startDate -->
+                    <div class="rowElem">@Html.LabelFor(a => a.startDate)<div class="formRight">@Html.TextBoxFor(a => a.startDate, new { @class = "dateTr datepickerInline" })<label
+                        class="error">@Html.ValidationMessageFor(a => a.startDate)</label>
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--endDate -->
+                    <div class="rowElem">@Html.LabelFor(a => a.endDate)<div class="formRight">@Html.TextBoxFor(a => a.endDate, new { @class = "dateTr datepickerInline" })<label
+                        class="error">@Html.ValidationMessageFor(a => a.endDate)</label>
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--userId -->
+                    <div class="rowElem">@Html.LabelFor(a => a.userId)<div class="formRight">@Html.DropDownList("userId", new SelectList(Model.userIdList(), "key", "value"))
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+                </div>
+                <div class="fix"></div>
+            </div>
+            <div class="fix"></div>
+        </div>
+    </fieldset>  
+    
+    <div class="fix" style="height: 20px"></div>
+   
+    <!--Buttons-->
+    if (ViewBag.success == null || !(bool)ViewBag.success)
+    {
+    <input type="submit" value="Kaydet" class="redBtn submitForm" />
+    }
+    <a class="greyishBtn button floatright" href="@Url.Action("Index")" >Geri Dön </a>    
+    
+}
+

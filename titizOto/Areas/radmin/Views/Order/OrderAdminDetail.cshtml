@@ -1,0 +1,197 @@
+﻿@model ViewModel.Account.Order.helperOrderAdminDetail
+
+
+
+
+<div id="accountContainer" class="mLeft0">
+    <h1 class="accountTitle" style="margin: 10px 0px 20px 20px; font-size: 20px;">@Resources.lang.orderListOrderNo #@Model.orderNo </h1>
+    <div class="pageContent mBottom0 mLeft0 mTop10">
+        @Html.Raw(Model.detail)
+    </div>
+
+
+
+
+    <div class="orderStatuContainer" style="font-size: 16px; margin-bottom: 20px; margin-left: 20px;">
+
+
+        <span class="orderNo">@Resources.lang.orderStatu : <b>@Html.Raw(Model.orderStatuHtml) </b></span>
+
+
+    </div>
+    <div class="clearfix"></div>
+
+
+    <table cellpadding="5" border="1" class="orderDetailTable">
+        <thead>
+
+            <tr>
+                <th>Ürün
+
+                </th>
+                <th style="width: 250px;">Açıklama
+
+                </th>
+                <th>Fiyat
+
+                </th>
+                <th style="width: 100px;">Adet
+
+                </th>
+                <th>Toplam
+
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.orderSummary.basketItem.basketList)
+            {
+                <tr>
+                    <td align="center">
+                        <img src="~/@item.photo" /></td>
+                    <td align="center">@Html.Raw(item.description)</td>
+                    <td align="center">@item.productPriceDec.ToString("F2", Model.orderSummary.basketItem.priceStringFormat)
+                        TL</td>
+                    <td align="center">
+                        <input style="width:30px;text-align:center;" type="text" class="quantityBox"  value="@item.quantity" readonly="readonly" /></td>
+                    <td align="center">@item.productTotalPriceDec.ToString("F2", Model.orderSummary.basketItem.priceStringFormat)
+                        TL</td>
+
+                </tr>
+                
+              
+               
+            }
+
+            @if (Model.orderSummary.isDiscountExist)
+            { 
+                <tr>
+
+
+                    <td colspan="3" align="right">@Resources.lang.discountCupon (@Model.orderSummary.discountCodeString)</td>
+                    <td colspan="2" align="right">@Model.orderSummary.productDiscountPriceStr</td>
+                </tr>
+                 
+            }
+
+            <tr>
+                <td colspan="3" align="right">Ürün Toplam (Kdv Dahil)</td>
+                <td colspan="2" align="right">@Model.orderSummary.productPriceStr TL</td>
+            </tr>
+
+            <tr>
+                <td colspan="3" align="right">@Resources.lang.cargoPrice</td>
+                <td colspan="2" align="right">@Model.orderSummary.cargoPriceStr</td>
+            </tr>
+
+            <tr>
+                <td colspan="3" align="right">@Resources.lang.paymentType</td>
+                <td colspan="2" align="right">@Model.orderSummary.paymentOptionChooseStr</td>
+            </tr>
+            @if (Model.orderSummary.paymentOptionChoose == ViewModel.Checkout.Payment.paymentOption.creditCard)
+            {
+                <tr>
+                    <td colspan="3" align="right">@Resources.lang.additionalPrice</td>
+                    <td colspan="2" align="right">@Model.orderSummary.additionalPriceStr </td>
+                </tr>
+                 
+            }
+
+            @if (Model.orderSummary.paymentOptionChoose == ViewModel.Checkout.Payment.paymentOption.transfer && Model.orderSummary.isTransferDiscountExist)
+            {
+                <tr>
+                    <td colspan="3" align="right">@Resources.lang.transferDiscount</td>
+                    <td colspan="2" align="right">@Model.orderSummary.transferDiscountStr </td>
+                </tr>
+                  
+            }
+
+            <tr>
+                <td colspan="3" align="right"><b>@Resources.lang.allPrice</b></td>
+                <td colspan="2" align="right"><b>@Model.orderSummary.allTotalPriceStr TL </b></td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+    <div class="clearfix"></div>
+
+    <div style="margin-left: 20px">
+        <div class="orderAddress delivery" style="margin-bottom:10px">
+            <div class="c1"><a href="#">@Resources.lang.deliveryAddress</a></div>
+            <div class="c2" style="display: none">
+                @Html.Raw(Model.deliveryAddress)
+
+            </div>
+
+        </div>
+
+        <div class="orderAddress billing" style="margin-bottom:10px">
+            <div class="c1"><a href="#">@Resources.lang.billingAddress</a></div>
+            <div class="c2" style="display: none">
+
+                @Html.Raw(Model.billingAddress)
+            </div>
+
+        </div>
+
+        <div class="clearfix"></div>
+
+        @if (!string.IsNullOrWhiteSpace(Model.orderNote))
+        {
+            <div class="orderNote " style="margin-bottom:10px">
+                <div><b>@Resources.lang.orderNote</b></div>
+                <div>
+                    @Model.orderNote
+
+                </div>
+
+            </div>
+
+        }
+
+        <div class="clearfix"></div>
+        <div class="approveList" style="margin-bottom:10px">
+
+            <div class="item">
+
+                <a href="#">@Resources.lang.salesAgreement</a>
+
+
+                <div class="agreement" style="display: none">
+                    <div class="agreementContainer modelContainer">
+
+                        <div class="detail">
+                            @Html.Raw(Model.salesAgreement)
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="item">
+
+                <a href="#">@Resources.lang.preSalesAgreement</a>
+
+
+                <div class="agreement" style="display: none">
+                    <div class="agreementContainer modelContainer">
+                        <div class="detail">
+                            @Html.Raw(Model.preSalesAgreement)
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="clearfix"></div>
+
+    </div>
+</div>
+
+

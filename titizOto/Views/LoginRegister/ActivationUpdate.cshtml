@@ -1,0 +1,36 @@
+﻿@model ViewModel.LoginRegister.helperActivationUpdate
+
+@{
+    
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+
+<div class="wrapper">
+    <div class="generalMainContainer">
+        <div class="generalMainHeader contentBg">
+        </div>
+        <div class="generalMainContent contentBg">
+            <div class="innerContent">
+
+                @Html.Partial("breadCrumb", Model.breadCrumbItem)
+
+
+                <h1 class="mainHeader staticHeader mLeft0">@Model.title</h1>
+
+                <div class="pageContent mLeft0"> 
+                    @Html.Raw(Model.message) 
+                </div> 
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="generalMainFooter contentBg">
+        </div>
+    </div>
+</div>
+
+@section scriptArea{
+
+    <script id="titizJs" src="~/Content/js/core.js?modul=staticPage"></script>
+
+}

@@ -1,0 +1,102 @@
+﻿@model tbl_gallery
+
+@{
+    ViewBag.Title = Model.classTitle + " Ekle";
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml";
+
+    int productId = 0; 
+}
+
+@if (ViewBag.success != null)
+{ 
+    @Html.Raw(ViewBag.resultHtml)
+}
+
+@if (ViewContext.RouteData.Values["filterId"] != null)
+{
+    productId = int.Parse(ViewContext.RouteData.Values["filterId"].ToString());
+}
+
+@using (Html.BeginForm("Create", "Gallery", FormMethod.Post, new { @class = "mainForm" }))
+{  
+    @Html.ValidationSummary(null, new { @class = "validationInfo hideit" }) 
+    
+    <div class="title">
+        <h5>@Model.classTitle Ekleme</h5>
+        <a></a>
+    </div> 
+
+    <!--Upload-->
+    @Html.AntiForgeryToken()
+
+   
+    <fieldset>
+        <div class="widget">
+
+            <!--Tabs-->
+            <ul class="tabs">
+                <li><a href="#tab1">Genel</a></li>
+                <li><a href="#tab2">Fotoğraf</a></li>
+
+            </ul>
+
+            <!--Column-->
+            <div class="tab_container">
+
+                <div id="tab1" class="tab_content">
+
+                    <!--galleryId -->
+                    @Html.HiddenFor(a => a.galleryId, new { @id = "primaryKey" })
+
+                    <!--productId -->
+                    @Html.Hidden("productId", productId)
+
+                    <!--statu -->
+                    <div class="rowElem">@Html.LabelFor(a => a.statu)<div class="formRight">@Html.StatuDropDown(a => a.statu)<label
+                        class="error">@Html.ValidationMessageFor(a => a.statu)</label>
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+                     
+ 
+
+                    <!--optionList -->
+                    <div class="rowElem botDir" title="Boş Bıraktığınızda Seçeneksiz Stok Eklenecektir">@Html.LabelFor(a => a.optionList)<div class="formRight">@Html.ListBox("optionIdList", new MultiSelectList(Model.critearIdList(productId), "key", "value", Model.optionList), new { Multiple = "multiple", @class = "chosen-select", data_placeholder = "Seçenek Seçimi" })
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+                        
+
+                    <!--guid -->
+                    @Html.HiddenFor(a => a.guid)
+
+
+                </div>
+
+                <div id="tab2" class="tab_content">
+
+                    <!--photo -->
+                    @Html.UploaderWithThumbnailPreview(a => a.photo, "gallery", a => a.photoCoordinate, "500", "350", Url.Content("~/"))<label
+                        class="error">@Html.ValidationMessageFor(a => a.photo)</label><div class="fix">
+                        </div>
+                </div>
+
+            </div>
+
+            <div class="fix"></div>
+        </div>
+    </fieldset>  
+    
+    <div class="fix" style="height: 20px"></div>
+   
+    <!--Buttons-->
+    if (ViewBag.success == null || !(bool)ViewBag.success)
+    {
+    <input type="submit" value="Kaydet" class="redBtn submitForm" />
+    }
+    <a class="greyishBtn button floatright" href="@Url.Action("IndexWithFilter", new { filterId = productId.ToString() })" >
+        Geri Dön </a>    
+    
+}
+

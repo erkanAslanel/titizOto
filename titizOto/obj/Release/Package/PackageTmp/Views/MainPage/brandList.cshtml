@@ -1,0 +1,21 @@
+﻿@model List<titizOto.ViewModel.MainPage.carBrand>
+ <section class="brandList">
+        <h2>@Resources.lang.models</h2>
+
+        <ul>
+        @foreach (var item in Model)
+        {
+            <li class="@item.classText">
+            <a href="@item.url" title="@item.name"><img src="@item.photo" /></a></li>
+             
+        }
+
+ 
+           @* <li>
+                <img src="~/Content/images/woswogan.png" /></li>
+            <li class="mRight0">
+                 <img src="~/Content/images/fiat.png" /></li>*@
+        
+        </ul>
+
+    </section>

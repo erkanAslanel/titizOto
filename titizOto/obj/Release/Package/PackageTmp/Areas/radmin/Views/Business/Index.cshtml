@@ -1,0 +1,33 @@
+﻿@model IEnumerable<tbl_business>
+
+@{
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml";
+    ViewBag.Title = @tbl_module.getClassTitle() + " Yönetimi";
+}
+
+<div class="title">
+    <h5>@tbl_business.getClassTitle() Yönetimi</h5>
+</div>
+
+<div class="body alignLeft">
+    <div class="proccess floatright">
+        <select>
+            <option value="-1">İşlem Seçiniz</option>
+            <option>Sil</option>
+            <option>Aktif</option>
+            <option>Pasif</option>
+        </select>
+    </div>
+    <a href="@Url.Action("create")" title="" class="btnIconLeft mr10 mt5">
+        <img src="@Url.Content("~/Areas/radmin/Content/images/icons/dark/add.png")" alt="" class="icon" /><span>Yeni @tbl_business.getClassTitle() Ekle</span></a>
+
+    <div class="fix"></div>
+</div>
+
+<div class="table">
+    @Html.Partial("Table", Model)
+</div>
+
+
+
+

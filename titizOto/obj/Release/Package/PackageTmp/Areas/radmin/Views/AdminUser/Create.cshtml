@@ -1,0 +1,90 @@
+﻿@model tbl_adminUser
+
+@{
+    ViewBag.Title = @Model.classTitle + " Ekle";
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml"; 
+}
+
+@if (ViewBag.success != null)
+{ 
+    @Html.Raw(ViewBag.resultHtml)
+}
+
+
+@using (Html.BeginForm("Create", "AdminUser", FormMethod.Post, new { @class = "mainForm" }))
+{  
+    @Html.ValidationSummary(null, new { @class = "validationInfo hideit" }) 
+    
+    <div class="title">
+        <h5>@Model.classTitle Ekleme</h5>
+        <a></a>
+    </div> 
+
+    <!--Upload-->
+    @Html.AntiForgeryToken()
+
+   
+    <fieldset>
+        <div class="widget">
+
+            <!--Tabs-->
+            <ul class="tabs">
+                <li><a href="#tab1">Genel İçerik</a></li>
+            </ul>
+
+            <!--Column-->
+            <div class="tab_container">
+                <div id="tab1" class="tab_content">
+                    <!--userId -->
+                    @Html.HiddenFor(a => a.userId, new { @id = "primaryKey" })
+
+                    <!--email -->
+                    <div class="rowElem">@Html.LabelFor(a => a.email)<div class="formRight">@Html.TextBoxFor(a => a.email)<label class="error">@Html.ValidationMessageFor(a => a.email)</label></div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--password -->
+                    <div class="rowElem">@Html.LabelFor(a => a.password)<div class="formRight">@Html.PasswordFor(a => a.password, new { value = Model.password })<label class="error">@Html.ValidationMessageFor(a => a.password)</label></div>
+                        <div class="fix"></div>
+                    </div>
+
+                     <!--role -->
+                    <div class="rowElem">@Html.LabelFor(a => a.adminRoleId)<div class="formRight">@Html.DropDownList("adminRoleId", new SelectList(Model.roleList(), "key", "value"))</div>
+                        <div class="fix"></div>
+                    </div>
+
+
+                    <!--enterDate -->
+                    <div class="rowElem">@Html.LabelFor(a => a.enterDate)<div class="formRight">@Html.TextBox("enterDate", Model.enterDate, "{0:d/M/yyyy HH:mm:ss}", new { @readonly = "readonly" })<label class="error">@Html.ValidationMessageFor(a => a.enterDate)</label></div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--name -->
+                    <div class="rowElem">@Html.LabelFor(a => a.name)<div class="formRight">@Html.TextBoxFor(a => a.name)<label class="error">@Html.ValidationMessageFor(a => a.name)</label></div>
+                        <div class="fix"></div>
+                    </div>
+
+
+                    <!--surname -->
+                    <div class="rowElem">@Html.LabelFor(a => a.surname)<div class="formRight">@Html.TextBoxFor(a => a.surname)<label class="error">@Html.ValidationMessageFor(a => a.surname)</label></div>
+                        <div class="fix"></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="fix"></div>
+        </div>
+    </fieldset>  
+    
+    <div class="fix" style="height: 20px"></div>
+   
+    <!--Buttons-->
+    if (ViewBag.success == null || !(bool)ViewBag.success)
+    {
+    <input type="submit" value="Kaydet" class="redBtn submitForm" />
+    }
+    <a class="greyishBtn button floatright" href="@Url.Action("Index")" >Geri Dön </a>    
+    
+}
+

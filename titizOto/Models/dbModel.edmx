@@ -1,0 +1,1924 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="titizOtoModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="titizOtoModelStoreContainer">
+          <EntitySet Name="tbl_activation" EntityType="titizOtoModel.Store.tbl_activation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_address" EntityType="titizOtoModel.Store.tbl_address" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_adminRole" EntityType="titizOtoModel.Store.tbl_adminRole" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_adminUser" EntityType="titizOtoModel.Store.tbl_adminUser" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_bank" EntityType="titizOtoModel.Store.tbl_bank" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_bankEft" EntityType="titizOtoModel.Store.tbl_bankEft" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_bankPos" EntityType="titizOtoModel.Store.tbl_bankPos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_bankPosOption" EntityType="titizOtoModel.Store.tbl_bankPosOption" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_brand" EntityType="titizOtoModel.Store.tbl_brand" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_business" EntityType="titizOtoModel.Store.tbl_business" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_carBrand" EntityType="titizOtoModel.Store.tbl_carBrand" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_cargo" EntityType="titizOtoModel.Store.tbl_cargo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_carModel" EntityType="titizOtoModel.Store.tbl_carModel" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_carModelProduct" EntityType="titizOtoModel.Store.tbl_carModelProduct" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_category" EntityType="titizOtoModel.Store.tbl_category" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_critear" EntityType="titizOtoModel.Store.tbl_critear" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_discount" EntityType="titizOtoModel.Store.tbl_discount" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_email" EntityType="titizOtoModel.Store.tbl_email" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_error" EntityType="titizOtoModel.Store.tbl_error" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_forgetPassword" EntityType="titizOtoModel.Store.tbl_forgetPassword" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_gallery" EntityType="titizOtoModel.Store.tbl_gallery" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_module" EntityType="titizOtoModel.Store.tbl_module" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_newsletterUser" EntityType="titizOtoModel.Store.tbl_newsletterUser" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_openContent" EntityType="titizOtoModel.Store.tbl_openContent" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_order" EntityType="titizOtoModel.Store.tbl_order" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_orderDetail" EntityType="titizOtoModel.Store.tbl_orderDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_page" EntityType="titizOtoModel.Store.tbl_page" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_payInfo" EntityType="titizOtoModel.Store.tbl_payInfo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_product" EntityType="titizOtoModel.Store.tbl_product" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_productCritear" EntityType="titizOtoModel.Store.tbl_productCritear" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_settings" EntityType="titizOtoModel.Store.tbl_settings" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_slider" EntityType="titizOtoModel.Store.tbl_slider" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_stock" EntityType="titizOtoModel.Store.tbl_stock" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_user" EntityType="titizOtoModel.Store.tbl_user" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_basket" EntityType="titizOtoModel.Store.tbl_basket" store:Type="Tables" Schema="titizDbUser" />
+          <EntitySet Name="tbl_trackInfo" EntityType="titizOtoModel.Store.tbl_trackInfo" store:Type="Tables" Schema="titizDbUser" />
+        </EntityContainer>
+        <EntityType Name="tbl_activation">
+          <Key>
+            <PropertyRef Name="activationId" />
+          </Key>
+          <Property Name="activationId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="datetime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_address">
+          <Key>
+            <PropertyRef Name="addressId" />
+          </Key>
+          <Property Name="addressId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="isPersonal" Type="bit" Nullable="false" />
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="statu" Type="bit" Nullable="false" />
+          <Property Name="tcNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="city" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="district" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="postCode" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="phone" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="address" Type="nvarchar" Nullable="false" />
+          <Property Name="companyName" Type="nvarchar" MaxLength="500" />
+          <Property Name="taxOffice" Type="nvarchar" MaxLength="500" />
+          <Property Name="taxNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="deliverPerson" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="sequence" Type="int" Nullable="false" />
+          <Property Name="isGuestUser" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_adminRole">
+          <Key>
+            <PropertyRef Name="roleId" />
+          </Key>
+          <Property Name="roleId" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tbl_adminUser">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="password" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="enterDate" Type="datetime" Nullable="false" />
+          <Property Name="adminRoleId" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="surname" Type="nvarchar" Nullable="false" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tbl_bank">
+          <Key>
+            <PropertyRef Name="bankId" />
+          </Key>
+          <Property Name="bankId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="color1" Type="nvarchar" MaxLength="500" />
+          <Property Name="color2" Type="nvarchar" MaxLength="500" />
+          <Property Name="color3" Type="nvarchar" MaxLength="500" />
+          <Property Name="logo" Type="nvarchar" MaxLength="500" />
+          <Property Name="statu" Type="bit" Nullable="false" />
+          <Property Name="sequence" Type="int" Nullable="false" />
+          <Property Name="paymentLogo" Type="nvarchar" MaxLength="500" />
+          <Property Name="langId" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_bankEft">
+          <Key>
+            <PropertyRef Name="bankEftId" />
+          </Key>
+          <Property Name="bankEftId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="bankId" Type="int" Nullable="false" />
+          <Property Name="branchCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="accountNo" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="iban" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="statu" Type="bit" Nullable="false" />
+          <Property Name="sequence" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_bankPos">
+          <Key>
+            <PropertyRef Name="bankPosId" />
+          </Key>
+          <Property Name="bankPosId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="bankId" Type="int" Nullable="false" />
+          <Property Name="statu" Type="bit" Nullable="false" />
+          <Property Name="isMainPos" Type="bit" Nullable="false" />
+          <Property Name="posTypeId" Type="int" Nullable="false" />
+          <Property Name="isPosShownOnTable" Type="bit" Nullable="false" />
+          <Property Name="posCode" Type="nchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_bankPosOption">
+          <Key>
+            <PropertyRef Name="bankPosOptionId" />
+          </Key>
+          <Property Name="bankPosOptionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="paymentCount" Type="int" Nullable="false" />
+          <Property Name="minBasketAmount" Type="decimal" Nullable="false" Precision="16" Scale="2" />
+          <Property Name="additionalAmount" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="statu" Type="bit" Nullable="false" />
+          <Property Name="bankPosId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_brand">
+          <Key>
+            <PropertyRef Name="brandId" />
+          </Key>
+          <Property Name="brandId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tbl_business">
+          <Key>
+            <PropertyRef Name="businessId" />
+          </Key>
+          <Property Name="businessId" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tbl_carBrand">
+          <Key>
+            <PropertyRef Name="carBrandId" />
+          </Key>
+          <Property Name="carBrandId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="url" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="statu" Type="bit" Nullable="false" />
+          <Property Name="sequence" Type="int" Nullable="false" />
+          <Property Name="isManuelUrl" Type="bit" Nullable="false" />
+          <Property Name="photo" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="photoCoordinate" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="langId" Type="int" Nullable="false" />
+          <Property Name="isMainPageShown" Type="bit" Nullable="false" />
+          <Property Name="metaKeyword" Type="nvarchar" MaxLength="500" />
+          <Property Name="metaDescription" Type="nvarchar" MaxLength="500" />
+          <Property Name="title" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tbl_cargo">
+          <Key>
+            <PropertyRef Name="cargoId" />
+          </Key>
+          <Property Name="cargoId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="price" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="freeCargoPrice" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="photo" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="photoCoordinate" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="statu" Type="bit" Nullable="false" />
+          <Property Name="detail" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="sequence" Type="int" Nullable="false" />
+          <Property Name="langId" Type="int" Nullable="false" />
+          <Property Name="isCargoPriceOnCustomer" Type="bit" Nullable="false" />
+          <Property Name="trackUrl" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tbl_carModel">
+          <Key>
+            <PropertyRef Name="carModelId" />
+          </Key>
+          <Property Name="carModelId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="carBrandId" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="url" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="statu" Type="bit" Nullable="false" />
+          <Property Name="sequence" Type="int" Nullable="false" />
+          <Property Name="isManuelUrl" Type="bit" Nullable="false" />
+          <Property Name="langId" Type="int" Nullable="false" />
+          <Property Name="metaKeyword" Type="nvarchar" MaxLength="500" />
+          <Property Name="metaDescription" Type="nvarchar" MaxLength="500" />
+          <Property Name="title" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tbl_carModelProduct">
+          <Key>
+            <PropertyRef Name="carModelProductId" />
+          </Key>
+          <Property Name="carModelProductId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="productId" Type="int" Nullable="false" />
+          <Property Name="carModelId" Type="int" Nullable="false" />
+          <Property Name="sequence" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_category">
+          <Key>
+            <PropertyRef Name="categoryId" />
+          </Key>
+          <Property Name="categoryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="langId" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="parentId" Type="int" Nullable="false" />
+          <Property Name="sequence" Type="int" Nullable="false" />
+          <Property Name="statu" Type="bit" Nullable="false" />
+          <Property Name="isMainMenuShown" Type="bit" Nullable="false" />
+          <Property Name="isFooterMenuShown" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_critear">
+          <Key>
+            <PropertyRef Name="critearId" />
+          </Key>
+          <Property Name="critearId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="parentId" Type="int" Nullable="false" />
+          <Property Name="sequence" Type="int" Nullable="false" />
+          <Property Name="statu" Type="bit" Nullable="false" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_discount">
+          <Key>
+            <PropertyRef Name="discountId" />
+          </Key>
+          <Property Name="discountId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="nchar" Nullable="false" MaxLength="50" />
+          <Property Name="description" Type="nvarchar" MaxLength="500" />
+          <Property Name="typeId" Type="int" Nullable="false" />
+          <Property Name="amountPercent" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="minBasketAmount" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="minBasketCount" Type="int" Nullable="false" />
+          <Property Name="startDate" Type="datetime" Nullable="false" />
+          <Property Name="endDate" Type="datetime" Nullable="false" />
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="productList" Type="nvarchar" />
+          <Property Name="isOtherCombine" Type="bit" Nullable="false" />
+          <Property Name="statu" Type="bit" Nullable="false" />
+          <Property Name="repTime" Type="int" Nullable="false" />
+          <Property Name="isManuelGenerated" Type="bit" Nullable="false" />
+          <Property Name="exculudeProductList" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="tbl_email">
+          <Key>
+            <PropertyRef Name="emailId" />
+          </Key>
+          <Property Name="emailId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="emailTypeId" Type="int" Nullable="false" />
+          <Property Name="langId" Type="int" Nullable="false" />
+          <Property Name="description" Type="nvarchar" />
+          <Property Name="detail" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tbl_error">
+          <Key>
+            <PropertyRef Name="errorId" />
+          </Key>
+          <Property Name="errorId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="errorText" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="saveDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_forgetPassword">
+          <Key>
+            <PropertyRef Name="forgetPasswordId" />
+          </Key>
+          <Property Name="forgetPasswordId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="code" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="createTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_gallery">
+          <Key>
+            <PropertyRef Name="galleryId" />
+          </Key>
+          <Property Name="galleryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="productId" Type="int" Nullable="false" />
+          <Property Name="photo" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="photoCoordinate" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="sequence" Type="int" Nullable="false" />
+          <Property Name="statu" Type="bit" Nullable="false" />
+          <Property Name="guid" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="optionList" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_module">
+          <Key>
+            <PropertyRef Name="moduleId" />
+          </Key>
+          <Property Name="moduleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="htmlContent" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="tag" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="typeId" Type="int" Nullable="false" />
+          <Property Name="description" Type="nvarchar" MaxLength="1000" />
+          <Property Name="langId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_newsletterUser">
+          <Key>
+            <PropertyRef Name="newsletterUserId" />
+          </Key>
+          <Property Name="newsletterUserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="ipNo" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="createTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_openContent">
+          <Key>
+            <PropertyRef Name="openContentId" />
+          </Key>
+          <Property Name="openContentId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="categoryId" Type="int" Nullable="false" />
+          <Property Name="langId" Type="int" Nullable="false" />
+          <Property Name="statu" Type="bit" Nullable="false" />
+          <Property Name="sequence" Type="int" Nullable="false" />
+          <Property Name="title" Type="nvarchar" Nullable="false" />
+          <Property Name="detail" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_order">
+          <Key>
+            <PropertyRef Name="orderId" />
+          </Key>
+          <Property Name="orderId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="orderNo" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="cargoId" Type="int" Nullable="false" />
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="trackInfoId" Type="int" Nullable="false" />
+          <Property Name="deliveryAddressId" Type="int" Nullable="false" />
+          <Property Name="billingAddressId" Type="int" Nullable="false" />
+          <Property Name="paymentTypeId" Type="int" Nullable="false" />
+          <Property Name="cargoPrice" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="orderStatu" Type="int" Nullable="false" />
+          <Property Name="orderMailStatu" Type="int" Nullable="false" />
+          <Property Name="totalProductPrice" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="discountCode" Type="nvarchar" MaxLength="500" />
+          <Property Name="discountAmount" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="transferDiscount" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="additionalPrice" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="totalCheckoutPrice" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="creditPaymentCount" Type="int" Nullable="false" />
+          <Property Name="isRegisteredOrder" Type="bit" Nullable="false" />
+          <Property Name="createDate" Type="datetime" Nullable="false" />
+          <Property Name="salesAgreement" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="preSalesAgreement" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="orderGuid" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="eftId" Type="int" Nullable="false" />
+          <Property Name="orderNote" Type="nvarchar(max)" />
+          <Property Name="isCargoOnCustomer" Type="bit" Nullable="false" />
+          <Property Name="deliveryAddressObj" Type="nvarchar(max)" />
+          <Property Name="billingAddressObj" Type="nvarchar(max)" />
+          <Property Name="shipmentNo" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_orderDetail">
+          <Key>
+            <PropertyRef Name="orderDetailId" />
+          </Key>
+          <Property Name="orderDetailId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="productId" Type="int" Nullable="false" />
+          <Property Name="quantity" Type="int" Nullable="false" />
+          <Property Name="productPrice" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="orderId" Type="int" Nullable="false" />
+          <Property Name="optionList" Type="nvarchar" MaxLength="50" />
+          <Property Name="productTotalPrice" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="nameWithOption" Type="nvarchar" Nullable="false" />
+          <Property Name="photo" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tbl_page">
+          <Key>
+            <PropertyRef Name="pageId" />
+          </Key>
+          <Property Name="pageId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="url" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="langId" Type="int" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="500" />
+          <Property Name="metaKeyword" Type="nvarchar" MaxLength="500" />
+          <Property Name="metaDescription" Type="nvarchar" MaxLength="500" />
+          <Property Name="categoryId" Type="int" Nullable="false" />
+          <Property Name="sequence" Type="int" Nullable="false" />
+          <Property Name="statu" Type="bit" Nullable="false" />
+          <Property Name="pageTypeId" Type="int" Nullable="false" />
+          <Property Name="redirectPageUrl" Type="nvarchar" MaxLength="500" />
+          <Property Name="isManuelUrl" Type="bit" Nullable="false" />
+          <Property Name="detail" Type="nvarchar(max)" />
+          <Property Name="isHelperUrl" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_payInfo">
+          <Key>
+            <PropertyRef Name="payInfoId" />
+          </Key>
+          <Property Name="payInfoId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="payTime" Type="datetime" Nullable="false" />
+          <Property Name="processId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_product">
+          <Key>
+            <PropertyRef Name="productId" />
+          </Key>
+          <Property Name="productId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="brandId" Type="int" Nullable="false" />
+          <Property Name="businessId" Type="int" Nullable="false" />
+          <Property Name="statu" Type="bit" Nullable="false" />
+          <Property Name="sequence" Type="int" Nullable="false" />
+          <Property Name="price" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="isTaxInclude" Type="bit" Nullable="false" />
+          <Property Name="taxPercent" Type="int" Nullable="false" />
+          <Property Name="discountPrice" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="isDiscountPriceActive" Type="bit" Nullable="false" />
+          <Property Name="shortDescription" Type="nvarchar" MaxLength="500" />
+          <Property Name="detail" Type="nvarchar(max)" />
+          <Property Name="metaKeyword" Type="nvarchar" MaxLength="500" />
+          <Property Name="metaDescription" Type="nvarchar" MaxLength="500" />
+          <Property Name="title" Type="nvarchar" MaxLength="500" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="url" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="isManuelUrl" Type="bit" Nullable="false" />
+          <Property Name="langId" Type="int" Nullable="false" />
+          <Property Name="isShowCase" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_productCritear">
+          <Key>
+            <PropertyRef Name="productCritearId" />
+          </Key>
+          <Property Name="productCritearId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="productId" Type="int" Nullable="false" />
+          <Property Name="critearId" Type="int" Nullable="false" />
+          <Property Name="sequence" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_settings">
+          <Key>
+            <PropertyRef Name="settingsId" />
+          </Key>
+          <Property Name="settingsId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="langId" Type="int" Nullable="false" />
+          <Property Name="mailUserName" Type="nvarchar" MaxLength="500" />
+          <Property Name="mailPassword" Type="nvarchar" MaxLength="500" />
+          <Property Name="mailPort" Type="nvarchar" MaxLength="500" />
+          <Property Name="mailSentName" Type="nvarchar" MaxLength="500" />
+          <Property Name="mailSentAddress" Type="nvarchar" MaxLength="500" />
+          <Property Name="mailReceiverAddress" Type="nvarchar" MaxLength="500" />
+          <Property Name="mailSmtpServer" Type="nvarchar" MaxLength="500" />
+          <Property Name="metaDescription" Type="nvarchar" />
+          <Property Name="metaDescriptionAdditional" Type="nvarchar" />
+          <Property Name="mainPageTitle" Type="nvarchar" MaxLength="500" />
+          <Property Name="allPageTitle" Type="nvarchar" MaxLength="500" />
+          <Property Name="metaKeyword" Type="nvarchar" />
+          <Property Name="registerIsActivationExist" Type="bit" Nullable="false" />
+          <Property Name="registerIsThankMessageSend" Type="bit" Nullable="false" />
+          <Property Name="mailIsEnableSSL" Type="bit" />
+          <Property Name="isTransferDiscount" Type="bit" />
+          <Property Name="transferDiscountType" Type="int" />
+          <Property Name="transferDiscountAmount" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="isTransferEnable" Type="bit" />
+          <Property Name="isCrediCardEnable" Type="bit" />
+          <Property Name="testAccountEmail" Type="nvarchar" MaxLength="500" />
+          <Property Name="testSuccessfulCard" Type="nvarchar" MaxLength="500" />
+          <Property Name="testValidCard" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tbl_slider">
+          <Key>
+            <PropertyRef Name="sliderId" />
+          </Key>
+          <Property Name="sliderId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="langId" Type="int" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="500" />
+          <Property Name="subTitle" Type="nvarchar" MaxLength="500" />
+          <Property Name="isUrlActive" Type="bit" Nullable="false" />
+          <Property Name="urlText" Type="nvarchar" MaxLength="500" />
+          <Property Name="statu" Type="bit" Nullable="false" />
+          <Property Name="sequence" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="photo" Type="nvarchar" Nullable="false" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tbl_stock">
+          <Key>
+            <PropertyRef Name="stockId" />
+          </Key>
+          <Property Name="stockId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="stockCount" Type="int" Nullable="false" />
+          <Property Name="productId" Type="int" Nullable="false" />
+          <Property Name="minCount" Type="int" Nullable="false" />
+          <Property Name="sequence" Type="int" Nullable="false" />
+          <Property Name="optionList" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_user">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="surname" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="password" Type="nvarchar" MaxLength="500" />
+          <Property Name="birthday" Type="datetime" />
+          <Property Name="gender" Type="int" />
+          <Property Name="userTypeId" Type="int" Nullable="false" />
+          <Property Name="registerStatuId" Type="int" Nullable="false" />
+          <Property Name="guid" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="createDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_basket">
+          <Key>
+            <PropertyRef Name="basketId" />
+          </Key>
+          <Property Name="basketId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="productId" Type="int" Nullable="false" />
+          <Property Name="quantity" Type="int" Nullable="false" />
+          <Property Name="guestCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="createTime" Type="datetime" Nullable="false" />
+          <Property Name="userId" Type="int" />
+          <Property Name="optionList" Type="nvarchar" MaxLength="50" />
+          <Property Name="discountCode" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_trackInfo">
+          <Key>
+            <PropertyRef Name="trackInfoId" />
+          </Key>
+          <Property Name="trackInfoId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="surname" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="500" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="titizOtoModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="titizOtoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_activation" EntityType="titizOtoModel.tbl_activation" />
+          <EntitySet Name="tbl_address" EntityType="titizOtoModel.tbl_address" />
+          <EntitySet Name="tbl_adminRole" EntityType="titizOtoModel.tbl_adminRole" />
+          <EntitySet Name="tbl_adminUser" EntityType="titizOtoModel.tbl_adminUser" />
+          <EntitySet Name="tbl_bank" EntityType="titizOtoModel.tbl_bank" />
+          <EntitySet Name="tbl_bankEft" EntityType="titizOtoModel.tbl_bankEft" />
+          <EntitySet Name="tbl_bankPos" EntityType="titizOtoModel.tbl_bankPos" />
+          <EntitySet Name="tbl_bankPosOption" EntityType="titizOtoModel.tbl_bankPosOption" />
+          <EntitySet Name="tbl_brand" EntityType="titizOtoModel.tbl_brand" />
+          <EntitySet Name="tbl_business" EntityType="titizOtoModel.tbl_business" />
+          <EntitySet Name="tbl_carBrand" EntityType="titizOtoModel.tbl_carBrand" />
+          <EntitySet Name="tbl_cargo" EntityType="titizOtoModel.tbl_cargo" />
+          <EntitySet Name="tbl_carModel" EntityType="titizOtoModel.tbl_carModel" />
+          <EntitySet Name="tbl_carModelProduct" EntityType="titizOtoModel.tbl_carModelProduct" />
+          <EntitySet Name="tbl_category" EntityType="titizOtoModel.tbl_category" />
+          <EntitySet Name="tbl_critear" EntityType="titizOtoModel.tbl_critear" />
+          <EntitySet Name="tbl_discount" EntityType="titizOtoModel.tbl_discount" />
+          <EntitySet Name="tbl_email" EntityType="titizOtoModel.tbl_email" />
+          <EntitySet Name="tbl_error" EntityType="titizOtoModel.tbl_error" />
+          <EntitySet Name="tbl_forgetPassword" EntityType="titizOtoModel.tbl_forgetPassword" />
+          <EntitySet Name="tbl_gallery" EntityType="titizOtoModel.tbl_gallery" />
+          <EntitySet Name="tbl_module" EntityType="titizOtoModel.tbl_module" />
+          <EntitySet Name="tbl_newsletterUser" EntityType="titizOtoModel.tbl_newsletterUser" />
+          <EntitySet Name="tbl_openContent" EntityType="titizOtoModel.tbl_openContent" />
+          <EntitySet Name="tbl_order" EntityType="titizOtoModel.tbl_order" />
+          <EntitySet Name="tbl_orderDetail" EntityType="titizOtoModel.tbl_orderDetail" />
+          <EntitySet Name="tbl_page" EntityType="titizOtoModel.tbl_page" />
+          <EntitySet Name="tbl_payInfo" EntityType="titizOtoModel.tbl_payInfo" />
+          <EntitySet Name="tbl_product" EntityType="titizOtoModel.tbl_product" />
+          <EntitySet Name="tbl_productCritear" EntityType="titizOtoModel.tbl_productCritear" />
+          <EntitySet Name="tbl_settings" EntityType="titizOtoModel.tbl_settings" />
+          <EntitySet Name="tbl_slider" EntityType="titizOtoModel.tbl_slider" />
+          <EntitySet Name="tbl_stock" EntityType="titizOtoModel.tbl_stock" />
+          <EntitySet Name="tbl_user" EntityType="titizOtoModel.tbl_user" />
+          <EntitySet Name="tbl_basket" EntityType="titizOtoModel.tbl_basket" />
+          <EntitySet Name="tbl_trackInfo" EntityType="titizOtoModel.tbl_trackInfo" />
+          <AssociationSet Name="FK_tbl_adminUser_tbl_adminRole" Association="titizOtoModel.FK_tbl_adminUser_tbl_adminRole">
+            <End Role="tbl_adminRole" EntitySet="tbl_adminRole" />
+            <End Role="tbl_adminUser" EntitySet="tbl_adminUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_bankEft_tbl_bank" Association="titizOtoModel.FK_tbl_bankEft_tbl_bank">
+            <End Role="tbl_bank" EntitySet="tbl_bank" />
+            <End Role="tbl_bankEft" EntitySet="tbl_bankEft" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_bankPos_tbl_bank" Association="titizOtoModel.FK_tbl_bankPos_tbl_bank">
+            <End Role="tbl_bank" EntitySet="tbl_bank" />
+            <End Role="tbl_bankPos" EntitySet="tbl_bankPos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_bankPosOption_tbl_bankPos" Association="titizOtoModel.FK_tbl_bankPosOption_tbl_bankPos">
+            <End Role="tbl_bankPos" EntitySet="tbl_bankPos" />
+            <End Role="tbl_bankPosOption" EntitySet="tbl_bankPosOption" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_product_tbl_brand" Association="titizOtoModel.FK_tbl_product_tbl_brand">
+            <End Role="tbl_brand" EntitySet="tbl_brand" />
+            <End Role="tbl_product" EntitySet="tbl_product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_product_tbl_business" Association="titizOtoModel.FK_tbl_product_tbl_business">
+            <End Role="tbl_business" EntitySet="tbl_business" />
+            <End Role="tbl_product" EntitySet="tbl_product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_carModel_tbl_carBrand" Association="titizOtoModel.FK_tbl_carModel_tbl_carBrand">
+            <End Role="tbl_carBrand" EntitySet="tbl_carBrand" />
+            <End Role="tbl_carModel" EntitySet="tbl_carModel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_carModelProduct_tbl_carModel" Association="titizOtoModel.FK_tbl_carModelProduct_tbl_carModel">
+            <End Role="tbl_carModel" EntitySet="tbl_carModel" />
+            <End Role="tbl_carModelProduct" EntitySet="tbl_carModelProduct" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_carModelProduct_tbl_product" Association="titizOtoModel.FK_tbl_carModelProduct_tbl_product">
+            <End Role="tbl_product" EntitySet="tbl_product" />
+            <End Role="tbl_carModelProduct" EntitySet="tbl_carModelProduct" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_page_tbl_category" Association="titizOtoModel.FK_tbl_page_tbl_category">
+            <End Role="tbl_category" EntitySet="tbl_category" />
+            <End Role="tbl_page" EntitySet="tbl_page" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_productCritear_tbl_critear" Association="titizOtoModel.FK_tbl_productCritear_tbl_critear">
+            <End Role="tbl_critear" EntitySet="tbl_critear" />
+            <End Role="tbl_productCritear" EntitySet="tbl_productCritear" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_gallery_tbl_product" Association="titizOtoModel.FK_tbl_gallery_tbl_product">
+            <End Role="tbl_product" EntitySet="tbl_product" />
+            <End Role="tbl_gallery" EntitySet="tbl_gallery" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_basket_tbl_product" Association="titizOtoModel.FK_tbl_basket_tbl_product">
+            <End Role="tbl_product" EntitySet="tbl_product" />
+            <End Role="tbl_basket" EntitySet="tbl_basket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_productCritear_tbl_product" Association="titizOtoModel.FK_tbl_productCritear_tbl_product">
+            <End Role="tbl_product" EntitySet="tbl_product" />
+            <End Role="tbl_productCritear" EntitySet="tbl_productCritear" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_stock_tbl_product" Association="titizOtoModel.FK_tbl_stock_tbl_product">
+            <End Role="tbl_product" EntitySet="tbl_product" />
+            <End Role="tbl_stock" EntitySet="tbl_stock" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tbl_activation">
+          <Key>
+            <PropertyRef Name="activationId" />
+          </Key>
+          <Property Type="Int32" Name="activationId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="code" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="userId" Nullable="false" />
+          <Property Type="DateTime" Name="datetime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_address">
+          <Key>
+            <PropertyRef Name="addressId" />
+          </Key>
+          <Property Type="Int32" Name="addressId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="isPersonal" Nullable="false" />
+          <Property Type="Int32" Name="userId" Nullable="false" />
+          <Property Type="Boolean" Name="statu" Nullable="false" />
+          <Property Type="String" Name="tcNo" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="city" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="district" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="postCode" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="phone" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="address" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="companyName" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="taxOffice" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="taxNo" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="deliverPerson" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="sequence" Nullable="false" />
+          <Property Type="Boolean" Name="isGuestUser" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_adminRole">
+          <Key>
+            <PropertyRef Name="roleId" />
+          </Key>
+          <Property Type="Int32" Name="roleId" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tbl_adminUser" Relationship="titizOtoModel.FK_tbl_adminUser_tbl_adminRole" FromRole="tbl_adminRole" ToRole="tbl_adminUser" />
+        </EntityType>
+        <EntityType Name="tbl_adminUser">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Type="Int32" Name="userId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="password" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="enterDate" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="adminRoleId" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="surname" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tbl_adminRole" Relationship="titizOtoModel.FK_tbl_adminUser_tbl_adminRole" FromRole="tbl_adminUser" ToRole="tbl_adminRole" />
+        </EntityType>
+        <EntityType Name="tbl_bank">
+          <Key>
+            <PropertyRef Name="bankId" />
+          </Key>
+          <Property Type="Int32" Name="bankId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="color1" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="color2" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="color3" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="logo" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="statu" Nullable="false" />
+          <Property Type="Int32" Name="sequence" Nullable="false" />
+          <Property Type="String" Name="paymentLogo" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="langId" />
+          <NavigationProperty Name="tbl_bankEft" Relationship="titizOtoModel.FK_tbl_bankEft_tbl_bank" FromRole="tbl_bank" ToRole="tbl_bankEft" />
+          <NavigationProperty Name="tbl_bankPos" Relationship="titizOtoModel.FK_tbl_bankPos_tbl_bank" FromRole="tbl_bank" ToRole="tbl_bankPos" />
+        </EntityType>
+        <EntityType Name="tbl_bankEft">
+          <Key>
+            <PropertyRef Name="bankEftId" />
+          </Key>
+          <Property Type="Int32" Name="bankEftId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="bankId" Nullable="false" />
+          <Property Type="String" Name="branchCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="accountNo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="iban" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="statu" Nullable="false" />
+          <Property Type="Int32" Name="sequence" Nullable="false" />
+          <NavigationProperty Name="tbl_bank" Relationship="titizOtoModel.FK_tbl_bankEft_tbl_bank" FromRole="tbl_bankEft" ToRole="tbl_bank" />
+        </EntityType>
+        <EntityType Name="tbl_bankPos">
+          <Key>
+            <PropertyRef Name="bankPosId" />
+          </Key>
+          <Property Type="Int32" Name="bankPosId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="bankId" Nullable="false" />
+          <Property Type="Boolean" Name="statu" Nullable="false" />
+          <Property Type="Boolean" Name="isMainPos" Nullable="false" />
+          <Property Type="Int32" Name="posTypeId" Nullable="false" />
+          <Property Type="Boolean" Name="isPosShownOnTable" Nullable="false" />
+          <Property Type="String" Name="posCode" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="tbl_bank" Relationship="titizOtoModel.FK_tbl_bankPos_tbl_bank" FromRole="tbl_bankPos" ToRole="tbl_bank" />
+          <NavigationProperty Name="tbl_bankPosOption" Relationship="titizOtoModel.FK_tbl_bankPosOption_tbl_bankPos" FromRole="tbl_bankPos" ToRole="tbl_bankPosOption" />
+        </EntityType>
+        <EntityType Name="tbl_bankPosOption">
+          <Key>
+            <PropertyRef Name="bankPosOptionId" />
+          </Key>
+          <Property Type="Int32" Name="bankPosOptionId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="paymentCount" Nullable="false" />
+          <Property Type="Decimal" Name="minBasketAmount" Nullable="false" Precision="16" Scale="2" />
+          <Property Type="Decimal" Name="additionalAmount" Nullable="false" Precision="10" Scale="2" />
+          <Property Type="Boolean" Name="statu" Nullable="false" />
+          <Property Type="Int32" Name="bankPosId" Nullable="false" />
+          <NavigationProperty Name="tbl_bankPos" Relationship="titizOtoModel.FK_tbl_bankPosOption_tbl_bankPos" FromRole="tbl_bankPosOption" ToRole="tbl_bankPos" />
+        </EntityType>
+        <EntityType Name="tbl_brand">
+          <Key>
+            <PropertyRef Name="brandId" />
+          </Key>
+          <Property Type="Int32" Name="brandId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tbl_product" Relationship="titizOtoModel.FK_tbl_product_tbl_brand" FromRole="tbl_brand" ToRole="tbl_product" />
+        </EntityType>
+        <EntityType Name="tbl_business">
+          <Key>
+            <PropertyRef Name="businessId" />
+          </Key>
+          <Property Type="Int32" Name="businessId" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tbl_product" Relationship="titizOtoModel.FK_tbl_product_tbl_business" FromRole="tbl_business" ToRole="tbl_product" />
+        </EntityType>
+        <EntityType Name="tbl_carBrand">
+          <Key>
+            <PropertyRef Name="carBrandId" />
+          </Key>
+          <Property Type="Int32" Name="carBrandId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="url" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="statu" Nullable="false" />
+          <Property Type="Int32" Name="sequence" Nullable="false" />
+          <Property Type="Boolean" Name="isManuelUrl" Nullable="false" />
+          <Property Type="String" Name="photo" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="photoCoordinate" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="langId" Nullable="false" />
+          <Property Type="Boolean" Name="isMainPageShown" Nullable="false" />
+          <Property Type="String" Name="metaKeyword" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="metaDescription" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="title" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tbl_carModel" Relationship="titizOtoModel.FK_tbl_carModel_tbl_carBrand" FromRole="tbl_carBrand" ToRole="tbl_carModel" />
+        </EntityType>
+        <EntityType Name="tbl_cargo">
+          <Key>
+            <PropertyRef Name="cargoId" />
+          </Key>
+          <Property Type="Int32" Name="cargoId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Decimal" Name="price" Nullable="false" Precision="10" Scale="2" />
+          <Property Type="Decimal" Name="freeCargoPrice" Nullable="false" Precision="10" Scale="2" />
+          <Property Type="String" Name="photo" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="photoCoordinate" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="statu" Nullable="false" />
+          <Property Type="String" Name="detail" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="sequence" Nullable="false" />
+          <Property Type="Int32" Name="langId" Nullable="false" />
+          <Property Type="Boolean" Name="isCargoPriceOnCustomer" Nullable="false" />
+          <Property Type="String" Name="trackUrl" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_carModel">
+          <Key>
+            <PropertyRef Name="carModelId" />
+          </Key>
+          <Property Type="Int32" Name="carModelId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="carBrandId" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="url" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="statu" Nullable="false" />
+          <Property Type="Int32" Name="sequence" Nullable="false" />
+          <Property Type="Boolean" Name="isManuelUrl" Nullable="false" />
+          <Property Type="Int32" Name="langId" Nullable="false" />
+          <Property Type="String" Name="metaKeyword" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="metaDescription" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="title" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tbl_carBrand" Relationship="titizOtoModel.FK_tbl_carModel_tbl_carBrand" FromRole="tbl_carModel" ToRole="tbl_carBrand" />
+          <NavigationProperty Name="tbl_carModelProduct" Relationship="titizOtoModel.FK_tbl_carModelProduct_tbl_carModel" FromRole="tbl_carModel" ToRole="tbl_carModelProduct" />
+        </EntityType>
+        <EntityType Name="tbl_carModelProduct">
+          <Key>
+            <PropertyRef Name="carModelProductId" />
+          </Key>
+          <Property Type="Int32" Name="carModelProductId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="productId" Nullable="false" />
+          <Property Type="Int32" Name="carModelId" Nullable="false" />
+          <Property Type="Int32" Name="sequence" Nullable="false" />
+          <NavigationProperty Name="tbl_carModel" Relationship="titizOtoModel.FK_tbl_carModelProduct_tbl_carModel" FromRole="tbl_carModelProduct" ToRole="tbl_carModel" />
+          <NavigationProperty Name="tbl_product" Relationship="titizOtoModel.FK_tbl_carModelProduct_tbl_product" FromRole="tbl_carModelProduct" ToRole="tbl_product" />
+        </EntityType>
+        <EntityType Name="tbl_category">
+          <Key>
+            <PropertyRef Name="categoryId" />
+          </Key>
+          <Property Type="Int32" Name="categoryId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="langId" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="parentId" Nullable="false" />
+          <Property Type="Int32" Name="sequence" Nullable="false" />
+          <Property Type="Boolean" Name="statu" Nullable="false" />
+          <Property Type="Boolean" Name="isMainMenuShown" Nullable="false" />
+          <Property Type="Boolean" Name="isFooterMenuShown" Nullable="false" />
+          <NavigationProperty Name="tbl_page" Relationship="titizOtoModel.FK_tbl_page_tbl_category" FromRole="tbl_category" ToRole="tbl_page" />
+        </EntityType>
+        <EntityType Name="tbl_critear">
+          <Key>
+            <PropertyRef Name="critearId" />
+          </Key>
+          <Property Type="Int32" Name="critearId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="parentId" Nullable="false" />
+          <Property Type="Int32" Name="sequence" Nullable="false" />
+          <Property Type="Boolean" Name="statu" Nullable="false" />
+          <Property Type="Boolean" Name="isDeleted" Nullable="false" />
+          <NavigationProperty Name="tbl_productCritear" Relationship="titizOtoModel.FK_tbl_productCritear_tbl_critear" FromRole="tbl_critear" ToRole="tbl_productCritear" />
+        </EntityType>
+        <EntityType Name="tbl_discount">
+          <Key>
+            <PropertyRef Name="discountId" />
+          </Key>
+          <Property Type="Int32" Name="discountId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="code" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="description" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="typeId" Nullable="false" />
+          <Property Type="Decimal" Name="amountPercent" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="minBasketAmount" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="minBasketCount" Nullable="false" />
+          <Property Type="DateTime" Name="startDate" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="endDate" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="userId" Nullable="false" />
+          <Property Type="String" Name="productList" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="isOtherCombine" Nullable="false" />
+          <Property Type="Boolean" Name="statu" Nullable="false" />
+          <Property Type="Int32" Name="repTime" Nullable="false" />
+          <Property Type="Boolean" Name="isManuelGenerated" Nullable="false" />
+          <Property Type="String" Name="exculudeProductList" MaxLength="4000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_email">
+          <Key>
+            <PropertyRef Name="emailId" />
+          </Key>
+          <Property Type="Int32" Name="emailId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="emailTypeId" Nullable="false" />
+          <Property Type="Int32" Name="langId" Nullable="false" />
+          <Property Type="String" Name="description" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="detail" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="title" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_error">
+          <Key>
+            <PropertyRef Name="errorId" />
+          </Key>
+          <Property Type="Int32" Name="errorId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="errorText" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="saveDate" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_forgetPassword">
+          <Key>
+            <PropertyRef Name="forgetPasswordId" />
+          </Key>
+          <Property Type="Int32" Name="forgetPasswordId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="userId" Nullable="false" />
+          <Property Type="String" Name="code" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="createTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_gallery">
+          <Key>
+            <PropertyRef Name="galleryId" />
+          </Key>
+          <Property Type="Int32" Name="galleryId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="productId" Nullable="false" />
+          <Property Type="String" Name="photo" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="photoCoordinate" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="sequence" Nullable="false" />
+          <Property Type="Boolean" Name="statu" Nullable="false" />
+          <Property Type="String" Name="guid" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="optionList" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tbl_product" Relationship="titizOtoModel.FK_tbl_gallery_tbl_product" FromRole="tbl_gallery" ToRole="tbl_product" />
+        </EntityType>
+        <EntityType Name="tbl_module">
+          <Key>
+            <PropertyRef Name="moduleId" />
+          </Key>
+          <Property Type="Int32" Name="moduleId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="htmlContent" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="tag" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="typeId" Nullable="false" />
+          <Property Type="String" Name="description" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="langId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_newsletterUser">
+          <Key>
+            <PropertyRef Name="newsletterUserId" />
+          </Key>
+          <Property Type="Int32" Name="newsletterUserId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ipNo" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="createTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_openContent">
+          <Key>
+            <PropertyRef Name="openContentId" />
+          </Key>
+          <Property Type="Int32" Name="openContentId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="categoryId" Nullable="false" />
+          <Property Type="Int32" Name="langId" Nullable="false" />
+          <Property Type="Boolean" Name="statu" Nullable="false" />
+          <Property Type="Int32" Name="sequence" Nullable="false" />
+          <Property Type="String" Name="title" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="detail" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_order">
+          <Key>
+            <PropertyRef Name="orderId" />
+          </Key>
+          <Property Type="Int32" Name="orderId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="orderNo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="cargoId" Nullable="false" />
+          <Property Type="Int32" Name="userId" Nullable="false" />
+          <Property Type="Int32" Name="trackInfoId" Nullable="false" />
+          <Property Type="Int32" Name="deliveryAddressId" Nullable="false" />
+          <Property Type="Int32" Name="billingAddressId" Nullable="false" />
+          <Property Type="Int32" Name="paymentTypeId" Nullable="false" />
+          <Property Type="Decimal" Name="cargoPrice" Nullable="false" Precision="10" Scale="2" />
+          <Property Type="Int32" Name="orderStatu" Nullable="false" />
+          <Property Type="Int32" Name="orderMailStatu" Nullable="false" />
+          <Property Type="Decimal" Name="totalProductPrice" Nullable="false" Precision="10" Scale="2" />
+          <Property Type="String" Name="discountCode" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="discountAmount" Nullable="false" Precision="10" Scale="2" />
+          <Property Type="Decimal" Name="transferDiscount" Nullable="false" Precision="10" Scale="2" />
+          <Property Type="Decimal" Name="additionalPrice" Nullable="false" Precision="10" Scale="2" />
+          <Property Type="Decimal" Name="totalCheckoutPrice" Nullable="false" Precision="10" Scale="2" />
+          <Property Type="Int32" Name="creditPaymentCount" Nullable="false" />
+          <Property Type="Boolean" Name="isRegisteredOrder" Nullable="false" />
+          <Property Type="DateTime" Name="createDate" Nullable="false" Precision="3" />
+          <Property Type="String" Name="salesAgreement" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="preSalesAgreement" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="orderGuid" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="eftId" Nullable="false" />
+          <Property Type="String" Name="orderNote" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="isCargoOnCustomer" Nullable="false" />
+          <Property Type="String" Name="deliveryAddressObj" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="billingAddressObj" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="shipmentNo" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_orderDetail">
+          <Key>
+            <PropertyRef Name="orderDetailId" />
+          </Key>
+          <Property Type="Int32" Name="orderDetailId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="productId" Nullable="false" />
+          <Property Type="Int32" Name="quantity" Nullable="false" />
+          <Property Type="Decimal" Name="productPrice" Nullable="false" Precision="10" Scale="2" />
+          <Property Type="Int32" Name="orderId" Nullable="false" />
+          <Property Type="String" Name="optionList" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="productTotalPrice" Nullable="false" Precision="10" Scale="2" />
+          <Property Type="String" Name="nameWithOption" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="photo" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_page">
+          <Key>
+            <PropertyRef Name="pageId" />
+          </Key>
+          <Property Type="Int32" Name="pageId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="url" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="langId" Nullable="false" />
+          <Property Type="String" Name="title" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="metaKeyword" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="metaDescription" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="categoryId" Nullable="false" />
+          <Property Type="Int32" Name="sequence" Nullable="false" />
+          <Property Type="Boolean" Name="statu" Nullable="false" />
+          <Property Type="Int32" Name="pageTypeId" Nullable="false" />
+          <Property Type="String" Name="redirectPageUrl" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="isManuelUrl" Nullable="false" />
+          <Property Type="String" Name="detail" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="isHelperUrl" Nullable="false" />
+          <NavigationProperty Name="tbl_category" Relationship="titizOtoModel.FK_tbl_page_tbl_category" FromRole="tbl_page" ToRole="tbl_category" />
+        </EntityType>
+        <EntityType Name="tbl_payInfo">
+          <Key>
+            <PropertyRef Name="payInfoId" />
+          </Key>
+          <Property Type="Int32" Name="payInfoId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="userId" Nullable="false" />
+          <Property Type="DateTime" Name="payTime" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="processId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_product">
+          <Key>
+            <PropertyRef Name="productId" />
+          </Key>
+          <Property Type="Int32" Name="productId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Boolean" Name="isDeleted" Nullable="false" />
+          <Property Type="Int32" Name="brandId" Nullable="false" />
+          <Property Type="Int32" Name="businessId" Nullable="false" />
+          <Property Type="Boolean" Name="statu" Nullable="false" />
+          <Property Type="Int32" Name="sequence" Nullable="false" />
+          <Property Type="Decimal" Name="price" Nullable="false" Precision="10" Scale="2" />
+          <Property Type="Boolean" Name="isTaxInclude" Nullable="false" />
+          <Property Type="Int32" Name="taxPercent" Nullable="false" />
+          <Property Type="Decimal" Name="discountPrice" Nullable="false" Precision="10" Scale="2" />
+          <Property Type="Boolean" Name="isDiscountPriceActive" Nullable="false" />
+          <Property Type="String" Name="shortDescription" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="detail" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="metaKeyword" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="metaDescription" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="title" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="url" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="isManuelUrl" Nullable="false" />
+          <Property Type="Int32" Name="langId" Nullable="false" />
+          <Property Type="Boolean" Name="isShowCase" Nullable="false" />
+          <NavigationProperty Name="tbl_brand" Relationship="titizOtoModel.FK_tbl_product_tbl_brand" FromRole="tbl_product" ToRole="tbl_brand" />
+          <NavigationProperty Name="tbl_business" Relationship="titizOtoModel.FK_tbl_product_tbl_business" FromRole="tbl_product" ToRole="tbl_business" />
+          <NavigationProperty Name="tbl_carModelProduct" Relationship="titizOtoModel.FK_tbl_carModelProduct_tbl_product" FromRole="tbl_product" ToRole="tbl_carModelProduct" />
+          <NavigationProperty Name="tbl_gallery" Relationship="titizOtoModel.FK_tbl_gallery_tbl_product" FromRole="tbl_product" ToRole="tbl_gallery" />
+          <NavigationProperty Name="tbl_basket" Relationship="titizOtoModel.FK_tbl_basket_tbl_product" FromRole="tbl_product" ToRole="tbl_basket" />
+          <NavigationProperty Name="tbl_productCritear" Relationship="titizOtoModel.FK_tbl_productCritear_tbl_product" FromRole="tbl_product" ToRole="tbl_productCritear" />
+          <NavigationProperty Name="tbl_stock" Relationship="titizOtoModel.FK_tbl_stock_tbl_product" FromRole="tbl_product" ToRole="tbl_stock" />
+        </EntityType>
+        <EntityType Name="tbl_productCritear">
+          <Key>
+            <PropertyRef Name="productCritearId" />
+          </Key>
+          <Property Type="Int32" Name="productCritearId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="productId" Nullable="false" />
+          <Property Type="Int32" Name="critearId" Nullable="false" />
+          <Property Type="Int32" Name="sequence" Nullable="false" />
+          <NavigationProperty Name="tbl_critear" Relationship="titizOtoModel.FK_tbl_productCritear_tbl_critear" FromRole="tbl_productCritear" ToRole="tbl_critear" />
+          <NavigationProperty Name="tbl_product" Relationship="titizOtoModel.FK_tbl_productCritear_tbl_product" FromRole="tbl_productCritear" ToRole="tbl_product" />
+        </EntityType>
+        <EntityType Name="tbl_settings">
+          <Key>
+            <PropertyRef Name="settingsId" />
+          </Key>
+          <Property Type="Int32" Name="settingsId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="langId" Nullable="false" />
+          <Property Type="String" Name="mailUserName" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="mailPassword" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="mailPort" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="mailSentName" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="mailSentAddress" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="mailReceiverAddress" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="mailSmtpServer" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="metaDescription" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="metaDescriptionAdditional" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="mainPageTitle" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="allPageTitle" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="metaKeyword" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="registerIsActivationExist" Nullable="false" />
+          <Property Type="Boolean" Name="registerIsThankMessageSend" Nullable="false" />
+          <Property Type="Boolean" Name="mailIsEnableSSL" />
+          <Property Type="Boolean" Name="isTransferDiscount" />
+          <Property Type="Int32" Name="transferDiscountType" />
+          <Property Type="Decimal" Name="transferDiscountAmount" Precision="10" Scale="2" />
+          <Property Type="Boolean" Name="isTransferEnable" />
+          <Property Type="Boolean" Name="isCrediCardEnable" />
+          <Property Type="String" Name="testAccountEmail" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="testSuccessfulCard" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="testValidCard" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_slider">
+          <Key>
+            <PropertyRef Name="sliderId" />
+          </Key>
+          <Property Type="Int32" Name="sliderId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="langId" Nullable="false" />
+          <Property Type="String" Name="title" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="subTitle" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="isUrlActive" Nullable="false" />
+          <Property Type="String" Name="urlText" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="statu" Nullable="false" />
+          <Property Type="Int32" Name="sequence" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="photo" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_stock">
+          <Key>
+            <PropertyRef Name="stockId" />
+          </Key>
+          <Property Type="Int32" Name="stockId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="stockCount" Nullable="false" />
+          <Property Type="Int32" Name="productId" Nullable="false" />
+          <Property Type="Int32" Name="minCount" Nullable="false" />
+          <Property Type="Int32" Name="sequence" Nullable="false" />
+          <Property Type="String" Name="optionList" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tbl_product" Relationship="titizOtoModel.FK_tbl_stock_tbl_product" FromRole="tbl_stock" ToRole="tbl_product" />
+        </EntityType>
+        <EntityType Name="tbl_user">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Type="Int32" Name="userId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="surname" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="password" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="birthday" Precision="3" />
+          <Property Type="Int32" Name="gender" />
+          <Property Type="Int32" Name="userTypeId" Nullable="false" />
+          <Property Type="Int32" Name="registerStatuId" Nullable="false" />
+          <Property Type="String" Name="guid" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="createDate" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_basket">
+          <Key>
+            <PropertyRef Name="basketId" />
+          </Key>
+          <Property Type="Int32" Name="basketId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="productId" Nullable="false" />
+          <Property Type="Int32" Name="quantity" Nullable="false" />
+          <Property Type="String" Name="guestCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="createTime" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="userId" />
+          <Property Type="String" Name="optionList" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="discountCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tbl_product" Relationship="titizOtoModel.FK_tbl_basket_tbl_product" FromRole="tbl_basket" ToRole="tbl_product" />
+        </EntityType>
+        <EntityType Name="tbl_trackInfo">
+          <Key>
+            <PropertyRef Name="trackInfoId" />
+          </Key>
+          <Property Type="Int32" Name="trackInfoId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="surname" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_tbl_adminUser_tbl_adminRole">
+          <End Type="titizOtoModel.tbl_adminRole" Role="tbl_adminRole" Multiplicity="1" />
+          <End Type="titizOtoModel.tbl_adminUser" Role="tbl_adminUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_adminRole">
+              <PropertyRef Name="roleId" />
+            </Principal>
+            <Dependent Role="tbl_adminUser">
+              <PropertyRef Name="adminRoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_bankEft_tbl_bank">
+          <End Type="titizOtoModel.tbl_bank" Role="tbl_bank" Multiplicity="1" />
+          <End Type="titizOtoModel.tbl_bankEft" Role="tbl_bankEft" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_bank">
+              <PropertyRef Name="bankId" />
+            </Principal>
+            <Dependent Role="tbl_bankEft">
+              <PropertyRef Name="bankId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_bankPos_tbl_bank">
+          <End Type="titizOtoModel.tbl_bank" Role="tbl_bank" Multiplicity="1" />
+          <End Type="titizOtoModel.tbl_bankPos" Role="tbl_bankPos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_bank">
+              <PropertyRef Name="bankId" />
+            </Principal>
+            <Dependent Role="tbl_bankPos">
+              <PropertyRef Name="bankId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_bankPosOption_tbl_bankPos">
+          <End Type="titizOtoModel.tbl_bankPos" Role="tbl_bankPos" Multiplicity="1" />
+          <End Type="titizOtoModel.tbl_bankPosOption" Role="tbl_bankPosOption" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_bankPos">
+              <PropertyRef Name="bankPosId" />
+            </Principal>
+            <Dependent Role="tbl_bankPosOption">
+              <PropertyRef Name="bankPosId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_product_tbl_brand">
+          <End Type="titizOtoModel.tbl_brand" Role="tbl_brand" Multiplicity="1" />
+          <End Type="titizOtoModel.tbl_product" Role="tbl_product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_brand">
+              <PropertyRef Name="brandId" />
+            </Principal>
+            <Dependent Role="tbl_product">
+              <PropertyRef Name="brandId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_product_tbl_business">
+          <End Type="titizOtoModel.tbl_business" Role="tbl_business" Multiplicity="1" />
+          <End Type="titizOtoModel.tbl_product" Role="tbl_product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_business">
+              <PropertyRef Name="businessId" />
+            </Principal>
+            <Dependent Role="tbl_product">
+              <PropertyRef Name="businessId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_carModel_tbl_carBrand">
+          <End Type="titizOtoModel.tbl_carBrand" Role="tbl_carBrand" Multiplicity="1" />
+          <End Type="titizOtoModel.tbl_carModel" Role="tbl_carModel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_carBrand">
+              <PropertyRef Name="carBrandId" />
+            </Principal>
+            <Dependent Role="tbl_carModel">
+              <PropertyRef Name="carBrandId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_carModelProduct_tbl_carModel">
+          <End Type="titizOtoModel.tbl_carModel" Role="tbl_carModel" Multiplicity="1" />
+          <End Type="titizOtoModel.tbl_carModelProduct" Role="tbl_carModelProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_carModel">
+              <PropertyRef Name="carModelId" />
+            </Principal>
+            <Dependent Role="tbl_carModelProduct">
+              <PropertyRef Name="carModelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_carModelProduct_tbl_product">
+          <End Type="titizOtoModel.tbl_product" Role="tbl_product" Multiplicity="1" />
+          <End Type="titizOtoModel.tbl_carModelProduct" Role="tbl_carModelProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_product">
+              <PropertyRef Name="productId" />
+            </Principal>
+            <Dependent Role="tbl_carModelProduct">
+              <PropertyRef Name="productId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_page_tbl_category">
+          <End Type="titizOtoModel.tbl_category" Role="tbl_category" Multiplicity="1" />
+          <End Type="titizOtoModel.tbl_page" Role="tbl_page" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_category">
+              <PropertyRef Name="categoryId" />
+            </Principal>
+            <Dependent Role="tbl_page">
+              <PropertyRef Name="categoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_productCritear_tbl_critear">
+          <End Type="titizOtoModel.tbl_critear" Role="tbl_critear" Multiplicity="1" />
+          <End Type="titizOtoModel.tbl_productCritear" Role="tbl_productCritear" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_critear">
+              <PropertyRef Name="critearId" />
+            </Principal>
+            <Dependent Role="tbl_productCritear">
+              <PropertyRef Name="critearId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_gallery_tbl_product">
+          <End Type="titizOtoModel.tbl_product" Role="tbl_product" Multiplicity="1" />
+          <End Type="titizOtoModel.tbl_gallery" Role="tbl_gallery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_product">
+              <PropertyRef Name="productId" />
+            </Principal>
+            <Dependent Role="tbl_gallery">
+              <PropertyRef Name="productId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_basket_tbl_product">
+          <End Type="titizOtoModel.tbl_product" Role="tbl_product" Multiplicity="1" />
+          <End Type="titizOtoModel.tbl_basket" Role="tbl_basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_product">
+              <PropertyRef Name="productId" />
+            </Principal>
+            <Dependent Role="tbl_basket">
+              <PropertyRef Name="productId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_productCritear_tbl_product">
+          <End Type="titizOtoModel.tbl_product" Role="tbl_product" Multiplicity="1" />
+          <End Type="titizOtoModel.tbl_productCritear" Role="tbl_productCritear" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_product">
+              <PropertyRef Name="productId" />
+            </Principal>
+            <Dependent Role="tbl_productCritear">
+              <PropertyRef Name="productId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_stock_tbl_product">
+          <End Type="titizOtoModel.tbl_product" Role="tbl_product" Multiplicity="1" />
+          <End Type="titizOtoModel.tbl_stock" Role="tbl_stock" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_product">
+              <PropertyRef Name="productId" />
+            </Principal>
+            <Dependent Role="tbl_stock">
+              <PropertyRef Name="productId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="titizOtoModelStoreContainer" CdmEntityContainer="titizOtoEntities">
+          <EntitySetMapping Name="tbl_activation">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_activation">
+              <MappingFragment StoreEntitySet="tbl_activation">
+                <ScalarProperty Name="datetime" ColumnName="datetime" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="activationId" ColumnName="activationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_address">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_address">
+              <MappingFragment StoreEntitySet="tbl_address">
+                <ScalarProperty Name="isGuestUser" ColumnName="isGuestUser" />
+                <ScalarProperty Name="sequence" ColumnName="sequence" />
+                <ScalarProperty Name="deliverPerson" ColumnName="deliverPerson" />
+                <ScalarProperty Name="taxNo" ColumnName="taxNo" />
+                <ScalarProperty Name="taxOffice" ColumnName="taxOffice" />
+                <ScalarProperty Name="companyName" ColumnName="companyName" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="postCode" ColumnName="postCode" />
+                <ScalarProperty Name="district" ColumnName="district" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="tcNo" ColumnName="tcNo" />
+                <ScalarProperty Name="statu" ColumnName="statu" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="isPersonal" ColumnName="isPersonal" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="addressId" ColumnName="addressId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_adminRole">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_adminRole">
+              <MappingFragment StoreEntitySet="tbl_adminRole">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="roleId" ColumnName="roleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_adminUser">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_adminUser">
+              <MappingFragment StoreEntitySet="tbl_adminUser">
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="adminRoleId" ColumnName="adminRoleId" />
+                <ScalarProperty Name="enterDate" ColumnName="enterDate" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_bank">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_bank">
+              <MappingFragment StoreEntitySet="tbl_bank">
+                <ScalarProperty Name="langId" ColumnName="langId" />
+                <ScalarProperty Name="paymentLogo" ColumnName="paymentLogo" />
+                <ScalarProperty Name="sequence" ColumnName="sequence" />
+                <ScalarProperty Name="statu" ColumnName="statu" />
+                <ScalarProperty Name="logo" ColumnName="logo" />
+                <ScalarProperty Name="color3" ColumnName="color3" />
+                <ScalarProperty Name="color2" ColumnName="color2" />
+                <ScalarProperty Name="color1" ColumnName="color1" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="bankId" ColumnName="bankId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_bankEft">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_bankEft">
+              <MappingFragment StoreEntitySet="tbl_bankEft">
+                <ScalarProperty Name="sequence" ColumnName="sequence" />
+                <ScalarProperty Name="statu" ColumnName="statu" />
+                <ScalarProperty Name="iban" ColumnName="iban" />
+                <ScalarProperty Name="accountNo" ColumnName="accountNo" />
+                <ScalarProperty Name="branchCode" ColumnName="branchCode" />
+                <ScalarProperty Name="bankId" ColumnName="bankId" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="bankEftId" ColumnName="bankEftId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_bankPos">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_bankPos">
+              <MappingFragment StoreEntitySet="tbl_bankPos">
+                <ScalarProperty Name="posCode" ColumnName="posCode" />
+                <ScalarProperty Name="isPosShownOnTable" ColumnName="isPosShownOnTable" />
+                <ScalarProperty Name="posTypeId" ColumnName="posTypeId" />
+                <ScalarProperty Name="isMainPos" ColumnName="isMainPos" />
+                <ScalarProperty Name="statu" ColumnName="statu" />
+                <ScalarProperty Name="bankId" ColumnName="bankId" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="bankPosId" ColumnName="bankPosId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_bankPosOption">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_bankPosOption">
+              <MappingFragment StoreEntitySet="tbl_bankPosOption">
+                <ScalarProperty Name="bankPosId" ColumnName="bankPosId" />
+                <ScalarProperty Name="statu" ColumnName="statu" />
+                <ScalarProperty Name="additionalAmount" ColumnName="additionalAmount" />
+                <ScalarProperty Name="minBasketAmount" ColumnName="minBasketAmount" />
+                <ScalarProperty Name="paymentCount" ColumnName="paymentCount" />
+                <ScalarProperty Name="bankPosOptionId" ColumnName="bankPosOptionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_brand">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_brand">
+              <MappingFragment StoreEntitySet="tbl_brand">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="brandId" ColumnName="brandId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_business">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_business">
+              <MappingFragment StoreEntitySet="tbl_business">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="businessId" ColumnName="businessId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_carBrand">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_carBrand">
+              <MappingFragment StoreEntitySet="tbl_carBrand">
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="metaDescription" ColumnName="metaDescription" />
+                <ScalarProperty Name="metaKeyword" ColumnName="metaKeyword" />
+                <ScalarProperty Name="isMainPageShown" ColumnName="isMainPageShown" />
+                <ScalarProperty Name="langId" ColumnName="langId" />
+                <ScalarProperty Name="photoCoordinate" ColumnName="photoCoordinate" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="isManuelUrl" ColumnName="isManuelUrl" />
+                <ScalarProperty Name="sequence" ColumnName="sequence" />
+                <ScalarProperty Name="statu" ColumnName="statu" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="carBrandId" ColumnName="carBrandId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_cargo">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_cargo">
+              <MappingFragment StoreEntitySet="tbl_cargo">
+                <ScalarProperty Name="trackUrl" ColumnName="trackUrl" />
+                <ScalarProperty Name="isCargoPriceOnCustomer" ColumnName="isCargoPriceOnCustomer" />
+                <ScalarProperty Name="langId" ColumnName="langId" />
+                <ScalarProperty Name="sequence" ColumnName="sequence" />
+                <ScalarProperty Name="detail" ColumnName="detail" />
+                <ScalarProperty Name="statu" ColumnName="statu" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="photoCoordinate" ColumnName="photoCoordinate" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="freeCargoPrice" ColumnName="freeCargoPrice" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="cargoId" ColumnName="cargoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_carModel">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_carModel">
+              <MappingFragment StoreEntitySet="tbl_carModel">
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="metaDescription" ColumnName="metaDescription" />
+                <ScalarProperty Name="metaKeyword" ColumnName="metaKeyword" />
+                <ScalarProperty Name="langId" ColumnName="langId" />
+                <ScalarProperty Name="isManuelUrl" ColumnName="isManuelUrl" />
+                <ScalarProperty Name="sequence" ColumnName="sequence" />
+                <ScalarProperty Name="statu" ColumnName="statu" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="carBrandId" ColumnName="carBrandId" />
+                <ScalarProperty Name="carModelId" ColumnName="carModelId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_carModelProduct">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_carModelProduct">
+              <MappingFragment StoreEntitySet="tbl_carModelProduct">
+                <ScalarProperty Name="sequence" ColumnName="sequence" />
+                <ScalarProperty Name="carModelId" ColumnName="carModelId" />
+                <ScalarProperty Name="productId" ColumnName="productId" />
+                <ScalarProperty Name="carModelProductId" ColumnName="carModelProductId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_category">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_category">
+              <MappingFragment StoreEntitySet="tbl_category">
+                <ScalarProperty Name="isFooterMenuShown" ColumnName="isFooterMenuShown" />
+                <ScalarProperty Name="isMainMenuShown" ColumnName="isMainMenuShown" />
+                <ScalarProperty Name="statu" ColumnName="statu" />
+                <ScalarProperty Name="sequence" ColumnName="sequence" />
+                <ScalarProperty Name="parentId" ColumnName="parentId" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="langId" ColumnName="langId" />
+                <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_critear">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_critear">
+              <MappingFragment StoreEntitySet="tbl_critear">
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="statu" ColumnName="statu" />
+                <ScalarProperty Name="sequence" ColumnName="sequence" />
+                <ScalarProperty Name="parentId" ColumnName="parentId" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="critearId" ColumnName="critearId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_discount">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_discount">
+              <MappingFragment StoreEntitySet="tbl_discount">
+                <ScalarProperty Name="exculudeProductList" ColumnName="exculudeProductList" />
+                <ScalarProperty Name="isManuelGenerated" ColumnName="isManuelGenerated" />
+                <ScalarProperty Name="repTime" ColumnName="repTime" />
+                <ScalarProperty Name="statu" ColumnName="statu" />
+                <ScalarProperty Name="isOtherCombine" ColumnName="isOtherCombine" />
+                <ScalarProperty Name="productList" ColumnName="productList" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="endDate" ColumnName="endDate" />
+                <ScalarProperty Name="startDate" ColumnName="startDate" />
+                <ScalarProperty Name="minBasketCount" ColumnName="minBasketCount" />
+                <ScalarProperty Name="minBasketAmount" ColumnName="minBasketAmount" />
+                <ScalarProperty Name="amountPercent" ColumnName="amountPercent" />
+                <ScalarProperty Name="typeId" ColumnName="typeId" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="discountId" ColumnName="discountId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_email">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_email">
+              <MappingFragment StoreEntitySet="tbl_email">
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="detail" ColumnName="detail" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="langId" ColumnName="langId" />
+                <ScalarProperty Name="emailTypeId" ColumnName="emailTypeId" />
+                <ScalarProperty Name="emailId" ColumnName="emailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_error">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_error">
+              <MappingFragment StoreEntitySet="tbl_error">
+                <ScalarProperty Name="saveDate" ColumnName="saveDate" />
+                <ScalarProperty Name="errorText" ColumnName="errorText" />
+                <ScalarProperty Name="errorId" ColumnName="errorId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_forgetPassword">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_forgetPassword">
+              <MappingFragment StoreEntitySet="tbl_forgetPassword">
+                <ScalarProperty Name="createTime" ColumnName="createTime" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="forgetPasswordId" ColumnName="forgetPasswordId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_gallery">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_gallery">
+              <MappingFragment StoreEntitySet="tbl_gallery">
+                <ScalarProperty Name="optionList" ColumnName="optionList" />
+                <ScalarProperty Name="guid" ColumnName="guid" />
+                <ScalarProperty Name="statu" ColumnName="statu" />
+                <ScalarProperty Name="sequence" ColumnName="sequence" />
+                <ScalarProperty Name="photoCoordinate" ColumnName="photoCoordinate" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="productId" ColumnName="productId" />
+                <ScalarProperty Name="galleryId" ColumnName="galleryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_module">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_module">
+              <MappingFragment StoreEntitySet="tbl_module">
+                <ScalarProperty Name="langId" ColumnName="langId" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="typeId" ColumnName="typeId" />
+                <ScalarProperty Name="tag" ColumnName="tag" />
+                <ScalarProperty Name="htmlContent" ColumnName="htmlContent" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="moduleId" ColumnName="moduleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_newsletterUser">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_newsletterUser">
+              <MappingFragment StoreEntitySet="tbl_newsletterUser">
+                <ScalarProperty Name="createTime" ColumnName="createTime" />
+                <ScalarProperty Name="ipNo" ColumnName="ipNo" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="newsletterUserId" ColumnName="newsletterUserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_openContent">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_openContent">
+              <MappingFragment StoreEntitySet="tbl_openContent">
+                <ScalarProperty Name="detail" ColumnName="detail" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="sequence" ColumnName="sequence" />
+                <ScalarProperty Name="statu" ColumnName="statu" />
+                <ScalarProperty Name="langId" ColumnName="langId" />
+                <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+                <ScalarProperty Name="openContentId" ColumnName="openContentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_order">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_order">
+              <MappingFragment StoreEntitySet="tbl_order">
+                <ScalarProperty Name="shipmentNo" ColumnName="shipmentNo" />
+                <ScalarProperty Name="billingAddressObj" ColumnName="billingAddressObj" />
+                <ScalarProperty Name="deliveryAddressObj" ColumnName="deliveryAddressObj" />
+                <ScalarProperty Name="isCargoOnCustomer" ColumnName="isCargoOnCustomer" />
+                <ScalarProperty Name="orderNote" ColumnName="orderNote" />
+                <ScalarProperty Name="eftId" ColumnName="eftId" />
+                <ScalarProperty Name="orderGuid" ColumnName="orderGuid" />
+                <ScalarProperty Name="preSalesAgreement" ColumnName="preSalesAgreement" />
+                <ScalarProperty Name="salesAgreement" ColumnName="salesAgreement" />
+                <ScalarProperty Name="createDate" ColumnName="createDate" />
+                <ScalarProperty Name="isRegisteredOrder" ColumnName="isRegisteredOrder" />
+                <ScalarProperty Name="creditPaymentCount" ColumnName="creditPaymentCount" />
+                <ScalarProperty Name="totalCheckoutPrice" ColumnName="totalCheckoutPrice" />
+                <ScalarProperty Name="additionalPrice" ColumnName="additionalPrice" />
+                <ScalarProperty Name="transferDiscount" ColumnName="transferDiscount" />
+                <ScalarProperty Name="discountAmount" ColumnName="discountAmount" />
+                <ScalarProperty Name="discountCode" ColumnName="discountCode" />
+                <ScalarProperty Name="totalProductPrice" ColumnName="totalProductPrice" />
+                <ScalarProperty Name="orderMailStatu" ColumnName="orderMailStatu" />
+                <ScalarProperty Name="orderStatu" ColumnName="orderStatu" />
+                <ScalarProperty Name="cargoPrice" ColumnName="cargoPrice" />
+                <ScalarProperty Name="paymentTypeId" ColumnName="paymentTypeId" />
+                <ScalarProperty Name="billingAddressId" ColumnName="billingAddressId" />
+                <ScalarProperty Name="deliveryAddressId" ColumnName="deliveryAddressId" />
+                <ScalarProperty Name="trackInfoId" ColumnName="trackInfoId" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="cargoId" ColumnName="cargoId" />
+                <ScalarProperty Name="orderNo" ColumnName="orderNo" />
+                <ScalarProperty Name="orderId" ColumnName="orderId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_orderDetail">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_orderDetail">
+              <MappingFragment StoreEntitySet="tbl_orderDetail">
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="nameWithOption" ColumnName="nameWithOption" />
+                <ScalarProperty Name="productTotalPrice" ColumnName="productTotalPrice" />
+                <ScalarProperty Name="optionList" ColumnName="optionList" />
+                <ScalarProperty Name="orderId" ColumnName="orderId" />
+                <ScalarProperty Name="productPrice" ColumnName="productPrice" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="productId" ColumnName="productId" />
+                <ScalarProperty Name="orderDetailId" ColumnName="orderDetailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_page">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_page">
+              <MappingFragment StoreEntitySet="tbl_page">
+                <ScalarProperty Name="isHelperUrl" ColumnName="isHelperUrl" />
+                <ScalarProperty Name="detail" ColumnName="detail" />
+                <ScalarProperty Name="isManuelUrl" ColumnName="isManuelUrl" />
+                <ScalarProperty Name="redirectPageUrl" ColumnName="redirectPageUrl" />
+                <ScalarProperty Name="pageTypeId" ColumnName="pageTypeId" />
+                <ScalarProperty Name="statu" ColumnName="statu" />
+                <ScalarProperty Name="sequence" ColumnName="sequence" />
+                <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+                <ScalarProperty Name="metaDescription" ColumnName="metaDescription" />
+                <ScalarProperty Name="metaKeyword" ColumnName="metaKeyword" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="langId" ColumnName="langId" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="pageId" ColumnName="pageId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_payInfo">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_payInfo">
+              <MappingFragment StoreEntitySet="tbl_payInfo">
+                <ScalarProperty Name="processId" ColumnName="processId" />
+                <ScalarProperty Name="payTime" ColumnName="payTime" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="payInfoId" ColumnName="payInfoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_product">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_product">
+              <MappingFragment StoreEntitySet="tbl_product">
+                <ScalarProperty Name="isShowCase" ColumnName="isShowCase" />
+                <ScalarProperty Name="langId" ColumnName="langId" />
+                <ScalarProperty Name="isManuelUrl" ColumnName="isManuelUrl" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="metaDescription" ColumnName="metaDescription" />
+                <ScalarProperty Name="metaKeyword" ColumnName="metaKeyword" />
+                <ScalarProperty Name="detail" ColumnName="detail" />
+                <ScalarProperty Name="shortDescription" ColumnName="shortDescription" />
+                <ScalarProperty Name="isDiscountPriceActive" ColumnName="isDiscountPriceActive" />
+                <ScalarProperty Name="discountPrice" ColumnName="discountPrice" />
+                <ScalarProperty Name="taxPercent" ColumnName="taxPercent" />
+                <ScalarProperty Name="isTaxInclude" ColumnName="isTaxInclude" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="sequence" ColumnName="sequence" />
+                <ScalarProperty Name="statu" ColumnName="statu" />
+                <ScalarProperty Name="businessId" ColumnName="businessId" />
+                <ScalarProperty Name="brandId" ColumnName="brandId" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="productId" ColumnName="productId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_productCritear">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_productCritear">
+              <MappingFragment StoreEntitySet="tbl_productCritear">
+                <ScalarProperty Name="sequence" ColumnName="sequence" />
+                <ScalarProperty Name="critearId" ColumnName="critearId" />
+                <ScalarProperty Name="productId" ColumnName="productId" />
+                <ScalarProperty Name="productCritearId" ColumnName="productCritearId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_settings">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_settings">
+              <MappingFragment StoreEntitySet="tbl_settings">
+                <ScalarProperty Name="testValidCard" ColumnName="testValidCard" />
+                <ScalarProperty Name="testSuccessfulCard" ColumnName="testSuccessfulCard" />
+                <ScalarProperty Name="testAccountEmail" ColumnName="testAccountEmail" />
+                <ScalarProperty Name="isCrediCardEnable" ColumnName="isCrediCardEnable" />
+                <ScalarProperty Name="isTransferEnable" ColumnName="isTransferEnable" />
+                <ScalarProperty Name="transferDiscountAmount" ColumnName="transferDiscountAmount" />
+                <ScalarProperty Name="transferDiscountType" ColumnName="transferDiscountType" />
+                <ScalarProperty Name="isTransferDiscount" ColumnName="isTransferDiscount" />
+                <ScalarProperty Name="mailIsEnableSSL" ColumnName="mailIsEnableSSL" />
+                <ScalarProperty Name="registerIsThankMessageSend" ColumnName="registerIsThankMessageSend" />
+                <ScalarProperty Name="registerIsActivationExist" ColumnName="registerIsActivationExist" />
+                <ScalarProperty Name="metaKeyword" ColumnName="metaKeyword" />
+                <ScalarProperty Name="allPageTitle" ColumnName="allPageTitle" />
+                <ScalarProperty Name="mainPageTitle" ColumnName="mainPageTitle" />
+                <ScalarProperty Name="metaDescriptionAdditional" ColumnName="metaDescriptionAdditional" />
+                <ScalarProperty Name="metaDescription" ColumnName="metaDescription" />
+                <ScalarProperty Name="mailSmtpServer" ColumnName="mailSmtpServer" />
+                <ScalarProperty Name="mailReceiverAddress" ColumnName="mailReceiverAddress" />
+                <ScalarProperty Name="mailSentAddress" ColumnName="mailSentAddress" />
+                <ScalarProperty Name="mailSentName" ColumnName="mailSentName" />
+                <ScalarProperty Name="mailPort" ColumnName="mailPort" />
+                <ScalarProperty Name="mailPassword" ColumnName="mailPassword" />
+                <ScalarProperty Name="mailUserName" ColumnName="mailUserName" />
+                <ScalarProperty Name="langId" ColumnName="langId" />
+                <ScalarProperty Name="settingsId" ColumnName="settingsId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_slider">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_slider">
+              <MappingFragment StoreEntitySet="tbl_slider">
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="sequence" ColumnName="sequence" />
+                <ScalarProperty Name="statu" ColumnName="statu" />
+                <ScalarProperty Name="urlText" ColumnName="urlText" />
+                <ScalarProperty Name="isUrlActive" ColumnName="isUrlActive" />
+                <ScalarProperty Name="subTitle" ColumnName="subTitle" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="langId" ColumnName="langId" />
+                <ScalarProperty Name="sliderId" ColumnName="sliderId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_stock">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_stock">
+              <MappingFragment StoreEntitySet="tbl_stock">
+                <ScalarProperty Name="optionList" ColumnName="optionList" />
+                <ScalarProperty Name="sequence" ColumnName="sequence" />
+                <ScalarProperty Name="minCount" ColumnName="minCount" />
+                <ScalarProperty Name="productId" ColumnName="productId" />
+                <ScalarProperty Name="stockCount" ColumnName="stockCount" />
+                <ScalarProperty Name="stockId" ColumnName="stockId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_user">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_user">
+              <MappingFragment StoreEntitySet="tbl_user">
+                <ScalarProperty Name="createDate" ColumnName="createDate" />
+                <ScalarProperty Name="guid" ColumnName="guid" />
+                <ScalarProperty Name="registerStatuId" ColumnName="registerStatuId" />
+                <ScalarProperty Name="userTypeId" ColumnName="userTypeId" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="birthday" ColumnName="birthday" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_basket">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_basket">
+              <MappingFragment StoreEntitySet="tbl_basket">
+                <ScalarProperty Name="discountCode" ColumnName="discountCode" />
+                <ScalarProperty Name="optionList" ColumnName="optionList" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="createTime" ColumnName="createTime" />
+                <ScalarProperty Name="guestCode" ColumnName="guestCode" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="productId" ColumnName="productId" />
+                <ScalarProperty Name="basketId" ColumnName="basketId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_trackInfo">
+            <EntityTypeMapping TypeName="titizOtoModel.tbl_trackInfo">
+              <MappingFragment StoreEntitySet="tbl_trackInfo">
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="trackInfoId" ColumnName="trackInfoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

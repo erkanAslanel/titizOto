@@ -1,0 +1,17 @@
+﻿@model List<ViewModel.MainPage.carBrand>
+
+    <h2>@Resources.lang.models</h2>
+
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li class="@item.classText">
+                <a href="@item.url" title="@item.name">
+                    <img src="@item.photo" /></a></li>
+             
+        }
+
+    </ul>
+   
+
+

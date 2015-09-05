@@ -1,0 +1,35 @@
+﻿@model ViewModel.Search.helperSearchModal
+
+
+@if (Model.totalSearch > 0)
+{
+
+    <ul>
+
+        @foreach (var item in Model.searchList)
+        {
+
+            if (item.objType == ViewModel.Search.searchObjType.product)
+            {
+            <li><a href="~/@item.productItem.url">@item.resultTitle</a></li>
+            }
+
+            else
+            {
+            <li><a href="~/@item.url">@item.resultTitle</a></li>
+            }
+
+        }
+
+    </ul>
+    <a href="@Model.searchLink" class="totalLink">@Html.Raw(Resources.lang.searchModalResult.Replace("[totalSearch]",
+        Model.totalSearch.ToString()))</a>
+}
+else
+{
+    <p>
+        @Resources.lang.searchModalNoResult
+    </p>    
+}
+
+

@@ -1,0 +1,18 @@
+﻿@model IEnumerable<tbl_settings>
+
+@{
+    ViewBag.Title = tbl_settings.getClassTitle() + " Yönetimi";
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml"; 
+}
+
+<div class="title">
+    <h5>@tbl_settings.getClassTitle() Yönetimi</h5>
+</div>
+
+<div class="body alignLeft">
+      <div class="fix"></div>
+</div>
+
+<div class="table">
+    @Html.Partial("Table", Model)
+</div>

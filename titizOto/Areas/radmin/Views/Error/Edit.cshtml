@@ -1,0 +1,68 @@
+﻿@model tbl_error
+
+@{
+    ViewBag.Title = tbl_error.getClassTitle() + " Düzenle";
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml"; 
+}
+
+@if (ViewBag.success != null)
+{
+    
+    @Html.Raw(ViewBag.resultHtml)
+}
+
+
+@using (Html.BeginForm("Edit", "Error", FormMethod.Post, new { @class = "mainForm" }))
+{  
+    @Html.ValidationSummary(null, new { @class = "validationInfo hideit" }) 
+    
+    <div class="title">
+        <h5>Sayfa Düzenleme(@Model.saveDate.ToString("dd.MM.yyyy"))</h5>
+    </div> 
+
+    <!--Upload-->
+    @Html.AntiForgeryToken()
+
+   
+
+    <fieldset>
+        <div class="widget">
+
+            <!--Tabs-->
+            <ul class="tabs">
+                <li><a href="#tab1">İçerik</a></li>
+            </ul>
+
+            <!--Column-->
+            <div class="tab_container">
+                <div id="tab1" class="tab_content">
+
+
+                    <!--errorText -->
+                    <div class="rowElem">@Html.LabelFor(a => a.errorText)<div class="formRight">@Html.TextAreaFor(a => a.errorText,new { style="height:100px",@readonly = "readonly" })<label
+                        class="error">@Html.ValidationMessageFor(a => a.errorText)</label></div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--saveDate -->
+                    <div class="rowElem">@Html.LabelFor(a => a.saveDate)<div class="formRight">@Html.TextBox("saveDate", Model.saveDate.ToString("dd.MM.yyyy"), new { @readonly = "readonly" })<label
+                        class="error">@Html.ValidationMessageFor(a => a.saveDate)</label>
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="fix"></div>
+        </div>
+    </fieldset>  
+    
+    <div class="fix" style="height: 20px"></div>
+   
+    <!--Buttons-->
+                      
+    
+    <a class="greyishBtn button floatright" href="@Url.Action("Index")" >Geri Dön </a>    
+    
+}

@@ -1,0 +1,65 @@
+﻿@model tbl_order
+
+@{
+    ViewBag.Title = @Model.classTitle + " Silme";
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml"; 
+}
+
+@if (ViewBag.success != null)
+{ 
+    @Html.Raw(ViewBag.resultHtml)
+}
+
+
+@using (Html.BeginForm("DeleteOrder", "Order", FormMethod.Post, new { @class = "mainForm" }))
+{  
+   
+    
+    <div class="title">
+        <h5>@Model.classTitle Düzenle(@Model.orderNo)</h5>
+    </div> 
+
+    <!--Upload-->
+    @Html.AntiForgeryToken()
+
+   
+    <fieldset>
+        <div class="widget">
+
+            <!--Tabs-->
+            <ul class="tabs">
+                <li><a href="#tab3">Genel İçerik</a></li>
+
+            </ul>
+
+            <!--Column-->
+            <div class="tab_container">
+                <div id="tab3" class="tab_content">
+
+                    <p>@Model.orderNo numaralı sipariş silinecektir.Bu işlemi onaylıyor musunuz ? </p>
+
+                    <div class="fix"></div>
+
+
+                </div>
+
+
+            </div>
+
+            <div class="fix"></div>
+        </div>
+    </fieldset>
+    
+    <div class="fix" style="height: 20px"></div>
+    
+    
+    <!--Buttons-->
+    if (ViewBag.success == null || !(bool)ViewBag.success)
+    {
+    <input type="submit" name="deleteAction" value="Sil" class="redBtn submitForm" />
+    }
+                       
+    <a class="greyishBtn button floatright" href="@Url.Action("Index")">Geri Dön </a>    
+    
+}
+

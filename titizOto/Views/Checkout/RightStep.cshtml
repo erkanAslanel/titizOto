@@ -1,0 +1,38 @@
+﻿@model ViewModel.Checkout.rightStep
+<div class="title">@Resources.lang.checkoutRightStepTitle</div>
+
+<ul>
+
+    @foreach (var item in Model.stepLinkList.Where(a => a.step != ViewModel.Checkout.checkoutStep.registerOptions && a.step != ViewModel.Checkout.checkoutStep.error && a.step != ViewModel.Checkout.checkoutStep.complete).ToList())
+    {
+        //Current Step
+        if (item.step == Model.currentStep)
+        {
+            
+        <li class="active"><span>@item.name</span></li> 
+       
+        }
+
+        // Show step
+        if ((int)item.step < (int)Model.currentStep)
+        {
+        <li class="active"><span>@item.name</span>
+            <div class="fRight"><span class="sep">|</span> <a href="~/@item.url">@Resources.lang.checkoutChange</a></div>
+        </li> 
+
+        }
+
+        // Hidden step
+        if ((int)item.step > (int)Model.currentStep)
+        {
+
+        <li><span>@item.name</span>
+        </li> 
+        
+        }
+
+    }
+
+
+</ul>
+

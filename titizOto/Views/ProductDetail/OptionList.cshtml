@@ -1,0 +1,93 @@
+﻿@model List<ViewModel.ProductDetail.payOptionContainer>
+
+
+<div class="modelContainer">
+
+
+    <h6>Taksit Seçenekleri
+    </h6>
+
+    @if (Model != null && Model.Count > 0)
+    { 
+        <ul class="taksitListContainer">
+            @foreach (var item in Model)
+            { 
+                <li>
+
+
+
+                    @foreach (var subItem in item.payOptionList)
+                    {
+                        <div class="blockItem" style="@(subItem.logoColor != null ? "border:solid 1px #" + subItem.logoColor : "")" >
+                            <div class="blockHeader" style="@(subItem.logoColor != null ? "background-color:#" + subItem.logoColor : "")">
+                                <img src="~/Download/item/bank/@subItem.logoImg" />
+                            </div>
+                            <div class="subBlockHeader" style="@(subItem.headerColor != null ? "background-color:#" + subItem.headerColor : "")">
+                                <div class="row">@Resources.lang.installmentCount</div>
+                                <div class="row">@Resources.lang.installmentAmount</div>
+                                <div class="row">@Resources.lang.totalAmount</div>
+                            </div>
+                            <div class="contentTable" style="@(subItem.rowColor != null ? "background-color:#" + subItem.rowColor : "")" >
+
+                                @foreach (var subsubItem in subItem.itemList)
+                                {
+
+                                    if (subsubItem.isMinSpentRequired)
+                                    {
+                                    <div class="row">
+                                       @subsubItem.payCount 
+                                        <span class="installmentRequired"> (@subsubItem.spentAmount.ToString("N0") @Resources.lang.checkoutInstallmentSpentRequired) </span></div>
+                                    }
+                                    else
+                                    {
+                                    <div class="row">@subsubItem.payCount  </div>
+                                    }
+
+                                    
+                                    <div class="row">
+                                        @if (subsubItem.insallmentAmount == Math.Round(subsubItem.insallmentAmount, 0, MidpointRounding.AwayFromZero))
+                                        {
+                                            @subsubItem.insallmentAmount.ToString("F0") @:TL
+                                        }
+                                        else
+                                        {
+                                            @subsubItem.insallmentAmount.ToString("F2") @:TL
+                                        }
+
+
+                                    </div>
+                                    <div class="row">
+
+                                        @if (subsubItem.totalAmount == Math.Round(subsubItem.totalAmount, 0, MidpointRounding.AwayFromZero))
+                                        {
+                                            @subsubItem.totalAmount.ToString("F0") @:TL
+                                        }
+                                        else
+                                        {
+                                            @subsubItem.totalAmount.ToString("F2") @:TL
+                                        }
+
+
+                                    </div>
+                                }
+
+                            </div>
+
+                        </div>
+                    }
+
+                </li> 
+            }
+
+        </ul> 
+    }
+    else
+    {
+        <div class="noPayOption">Taksit Seçeneği Bulunmamaktadır.</div>
+        
+    }
+
+
+
+
+</div>

@@ -1,0 +1,39 @@
+﻿@model titizOto.Models.tbl_bankEft
+
+<table cellpadding="2" cellspacing="0" border="0">
+    <tr>
+        <td colspan="2">
+       <b>   @Model.tbl_bank.name </b>  
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(a => Model.name) </td>
+        <td>
+
+           : @Model.name
+        </td>
+    </tr>
+
+    <tr>
+        <td>@Html.DisplayNameFor(a => Model.branchCode) </td>
+        <td>
+
+          : @Model.branchCode
+        </td>
+    </tr>
+
+    <tr>
+        <td>@Html.DisplayNameFor(a => Model.accountNo) </td>
+        <td>
+
+           : @Model.accountNo
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(a => Model.iban) </td>
+        <td>
+
+           : @Model.iban
+        </td>
+    </tr>
+</table>

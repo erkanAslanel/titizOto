@@ -1,0 +1,73 @@
+﻿@model tbl_settings
+@{
+    ViewBag.Title = tbl_settings.getClassTitle() + " Düzenle";
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml"; 
+}
+
+@if (ViewBag.success != null)
+{
+    
+    @Html.Raw(ViewBag.resultHtml)
+}
+
+@using (Html.BeginForm("TestMail", "Settings", FormMethod.Post, new { @class = "mainForm" }))
+{  
+    @Html.ValidationSummary(null, new { @class = "validationInfo hideit" }) 
+    
+    <div class="title">
+        <h5>Test Maili Gönderimi</h5>
+    </div> 
+
+    <!--Upload-->
+    @Html.AntiForgeryToken()
+
+  
+
+    <fieldset>
+        <div class="widget">
+
+            <!--Tabs-->
+            <ul class="tabs">
+
+                <li><a href="#tab2">Test Mail</a></li>
+
+            </ul>
+
+            <!--Column-->
+            <div class="tab_container">
+
+
+                <div id="tab2" class="tab_content">
+
+                    <!--urlControl-->
+                    @Html.HiddenFor(a => a.settingsId, new { @id = "primaryKey" })
+
+                    <div class="rowElem">
+                        @Html.Label("Test Email Adresi")
+                        <div class="formRight">
+                            @Html.TextBox("email")
+
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+
+
+                </div>
+
+
+
+            </div>
+            <div class="fix"></div>
+        </div>
+    </fieldset>  
+    
+    <div class="fix" style="height: 20px"></div>
+   
+    <!--Buttons-->
+                      
+    <input type="submit" value="Gönder" class="redBtn submitForm" />
+                       
+    <a class="greyishBtn button floatright" href="@Url.Action("Index")" >Geri Dön </a>    
+    
+}

@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.title</title>
+    @if (ViewBag.description != null)
+    {
+        <meta name="Description" content="@ViewBag.description">
+    }
+
+    <!--[if lt IE 9]>
+         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,latin-ext'
+        rel='stylesheet' type='text/css'>
+    @RenderSection("cssArea", false)
+    <link href="~/Content/js/plugin/slider/stylesheets/superslides.css" rel="stylesheet" />
+    <link href="~/Content/css/core.css?v=2" rel="stylesheet" />
+    @RenderSection("afterCssArea", false)
+</head>
+<body data-mainpath="@Url.Content("~/")">
+    <div class="main">
+        <header>
+            <div class="wrapper">
+                <div class="logoContainer">
+                    <a href="#">
+                        <img src="Content/images/titizLogo.png" /></a>
+                    <div></div>
+                </div>
+
+                @Html.Partial("topMenu", ViewData["topMenu"])
+                @Html.Partial("topCart", ViewData["topCart"])
+
+                <div class="searchBox">
+
+
+                </div>
+            </div>
+        </header>
+        @RenderBody()
+    </div>
+    <footer>
+        <div class="wrapper">
+            <div class="c1">
+
+                <ul class="social">
+                    <li><a href="#" rel="nofollow">
+                        <img src="~/Content/images/facebookIcon.png" />
+                    </a></li>
+                    <li><a href="#" rel="nofollow">
+                        <img src="~/Content/images/twitter.png" />
+                    </a></li>
+
+                </ul>
+                <div class="clearfix"></div>
+                <ul class="bankLogo">
+                    <li>
+                        <img src="~/Content/images/bonus.png" />
+                    </li>
+                    <li>
+                        <img src="~/Content/images/worldCard.png" />
+                    </li>
+                    <li>
+                        <img src="~/Content/images/axess.png" />
+                    </li>
+                    <li>
+                        <img src="~/Content/images/finans.png" />
+                    </li>
+                    <li>
+                        <img src="~/Content/images/maximum.png" />
+                    </li>
+                    <li>
+                        <ul>
+                            <li>
+                                <img src="~/Content/images/visa.png" /></li>
+                            <li>
+                                <img src="~/Content/images/master.png" /></li>
+                            <li>
+                                <img src="~/Content/images/payPal.png" /></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+                <small>© 2014, Titiz Otomotiv Tüm Hakları Saklıdır.</small>
+            </div>
+
+              @Html.Partial("footerMenu", ViewData["footerMenu"]) 
+           
+              @Html.Partial("newsletter")
+
+        </div>
+    </footer>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    @RenderSection("scriptArea", false)
+
+    <div>
+    </div>
+</body>
+</html>

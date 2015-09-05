@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "titizOto", "titizOto\titizOto.csproj", "{0AB9F479-A37D-4A8A-8649-37C31A78DA9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "titizTest", "titizTest\titizTest.csproj", "{19AF6D99-6D12-4592-ADED-F0B9C8143AFB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0AB9F479-A37D-4A8A-8649-37C31A78DA9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AB9F479-A37D-4A8A-8649-37C31A78DA9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AB9F479-A37D-4A8A-8649-37C31A78DA9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AB9F479-A37D-4A8A-8649-37C31A78DA9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19AF6D99-6D12-4592-ADED-F0B9C8143AFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19AF6D99-6D12-4592-ADED-F0B9C8143AFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19AF6D99-6D12-4592-ADED-F0B9C8143AFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19AF6D99-6D12-4592-ADED-F0B9C8143AFB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

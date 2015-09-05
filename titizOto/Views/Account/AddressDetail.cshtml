@@ -1,0 +1,129 @@
+﻿@model ViewModel.Account.Address.addressModelItem
+
+<div class="modelContainer sharedAddress" data-ispersonal="@Model.addressItem.isPersonal" data-closeurl="@Model.closeUrl">
+    <h6>
+        @Resources.lang.addressDetail
+    </h6>
+
+    @using (Html.BeginForm("AddressAdd", "Account", FormMethod.Post, new { id = "addForm" }))
+    { 
+        @Html.AntiForgeryToken()
+        
+        if (@Model.isMessageExist)
+        {
+        @Html.Raw(Model.message)
+        }
+        
+        <!--userGuid -->
+        @Html.HiddenFor(a => a.guid)
+
+        <!--name -->
+        <div class="rowElem">@Html.LabelFor(a => a.addressItem.name)<div class="formRight">@Html.TextBoxFor(a => a.addressItem.name, new { @readonly = "readonly" })<label
+            class="error">@Html.ValidationMessageFor(a => a.addressItem.name)</label>
+        </div>
+
+        </div>
+
+        <!--isPersonal -->
+        <div class="rowElem">@Html.LabelFor(a => a.addressItem.isPersonal)<div class="formRight">
+
+            <input disabled="disabled" type="radio" name="addressItem.isPersonal" checked="@(Model.addressItem.isPersonal ? "checked" : null)"  value="True">&nbsp;@Resources.lang.personal
+            &nbsp;&nbsp;
+            <input disabled="disabled" type="radio" name="addressItem.isPersonal" checked="@(!Model.addressItem.isPersonal ? "checked" : null)" value="False">&nbsp;@Resources.lang.corporate
+
+            <label
+                class="error">@Html.ValidationMessageFor(a => a.addressItem.isPersonal)</label>
+        </div>
+
+        </div>
+
+        <!--deliverPerson -->
+        <div class="rowElem bigItem">@Html.LabelFor(a => a.addressItem.deliverPerson)<div
+            class="formRight">@Html.TextBoxFor(a => a.addressItem.deliverPerson, new { @readonly = "readonly" })<label
+                class="error">@Html.ValidationMessageFor(a => a.addressItem.deliverPerson)</label>
+        </div>
+
+        </div>
+        
+        
+        <div class="tcNoContainer" style="@(Model.addressItem.isPersonal ? null : "display:none")">
+
+            <!--tcNo -->
+            <div class="rowElem">@Html.LabelFor(a => a.addressItem.tcNo)<div class="formRight">@Html.TextBoxFor(a => a.addressItem.tcNo, new { @class = "addressTc", data_required = Resources.lang.addressTcNoRequired, @readonly = "readonly" })<label
+                class="error">@Html.ValidationMessageFor(a => a.addressItem.tcNo)</label>
+            </div>
+
+            </div>
+
+        </div>
+        
+        <div class="companyContainer" style="@(!Model.addressItem.isPersonal ? null : "display:none")">
+
+            <!--companyName -->
+            <div class="rowElem">@Html.LabelFor(a => a.addressItem.companyName)<div class="formRight">@Html.TextBoxFor(a => a.addressItem.companyName, new { @class = "addressCompanyName", data_required = Resources.lang.addressCompanyNameRequired, @readonly = "readonly" })<label
+                class="error">@Html.ValidationMessageFor(a => a.addressItem.companyName)</label>
+            </div>
+
+            </div>
+
+            <!--taxOffice -->
+            <div class="rowElem">@Html.LabelFor(a => a.addressItem.taxOffice)<div class="formRight">@Html.TextBoxFor(a => a.addressItem.taxOffice, new { @class = "addresstaxOffice", data_required = Resources.lang.addressTaxOfficeRequired, @readonly = "readonly" })<label
+                class="error">@Html.ValidationMessageFor(a => a.addressItem.taxOffice)</label>
+            </div>
+
+            </div>
+
+            <!--taxNo -->
+            <div class="rowElem">@Html.LabelFor(a => a.addressItem.taxNo)<div class="formRight">@Html.TextBoxFor(a => a.addressItem.taxNo, new { @class = "addressTax", data_required = Resources.lang.addressTaxNoRequired, @readonly = "readonly" })<label
+                class="error">@Html.ValidationMessageFor(a => a.addressItem.taxNo)</label>
+            </div>
+
+            </div>
+
+        </div>
+
+        <!--city -->
+        <div class="rowElem">@Html.LabelFor(a => a.addressItem.city)<div class="formRight">@Html.TextBoxFor(a => a.addressItem.city, new { @readonly = "readonly" })<label
+            class="error">@Html.ValidationMessageFor(a => a.addressItem.city)</label>
+        </div>
+
+        </div>
+
+        <!--district -->
+        <div class="rowElem">@Html.LabelFor(a => a.addressItem.district)<div class="formRight">@Html.TextBoxFor(a => a.addressItem.district, new { @readonly = "readonly" })<label
+            class="error">@Html.ValidationMessageFor(a => a.addressItem.district)</label>
+        </div>
+
+        </div>
+
+        <!--postCode -->
+        <div class="rowElem">@Html.LabelFor(a => a.addressItem.postCode)<div class="formRight">@Html.TextBoxFor(a => a.addressItem.postCode, new { @class = "addressPost", @readonly = "readonly" })<label
+            class="error">@Html.ValidationMessageFor(a => a.addressItem.postCode)</label>
+        </div>
+
+        </div>
+
+        <!--phone -->
+        <div class="rowElem">@Html.LabelFor(a => a.addressItem.phone)<div class="formRight">@Html.TextBoxFor(a => a.addressItem.phone, new { @class = "addressPhone", @readonly = "readonly" })<label
+            class="error">@Html.ValidationMessageFor(a => a.addressItem.phone)</label>
+        </div>
+
+        </div>
+
+        <!--address -->
+        <div class="rowElem bigItem">@Html.LabelFor(a => a.addressItem.address)<div class="formRight">@Html.TextAreaFor(a => a.addressItem.address, new { style = "height:100px", @readonly = "readonly" })<label
+            class="error">@Html.ValidationMessageFor(a => a.addressItem.address)</label>
+        </div>
+
+        </div> 
+      
+        <div class="submitContainer">
+
+            <a class="btn mRight10 close">@Resources.lang.goBack</a>
+
+        </div>
+    }
+
+    <button title="@Resources.lang.close (Esc)" type="button" class="mfp-close">×</button>
+
+</div>

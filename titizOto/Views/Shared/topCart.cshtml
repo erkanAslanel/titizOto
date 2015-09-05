@@ -1,0 +1,47 @@
+﻿@model topCart
+
+<div class="cartBox">
+    <a class="rightCart" href="@Url.Content("~/" + ViewData["langCode"] + "/" + Model.basketUrl )">
+        <img src="~/Content/images/basketIcon.png" /></a>
+    <div class="left">
+        <a href="@Url.Content("~/" + ViewData["langCode"] + "/" + Model.basketUrl)" class="cart">@Resources.lang.myCart</a>
+
+
+        @if (Model.isRegisteredUser)
+        {
+            <div class="fRight pRight10" style="min-width:200px">
+
+                  <a href="@Url.Content("~/" + ViewData["langCode"] + "/" + Model.basketUrl)" class="product fRight">
+                    <span>(@Model.productCount)</span> @Resources.lang.product</a>
+                <div class="user fRight">
+                    <a class="userName" href="#">@Model.nameSurname</a> | 
+                     <a href="@Url.Action("Index", "Logout", new { lang = ViewData["langCode"] })" class="logout">@Resources.lang.topCartLogout</a>
+                </div>
+
+              
+            </div>
+        }
+        else
+        {
+            <div class="container">
+                <div class="login">
+                    <a  href="@(Model.registerUrl != "#" ? Url.Content("~/" + ViewData["langCode"] + "/" + Model.registerUrl) : "#")">
+                        @Resources.lang.topCartLogin </a>| 
+                       
+                </div>
+                <div class="register">
+                    <a href="@(Model.registerUrl != "#" ? Url.Content("~/" + ViewData["langCode"] + "/" + Model.registerUrl) : "#")">
+                        @Resources.lang.topCartRegister</a>|
+                </div>
+
+                <a href="@Url.Content("~/" + ViewData["langCode"] + "/" + Model.basketUrl)" class="product">
+                    <span>(@Model.productCount)</span> @Resources.lang.product</a>
+            </div>
+        }
+
+
+    </div>
+</div>
+
+
+

@@ -1,0 +1,134 @@
+﻿@model ViewModel.Checkout.Payment.helperPaymentOption
+
+@{ 
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+
+@section cssArea{
+
+    <link href="~/Content/js/plugin/pop-up/magnific-popup.css" rel="stylesheet" />
+    <link href="~/Content/js/plugin/qTip/jquery.qtip.min.css" rel="stylesheet" />
+
+}
+
+<div class="wrapper">
+    <div class="generalMainContainer">
+        <div class="generalMainHeader contentBg">
+        </div>
+        <div class="generalMainContent contentBg">
+            <div class="innerContent">
+                <div class="clearfix"></div>
+                <div class="rightStep">
+
+                    @Html.Partial("RightStep", new ViewModel.Checkout.rightStep(Model.stepLinkList, Model.activeStep))
+
+                </div>
+
+                <div class="checkoutContainer">
+
+                    <div class="checkoutBlock mTop30">
+                        <span>1</span>
+                        <h2>@Model.stepLinkList.Where(a => a.step == ViewModel.Checkout.checkoutStep.delivery).First().name
+                        </h2>
+                    </div>
+
+                    <div class="checkoutBlock">
+                        <span>2</span>
+                        <h2>@Model.stepLinkList.Where(a => a.step == ViewModel.Checkout.checkoutStep.billing).First().name
+                        </h2>
+                    </div>
+
+
+                    <div class="checkoutBlock">
+                        <span>3</span>
+                        <h2>@Model.stepLinkList.Where(a => a.step == ViewModel.Checkout.checkoutStep.cargo).First().name
+                        </h2>
+                    </div>
+
+
+
+                    <div class="checkoutBlock active">
+                        <span>4</span>
+                        <h1>@Model.stepLinkList.Where(a => a.step == ViewModel.Checkout.checkoutStep.payment).First().name
+                        </h1>
+                    </div>
+
+                    <div class="pageContent checkoutStaticContent mLeft10">
+                        <p class="checkoutDetail">@Html.Raw(Model.detail)</p>
+                        <div class="checkoutForm mTop20">
+
+                            <ul class="paymentOption">
+
+                                @if (Model.isCredicardVisiable)
+                                { 
+                                    <li>
+                                        @Html.RadioButtonFor(a => a.paymentOptionId, (int)ViewModel.Checkout.Payment.paymentOption.creditCard) <span>@Resources.lang.checkoutCrediCard</span>
+                                        <p>@Resources.lang.checkoutCrediCardDetail</p>
+                                    </li>
+
+                                }
+
+
+                                @if (Model.isTransferVisiable)
+                                { 
+                                    <li>
+                                        @Html.RadioButtonFor(a => a.paymentOptionId, (int)ViewModel.Checkout.Payment.paymentOption.transfer) <span>@Resources.lang.checkoutTransfer @Model.transferDiscountText </span>
+                                        <p>@Resources.lang.checkoutTransferDetail</p>
+                                    </li>
+                                  
+                                }
+
+                            </ul>
+
+                            <div class="subContentPayment">
+
+                                @if (Model.isCredicardVisiable && Model.paymentOptionId == (int)ViewModel.Checkout.Payment.paymentOption.creditCard)
+                                {
+                                    @Html.Action("Credit", new { lang = ViewData["langCode"], isModal = false });
+                                }
+
+
+                                @if (Model.isTransferVisiable && Model.paymentOptionId == (int)ViewModel.Checkout.Payment.paymentOption.transfer)
+                                {
+                                    @Html.Action("Transfer", new { lang = ViewData["langCode"], isModal = false });
+                                }
+
+                            </div>
+
+                            <div class="hiddenCardOption dNone">
+
+                                @Html.Partial("CreditOptionDefault")
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="checkoutBlock">
+                        <span>5</span>
+                        <h2>@Model.stepLinkList.Where(a => a.step == ViewModel.Checkout.checkoutStep.summary).First().name
+                        </h2>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="generalMainFooter contentBg">
+        </div>
+    </div>
+</div>
+
+@section scriptArea{
+
+    <script src="~/Content/js/plugin/pop-up/jquery.magnific-popup.min.js"></script>
+    <script src="~/Content/js/plugin/qTip/imagesloaded.pkg.min.js"></script>
+    <script src="~/Content/js/plugin/qTip/jquery.qtip.min.js"></script>
+    <script src="~/Content/js/plugin/jquery.maskedinput.min.js"></script>
+    <script id="titizJs" src="~/Content/js/core.js?modul=payment"></script>
+
+}
+

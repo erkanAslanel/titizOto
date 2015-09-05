@@ -1,0 +1,30 @@
+﻿@model topCart
+
+<div class="cartBox">
+    <div class="left">
+        <a href="#" class="cart">@Resources.lang.myCart</a>
+        <div class="clearfix"></div>
+        <div>
+            @if (Model.isRegisteredUser)
+            {
+                <div class="user">
+                    <a href="#">@Model.nameSurname</a> | 
+                </div>
+            }
+            else
+            {
+                <div class="login">
+                    <a href="#">Giriş Yap </a>| 
+                </div> 
+                <div class="register">
+                    <a href="#">Kayıt Ol </a> |
+                </div> 
+            }
+
+            <a href="#" class="product"><span>(@Model.productCount)</span> @Resources.lang.product</a>
+        </div>
+    </div>
+    <a class="rightCart">
+        <img src="Content/images/basketIcon.png" /></a>
+
+</div>

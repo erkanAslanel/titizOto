@@ -1,0 +1,200 @@
+﻿@model ViewModel.Basket.helperBasket
+
+@{
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+
+<div class="wrapper">
+    <div class="generalMainContainer">
+        <div class="generalMainHeader contentBg">
+        </div>
+        <div class="generalMainContent contentBg" style="min-height: 306px;">
+
+            <div class="innerContent">
+                <div class="clearfix"></div>
+
+                @Html.Partial("breadCrumb", Model.breadCrumbItem)
+
+                @if (Model.isBasketExist)
+                {  
+                    <div class="wrapper">
+                        <div class="basketWrapper">
+                          
+                            @if (Model.isMessageExist)
+                            {
+                                @Html.Raw(Model.message)
+                            }
+
+                            <div class="basketContent">
+                                <div class="header">
+                                    <div class="item text photo"><span>Ürün</span> </div>
+                                    <div class="item text description"><span>Açıklama</span></div>
+                                    <div class="item text price"><span>Fiyat</span></div>
+                                    <div class="item text count"><span>Adet</span></div>
+                                    <div class="item text delete"><span>Sil</span></div>
+                                    <div class="item text total"><span>Toplam</span></div>
+                                </div>
+                                <div class="clearfix"></div>
+
+                                @using (Html.BeginForm("Update", "Basket", new { lang = ViewData["langCode"] }, FormMethod.Post,
+                                      new { enctype = "multipart/form-data" }))
+                                {
+                                    <div class="tableContent">
+                                        @foreach (var item in Model.basketList)
+                                        {
+                                            <div class="itemContainer">
+                                                <div class="item photo">
+                                                    <div class="table">
+                                                        <div class="tableCellVertical">
+                                                            <img src="~/@item.photo" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="item description">
+                                                    <div class="table">
+                                                        <div class="tableCellVertical">@Html.Raw(item.productDescriptionWithOptionItem)</div>
+                                                    </div>
+                                                </div>
+                                                <div class="item price">
+
+                                                    <div class="table">
+                                                        <div class="tableCellVertical">@item.productPriceDec.ToString("F2", Model.priceStringFormat)
+                                                            TL
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="item count">
+
+
+                                                    <div class="table">
+                                                        <div class="tableCellVertical">
+                                                            <input type="text" class="quantityBox" name="quantityBox_@item.basketId" value="@item.quantity" />
+                                                            <input type="submit" value="Güncelle" name="quantityUpdate_@item.basketId" class="quantitySubmit chromeBtn" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="item delete">
+                                                    <div class="table">
+                                                        <div class="tableCellVertical">
+                                                            <button type="submit" class="basketDelete" name="delete_@item.basketId">
+                                                                <img src="~/Content/images/delete.png" /></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="item total">
+                                                    <div class="table">
+                                                        <div class="tableCellVertical">@item.productTotalPriceDec.ToString("F2", Model.priceStringFormat)
+                                                            TL
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    </div>
+                                    <div class="clearfix"></div>
+
+                                        if (Model.isDiscountExist)
+                                        {
+                                            foreach (var item in Model.discountList)
+                                            {
+                                    <div class="tableFooter">
+                                        <div class="itemContainer">
+                                            <div class="total">
+                                                <div class="price">
+                                                    <span style="font-weight: normal">@item.discountAmount.ToString("F2", Model.priceStringFormat)
+                                                        TL</span>
+                                                </div>
+                                                <div class="text">
+                                                    <span style="font-weight: normal">@item.name @(!string.IsNullOrWhiteSpace(item.description) ? " - " + item.description : "")
+
+                                                        <input type="submit" name="deleteDiscount_@item.discountId" class="chromeBtn" value="@Resources.lang.delete" />
+                                                    </span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                                            }
+                                        }
+                                }
+
+                                @if (Model.isBasketExist)
+                                {
+                                    using (Html.BeginForm("AddDiscount", "Basket", new { lang = ViewData["langCode"] }, FormMethod.Post,
+                                      new { enctype = "multipart/form-data" }))
+                                    {
+                                    <div class="tableFooter">
+                                        <div class="itemContainer">
+                                            <div class="total">
+                                                <div class="price">
+
+
+                                                    <span>@Model.totalPriceStr TL</span>
+                                                </div>
+                                                <div class="text">
+
+                                                    <div class="discountBox">
+                                                        <input name="discountCode" type="text" value="" placeholder="İndirim kupon kodunu giriniz" />
+                                                        <input type="submit" class="chromeBtn" name="discountCodeAdd" value="Ekle" />
+
+                                                    </div>
+                                                    <span>Ürün Toplam (Kdv Dahil) </span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    }
+                                }
+
+                                <div class="clearfix"></div>
+
+                            </div>
+
+                            <div class="basketBtn">
+                                <a class="btn btnMiddle fLeft" href="@Model.continueShopUrl">@Resources.lang.basketContinueShopping</a>
+                                @if (Model.isBasketExist)
+                                { 
+                                    <a class="btn btnMiddle fRight greenBg" href="~/@Model.checkoutUrl">@Resources.lang.basketCheckout</a>
+                                }
+
+                                <a class="btn btnMiddle fRight mRight20" href="@Url.Content("~/" + ViewData["langCode"] + "/" + Model.updateBasketUrl + ".html")">
+                                    @Resources.lang.basketUpdate </a>
+                                <div class="clearfix"></div>
+                            </div>
+
+                        </div>
+                    </div> 
+                }
+
+                else
+                { 
+                    <div class="noBasket">
+                        <div class="noBasketInner">
+
+                            <a href="@Model.continueShopUrl" class="title">@Resources.lang.basketEmtyText1 </a>
+
+                            <p>
+
+
+                                @Resources.lang.basketEmtyText2
+                            </p>
+                        </div>
+
+                    </div>
+                }
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="generalMainFooter contentBg"></div>
+    </div>
+</div>
+
+@section scriptArea{
+
+    <script id="titizJs" src="~/Content/js/core.js?modul=basket"></script>
+
+}

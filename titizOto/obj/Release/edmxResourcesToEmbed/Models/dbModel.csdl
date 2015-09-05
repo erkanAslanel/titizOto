@@ -1,0 +1,732 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="titizOtoModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="titizOtoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_address" EntityType="titizOtoModel.tbl_address" />
+    <EntitySet Name="tbl_adminRole" EntityType="titizOtoModel.tbl_adminRole" />
+    <EntitySet Name="tbl_adminUser" EntityType="titizOtoModel.tbl_adminUser" />
+    <EntitySet Name="tbl_bank" EntityType="titizOtoModel.tbl_bank" />
+    <EntitySet Name="tbl_bankEft" EntityType="titizOtoModel.tbl_bankEft" />
+    <EntitySet Name="tbl_bankPos" EntityType="titizOtoModel.tbl_bankPos" />
+    <EntitySet Name="tbl_brand" EntityType="titizOtoModel.tbl_brand" />
+    <EntitySet Name="tbl_business" EntityType="titizOtoModel.tbl_business" />
+    <EntitySet Name="tbl_carBrand" EntityType="titizOtoModel.tbl_carBrand" />
+    <EntitySet Name="tbl_cargo" EntityType="titizOtoModel.tbl_cargo" />
+    <EntitySet Name="tbl_carModel" EntityType="titizOtoModel.tbl_carModel" />
+    <EntitySet Name="tbl_carModelProduct" EntityType="titizOtoModel.tbl_carModelProduct" />
+    <EntitySet Name="tbl_cart" EntityType="titizOtoModel.tbl_cart" />
+    <EntitySet Name="tbl_category" EntityType="titizOtoModel.tbl_category" />
+    <EntitySet Name="tbl_gallery" EntityType="titizOtoModel.tbl_gallery" />
+    <EntitySet Name="tbl_order" EntityType="titizOtoModel.tbl_order" />
+    <EntitySet Name="tbl_orderDetail" EntityType="titizOtoModel.tbl_orderDetail" />
+    <EntitySet Name="tbl_page" EntityType="titizOtoModel.tbl_page" />
+    <EntitySet Name="tbl_payInfo" EntityType="titizOtoModel.tbl_payInfo" />
+    <EntitySet Name="tbl_product" EntityType="titizOtoModel.tbl_product" />
+    <EntitySet Name="tbl_settings" EntityType="titizOtoModel.tbl_settings" />
+    <EntitySet Name="tbl_slider" EntityType="titizOtoModel.tbl_slider" />
+    <EntitySet Name="tbl_user" EntityType="titizOtoModel.tbl_user" />
+    <AssociationSet Name="FK_tbl_address_tbl_user" Association="titizOtoModel.FK_tbl_address_tbl_user">
+      <End Role="tbl_user" EntitySet="tbl_user" />
+      <End Role="tbl_address" EntitySet="tbl_address" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_adminUser_tbl_adminRole" Association="titizOtoModel.FK_tbl_adminUser_tbl_adminRole">
+      <End Role="tbl_adminRole" EntitySet="tbl_adminRole" />
+      <End Role="tbl_adminUser" EntitySet="tbl_adminUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_bankEft_tbl_bank" Association="titizOtoModel.FK_tbl_bankEft_tbl_bank">
+      <End Role="tbl_bank" EntitySet="tbl_bank" />
+      <End Role="tbl_bankEft" EntitySet="tbl_bankEft" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_bankPos_tbl_bank" Association="titizOtoModel.FK_tbl_bankPos_tbl_bank">
+      <End Role="tbl_bank" EntitySet="tbl_bank" />
+      <End Role="tbl_bankPos" EntitySet="tbl_bankPos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_product_tbl_brand" Association="titizOtoModel.FK_tbl_product_tbl_brand">
+      <End Role="tbl_brand" EntitySet="tbl_brand" />
+      <End Role="tbl_product" EntitySet="tbl_product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_product_tbl_business" Association="titizOtoModel.FK_tbl_product_tbl_business">
+      <End Role="tbl_business" EntitySet="tbl_business" />
+      <End Role="tbl_product" EntitySet="tbl_product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_carModel_tbl_carBrand" Association="titizOtoModel.FK_tbl_carModel_tbl_carBrand">
+      <End Role="tbl_carBrand" EntitySet="tbl_carBrand" />
+      <End Role="tbl_carModel" EntitySet="tbl_carModel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_order_tbl_cargo" Association="titizOtoModel.FK_tbl_order_tbl_cargo">
+      <End Role="tbl_cargo" EntitySet="tbl_cargo" />
+      <End Role="tbl_order" EntitySet="tbl_order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_carModelProduct_tbl_carModel" Association="titizOtoModel.FK_tbl_carModelProduct_tbl_carModel">
+      <End Role="tbl_carModel" EntitySet="tbl_carModel" />
+      <End Role="tbl_carModelProduct" EntitySet="tbl_carModelProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_carModelProduct_tbl_product" Association="titizOtoModel.FK_tbl_carModelProduct_tbl_product">
+      <End Role="tbl_product" EntitySet="tbl_product" />
+      <End Role="tbl_carModelProduct" EntitySet="tbl_carModelProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_cart_tbl_product" Association="titizOtoModel.FK_tbl_cart_tbl_product">
+      <End Role="tbl_product" EntitySet="tbl_product" />
+      <End Role="tbl_cart" EntitySet="tbl_cart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_cart_tbl_user" Association="titizOtoModel.FK_tbl_cart_tbl_user">
+      <End Role="tbl_user" EntitySet="tbl_user" />
+      <End Role="tbl_cart" EntitySet="tbl_cart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_page_tbl_category" Association="titizOtoModel.FK_tbl_page_tbl_category">
+      <End Role="tbl_category" EntitySet="tbl_category" />
+      <End Role="tbl_page" EntitySet="tbl_page" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_gallery_tbl_product" Association="titizOtoModel.FK_tbl_gallery_tbl_product">
+      <End Role="tbl_product" EntitySet="tbl_product" />
+      <End Role="tbl_gallery" EntitySet="tbl_gallery" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_order_tbl_user" Association="titizOtoModel.FK_tbl_order_tbl_user">
+      <End Role="tbl_user" EntitySet="tbl_user" />
+      <End Role="tbl_order" EntitySet="tbl_order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_orderDetail_tbl_order" Association="titizOtoModel.FK_tbl_orderDetail_tbl_order">
+      <End Role="tbl_order" EntitySet="tbl_order" />
+      <End Role="tbl_orderDetail" EntitySet="tbl_orderDetail" />
+    </AssociationSet>
+    <EntitySet Name="tbl_module" EntityType="titizOtoModel.tbl_module" />
+    <EntitySet Name="tbl_critear" EntityType="titizOtoModel.tbl_critear" />
+    <EntitySet Name="tbl_productCritear" EntityType="titizOtoModel.tbl_productCritear" />
+    <AssociationSet Name="FK_tbl_productCritear_tbl_critear" Association="titizOtoModel.FK_tbl_productCritear_tbl_critear">
+      <End Role="tbl_critear" EntitySet="tbl_critear" />
+      <End Role="tbl_productCritear" EntitySet="tbl_productCritear" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_productCritear_tbl_product" Association="titizOtoModel.FK_tbl_productCritear_tbl_product">
+      <End Role="tbl_product" EntitySet="tbl_product" />
+      <End Role="tbl_productCritear" EntitySet="tbl_productCritear" />
+    </AssociationSet>
+    <EntitySet Name="tbl_stock" EntityType="titizOtoModel.tbl_stock" />
+    <AssociationSet Name="FK_tbl_stock_tbl_product" Association="titizOtoModel.FK_tbl_stock_tbl_product">
+      <End Role="tbl_product" EntitySet="tbl_product" />
+      <End Role="tbl_stock" EntitySet="tbl_stock" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_stock_tbl_critear" Association="titizOtoModel.FK_tbl_stock_tbl_critear">
+      <End Role="tbl_critear" EntitySet="tbl_critear" />
+      <End Role="tbl_stock" EntitySet="tbl_stock" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_gallery_tbl_critear" Association="titizOtoModel.FK_tbl_gallery_tbl_critear">
+      <End Role="tbl_critear" EntitySet="tbl_critear" />
+      <End Role="tbl_gallery" EntitySet="tbl_gallery" />
+    </AssociationSet>
+    <EntitySet Name="tbl_newsletterUser" EntityType="titizOtoModel.tbl_newsletterUser" />
+  </EntityContainer>
+  <EntityType Name="tbl_address">
+    <Key>
+      <PropertyRef Name="addressId" />
+    </Key>
+    <Property Type="Int32" Name="addressId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="isPersonal" Nullable="false" />
+    <Property Type="Int32" Name="userId" Nullable="false" />
+    <Property Type="Boolean" Name="isDeleted" Nullable="false" />
+    <NavigationProperty Name="tbl_user" Relationship="titizOtoModel.FK_tbl_address_tbl_user" FromRole="tbl_address" ToRole="tbl_user" />
+  </EntityType>
+  <EntityType Name="tbl_adminRole">
+    <Key>
+      <PropertyRef Name="roleId" />
+    </Key>
+    <Property Type="Int32" Name="roleId" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_adminUser" Relationship="titizOtoModel.FK_tbl_adminUser_tbl_adminRole" FromRole="tbl_adminRole" ToRole="tbl_adminUser" />
+  </EntityType>
+  <EntityType Name="tbl_adminUser">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Type="Int32" Name="userId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="email" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="password" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="enterDate" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="adminRoleId" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="surname" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_adminRole" Relationship="titizOtoModel.FK_tbl_adminUser_tbl_adminRole" FromRole="tbl_adminUser" ToRole="tbl_adminRole" />
+  </EntityType>
+  <EntityType Name="tbl_bank">
+    <Key>
+      <PropertyRef Name="bankId" />
+    </Key>
+    <Property Type="Int32" Name="bankId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_bankEft" Relationship="titizOtoModel.FK_tbl_bankEft_tbl_bank" FromRole="tbl_bank" ToRole="tbl_bankEft" />
+    <NavigationProperty Name="tbl_bankPos" Relationship="titizOtoModel.FK_tbl_bankPos_tbl_bank" FromRole="tbl_bank" ToRole="tbl_bankPos" />
+  </EntityType>
+  <EntityType Name="tbl_bankEft">
+    <Key>
+      <PropertyRef Name="bankEftId" />
+    </Key>
+    <Property Type="Int32" Name="bankEftId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="bankId" Nullable="false" />
+    <NavigationProperty Name="tbl_bank" Relationship="titizOtoModel.FK_tbl_bankEft_tbl_bank" FromRole="tbl_bankEft" ToRole="tbl_bank" />
+  </EntityType>
+  <EntityType Name="tbl_bankPos">
+    <Key>
+      <PropertyRef Name="bankPosId" />
+    </Key>
+    <Property Type="Int32" Name="bankPosId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="bankId" Nullable="false" />
+    <NavigationProperty Name="tbl_bank" Relationship="titizOtoModel.FK_tbl_bankPos_tbl_bank" FromRole="tbl_bankPos" ToRole="tbl_bank" />
+  </EntityType>
+  <EntityType Name="tbl_brand">
+    <Key>
+      <PropertyRef Name="brandId" />
+    </Key>
+    <Property Type="Int32" Name="brandId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_product" Relationship="titizOtoModel.FK_tbl_product_tbl_brand" FromRole="tbl_brand" ToRole="tbl_product" />
+  </EntityType>
+  <EntityType Name="tbl_business">
+    <Key>
+      <PropertyRef Name="businessId" />
+    </Key>
+    <Property Type="Int32" Name="businessId" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_product" Relationship="titizOtoModel.FK_tbl_product_tbl_business" FromRole="tbl_business" ToRole="tbl_product" />
+  </EntityType>
+  <EntityType Name="tbl_carBrand">
+    <Key>
+      <PropertyRef Name="carBrandId" />
+    </Key>
+    <Property Type="Int32" Name="carBrandId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="url" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="statu" Nullable="false" />
+    <Property Type="Int32" Name="sequence" Nullable="false" />
+    <Property Type="Boolean" Name="isManuelUrl" Nullable="false" />
+    <Property Type="String" Name="photo" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="photoCoordinate" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="langId" Nullable="false" />
+    <Property Type="Boolean" Name="isMainPageShown" Nullable="false" />
+    <NavigationProperty Name="tbl_carModel" Relationship="titizOtoModel.FK_tbl_carModel_tbl_carBrand" FromRole="tbl_carBrand" ToRole="tbl_carModel" />
+  </EntityType>
+  <EntityType Name="tbl_cargo">
+    <Key>
+      <PropertyRef Name="cargoId" />
+    </Key>
+    <Property Type="Int32" Name="cargoId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Decimal" Name="price" Nullable="false" Precision="10" Scale="2" />
+    <Property Type="Decimal" Name="freeCargoPrice" Nullable="false" Precision="10" Scale="2" />
+    <Property Type="String" Name="photo" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="photoCoordinate" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_order" Relationship="titizOtoModel.FK_tbl_order_tbl_cargo" FromRole="tbl_cargo" ToRole="tbl_order" />
+  </EntityType>
+  <EntityType Name="tbl_carModel">
+    <Key>
+      <PropertyRef Name="carModelId" />
+    </Key>
+    <Property Type="Int32" Name="carModelId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="carBrandId" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="url" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="statu" Nullable="false" />
+    <Property Type="Int32" Name="sequence" Nullable="false" />
+    <Property Type="Boolean" Name="isManuelUrl" Nullable="false" />
+    <Property Type="Int32" Name="langId" Nullable="false" />
+    <NavigationProperty Name="tbl_carBrand" Relationship="titizOtoModel.FK_tbl_carModel_tbl_carBrand" FromRole="tbl_carModel" ToRole="tbl_carBrand" />
+    <NavigationProperty Name="tbl_carModelProduct" Relationship="titizOtoModel.FK_tbl_carModelProduct_tbl_carModel" FromRole="tbl_carModel" ToRole="tbl_carModelProduct" />
+  </EntityType>
+  <EntityType Name="tbl_carModelProduct">
+    <Key>
+      <PropertyRef Name="carModelProductId" />
+    </Key>
+    <Property Type="Int32" Name="carModelProductId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="productId" Nullable="false" />
+    <Property Type="Int32" Name="carModelId" Nullable="false" />
+    <Property Type="Int32" Name="sequence" Nullable="false" />
+    <NavigationProperty Name="tbl_carModel" Relationship="titizOtoModel.FK_tbl_carModelProduct_tbl_carModel" FromRole="tbl_carModelProduct" ToRole="tbl_carModel" />
+    <NavigationProperty Name="tbl_product" Relationship="titizOtoModel.FK_tbl_carModelProduct_tbl_product" FromRole="tbl_carModelProduct" ToRole="tbl_product" />
+  </EntityType>
+  <EntityType Name="tbl_cart">
+    <Key>
+      <PropertyRef Name="cartId" />
+    </Key>
+    <Property Type="Int32" Name="cartId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="userId" Nullable="false" />
+    <Property Type="String" Name="guestGuid" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="productId" Nullable="false" />
+    <Property Type="Int32" Name="productCount" Nullable="false" />
+    <Property Type="Int32" Name="critearId" Nullable="false" />
+    <NavigationProperty Name="tbl_product" Relationship="titizOtoModel.FK_tbl_cart_tbl_product" FromRole="tbl_cart" ToRole="tbl_product" />
+    <NavigationProperty Name="tbl_user" Relationship="titizOtoModel.FK_tbl_cart_tbl_user" FromRole="tbl_cart" ToRole="tbl_user" />
+  </EntityType>
+  <EntityType Name="tbl_category">
+    <Key>
+      <PropertyRef Name="categoryId" />
+    </Key>
+    <Property Type="Int32" Name="categoryId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="langId" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="parentId" Nullable="false" />
+    <Property Type="Int32" Name="sequence" Nullable="false" />
+    <Property Type="Boolean" Name="statu" Nullable="false" />
+    <Property Type="Boolean" Name="isMainMenuShown" Nullable="false" />
+    <Property Type="Boolean" Name="isFooterMenuShown" Nullable="false" />
+    <NavigationProperty Name="tbl_page" Relationship="titizOtoModel.FK_tbl_page_tbl_category" FromRole="tbl_category" ToRole="tbl_page" />
+  </EntityType>
+  <EntityType Name="tbl_gallery">
+    <Key>
+      <PropertyRef Name="galleryId" />
+    </Key>
+    <Property Type="Int32" Name="galleryId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="productId" Nullable="false" />
+    <Property Type="String" Name="photo" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="photoCoordinate" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="sequence" Nullable="false" />
+    <Property Type="Boolean" Name="statu" Nullable="false" />
+    <NavigationProperty Name="tbl_product" Relationship="titizOtoModel.FK_tbl_gallery_tbl_product" FromRole="tbl_gallery" ToRole="tbl_product" />
+    <Property Type="String" Name="guid" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="critearId" Nullable="false" />
+    <NavigationProperty Name="tbl_critear" Relationship="titizOtoModel.FK_tbl_gallery_tbl_critear" FromRole="tbl_gallery" ToRole="tbl_critear" />
+  </EntityType>
+  <EntityType Name="tbl_order">
+    <Key>
+      <PropertyRef Name="orderId" />
+    </Key>
+    <Property Type="Int32" Name="orderId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="orderNo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="cargoId" Nullable="false" />
+    <Property Type="Int32" Name="userId" Nullable="false" />
+    <Property Type="Int32" Name="addressId" Nullable="false" />
+    <Property Type="Int32" Name="paymentTypeId" Nullable="false" />
+    <Property Type="Decimal" Name="cargoPrice" Nullable="false" Precision="10" Scale="2" />
+    <Property Type="Int32" Name="orderStatu" Nullable="false" />
+    <Property Type="Int32" Name="orderMailStatu" Nullable="false" />
+    <Property Type="Decimal" Name="totalPrice" Nullable="false" Precision="10" Scale="2" />
+    <NavigationProperty Name="tbl_cargo" Relationship="titizOtoModel.FK_tbl_order_tbl_cargo" FromRole="tbl_order" ToRole="tbl_cargo" />
+    <NavigationProperty Name="tbl_user" Relationship="titizOtoModel.FK_tbl_order_tbl_user" FromRole="tbl_order" ToRole="tbl_user" />
+    <NavigationProperty Name="tbl_orderDetail" Relationship="titizOtoModel.FK_tbl_orderDetail_tbl_order" FromRole="tbl_order" ToRole="tbl_orderDetail" />
+  </EntityType>
+  <EntityType Name="tbl_orderDetail">
+    <Key>
+      <PropertyRef Name="orderDetailId" />
+    </Key>
+    <Property Type="Int32" Name="orderDetailId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="productId" Nullable="false" />
+    <Property Type="Int32" Name="quantity" Nullable="false" />
+    <Property Type="Decimal" Name="productPrice" Nullable="false" Precision="10" Scale="2" />
+    <Property Type="Int32" Name="orderId" Nullable="false" />
+    <Property Type="Int32" Name="critearId" Nullable="false" />
+    <NavigationProperty Name="tbl_order" Relationship="titizOtoModel.FK_tbl_orderDetail_tbl_order" FromRole="tbl_orderDetail" ToRole="tbl_order" />
+  </EntityType>
+  <EntityType Name="tbl_page">
+    <Key>
+      <PropertyRef Name="pageId" />
+    </Key>
+    <Property Type="Int32" Name="pageId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="url" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="langId" Nullable="false" />
+    <Property Type="String" Name="title" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="metaKeyword" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="metaDescription" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="categoryId" Nullable="false" />
+    <Property Type="Int32" Name="sequence" Nullable="false" />
+    <Property Type="Boolean" Name="statu" Nullable="false" />
+    <NavigationProperty Name="tbl_category" Relationship="titizOtoModel.FK_tbl_page_tbl_category" FromRole="tbl_page" ToRole="tbl_category" />
+    <Property Type="Int32" Name="pageTypeId" Nullable="false" />
+    <Property Type="String" Name="redirectPageUrl" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="isManuelUrl" Nullable="false" />
+    <Property Type="String" Name="detail" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="isHelperUrl" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_payInfo">
+    <Key>
+      <PropertyRef Name="payInfoId" />
+    </Key>
+    <Property Type="Int32" Name="payInfoId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="userId" Nullable="false" />
+    <Property Type="DateTime" Name="payTime" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="processId" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_product">
+    <Key>
+      <PropertyRef Name="productId" />
+    </Key>
+    <Property Type="Int32" Name="productId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Boolean" Name="isDeleted" Nullable="false" />
+    <Property Type="Int32" Name="brandId" Nullable="false" />
+    <Property Type="Int32" Name="businessId" Nullable="false" />
+    <NavigationProperty Name="tbl_brand" Relationship="titizOtoModel.FK_tbl_product_tbl_brand" FromRole="tbl_product" ToRole="tbl_brand" />
+    <NavigationProperty Name="tbl_business" Relationship="titizOtoModel.FK_tbl_product_tbl_business" FromRole="tbl_product" ToRole="tbl_business" />
+    <NavigationProperty Name="tbl_carModelProduct" Relationship="titizOtoModel.FK_tbl_carModelProduct_tbl_product" FromRole="tbl_product" ToRole="tbl_carModelProduct" />
+    <NavigationProperty Name="tbl_cart" Relationship="titizOtoModel.FK_tbl_cart_tbl_product" FromRole="tbl_product" ToRole="tbl_cart" />
+    <NavigationProperty Name="tbl_gallery" Relationship="titizOtoModel.FK_tbl_gallery_tbl_product" FromRole="tbl_product" ToRole="tbl_gallery" />
+    <Property Type="Boolean" Name="statu" Nullable="false" />
+    <Property Type="Int32" Name="sequence" Nullable="false" />
+    <Property Type="Decimal" Name="price" Nullable="false" Precision="10" Scale="2" />
+    <Property Type="Boolean" Name="isTaxInclude" Nullable="false" />
+    <Property Type="Int32" Name="taxPercent" Nullable="false" />
+    <Property Type="Decimal" Name="discountPrice" Nullable="false" Precision="10" Scale="2" />
+    <Property Type="Boolean" Name="isDiscountPriceActive" Nullable="false" />
+    <Property Type="String" Name="shortDescription" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="detail" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="metaKeyword" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="metaDescription" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="title" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="url" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="isManuelUrl" Nullable="false" />
+    <Property Type="Int32" Name="langId" Nullable="false" />
+    <Property Type="Boolean" Name="isShowCase" Nullable="false" />
+    <NavigationProperty Name="tbl_productCritear" Relationship="titizOtoModel.FK_tbl_productCritear_tbl_product" FromRole="tbl_product" ToRole="tbl_productCritear" />
+    <NavigationProperty Name="tbl_stock" Relationship="titizOtoModel.FK_tbl_stock_tbl_product" FromRole="tbl_product" ToRole="tbl_stock" />
+  </EntityType>
+  <EntityType Name="tbl_settings">
+    <Key>
+      <PropertyRef Name="settingsId" />
+    </Key>
+    <Property Type="Int32" Name="settingsId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="langId" Nullable="false" />
+    <Property Type="String" Name="mailUserName" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="mailPassword" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="mailPort" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="mailSentName" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="mailSentAddress" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="mailReceiverAddress" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="mailSmtpServer" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="metaDescription" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="metaDescriptionAdditional" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="mainPageTitle" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="allPageTitle" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_slider">
+    <Key>
+      <PropertyRef Name="sliderId" />
+    </Key>
+    <Property Type="Int32" Name="sliderId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="langId" Nullable="false" />
+    <Property Type="String" Name="title" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="subTitle" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="isUrlActive" Nullable="false" />
+    <Property Type="String" Name="urlText" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="statu" Nullable="false" />
+    <Property Type="Int32" Name="sequence" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="photo" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_user">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Type="Int32" Name="userId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="surname" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_address" Relationship="titizOtoModel.FK_tbl_address_tbl_user" FromRole="tbl_user" ToRole="tbl_address" />
+    <NavigationProperty Name="tbl_cart" Relationship="titizOtoModel.FK_tbl_cart_tbl_user" FromRole="tbl_user" ToRole="tbl_cart" />
+    <NavigationProperty Name="tbl_order" Relationship="titizOtoModel.FK_tbl_order_tbl_user" FromRole="tbl_user" ToRole="tbl_order" />
+  </EntityType>
+  <Association Name="FK_tbl_address_tbl_user">
+    <End Type="titizOtoModel.tbl_user" Role="tbl_user" Multiplicity="1" />
+    <End Type="titizOtoModel.tbl_address" Role="tbl_address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_user">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="tbl_address">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_adminUser_tbl_adminRole">
+    <End Type="titizOtoModel.tbl_adminRole" Role="tbl_adminRole" Multiplicity="1" />
+    <End Type="titizOtoModel.tbl_adminUser" Role="tbl_adminUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_adminRole">
+        <PropertyRef Name="roleId" />
+      </Principal>
+      <Dependent Role="tbl_adminUser">
+        <PropertyRef Name="adminRoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_bankEft_tbl_bank">
+    <End Type="titizOtoModel.tbl_bank" Role="tbl_bank" Multiplicity="1" />
+    <End Type="titizOtoModel.tbl_bankEft" Role="tbl_bankEft" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_bank">
+        <PropertyRef Name="bankId" />
+      </Principal>
+      <Dependent Role="tbl_bankEft">
+        <PropertyRef Name="bankId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_bankPos_tbl_bank">
+    <End Type="titizOtoModel.tbl_bank" Role="tbl_bank" Multiplicity="1" />
+    <End Type="titizOtoModel.tbl_bankPos" Role="tbl_bankPos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_bank">
+        <PropertyRef Name="bankId" />
+      </Principal>
+      <Dependent Role="tbl_bankPos">
+        <PropertyRef Name="bankId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_product_tbl_brand">
+    <End Type="titizOtoModel.tbl_brand" Role="tbl_brand" Multiplicity="1" />
+    <End Type="titizOtoModel.tbl_product" Role="tbl_product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_brand">
+        <PropertyRef Name="brandId" />
+      </Principal>
+      <Dependent Role="tbl_product">
+        <PropertyRef Name="brandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_product_tbl_business">
+    <End Type="titizOtoModel.tbl_business" Role="tbl_business" Multiplicity="1" />
+    <End Type="titizOtoModel.tbl_product" Role="tbl_product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_business">
+        <PropertyRef Name="businessId" />
+      </Principal>
+      <Dependent Role="tbl_product">
+        <PropertyRef Name="businessId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_carModel_tbl_carBrand">
+    <End Type="titizOtoModel.tbl_carBrand" Role="tbl_carBrand" Multiplicity="1" />
+    <End Type="titizOtoModel.tbl_carModel" Role="tbl_carModel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_carBrand">
+        <PropertyRef Name="carBrandId" />
+      </Principal>
+      <Dependent Role="tbl_carModel">
+        <PropertyRef Name="carBrandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_order_tbl_cargo">
+    <End Type="titizOtoModel.tbl_cargo" Role="tbl_cargo" Multiplicity="1" />
+    <End Type="titizOtoModel.tbl_order" Role="tbl_order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_cargo">
+        <PropertyRef Name="cargoId" />
+      </Principal>
+      <Dependent Role="tbl_order">
+        <PropertyRef Name="cargoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_carModelProduct_tbl_carModel">
+    <End Type="titizOtoModel.tbl_carModel" Role="tbl_carModel" Multiplicity="1" />
+    <End Type="titizOtoModel.tbl_carModelProduct" Role="tbl_carModelProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_carModel">
+        <PropertyRef Name="carModelId" />
+      </Principal>
+      <Dependent Role="tbl_carModelProduct">
+        <PropertyRef Name="carModelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_carModelProduct_tbl_product">
+    <End Type="titizOtoModel.tbl_product" Role="tbl_product" Multiplicity="1" />
+    <End Type="titizOtoModel.tbl_carModelProduct" Role="tbl_carModelProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_product">
+        <PropertyRef Name="productId" />
+      </Principal>
+      <Dependent Role="tbl_carModelProduct">
+        <PropertyRef Name="productId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_cart_tbl_product">
+    <End Type="titizOtoModel.tbl_product" Role="tbl_product" Multiplicity="1" />
+    <End Type="titizOtoModel.tbl_cart" Role="tbl_cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_product">
+        <PropertyRef Name="productId" />
+      </Principal>
+      <Dependent Role="tbl_cart">
+        <PropertyRef Name="productId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_cart_tbl_user">
+    <End Type="titizOtoModel.tbl_user" Role="tbl_user" Multiplicity="1" />
+    <End Type="titizOtoModel.tbl_cart" Role="tbl_cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_user">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="tbl_cart">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_page_tbl_category">
+    <End Type="titizOtoModel.tbl_category" Role="tbl_category" Multiplicity="1" />
+    <End Type="titizOtoModel.tbl_page" Role="tbl_page" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_category">
+        <PropertyRef Name="categoryId" />
+      </Principal>
+      <Dependent Role="tbl_page">
+        <PropertyRef Name="categoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_gallery_tbl_product">
+    <End Type="titizOtoModel.tbl_product" Role="tbl_product" Multiplicity="1" />
+    <End Type="titizOtoModel.tbl_gallery" Role="tbl_gallery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_product">
+        <PropertyRef Name="productId" />
+      </Principal>
+      <Dependent Role="tbl_gallery">
+        <PropertyRef Name="productId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_order_tbl_user">
+    <End Type="titizOtoModel.tbl_user" Role="tbl_user" Multiplicity="1" />
+    <End Type="titizOtoModel.tbl_order" Role="tbl_order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_user">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="tbl_order">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_orderDetail_tbl_order">
+    <End Type="titizOtoModel.tbl_order" Role="tbl_order" Multiplicity="1" />
+    <End Type="titizOtoModel.tbl_orderDetail" Role="tbl_orderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_order">
+        <PropertyRef Name="orderId" />
+      </Principal>
+      <Dependent Role="tbl_orderDetail">
+        <PropertyRef Name="orderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tbl_module">
+    <Key>
+      <PropertyRef Name="moduleId" />
+    </Key>
+    <Property Type="Int32" Name="moduleId" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="htmlContent" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="tag" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_critear">
+    <Key>
+      <PropertyRef Name="critearId" />
+    </Key>
+    <Property Type="Int32" Name="critearId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="parentId" Nullable="false" />
+    <Property Type="Int32" Name="sequence" Nullable="false" />
+    <Property Type="Boolean" Name="statu" Nullable="false" />
+    <NavigationProperty Name="tbl_productCritear" Relationship="titizOtoModel.FK_tbl_productCritear_tbl_critear" FromRole="tbl_critear" ToRole="tbl_productCritear" />
+    <NavigationProperty Name="tbl_stock" Relationship="titizOtoModel.FK_tbl_stock_tbl_critear" FromRole="tbl_critear" ToRole="tbl_stock" />
+    <NavigationProperty Name="tbl_gallery" Relationship="titizOtoModel.FK_tbl_gallery_tbl_critear" FromRole="tbl_critear" ToRole="tbl_gallery" />
+  </EntityType>
+  <EntityType Name="tbl_productCritear">
+    <Key>
+      <PropertyRef Name="productCritearId" />
+    </Key>
+    <Property Type="Int32" Name="productCritearId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="productId" Nullable="false" />
+    <Property Type="Int32" Name="critearId" Nullable="false" />
+    <Property Type="Int32" Name="sequence" Nullable="false" />
+    <NavigationProperty Name="tbl_critear" Relationship="titizOtoModel.FK_tbl_productCritear_tbl_critear" FromRole="tbl_productCritear" ToRole="tbl_critear" />
+    <NavigationProperty Name="tbl_product" Relationship="titizOtoModel.FK_tbl_productCritear_tbl_product" FromRole="tbl_productCritear" ToRole="tbl_product" />
+  </EntityType>
+  <Association Name="FK_tbl_productCritear_tbl_critear">
+    <End Type="titizOtoModel.tbl_critear" Role="tbl_critear" Multiplicity="1" />
+    <End Type="titizOtoModel.tbl_productCritear" Role="tbl_productCritear" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_critear">
+        <PropertyRef Name="critearId" />
+      </Principal>
+      <Dependent Role="tbl_productCritear">
+        <PropertyRef Name="critearId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_productCritear_tbl_product">
+    <End Type="titizOtoModel.tbl_product" Role="tbl_product" Multiplicity="1" />
+    <End Type="titizOtoModel.tbl_productCritear" Role="tbl_productCritear" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_product">
+        <PropertyRef Name="productId" />
+      </Principal>
+      <Dependent Role="tbl_productCritear">
+        <PropertyRef Name="productId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tbl_stock">
+    <Key>
+      <PropertyRef Name="stockId" />
+    </Key>
+    <Property Type="Int32" Name="stockId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="stockCount" Nullable="false" />
+    <Property Type="Int32" Name="productId" Nullable="false" />
+    <Property Type="Int32" Name="critearId" Nullable="false" />
+    <Property Type="Int32" Name="minCount" Nullable="false" />
+    <Property Type="Int32" Name="sequence" Nullable="false" />
+    <NavigationProperty Name="tbl_product" Relationship="titizOtoModel.FK_tbl_stock_tbl_product" FromRole="tbl_stock" ToRole="tbl_product" />
+    <NavigationProperty Name="tbl_critear" Relationship="titizOtoModel.FK_tbl_stock_tbl_critear" FromRole="tbl_stock" ToRole="tbl_critear" />
+  </EntityType>
+  <Association Name="FK_tbl_stock_tbl_product">
+    <End Type="titizOtoModel.tbl_product" Role="tbl_product" Multiplicity="1" />
+    <End Type="titizOtoModel.tbl_stock" Role="tbl_stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_product">
+        <PropertyRef Name="productId" />
+      </Principal>
+      <Dependent Role="tbl_stock">
+        <PropertyRef Name="productId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_stock_tbl_critear">
+    <End Type="titizOtoModel.tbl_critear" Role="tbl_critear" Multiplicity="1" />
+    <End Type="titizOtoModel.tbl_stock" Role="tbl_stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_critear">
+        <PropertyRef Name="critearId" />
+      </Principal>
+      <Dependent Role="tbl_stock">
+        <PropertyRef Name="critearId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_gallery_tbl_critear">
+    <End Type="titizOtoModel.tbl_critear" Role="tbl_critear" Multiplicity="1" />
+    <End Type="titizOtoModel.tbl_gallery" Role="tbl_gallery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_critear">
+        <PropertyRef Name="critearId" />
+      </Principal>
+      <Dependent Role="tbl_gallery">
+        <PropertyRef Name="critearId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tbl_newsletterUser">
+    <Key>
+      <PropertyRef Name="newsletterUserId" />
+    </Key>
+    <Property Type="Int32" Name="newsletterUserId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="email" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ipNo" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="createTime" Nullable="false" Precision="3" />
+  </EntityType>
+</Schema>

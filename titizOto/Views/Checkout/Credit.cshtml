@@ -1,0 +1,76 @@
+﻿@model ViewModel.Checkout.Payment.cardInfo
+
+<div class="credit">
+    <form>
+
+        @if (Model.isErrorExist)
+        {
+            @Html.Raw(Model.message)
+        }
+
+        <div class="optionTable">
+            <a href="#" data-amount="@Model.totalPriceStr">@Resources.lang.checkoutCreditInfoOptionTable</a>
+        </div>
+
+        <div class="cardInfo">
+
+            <!--creditCard -->
+            <div class="rowElem">@Html.LabelFor(a => a.creditCard)<div class="formRight">@Html.TextBoxFor(a => a.creditCard, new { @class = "creditCard", title = Resources.lang.checkoutCreditInfoNoSpace })<label class="error">@Html.ValidationMessageFor(a => a.creditCard)</label></div>
+                <div class="fix"></div>
+
+                <div class="cardType"></div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!--month year-->
+            <div class="rowElem date">
+                <label>@Resources.lang.checkoutCardInfoLastUse</label>
+                <div class="formRight">@Html.DropDownList("month", new SelectList(Model.monthList, "key", "value"))</div>
+                <div class="sep">/</div>
+                <div class="formRight">@Html.DropDownList("year", new SelectList(Model.yearList, "key", "value"))</div>
+                <div class="clearfix"></div>
+                @Html.ValidationMessageFor(a => a.month)
+                <div class="clearfix"></div>
+                @Html.ValidationMessageFor(a => a.year)
+            </div>
+
+            <!--cvv -->
+            <div class="rowElem">@Html.LabelFor(a => a.cvv)<div class="formRight">
+
+                @if (Model.cvv == 0)
+                {
+                    @Html.TextBox("cvv", "", new { @class = "cvv" })
+                }
+                else
+                {
+                    @Html.TextBoxFor(a => a.cvv, new { @class = "cvv" })
+                }
+
+                <label class="error">@Html.ValidationMessageFor(a => a.cvv)</label>
+            </div>
+                <div class="fix"></div>
+                <a class="aboutCvv">@Resources.lang.checkoutCardInfoCvvAbout</a>
+                <div class="aboutCvvImg">
+                    <img src="~/Content/images/cvv.png" />
+                </div>
+            </div>
+             
+            <div class="clearfix"></div>
+
+            <div class="rowElem">@Html.LabelFor(a => a.nameSurname)<div class="formRight">@Html.TextBoxFor(a => a.nameSurname)<label class="error">@Html.ValidationMessageFor(a => a.nameSurname)</label></div>
+                <div class="fix"></div>
+            </div>
+
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="cardOptionListContainer">
+            @Html.Action("CreditOption", new { lang = ViewData["langCode"], isModal = false, creditCard = Model.creditCard })
+        </div>
+
+        @Html.AntiForgeryToken()
+
+    </form>
+</div>

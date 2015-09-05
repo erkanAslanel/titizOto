@@ -1,0 +1,162 @@
+﻿@model ViewModel.ProductDetail.helperProductDetail
+@{
+     
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+@section cssArea{
+
+    <link href="~/Content/js/plugin/pop-up/magnific-popup.css" rel="stylesheet" />
+
+}
+
+<div class="wrapper">
+    <div class="generalMainContainer">
+
+        <div class="generalMainHeader contentBg">
+        </div>
+        <div class="generalMainContent contentBg">
+
+            <div class="innerContent">
+
+                @Html.Partial("breadCrumb", Model.breadCrumbItem)
+
+                @if (Model.isOptionMsgExist)
+                {
+                    <div class="msg warning autoHide mRight30 mTop10" style="display: block;">@Resources.lang.productOptionSelect
+                    </div>
+                }
+
+
+                @if (Model.isBackProductUrlExist || Model.isNextProductUrlExist)
+                { 
+                    <div class="navProduct">
+                        @if (Model.isBackProductUrlExist)
+                        {
+                            <a href="@Model.backProductUrl" class="prev"><i></i><span>Önceki Ürün</span></a>
+                        }
+
+                        @if (Model.isNextProductUrlExist)
+                        {
+                            <a href="@Model.nextProductUrl" class="next"><i></i><span>Sonraki Ürün</span></a>
+                        }
+
+                        <div class="clearfix"></div>
+                    </div>
+                }
+                <div class="leftProduct">
+
+                    <ul class="bigPhoto" data-cycle-fx="scrollHorz"
+                        data-cycle-timeout="4000"
+                        data-slides=">li">
+                        @foreach (var item in Model.imageList)
+                        {
+                            <li data-photo="@(string.IsNullOrWhiteSpace(item.Item2) ? "" : item.Item2)">
+                                <img src="~/@item.Item1" /></li>
+                        }
+
+                    </ul>
+
+                    <ul class="smallPhoto">
+
+                        @foreach (var item in Model.imageList)
+                        {
+                            <li data-photo="@(string.IsNullOrWhiteSpace(item.Item2) ? "" : item.Item2)">
+                                <img src="~/@item.Item1" width="100" /></li>
+                        }
+
+                    </ul>
+
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="rightProduct">
+
+                    <h1>@Model.productName</h1>
+
+                    @if (Model.optionList != null && Model.optionList.Count > 0)
+                    {
+                        <div class="optionContainer">
+
+                            @foreach (var item in Model.optionList)
+                            {
+                                <div class="item">
+                                    <span>@item.header <b class="mustHeader">*</b> </span>
+                                    <select name="critear_@item.headerId">
+
+                                        <option value="0">@Resources.lang.pleaseSelect</option>
+
+                                        @foreach (var subItem in item.options)
+                                        {
+                                            <option value="@subItem.Key">@subItem.Value</option>
+                                        }
+
+                                    </select>
+                                    <div class="mustChoose">
+                                        <span><i class="icon"></i>@item.header @Resources.lang.pleaseSelect
+                                        </span>
+                                    </div>
+                                </div>
+                                
+                               
+                            }
+
+                        </div>
+                    }
+
+                    <div class="price">
+                        <b>Fiyat</b>:&nbsp; @Model.withoutTaxPrice TL + KDV
+                        <br />
+                        <b>KDV Dahil</b>:&nbsp; @Model.price
+                        <br />
+                        <b>Havale / EFT</b>:&nbsp; @Model.price (KDV Dahil)
+                    </div>
+                    <div class="bntContainer">
+                        <a href="#" data-productid="@Model.productId" data-lang="@ViewData["langCode"]" class="btn redBg addBasket">Sepete Ekle</a>
+
+                        @if (Model.isInstallmenTableVisible)
+                        {
+                             
+                            <a href="#" class="btn mLeft10 payOption">Taksit Seçenekleri</a>
+                            
+                        }
+
+                        <div class="productDetailLoader">
+                            <img src="/Content/images/productLoader.gif">
+                        </div>
+                    </div>
+
+                    <div>&nbsp;</div>
+
+                    @if (!string.IsNullOrWhiteSpace(Model.detail))
+                    {
+                        <section>
+
+
+                            <div class="htmlInput">
+
+                                @Html.Raw(Model.detail)
+
+                            </div>
+
+                        </section>
+                        
+                    }
+
+
+                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="generalMainFooter contentBg">
+        </div>
+    </div>
+</div>
+
+@section scriptArea{
+
+    <script src="~/Content/js/plugin/jquery.cycle2.min.js"></script>
+    <script src="~/Content/js/plugin/pop-up/jquery.magnific-popup.min.js"></script>
+    <script id="titizJs" src="~/Content/js/core.js?modul=productDetail&v=2"></script>
+
+}

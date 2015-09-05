@@ -1,0 +1,90 @@
+﻿@model tbl_bankPos
+
+@{
+    ViewBag.Title = tbl_bankPos.getClassTitle() + " Ekle";
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml"; 
+}
+
+@if (ViewBag.success != null)
+{
+    
+    @Html.Raw(ViewBag.resultHtml)
+}
+
+
+@using (Html.BeginForm("Create", "Pos", FormMethod.Post, new { @class = "mainForm" }))
+{  
+    @Html.ValidationSummary(null, new { @class = "validationInfo hideit" }) 
+    
+    <div class="title">
+        <h5>@Model.classTitle Ekleme</h5>
+    </div> 
+
+    <!--Upload-->
+    @Html.AntiForgeryToken()
+
+   
+
+    <fieldset>
+        <div class="widget">
+
+            <!--Tabs-->
+            <ul class="tabs">
+                <li><a href="#tab1">Genel</a></li>
+
+            </ul>
+
+            <!--Column-->
+            <div class="tab_container">
+
+                <div id="tab1" class="tab_content">
+
+
+                    <!--bankPosId -->
+                    @Html.HiddenFor(a => a.bankPosId, new { @id = "primaryKey" })
+
+                    <!--name -->
+                    <div class="rowElem">@Html.LabelFor(a => a.name)<div class="formRight">@Html.TextBoxFor(a => a.name)<label
+                        class="error">@Html.ValidationMessageFor(a => a.name)</label></div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--bankId -->
+                    <div class="rowElem">@Html.LabelFor(a => a.bankId)<div class="formRight">@Html.DropDownList("bankId", new SelectList(Model.bankIdList(), "key", "value"))
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--statu -->
+ <div class="rowElem">@Html.LabelFor(a => a.statu)<div class="formRight">@Html.StatuDropDown(a => a.statu)<label class="error">@Html.ValidationMessageFor(a => a.statu)</label></div><div class="fix"></div></div>
+
+                       <!--isMainPos -->
+ <div class="rowElem">@Html.LabelFor(a => a.isMainPos)<div class="formRight">@Html.StatuDropDown(a => a.isMainPos)<label class="error">@Html.ValidationMessageFor(a => a.isMainPos)</label></div><div class="fix"></div></div>
+    
+   <!--posTypeId -->
+ <div class="rowElem">@Html.LabelFor(a => a.posTypeId)<div class="formRight">@Html.DropDownList("posTypeId", new SelectList(Model.posTypeIdList(), "key", "value"))</div><div class="fix"></div></div>
+  
+   <!--isPosShownOnTable -->
+ <div class="rowElem">@Html.LabelFor(a => a.isPosShownOnTable)<div class="formRight">@Html.StatuDropDown(a => a.isPosShownOnTable)<label class="error">@Html.ValidationMessageFor(a => a.isPosShownOnTable)</label></div><div class="fix"></div></div>
+    
+   <!--posCode -->
+ <div class="rowElem">@Html.LabelFor(a => a.posCode)<div class="formRight">@Html.DropDownList("posCode", new SelectList(Model.posCodeList(), "key", "value"))</div><div class="fix"></div></div>
+   
+
+                </div>
+            </div>
+            <div class="fix"></div>
+        </div>
+    </fieldset>  
+    
+    <div class="fix" style="height: 20px"></div>
+   
+    <!--Buttons-->
+    if (ViewBag.success == null || !(bool)ViewBag.success)
+    {
+    <input type="submit" value="Kaydet" class="redBtn submitForm" />
+    }
+    <a class="greyishBtn button floatright" href="@Url.Action("Index")" >Geri Dön </a>    
+    
+}
+

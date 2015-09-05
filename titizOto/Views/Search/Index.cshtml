@@ -1,0 +1,150 @@
+﻿@model ViewModel.Search.helperSearch
+
+@{
+     
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+
+
+<div class="wrapper">
+    <div class="generalMainContainer">
+        <div class="generalMainHeader contentBg">
+        </div>
+        <div class="generalMainContent contentBg">
+            <div class="innerContent">
+
+                @Html.Partial("breadCrumb", Model.breadCrumbItem)
+
+
+                <h1 class="mainHeader staticHeader mLeft0">@Model.title</h1>
+                <div>
+                    <div class="inline fLeft">
+                        <h2 class="inline">@Model.searchWord</h2>
+                        : <span>@Model.resultFound </span>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="reSearch mTop10">
+                        <form action="@Model.searchLink" method="get">
+
+                            @Html.TextBox("keyWord", Model.searchWord, new { @class = "input" })
+                            <button class="btn redBg">Tekrar Ara</button>
+
+
+                        </form>
+                    </div>
+                </div>
+                <div class="pageContent mLeft0">
+
+                    @Html.Raw(Model.detail)
+
+                    @if (Model.searchList != null && Model.searchList.Count > 0)
+                    {
+                        
+                        <ul class="searchResultList">
+
+                            @foreach (var item in Model.searchList)
+                            {
+                                
+                                <li class="@item.cssClass">
+
+                                    @if (@item.objType == ViewModel.Search.searchObjType.product)
+                                    {
+                                        <a href="~/@item.productItem.url" title="@item.resultTitle">
+
+                                            @if (item.productItem !=
+                                            null && item.productItem.photo != null)
+                                            {
+                                                <img class="fLeft mRight10" src="~/@item.productItem.photo" alt="@item.resultTitle" />
+                                            }
+
+                                            <span class="t1">
+
+                                                @item.resultTitle
+
+                                            </span>
+
+                                        </a>
+                                          
+                                            if (!string.IsNullOrWhiteSpace(item.resultSubTitle))
+                                            {
+                                     
+                                        <a href="~/@item.productItem.url" title="@item.resultTitle">
+                                            <p class="t2">@item.resultSubTitle</p>
+
+                                        </a>
+                                            }
+
+                                    }
+                                    else
+                                    {
+
+                                        <a href="~/@item.url" title="@item.resultTitle">
+
+                                            @if (!string.IsNullOrWhiteSpace(item.photo))
+                                            {
+                                                <img class="fLeft mRight10" src="~/@item.photo" alt="@item.resultTitle" />
+                                            }
+
+                                            <span class="t1">
+
+                                                @item.resultTitle
+
+                                            </span>
+
+                                        </a> 
+
+                                            if (!string.IsNullOrWhiteSpace(item.resultSubTitle))
+                                            {
+                                     
+                                        <a href="~/@item.url" title="@item.resultTitle">
+                                            <p class="t2">@item.resultSubTitle</p>
+
+                                        </a>
+                                            }
+
+                                    }
+
+
+
+                                    <div class="clearfix"></div>
+
+                                </li>
+                                 
+                            }
+
+                        </ul>
+                        
+                        @Html.HiddenFor(a => a.searchKeyWordList)
+
+                        @Html.HiddenFor(a => a.searchList.Count)
+                        
+                        <div class="clearfix"></div>
+
+                            if (Model.pagingItem.isPagingExist)
+                            {
+                        <div id="paging" class="mainList" data-items="@Model.pagingItem.totalItems" data-current="@Model.pagingItem.currentPage" data-peritem="@Model.pagingItem.itemsPerPage" data-suffix="@Model.pagingItem.pageSufix">
+                        </div>
+                        <div class="clearfix"></div>
+                            }
+
+                    }
+
+
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="generalMainFooter contentBg">
+        </div>
+    </div>
+</div>
+
+@section scriptArea{
+
+    <script src="~/Content/js/plugin/jquery.simplePagination.js"></script>
+    <script id="titizJs" src="~/Content/js/core.js?modul=search"></script>
+
+}

@@ -1,0 +1,109 @@
+﻿@model tbl_cargo
+
+@{
+    ViewBag.Title = @Model.classTitle + " Düzenle";
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml"; 
+}
+
+@if (ViewBag.success != null)
+{ 
+    @Html.Raw(ViewBag.resultHtml)
+}
+
+
+@using (Html.BeginForm("Edit", "Cargo", FormMethod.Post, new { @class = "mainForm" }))
+{  
+    @Html.ValidationSummary(null, new { @class = "validationInfo hideit" }) 
+    
+    <div class="title">
+        <h5>@Model.classTitle Düzenle(@Model.name)</h5>
+    </div> 
+
+    <!--Upload-->
+    @Html.AntiForgeryToken()
+
+   
+  <fieldset>
+        <div class="widget">
+
+            <!--Tabs-->
+            <ul class="tabs">
+                <li><a href="#tab3">Genel İçerik</a></li>
+                <li><a href="#tab2">Fotoğraf</a></li>
+            </ul>
+
+            <!--Column-->
+            <div class="tab_container">
+                <div id="tab3" class="tab_content">
+
+                    <!--cargoId -->
+                    @Html.HiddenFor(a => a.cargoId, new { @id = "primaryKey" })
+
+                    <!--langId -->
+                    <div class="rowElem">@Html.LabelFor(a => a.langId)<div class="formRight">@Html.LangDropDown(a => a.langId)<label class="error">@Html.ValidationMessageFor(a => a.langId)</label></div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--statu -->
+                    <div class="rowElem">@Html.LabelFor(a => a.statu)<div class="formRight">@Html.StatuDropDown(a => a.statu)<label class="error">@Html.ValidationMessageFor(a => a.statu)</label></div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--name -->
+                    <div class="rowElem">@Html.LabelFor(a => a.name)<div class="formRight">@Html.TextBoxFor(a => a.name)<label class="error">@Html.ValidationMessageFor(a => a.name)</label></div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--price -->
+                    <div class="rowElem">@Html.LabelFor(a => a.price)
+                        <div class="formRight">@Html.TextBox("price", Model.price.ToString("F2", System.Globalization.CultureInfo.CreateSpecificCulture("en-US")))<label class="error">@Html.ValidationMessageFor(a => a.price)</label></div>
+                        <div class="fix"></div>
+                    </div>
+
+
+                    <!--freeCargoPrice -->
+                    <div class="rowElem">@Html.LabelFor(a => a.freeCargoPrice)<div class="formRight">@Html.TextBox("freeCargoPrice", Model.freeCargoPrice.ToString("F2", System.Globalization.CultureInfo.CreateSpecificCulture("en-US")))<label class="error">@Html.ValidationMessageFor(a => a.freeCargoPrice)</label></div>
+                        <div class="fix"></div>
+                    </div>
+
+
+                    <!--detail -->
+                    <div class="rowElem">@Html.LabelFor(a => a.detail)<div class="formRight">@Html.CkeditorHtml(a => a.detail)<label class="error">@Html.ValidationMessageFor(a => a.detail)</label></div>
+                        <div class="fix"></div>
+                    </div>
+
+
+                    <!--isCargoPriceOnCustomer -->
+                    <div class="rowElem">@Html.LabelFor(a => a.isCargoPriceOnCustomer)<div class="formRight">@Html.StatuDropDown(a => a.isCargoPriceOnCustomer)<label class="error">@Html.ValidationMessageFor(a => a.isCargoPriceOnCustomer)</label></div>
+                        <div class="fix"></div>
+                    </div>
+
+                     <!--trackUrl -->
+  <div class="rowElem">@Html.LabelFor(a => a.trackUrl)<div class="formRight">@Html.TextBoxFor(a => a.trackUrl)<label class="error">@Html.ValidationMessageFor(a => a.trackUrl)</label></div><div class="fix"></div></div>
+
+
+                    <div class="fix"></div>
+                </div>
+                 
+                <div id="tab2" class="tab_content">
+
+                    <!--photo -->
+                    @Html.UploaderWithThumbnailPreview(a => a.photo, "cargo", a => a.photoCoordinate, "150", "150", Url.Content("~/"))<label class="error">@Html.ValidationMessageFor(a => a.photo)</label><div class="fix"></div>
+
+                </div>
+            </div>
+
+            <div class="fix"></div>
+        </div>
+    </fieldset>
+    
+    <div class="fix" style="height: 20px"></div>
+   
+    <!--Buttons-->
+                       
+    <input type="submit" value="Kaydet" class="redBtn submitForm" />
+                       
+    <a class="greyishBtn button floatright" href="@Url.Action("Index")" >Geri Dön </a>    
+    
+}
+

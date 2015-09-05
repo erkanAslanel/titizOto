@@ -1,0 +1,180 @@
+﻿@model tbl_settings
+
+@{
+    ViewBag.Title = tbl_settings.getClassTitle() + " Düzenle";
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml"; 
+}
+
+@if (ViewBag.success != null)
+{
+    
+    @Html.Raw(ViewBag.resultHtml)
+}
+
+@using (Html.BeginForm("Edit", "Settings", FormMethod.Post, new { @class = "mainForm" }))
+{  
+    @Html.ValidationSummary(null, new { @class = "validationInfo hideit" }) 
+    
+    <div class="title">
+        <h5>@tbl_settings.getClassTitle() Düzenleme(
+            
+            @if (Model.langId == 1)
+            {
+                @:Türkçe
+	}
+            else
+            {
+                @:İngilizce                                           
+	}
+            )</h5>
+    </div> 
+
+    <!--Upload-->
+    @Html.AntiForgeryToken()
+
+    <!--urlControl-->
+    @Html.HiddenFor(a => a.settingsId, new { @id = "primaryKey" })
+
+    <fieldset>
+        <div class="widget">
+
+            <!--Tabs-->
+            <ul class="tabs">
+
+                <li><a href="#tab2">Mail</a></li>
+                <li><a href="#tab3">Seo</a></li>
+               
+            </ul>
+
+            <!--Column-->
+            <div class="tab_container">
+
+
+                <div id="tab2" class="tab_content">
+
+                    @Html.HiddenFor(a => a.langId)
+
+                    <div class="rowElem">
+                        @Html.LabelFor(a => a.mailSmtpServer)
+                        <div class="formRight">
+                            @Html.TextBoxFor(a => a.mailSmtpServer)
+
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <div class="rowElem">
+                        @Html.LabelFor(a => a.mailPort)
+                        <div class="formRight">
+                            @Html.TextBoxFor(a => a.mailPort)
+
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <div class="rowElem">
+                        @Html.LabelFor(a => a.mailUserName)
+                        <div class="formRight">
+                            @Html.TextBoxFor(a => a.mailUserName)
+
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <div class="rowElem">
+                        @Html.LabelFor(a => a.mailPassword)
+                        <div class="formRight">
+                            @Html.TextBoxFor(a => a.mailPassword)
+
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <div class="rowElem">
+                        @Html.LabelFor(a => a.mailSentName)
+                        <div class="formRight">
+                            @Html.TextBoxFor(a => a.mailSentName)
+
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <div class="rowElem">
+                        @Html.LabelFor(a => a.mailSentAddress)
+                        <div class="formRight">
+                            @Html.TextBoxFor(a => a.mailSentAddress)
+
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <div class="rowElem">
+                        @Html.LabelFor(a => a.mailReceiverAddress)
+                        <div class="formRight">
+                            @Html.TextBoxFor(a => a.mailReceiverAddress)
+
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                </div>
+
+                <div id="tab3" class="tab_content">
+
+                    <!-- Alt Sayfa -->
+                    <div class="rowElem">
+                        @Html.LabelFor(a => a.mainPageTitle)
+                        <div class="formRight">
+                            @Html.TextBoxFor(a => a.mainPageTitle)
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+
+                    <!-- Alt Sayfa -->
+                    <div class="rowElem">
+                        @Html.LabelFor(a => a.allPageTitle)
+                        <div class="formRight">
+                            @Html.TextBoxFor(a => a.allPageTitle)
+
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+
+
+                    <!-- Meta -->
+                    <div class="rowElem">
+                        @Html.LabelFor(a => a.metaDescription)
+                        <div class="formRight">
+                            @Html.TextAreaFor(a => a.metaDescription, new { style = "height:100px;" })
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+                    <!-- Meta -->
+                    <div class="rowElem">
+                        @Html.LabelFor(a => a.metaDescriptionAdditional)
+                        <div class="formRight">
+                            @Html.TextAreaFor(a => a.metaDescriptionAdditional, new { style = "height:100px;" }))
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                </div>
+
+            
+
+            </div>
+            <div class="fix"></div>
+        </div>
+    </fieldset>  
+    
+    <div class="fix" style="height: 20px"></div>
+   
+    <!--Buttons-->
+                      
+    <input type="submit" value="Kaydet" class="redBtn submitForm" />
+                       
+    <a class="greyishBtn button floatright" href="@Url.Action("Index")" >Geri Dön </a>    
+    
+}

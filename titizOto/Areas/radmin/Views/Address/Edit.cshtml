@@ -1,0 +1,190 @@
+﻿@model tbl_address
+
+@{
+    ViewBag.Title = Model.classTitle + " Düzenle";
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml";
+
+    int userId = 0; 
+}
+
+@if (ViewBag.success != null)
+{ 
+    @Html.Raw(ViewBag.resultHtml)
+}
+
+@if (ViewContext.RouteData.Values["filterId"] != null)
+{
+    userId = int.Parse(ViewContext.RouteData.Values["filterId"].ToString());
+}
+
+@using (Html.BeginForm("Edit", "Address", FormMethod.Post, new { @class = "mainForm" }))
+{  
+    @Html.ValidationSummary(null, new { @class = "validationInfo hideit" }) 
+    
+    <div class="title">
+        <h5>@Model.classTitle Düzenle(@Model.name)</h5>
+        <a></a>
+    </div> 
+
+    <!--Upload-->
+    @Html.AntiForgeryToken()
+
+   
+   <fieldset>
+        <div class="widget">
+
+            <!--Tabs-->
+            <ul class="tabs">
+                <li><a href="#tab1">Genel</a></li>
+                <li><a href="#tab2">Bireysel</a></li>
+                <li><a href="#tab3">Kurumsal</a></li>
+            </ul>
+
+            <!--Column-->
+            <div class="tab_container">
+
+                <div id="tab1" class="tab_content">
+
+                    <!--userId -->
+                    @Html.Hidden("userId", userId)
+
+                    <!--addressId -->
+                    @Html.HiddenFor(a => a.addressId, new { @id = "primaryKey" })
+
+                    <!--statu -->
+                    <div class="rowElem">@Html.LabelFor(a => a.statu)<div class="formRight">@Html.StatuDropDown(a => a.statu)<label
+                        class="error">@Html.ValidationMessageFor(a => a.statu)</label>
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--name -->
+                    <div class="rowElem">@Html.LabelFor(a => a.name)<div class="formRight">@Html.TextBoxFor(a => a.name)<label
+                        class="error">@Html.ValidationMessageFor(a => a.name)</label>
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+                     <!--isPersonal -->
+                    <div class="rowElem">@Html.LabelFor(a => a.isPersonal)<div class="formRight">
+                        <select name="isPersonal">
+                            <option value="True" selected="@(Model.isPersonal ? "selected" : null)">Kişisel</option>
+                            <option value="False" selected="@(!Model.isPersonal ? "selected" : null)">Kurumsal</option>
+                        </select>
+
+                        <label
+                            class="error">@Html.ValidationMessageFor(a => a.isPersonal)</label>
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--deliverPerson -->
+                    <div class="rowElem">@Html.LabelFor(a => a.deliverPerson)<div class="formRight">@Html.TextBoxFor(a => a.deliverPerson)<label
+                        class="error">@Html.ValidationMessageFor(a => a.deliverPerson)</label>
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--city -->
+                    <div class="rowElem">@Html.LabelFor(a => a.city)<div class="formRight">@Html.TextBoxFor(a => a.city)<label
+                        class="error">@Html.ValidationMessageFor(a => a.city)</label>
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--district -->
+                    <div class="rowElem">@Html.LabelFor(a => a.district)<div class="formRight">@Html.TextBoxFor(a => a.district)<label
+                        class="error">@Html.ValidationMessageFor(a => a.district)</label>
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--postCode -->
+                    <div class="rowElem">@Html.LabelFor(a => a.postCode)<div class="formRight">@Html.TextBoxFor(a => a.postCode, new { @class = "addressPost" })<label
+                        class="error">@Html.ValidationMessageFor(a => a.postCode)</label>
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--phone -->
+                    <div class="rowElem">@Html.LabelFor(a => a.phone)<div class="formRight">@Html.TextBoxFor(a => a.phone, new { @class = "addressPhone" })<label
+                        class="error">@Html.ValidationMessageFor(a => a.phone)</label>
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--address -->
+                    <div class="rowElem">@Html.LabelFor(a => a.address)<div class="formRight">@Html.TextAreaFor(a => a.address, new { style = "height:100px" })<label
+                        class="error">@Html.ValidationMessageFor(a => a.address)</label>
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+
+                </div>
+
+                <div id="tab2" class="tab_content">
+
+                    <!--tcNo -->
+                    <div class="rowElem">@Html.LabelFor(a => a.tcNo)<div class="formRight">@Html.TextBoxFor(a => a.tcNo, new { @class = "addressTc" })<label
+                        class="error">@Html.ValidationMessageFor(a => a.tcNo)</label>
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+                </div>
+                <div id="tab3" class="tab_content">
+
+
+                    <!--companyName -->
+                    <div class="rowElem">@Html.LabelFor(a => a.companyName)<div class="formRight">@Html.TextBoxFor(a => a.companyName)<label
+                        class="error">@Html.ValidationMessageFor(a => a.companyName)</label>
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--taxOffice -->
+                    <div class="rowElem">@Html.LabelFor(a => a.taxOffice)<div class="formRight">@Html.TextBoxFor(a => a.taxOffice)<label
+                        class="error">@Html.ValidationMessageFor(a => a.taxOffice)</label>
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--taxNo -->
+                    <div class="rowElem">@Html.LabelFor(a => a.taxNo)<div class="formRight">@Html.TextBoxFor(a => a.taxNo, new { @class = "addressTax" })<label
+                        class="error">@Html.ValidationMessageFor(a => a.taxNo)</label>
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="fix"></div>
+        </div>
+    </fieldset>
+    
+    <div class="fix" style="height: 20px"></div>
+   
+    <!--Buttons-->  
+    <input type="submit" value="Kaydet" class="redBtn submitForm" />
+    
+    <a class="greyishBtn button floatright" href="@Url.Action("IndexWithFilter", new { filterId = userId.ToString() })" >
+        Geri Dön </a>    
+    
+}
+
+@section scriptArea{
+
+
+    <script>
+
+        $(".addressPhone").mask("(999)999-99-99");
+        $(".addressPost").mask("99999");
+        $(".addressTc").mask("99999999999");
+        $(".addressTax").mask("9999999999");
+         
+    </script>
+
+
+}

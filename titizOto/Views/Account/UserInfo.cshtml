@@ -1,0 +1,155 @@
+﻿@model ViewModel.Account.UserInfo.helperUserInfo
+
+@{
+   
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+
+<div class="wrapper">
+    <div class="generalMainContainer">
+        <div class="generalMainHeader contentBg"></div>
+        <div class="generalMainContent contentBg">
+            <div class="innerContent">
+
+                @Html.Partial("breadCrumb", Model.breadCrumbItem)
+
+
+                <ul class="leftMenu">
+
+                    @foreach (var item in Model.leftMenuList)
+                    {
+                        <li class="@item.className"><a href="~/@item.url">@item.name</a></li>
+                    }
+
+                </ul>
+
+                <div id="accountContainer">
+                    <h1 class="accountTitle">@Model.title</h1>
+                    <div class="pageContent mBottom0 mLeft0 mTop10">
+                        @Html.Raw(Model.detail)
+                    </div>
+
+                    <div class="userInfoForm mTop10">
+
+                        @using (Html.BeginForm())
+                        {
+
+                            if (Model.isMessageExist)
+                            {
+                            @Html.Raw(Model.message)
+                            }
+
+                            <div class="item mRight20">
+                                @Html.LabelFor(a => a.name, new { @class = "lbl" })
+
+                                <div class="inputContainer">
+                                    @Html.TextBoxFor(a => a.name, new { @class = "input" })
+                                </div>
+                                <div class="error">
+                                    @Html.ValidationMessageFor(a => a.name)
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                @Html.LabelFor(a => a.surname, new { @class = "lbl" })
+
+                                <div class="inputContainer">
+                                    @Html.TextBoxFor(a => a.surname, new { @class = "input" })
+                                </div>
+                                <div class="error">
+                                    @Html.ValidationMessageFor(a => a.surname)
+                                </div>
+                            </div>
+
+                            <div class="clearfix"></div>
+
+                            <div class="item bigItem">
+                                @Html.LabelFor(a => a.email, new { @class = "lbl" })
+
+                                <div class="inputContainer">
+                                    @Html.TextBoxFor(a => a.email, new { @class = "input" })
+                                </div>
+                                <div class="error">
+                                    @Html.ValidationMessageFor(a => a.email)
+                                </div>
+                            </div>
+
+                           
+
+                         
+
+                            <div class="clearfix"></div>
+
+                            <div class="item birthday mRight20">
+                                @Html.Label(Resources.lang.formBirthday, new { @class = "lbl" })
+
+                                <div class="dropItem" style="width: 60px;">
+                                    @Html.DropDownList("day", new SelectList(Model.dayList, "item1", "item2", Model.day))
+                                    <div class="error">@Html.ValidationMessageFor(a => a.day)</div>
+                                </div>
+
+                                <div class="dropItem" style="width: 53px;">
+                                    @Html.DropDownList("month", new SelectList(Model.monthList, "item1", "item2", Model.month))
+                                    <div class="error">@Html.ValidationMessageFor(a => a.month)</div>
+                                </div>
+
+                                <div class="dropItem" style="width: 64px;">
+                                    @Html.DropDownList("year", new SelectList(Model.yearList, "item1", "item2", Model.year))
+                                    <div class="error">@Html.ValidationMessageFor(a => a.year)</div>
+                                </div>
+                                <div class="clearfix"></div>
+                                @Html.ValidationMessage("validDate")
+
+                            </div>
+
+                            <div class="item">
+                                @Html.LabelFor(a => a.gender, new { @class = "lbl" })
+
+                                <div class="radioItem">
+                                    <div class="subItem">
+                                        @Html.RadioButton("gender", 2, Model.gender == 2)<span>@Resources.lang.formWomen</span>
+                                    </div>
+                                    <div class="subItem">
+                                        @Html.RadioButton("gender", 1, Model.gender == 1) <span>@Resources.lang.formMen</span>
+                                    </div>
+                                    <div class="error">@Html.ValidationMessageFor(a => a.gender)</div>
+                                </div>
+
+                            </div>
+
+                            <div class="clearfix"></div>
+                          
+                            <div class="submitBtn">
+                                <a href="~/@Model.cancelUrl" class="btn btnMiddle">@Resources.lang.cancel</a>
+                                <button class="btn btnMiddle redBg clickDisable" data-checkvalidation=".userInfoForm form" data-lang="@ViewData["langCode"]">@Resources.lang.save</button>
+
+                            </div>
+                            
+                             
+                            @Html.AntiForgeryToken()
+
+                        }
+
+
+                    </div>
+
+
+
+
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="generalMainFooter contentBg"></div>
+    </div>
+</div>
+
+
+@section scriptArea{
+
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/mvc/4.0/jquery.validate.unobtrusive.js"></script>
+    <script id="titizJs" src="~/Content/js/core.js?modul=accountUserInfo"></script>
+
+}

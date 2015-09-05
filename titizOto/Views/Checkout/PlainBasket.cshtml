@@ -1,0 +1,129 @@
+﻿@model ViewModel.Shared.orderSummary
+
+
+@if (Model.basketItem != null)
+{
+    <table class="@Model.parentClass">
+
+        <thead>
+            <tr>
+                <td style="width: 300px"><b>Ürün </b>
+                </td>
+                <td style="width: 60px"><b>Fiyat </b>
+                </td>
+                <td style="width: 60px"><b>Adet </b>
+                </td>
+                <td style="width: 60px"><b>Toplam </b>
+                </td>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @foreach (var item in Model.basketItem.basketList)
+            {
+                <tr>
+                    <td>@Html.Raw(item.productDescriptionWithOptionItem)</td>
+                    <td>@item.productPriceDec.ToString("F2", Model.basketItem.priceStringFormat) TL</td>
+                    <td>@item.quantity</td>
+                    <td>@item.productPriceDec.ToString("F2", Model.basketItem.priceStringFormat) TL</td>
+
+                </tr>
+            }
+
+            @if (Model.basketItem.isDiscountExist)
+            {
+
+                foreach (var item in Model.basketItem.discountList)
+                {
+                <tr>
+                    <td colspan="2">@item.discountAmount.ToString("F2", Model.basketItem.priceStringFormat)
+                        TL</td>
+
+
+                    <td colspan="2">@item.name @(!string.IsNullOrWhiteSpace(item.description) ? " - " + item.description : "")</td>
+                </tr>
+                }
+
+
+            }
+
+            <tr>
+                <td colspan="4">
+                    <br />
+
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2"><b>Ürün Toplam (Kdv Dahil)</b>
+                </td>
+
+
+                <td colspan="2">@Model.basketItem.totalPriceStr TL</td>
+            </tr>
+
+            <tr>
+                <td colspan="2"><b>@Resources.lang.cargoPrice</b>
+                </td>
+
+
+                <td colspan="2">@Model.cargoPriceStr</td>
+            </tr>
+
+            <tr>
+                <td colspan="2"><b>@Resources.lang.paymentType</b>
+                </td>
+
+
+                <td colspan="2">@Model.paymentOptionChooseStr</td>
+            </tr>
+
+            @if (Model.paymentOptionChoose == ViewModel.Checkout.Payment.paymentOption.creditCard)
+            {
+                <tr>
+                    <td colspan="2"><b>@Resources.lang.additionalPrice</b>
+                    </td>
+
+
+                    <td colspan="2">@Model.additionalPriceStr</td>
+                </tr>
+            }
+
+            @if (Model.paymentOptionChoose == ViewModel.Checkout.Payment.paymentOption.transfer && Model.isTransferDiscountExist  )
+            {
+                  <tr>
+                    <td colspan="2"><b>@Resources.lang.transferDiscount</b>
+                    </td>
+
+
+                    <td colspan="2">@Model.transferDiscountStr</td>
+                </tr>
+            }
+
+            <tr>
+                <td colspan="2"><b>@Resources.lang.allPrice</b>
+                </td>
+
+
+                <td colspan="2">@Model.allTotalPriceStr</td>
+            </tr>
+
+
+            <tr>
+                <td colspan="4">
+                    <br />
+
+                </td>
+            </tr>
+        </tbody>
+
+
+    </table>
+    
+    
+     
+                                    
+}
+
+

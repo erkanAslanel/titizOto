@@ -1,0 +1,63 @@
+﻿@model tbl_error
+
+@{
+    ViewBag.Title = "Tüm Hataları Silme";
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml"; 
+}
+
+@if (ViewBag.success != null)
+{
+    
+    @Html.Raw(ViewBag.resultHtml)
+}
+
+
+@using (Html.BeginForm("DeleteAll", "Error", FormMethod.Post, new { @class = "mainForm" }))
+{  
+    @Html.ValidationSummary(null, new { @class = "validationInfo hideit" }) 
+    
+    <div class="title">
+        <h5>Tüm Hataları Silme</h5>
+    </div> 
+
+    <!--Upload-->
+    @Html.AntiForgeryToken()
+
+   
+
+    <fieldset>
+        <div class="widget">
+
+            <!--Tabs-->
+            <ul class="tabs">
+                <li><a href="#tab1">İçerik</a></li>
+            </ul>
+
+            <!--Column-->
+            <div class="tab_container">
+                <div id="tab1" class="tab_content">
+
+
+                    <!--errorText -->
+                    <div class="rowElem"><div><b>Önemli uyarı </b>: Sil butonuna bastığınızda kayıtlı tüm hatalar silinecektir.</div></div>
+                  
+                  @Html.Hidden("deleteId","1")
+                  
+
+
+                </div>
+            </div>
+            <div class="fix"></div>
+        </div>
+    </fieldset>  
+    
+    <div class="fix" style="height: 20px"></div>
+   
+    <!--Buttons-->
+                      
+     <input type="submit" value="Sil" class="redBtn submitForm" />
+                       
+                       
+    <a class="greyishBtn button floatright" href="@Url.Action("Index")" >Geri Dön </a>    
+    
+}

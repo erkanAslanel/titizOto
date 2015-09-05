@@ -1,0 +1,66 @@
+﻿@model IEnumerable<tbl_productCritear>
+
+<div class="head">
+</div>
+<form>
+
+    @Html.Hidden("controlName", ViewContext.RouteData.Values["Controller"])
+    @Html.Hidden("filterId", ViewContext.RouteData.Values["filterId"])
+
+    <table id="indexTable" border="0" cellpadding="0" cellspacing="0" class="display">
+
+        <thead>
+            <tr>
+                <th class="nosortable"></th>
+                <th>#</th>
+                <th>Ürün Seçenek Adı
+                </th>
+                <th style="width: 50px">
+                    @Html.DisplayNameFor(model => model.sequence)
+                </th>
+
+                <th>İşlem</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @{ int index = 1;
+            }
+
+            @foreach (var item in Model)
+            {
+                <tr class="gradeA">
+                    <td class="center">
+                        @Html.CheckBox("selectedItem", new { value = item.productCritearId })
+                    </td>
+                    <td class="center">@index</td>
+                    <td class="center">
+                        @if (item.tbl_critear != null)
+                        {
+                            @Html.DisplayFor(modelItem => item.tbl_critear.name)
+                        }
+                        else
+                        {
+                            @:Silinmiş Ürün Seçenek
+	                    }
+                    </td>
+                    <td class="center">
+                        @Html.TextBox("seq" + item.productCritearId, item.sequence, new { @class = "seqBox onlyNums" })
+                    </td>
+
+                    <td class="center editBtn" data-id="@item.productCritearId"> 
+                        <a class="btn14 mr5 ajx" data-action="moveUpWithFilter" title="Yukarı Taşı">
+                            <img  src="@Url.Content("~/Areas/radmin/Content/images/icons/dark/arrowUp.png")"/></a>
+                        <a class="btn14 mr5 ajx" data-action="moveDownWithFilter" title="Aşağı Taşı">
+                            <img  src="@Url.Content("~/Areas/radmin/Content/images/icons/dark/arrowDown.png")"/></a>
+                        <a class="btn14 mr5 delete ajx" data-action="deleteWithFilter" title="Sil">
+                            <img  src="@Url.Content("~/Areas/radmin/Content/images/icons/dark/trash.png")"/></a>
+                    </td>
+                </tr>
+                
+                        index = index + 1;
+            }
+
+        </tbody>
+    </table>
+</form>

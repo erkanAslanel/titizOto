@@ -1,0 +1,28 @@
+﻿@model List<ViewModel.Shared.footerMenu>
+
+<div class="c2">
+    <ul class="linkContainer">
+
+        @foreach (var item in Model)
+        {
+            <li><a href="@item.url">@item.name</a>
+
+                @if (item.children != null && item.children.Count > 0)
+                {  
+                    <ul>
+                        @foreach (var subItem in item.children)
+                        {
+                            <li><a href="@subItem.url">@subItem.name</a></li>
+                        }
+                    </ul>
+                }
+
+            </li>
+        }
+
+
+
+
+    </ul>
+
+</div>

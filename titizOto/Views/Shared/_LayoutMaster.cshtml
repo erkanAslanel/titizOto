@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.title</title>
+
+    @if (ViewBag.description != null)
+    {
+        <meta name="description" content="@ViewBag.description" />
+    }
+
+    @if (ViewBag.meta != null)
+    {
+        @Html.Raw(ViewBag.meta)
+    }
+
+    @if (ViewBag.keyword != null)
+    {
+        <meta name="keywords" content="@ViewBag.keyword" />
+    }
+
+    <meta name="viewport" content="width=1080, initial-scale=1.0" />
+    <meta name="google-site-verification" content="EAadqA2Rh8jz8VUarcd9z6pIZILycbDkp-yx0LmQ4VA" />
+    <meta name="alexaVerifyID" content="AqOXf7OtadQ429Rx8S3Iph8A4pE"/>
+    <meta name='yandex-verification' content='79ada8a7fcde8052' />
+
+    <!--[if lt IE 9]>
+         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,latin-ext'
+        rel='stylesheet' type='text/css' />
+    @RenderSection("cssArea", false)
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+        rel="stylesheet" />
+    <link href="~/Content/css/core.css?v3" rel="stylesheet" />
+
+    @RenderSection("afterCssArea", false)
+</head>
+<body data-mainpath="@Url.Content("~/")" data-lang="@ViewBag.langCode">
+    <div class="main">
+        <header>
+            <div class="wrapper relative">
+
+                <div class="logoContainer">
+                    <a href="/@Resources.lang.langCode">
+                        <img src="~/Content/images/titizLogo.png" /></a>
+                    <div></div>
+                </div>
+
+                @Html.Action("topMenu", "Shared", new { lang = ViewData["langCode"] })
+
+                @Html.Partial("topCart", ViewData["topCart"])
+
+                @Html.Action("search", "Shared", new { lang = ViewData["langCode"] })
+
+            </div>
+        </header>
+
+        @RenderBody()
+
+        <div class="flySocial">
+            <div class="relative">
+
+                <div class="box facebook transition05">
+                    <div class="inner">
+                        <a href="https://www.facebook.com/titizkromaksesuar" rel="nofollow"
+                            target="_blank">Facebook Sayfamız</a>
+                    </div>
+                </div>
+
+                <div class="box instagram transition05">
+                    <div class="inner">
+                        <a href="http://instagram.com/titizkromaksesuar" rel="nofollow"
+                            target="_blank">Instagram Sayfamız</a>
+                    </div>
+                </div>
+
+                <div class="box sahibinden transition05">
+                    <div class="inner">
+                        <a href="http://titizkromaksesuar.sahibinden.com" rel="nofollow"
+                            target="_blank">Sahibinden Sayfamız</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="wrapper">
+            <div class="c1">
+                <div class="clearfix"></div>
+                <!--  <ul class="bankLogo">
+                    <li>
+                        <img src="~/Content/images/bonus.png" />
+                    </li>
+                    <li>
+                        <img src="~/Content/images/worldCard.png" />
+                    </li>
+                    <li>
+                        <img src="~/Content/images/axess.png" />
+                    </li>
+                    <li>
+                        <img src="~/Content/images/finans.png" />
+                    </li>
+                    <li>
+                        <img src="~/Content/images/maximum.png" />
+                    </li>
+                    <li>
+                        <ul>
+                            <li>
+                                <img src="~/Content/images/visa.png" /></li>
+                            <li>
+                                <img src="~/Content/images/master.png" /></li>
+                            <li>
+                                <img src="~/Content/images/payPal.png" /></li>
+                        </ul>
+                    </li>
+                </ul> -->
+                <div class="clearfix"></div>
+                <small>© 2014, Titiz Oto Aksesuarı Tüm Hakları Saklıdır.</small>
+            </div>
+
+            @Html.Partial("newsletter", new ViewModel.Newsletter.newsletterItem())
+
+            @Html.Action("footerMenu", "Shared", new { lang = ViewData["langCode"] })
+
+
+
+        </div>
+    </footer>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-52413230-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="~/Content/js/plugin/fancy/jquery.fancybox.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/mvc/4.0/jquery.validate.unobtrusive.js"></script>
+    
+    @RenderSection("scriptArea", false)
+
+</body>
+</html>

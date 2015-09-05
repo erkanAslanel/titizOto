@@ -1,0 +1,114 @@
+﻿@model tbl_openContent
+
+@{
+    ViewBag.Title = @Model.classTitle + " Düzenle";
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml"; 
+}
+
+@if (ViewBag.success != null)
+{ 
+    @Html.Raw(ViewBag.resultHtml)
+}
+
+
+@using (Html.BeginForm("Edit", "OpenContent", FormMethod.Post, new { @class = "mainForm" }))
+{  
+    @Html.ValidationSummary(null, new { @class = "validationInfo hideit" }) 
+    
+    <div class="title">
+        <h5>@Model.classTitle Düzenle(@Model.title)</h5>
+        <a></a>
+    </div> 
+
+    <!--Upload-->
+    @Html.AntiForgeryToken()
+
+   
+    <fieldset>
+        <div class="widget">
+
+            <!--Tabs-->
+            <ul class="tabs">
+                <li><a href="#tab4">Genel</a></li>
+                <li><a href="#tab1">Kategori Yeri</a></li>
+                <li><a href="#tab2">Sayfa İçerik</a></li>
+
+            </ul>
+
+            <!--Column-->
+            <div class="tab_container">
+                <div id="tab4" class="tab_content">
+
+                    <!--langId -->
+                    <div class="rowElem">@Html.LabelFor(a => a.langId)<div class="formRight">@Html.LangDropDown(a => a.langId)<label
+                        class="error">@Html.ValidationMessageFor(a => a.langId)</label>
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+
+                    <!--statu -->
+                    <div class="rowElem">@Html.LabelFor(a => a.statu)<div class="formRight">@Html.StatuDropDown(a => a.statu)<label
+                        class="error">@Html.ValidationMessageFor(a => a.statu)</label>
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+                </div>
+                <div id="tab1" class="tab_content">
+
+                    <!--openContentId -->
+                    @Html.HiddenFor(a => a.openContentId, new { @id = "primaryKey" })
+
+                    <!-- Category -->
+                    <div class="categoryContainer">
+                        @if (ViewBag.treeView != null)
+                        {
+                            TreeviewOption option = (TreeviewOption)ViewBag.treeView; 
+                            <div id="tree"></div>
+                            <input id="@option.fieldName" name="@option.fieldName" type="hidden" /> 
+                            <label class="error">@Html.ValidationMessageFor(a => a.categoryId)</label> 
+                            @section scriptArea{
+
+                                @Html.Partial("treeviewHtml", option)
+                            } 
+                        }
+                    </div>
+
+                </div>
+
+                <div id="tab2" class="tab_content">
+
+
+
+                    <!--title -->
+                    <div class="rowElem">@Html.LabelFor(a => a.title)<div class="formRight">@Html.TextBoxFor(a => a.title)<label
+                        class="error">@Html.ValidationMessageFor(a => a.title)</label>
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--detail -->
+                    <div class="rowElem">@Html.LabelFor(a => a.detail)<div class="formRight">@Html.CkeditorHtml(a => a.detail)<label
+                        class="error">@Html.ValidationMessageFor(a => a.detail)</label>
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="fix"></div>
+        </div>
+    </fieldset>
+    
+    <div class="fix" style="height: 20px"></div>
+   
+    <!--Buttons-->
+                       
+    <input type="submit" value="Kaydet" class="redBtn submitForm" />
+                        
+    <a class="greyishBtn button floatright" href="@Url.Action("Index")" >Geri Dön </a>    
+    
+}
+

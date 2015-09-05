@@ -1,0 +1,87 @@
+﻿@model ViewModel.Checkout.Delivery.helperRegisterDelivery
+
+@{
+   
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+
+@section cssArea{
+
+    <link href="~/Content/js/plugin/pop-up/magnific-popup.css" rel="stylesheet" /> 
+}
+
+<div class="wrapper">
+    <div class="generalMainContainer">
+        <div class="generalMainHeader contentBg">
+        </div>
+        <div class="generalMainContent contentBg">
+            <div class="innerContent">
+                <div class="clearfix"></div>
+                <div class="rightStep">
+
+                    @Html.Partial("RightStep", new ViewModel.Checkout.rightStep(Model.stepLinkList, Model.activeStep))
+
+                </div>
+
+                <div class="checkoutContainer">
+
+                    <div class="checkoutBlock mTop30 active">
+                        <span>1</span>
+                        <h1>@Model.stepLinkList.Where(a => a.step == ViewModel.Checkout.checkoutStep.delivery).First().name
+                        </h1>
+                    </div>
+
+                    <div class="pageContent checkoutStaticContent mLeft10">
+                        <p class="checkoutDetail">@Html.Raw(Model.detail)</p>
+                        <div class="checkoutForm delivery mTop20">
+
+                            @Html.Partial("DeliveryRegisterModal", Model)
+
+                        </div>
+
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="checkoutBlock">
+                        <span>2</span>
+                        <h2>@Model.stepLinkList.Where(a => a.step == ViewModel.Checkout.checkoutStep.billing).First().name
+                        </h2>
+                    </div>
+
+                    <div class="checkoutBlock">
+                        <span>3</span>
+                        <h2>@Model.stepLinkList.Where(a => a.step == ViewModel.Checkout.checkoutStep.cargo).First().name
+                        </h2>
+                    </div>
+
+                    <div class="checkoutBlock">
+                        <span>4</span>
+                        <h2>@Model.stepLinkList.Where(a => a.step == ViewModel.Checkout.checkoutStep.payment).First().name
+                        </h2>
+                    </div>
+
+                    <div class="checkoutBlock">
+                        <span>5</span>
+                        <h2>@Model.stepLinkList.Where(a => a.step == ViewModel.Checkout.checkoutStep.summary).First().name
+                        </h2>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="generalMainFooter contentBg">
+        </div>
+    </div>
+</div>
+
+@section scriptArea{
+
+  <script src="~/Content/js/plugin/pop-up/jquery.magnific-popup.min.js"></script>
+    <script src="~/Content/js/plugin/jquery.maskedinput.min.js"></script> 
+    <script id="titizJs" src="~/Content/js/core.js?modul=checkoutRegisterDelivery"></script>
+
+}

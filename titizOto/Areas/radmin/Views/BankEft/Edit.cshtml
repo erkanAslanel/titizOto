@@ -1,0 +1,102 @@
+﻿@model tbl_bankEft
+
+@{
+    ViewBag.Title = @Model.classTitle + " Düzenle";
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml"; 
+}
+
+@if (ViewBag.success != null)
+{ 
+    @Html.Raw(ViewBag.resultHtml)
+}
+
+
+@using (Html.BeginForm("Edit", "BankEft", FormMethod.Post, new { @class = "mainForm" }))
+{  
+    @Html.ValidationSummary(null, new { @class = "validationInfo hideit" }) 
+    
+    <div class="title">
+        <h5>@Model.classTitle Düzenle(@Model.name)</h5>
+        <a></a>
+    </div> 
+
+    <!--Upload-->
+    @Html.AntiForgeryToken()
+
+   
+    <fieldset>
+        <div class="widget">
+
+            <!--Tabs-->
+            <ul class="tabs">
+                <li><a href="#tab4">Genel</a></li>
+
+            </ul>
+
+            <!--Column-->
+            <div class="tab_container">
+                <div id="tab4" class="tab_content">
+
+                    <!--bankEftId -->
+                    @Html.HiddenFor(a => a.bankEftId, new { @id = "primaryKey" })
+
+                    <!--name -->
+                    <div class="rowElem">@Html.LabelFor(a => a.name)<div class="formRight">@Html.TextBoxFor(a => a.name)<label
+                        class="error">@Html.ValidationMessageFor(a => a.name)</label>
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--bankId -->
+                    <div class="rowElem">@Html.LabelFor(a => a.bankId)<div class="formRight">@Html.DropDownList("bankId", new SelectList(Model.bankIdList(), "key", "value"))
+                    </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--branchCode -->
+                    <div class="rowElem">@Html.LabelFor(a => a.branchCode)<div class="formRight">@Html.TextBoxFor(a => a.branchCode)<label
+                        class="error">@Html.ValidationMessageFor(a => a.branchCode)</label>
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--accountNo -->
+                    <div class="rowElem">@Html.LabelFor(a => a.accountNo)<div class="formRight">@Html.TextBoxFor(a => a.accountNo)<label
+                        class="error">@Html.ValidationMessageFor(a => a.accountNo)</label>
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--iban -->
+                    <div class="rowElem">@Html.LabelFor(a => a.iban)<div class="formRight">@Html.TextBoxFor(a => a.iban)<label
+                        class="error">@Html.ValidationMessageFor(a => a.iban)</label>
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--statu -->
+                    <div class="rowElem">@Html.LabelFor(a => a.statu)<div class="formRight">@Html.StatuDropDown(a => a.statu)<label
+                        class="error">@Html.ValidationMessageFor(a => a.statu)</label>
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+
+                    <div class="fix"></div>
+                </div> 
+            </div>
+
+            <div class="fix"></div>
+        </div>
+    </fieldset>
+    
+    <div class="fix" style="height: 20px"></div>
+   
+    <!--Buttons-->
+                       
+    <input type="submit" value="Kaydet" class="redBtn submitForm" />
+                        
+    <a class="greyishBtn button floatright" href="@Url.Action("Index")" >Geri Dön </a>    
+    
+}
+

@@ -1,0 +1,82 @@
+﻿@model tbl_stock
+
+@{
+    ViewBag.Title = Model.classTitle + " Ekle";
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml";
+
+    int productId = 0; 
+}
+
+@if (ViewBag.success != null)
+{ 
+    @Html.Raw(ViewBag.resultHtml)
+}
+
+@if (ViewContext.RouteData.Values["filterId"] != null)
+{
+    productId = int.Parse(ViewContext.RouteData.Values["filterId"].ToString());
+}
+
+@using (Html.BeginForm("Create", "Stock", FormMethod.Post, new { @class = "mainForm" }))
+{  
+    @Html.ValidationSummary(null, new { @class = "validationInfo hideit" }) 
+    
+    <div class="title">
+        <h5>@Model.classTitle Ekleme</h5>
+        <a></a>
+    </div> 
+
+    <!--Upload-->
+    @Html.AntiForgeryToken()
+
+   
+    <fieldset>
+        <div class="widget">
+
+            <!--Tabs-->
+            <ul class="tabs">
+                <li><a href="#tab1">Genel</a></li>
+
+            </ul>
+
+            <!--Column-->
+            <div class="tab_container">
+
+                <div id="tab1" class="tab_content">
+
+                    <!--stockId -->
+   @Html.HiddenFor(a => a.stockId, new { @id = "primaryKey" })
+
+                    <!--productId -->
+                    @Html.Hidden("productId", productId)
+
+                     <!--critearId -->
+ <div class="rowElem">@Html.LabelFor(a => a.critearId)<div class="formRight">@Html.DropDownList("critearId", new SelectList(Model.critearIdList(productId), "key", "value"))</div><div class="fix"></div></div>
+                    
+                     <!--count -->
+  <div class="rowElem">@Html.LabelFor(a => a.stockCount)<div class="formRight">@Html.TextBoxFor(a => a.stockCount)<label class="error">@Html.ValidationMessageFor(a => a.stockCount)</label></div><div class="fix"></div></div>
+
+  <!--minCount -->
+  <div class="rowElem">@Html.LabelFor(a => a.minCount)<div class="formRight">@Html.TextBoxFor(a => a.minCount)<label class="error">@Html.ValidationMessageFor(a => a.minCount)</label></div><div class="fix"></div></div>
+
+
+                </div>
+
+
+            </div>
+
+            <div class="fix"></div>
+        </div>
+    </fieldset>  
+    
+    <div class="fix" style="height: 20px"></div>
+   
+    <!--Buttons-->
+                        if (ViewBag.success == null || !(bool)ViewBag.success)
+                        {
+    <input type="submit" value="Kaydet" class="redBtn submitForm" />
+                        }
+    <a class="greyishBtn button floatright" href="@Url.Action("IndexWithFilter", new { filterId = productId.ToString() })" >Geri Dön </a>    
+    
+}
+

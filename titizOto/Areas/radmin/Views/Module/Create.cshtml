@@ -1,0 +1,89 @@
+﻿@model tbl_module
+
+@{
+    ViewBag.Title = tbl_module.getClassTitle() + " Ekle";
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml"; 
+}
+
+@if (ViewBag.success != null)
+{
+    
+    @Html.Raw(ViewBag.resultHtml)
+}
+
+
+@using (Html.BeginForm("Create", "Module", FormMethod.Post, new { @class = "mainForm" }))
+{  
+    @Html.ValidationSummary(null, new { @class = "validationInfo hideit" }) 
+    
+    <div class="title">
+        <h5>@tbl_module.getClassTitle() Ekleme</h5>
+    </div> 
+
+    <!--Upload-->
+    @Html.AntiForgeryToken()
+
+    <!--urlControl-->
+    @Html.HiddenFor(a => a.moduleId, new { @id = "primaryKey" })
+
+    <fieldset>
+        <div class="widget">
+
+            <!--Tabs-->
+            <ul class="tabs">
+                <li><a href="#tab1">İçerik</a></li>
+
+            </ul>
+
+            <!--Column-->
+            <div class="tab_container">
+
+                <div id="tab1" class="tab_content">
+
+                     <!--langId -->
+                    <div class="rowElem">@Html.LabelFor(a => a.langId)<div class="formRight">@Html.LangDropDown(a => a.langId)<label
+                        class="error">@Html.ValidationMessageFor(a => a.langId)</label>
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--name -->
+                    <div class="rowElem">@Html.LabelFor(a => a.name)<div class="formRight">@Html.TextBoxFor(a => a.name)<label class="error">@Html.ValidationMessageFor(a => a.name)</label></div>
+                        <div class="fix"></div>
+                    </div>
+
+
+
+                    <!--typeId -->
+                    <div class="rowElem">@Html.LabelFor(a => a.typeId)<div class="formRight">@Html.DropDownList("typeId", new SelectList(Model.typeIdList(), "key", "value"))</div>
+                        <div class="fix"></div>
+                    </div>
+
+                    <!--description -->
+                    <div class="rowElem">@Html.LabelFor(a => a.description)<div class="formRight">@Html.TextAreaFor(a => a.description)<label class="error">@Html.ValidationMessageFor(a => a.description)</label></div>
+                        <div class="fix"></div>
+                    </div>
+
+
+
+                    <!--htmlContent -->
+                    <div class="rowElem">@Html.LabelFor(a => a.htmlContent)<div class="formRight">@Html.CkeditorHtml(a => a.htmlContent)<label class="error">@Html.ValidationMessageFor(a => a.htmlContent)</label></div>
+                        <div class="fix"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="fix"></div>
+        </div>
+    </fieldset>  
+    
+    <div class="fix" style="height: 20px"></div>
+   
+    <!--Buttons-->
+    if (ViewBag.success == null || !(bool)ViewBag.success)
+    {
+    <input type="submit" value="Kaydet" class="redBtn submitForm" />
+    }
+    <a class="greyishBtn button floatright" href="@Url.Action("Index")" >Geri Dön </a>    
+    
+}
+

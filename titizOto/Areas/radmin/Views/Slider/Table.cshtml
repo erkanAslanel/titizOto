@@ -1,0 +1,68 @@
+﻿@model IEnumerable<tbl_slider>
+
+<div class="head">
+</div>
+<form>
+
+    @Html.Hidden("controlName", ViewContext.RouteData.Values["Controller"])
+
+    <table id="indexTable" border="0" cellpadding="0" cellspacing="0" class="display"> 
+        <thead>
+            <tr>
+                <th class="nosortable"></th>
+                <th>#</th> 
+                   <th>
+                    @Html.DisplayNameFor(model => model.name)
+                </th> 
+                <th>
+                   Fotoğraf
+                </th> 
+                <th style="width: 50px">
+                    @Html.DisplayNameFor(model => model.sequence)
+                </th> 
+                <th>
+                    @Html.DisplayNameFor(model => model.statu)
+                </th>
+                <th>İşlem</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @{ int index = 1;
+            }
+
+            @foreach (var item in Model)
+            {
+                <tr class="gradeA">
+                    <td class="center">
+                        @Html.CheckBox("selectedItem", new { value = item.sliderId })
+                    </td>
+                    <td class="center">@index</td>
+                    <td class="center">@item.name</td>
+                    <td class="center">
+                         <a href="@Url.Content("~/Download/item/slider/"+item.photo)" data-lightbox="@item.photo" ><img src="@Url.Content("~/Download/item/slider/"+item.photo)" width="100" /></a>
+                    </td>
+                    <td class="center">
+                        @Html.TextBox("seq" + item.sliderId, item.sequence, new { @class = "seqBox onlyNums" })
+                    </td>
+                    <td class="center">
+                        @Html.getStatus(modelItem => item.statu)
+                    </td>
+                    <td class="center editBtn" data-id="@item.sliderId">
+                        <a title="Düzenle" class="btn14 mr5" href="@Url.Action("Edit", new { id = item.sliderId })">
+                            <img  src="@Url.Content("~/Areas/radmin/Content/images/icons/dark/pencil.png")"/></a>
+                        <a class="btn14 mr5 ajx" data-action="moveUp" title="Yukarı Taşı">
+                            <img  src="@Url.Content("~/Areas/radmin/Content/images/icons/dark/arrowUp.png")"/></a>
+                        <a class="btn14 mr5 ajx" data-action="moveDown" title="Aşağı Taşı">
+                            <img  src="@Url.Content("~/Areas/radmin/Content/images/icons/dark/arrowDown.png")"/></a>
+                        <a class="btn14 mr5 delete ajx" data-action="delete" title="Sil">
+                            <img  src="@Url.Content("~/Areas/radmin/Content/images/icons/dark/trash.png")"/></a>
+                    </td>
+                </tr>
+                
+                index = index + 1;
+            }
+
+        </tbody>
+    </table>
+</form>

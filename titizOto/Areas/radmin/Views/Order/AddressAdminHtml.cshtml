@@ -1,0 +1,110 @@
+﻿@model titizOto.Models.tbl_address
+
+<div class="modelContainer sharedAddress" data-ispersonal="@Model.isPersonal" >
+
+    <h6>@Resources.lang.addressDetail
+
+    </h6>
+
+
+    <!--name -->
+    <div class="rowElem">@Html.LabelFor(a => a.name)<div class="formRight">@Html.TextBoxFor(a => a.name, new { @readonly = "readonly" })<label
+        class="error">@Html.ValidationMessageFor(a => a.name)</label>
+    </div>
+
+    </div>
+
+    <!--isPersonal -->
+    <div class="rowElem">@Html.LabelFor(a => a.isPersonal)<div class="formRight">
+
+        <input disabled="disabled" type="radio" name="addressItem.isPersonal" checked="@(Model.isPersonal ? "checked" : null)"  value="True">&nbsp;@Resources.lang.personal
+        &nbsp;&nbsp;
+            <input disabled="disabled" type="radio" name="addressItem.isPersonal" checked="@(!Model.isPersonal ? "checked" : null)" value="False">&nbsp;@Resources.lang.corporate
+
+        <label
+            class="error">@Html.ValidationMessageFor(a => a.isPersonal)</label>
+    </div>
+
+    </div>
+
+    <!--deliverPerson -->
+    <div class="rowElem bigItem">@Html.LabelFor(a => a.deliverPerson)<div
+        class="formRight">@Html.TextBoxFor(a => a.deliverPerson, new { @readonly = "readonly" })<label
+            class="error">@Html.ValidationMessageFor(a => a.deliverPerson)</label>
+    </div>
+
+    </div>
+
+
+    <div class="tcNoContainer" style="@(Model.isPersonal ? null : "display:none")">
+
+        <!--tcNo -->
+        <div class="rowElem">@Html.LabelFor(a => a.tcNo)<div class="formRight">@Html.TextBoxFor(a => a.tcNo, new { @class = "addressTc", data_required = Resources.lang.addressTcNoRequired, @readonly = "readonly" })<label
+            class="error">@Html.ValidationMessageFor(a => a.tcNo)</label>
+        </div>
+
+        </div>
+
+    </div>
+
+    <div class="companyContainer" style="@(!Model.isPersonal ? null : "display:none")">
+
+        <!--companyName -->
+        <div class="rowElem">@Html.LabelFor(a => a.companyName)<div class="formRight">@Html.TextBoxFor(a => a.companyName, new { @class = "addressCompanyName", data_required = Resources.lang.addressCompanyNameRequired, @readonly = "readonly" })<label
+            class="error">@Html.ValidationMessageFor(a => a.companyName)</label>
+        </div>
+
+        </div>
+
+        <!--taxOffice -->
+        <div class="rowElem">@Html.LabelFor(a => a.taxOffice)<div class="formRight">@Html.TextBoxFor(a => a.taxOffice, new { @class = "addresstaxOffice", data_required = Resources.lang.addressTaxOfficeRequired, @readonly = "readonly" })<label
+            class="error">@Html.ValidationMessageFor(a => a.taxOffice)</label>
+        </div>
+
+        </div>
+
+        <!--taxNo -->
+        <div class="rowElem">@Html.LabelFor(a => a.taxNo)<div class="formRight">@Html.TextBoxFor(a => a.taxNo, new { @class = "addressTax", data_required = Resources.lang.addressTaxNoRequired, @readonly = "readonly" })<label
+            class="error">@Html.ValidationMessageFor(a => a.taxNo)</label>
+        </div>
+
+        </div>
+
+    </div>
+
+    <!--city -->
+    <div class="rowElem">@Html.LabelFor(a => a.city)<div class="formRight">@Html.TextBoxFor(a => a.city, new { @readonly = "readonly" })<label
+        class="error">@Html.ValidationMessageFor(a => a.city)</label>
+    </div>
+
+    </div>
+
+    <!--district -->
+    <div class="rowElem">@Html.LabelFor(a => a.district)<div class="formRight">@Html.TextBoxFor(a => a.district, new { @readonly = "readonly" })<label
+        class="error">@Html.ValidationMessageFor(a => a.district)</label>
+    </div>
+
+    </div>
+
+    <!--postCode -->
+    <div class="rowElem">@Html.LabelFor(a => a.postCode)<div class="formRight">@Html.TextBoxFor(a => a.postCode, new { @class = "addressPost", @readonly = "readonly" })<label
+        class="error">@Html.ValidationMessageFor(a => a.postCode)</label>
+    </div>
+
+    </div>
+
+    <!--phone -->
+    <div class="rowElem">@Html.LabelFor(a => a.phone)<div class="formRight">@Html.TextBoxFor(a => a.phone, new { @class = "addressPhone", @readonly = "readonly" })<label
+        class="error">@Html.ValidationMessageFor(a => a.phone)</label>
+    </div>
+
+    </div>
+
+    <!--address -->
+    <div class="rowElem bigItem">@Html.LabelFor(a => a.address)<div class="formRight">@Html.TextAreaFor(a => a.address, new { style = "height:100px", @readonly = "readonly" })<label
+        class="error">@Html.ValidationMessageFor(a => a.address)</label>
+    </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,62 @@
+﻿@model breadCrumb
+
+
+@if (Model != null)
+{
+    <div class="breadcrumb">
+        <div class="inline" itemscope>
+            <a href="~/@Resources.lang.langCode" itemprop="url"><span itemprop="title">@Resources.lang.mainPage</span>
+            </a>&nbsp;&gt;&gt;                   
+                            
+                                @if (Model.child != null)
+                                {
+                                    <div class="inline" itemprop="child">
+                                        <a href="@Model.url" itemprop="url"><span itemprop="title">@Model.name</span> </a>
+
+
+                                        &nbsp;&gt;&gt;
+
+                                     <div class="inline" itemprop="child">
+                                         <a href="@Model.child.url" itemprop="url"><span itemprop="title">@Model.child.name</span>
+                                         </a>
+
+                                         @if (Model.child.child != null)
+                                         {
+                                             @:&nbsp;&gt;&gt;
+                                             
+                                             <div class="inline" itemprop="child">
+                                                 <a href="@Model.child.child.url" itemprop="url"><span itemprop="title">@Model.child.child.name</span>
+                                                 </a>
+
+                                                 @if (Model.child.child.child != null)
+                                                 {
+                                                     @:&nbsp;&gt;&gt;
+                                             
+                                                     <div class="inline" itemprop="child">
+                                                         <a href="@Model.child.child.child.url" itemprop="url"><span itemprop="title">@Model.child.child.child.name</span>
+                                                         </a>
+                                                     </div>
+                                             
+                                                 }
+
+                                             </div>
+                                             
+                                         }
+
+                                     </div>
+
+
+                                    </div>
+                                 
+                                }
+                                else
+                                {
+                                    <div class="inline" itemprop="child">
+                                        <span>@Model.name</span>
+                                    </div>  
+                                    
+                                }
+        </div>
+    </div>
+}
+

@@ -1,0 +1,156 @@
+﻿@import url('static.css');
+
+/*&&&-------------------- General ---------------------- &&& */
+
+* { margin: 0; }
+html, body { height: 100%; margin: 0px; padding: 0px; font-family: 'PT Sans', sans-serif; }
+
+.main { min-height: 100%; margin-bottom: -220px; }
+    .main:after { content: ""; display: block; }
+    footer, .main:after { height: 220px; }
+footer { background-image: url(../images/footerBg.jpg); background-repeat: repeat; }
+.main { background-image: url(../images/bgMainPage.jpg); background-repeat: repeat; }
+.wrapper { width: 1024px; margin: auto; }
+.btn { padding: 5px 10px; color: white; background-color: gray; display: inline-block; }
+.redBg { background-color: #6e0912; }
+
+.msg { padding: 6px 10px; margin: 0px 0px 15px 0px; display: none; cursor:pointer; }
+    .msg.error { background-color: #F2DEDE; border-color: #e0b1b8; color: #B94A48; }
+    .msg.success { background-color: #DBF6D3; border-color: #AED4A5; color: #569745; }
+
+.disableBtn { zoom: 1; filter: alpha(opacity=50); opacity: 0.5; }
+
+/*&&&-------------------- &&& ---------------------- &&& */
+
+/*&&&-------------------- MainPage ---------------------- &&& */
+
+
+header { height: 120px; background-color: #4b4b4b; border-bottom: solid 2px #cd4343; }
+    header .logoContainer { float: left; width: 130px; height: 120px; background-color: #373737; position: relative; text-align: center; }
+        header .logoContainer a { display: block; margin-top: 40px; }
+        header .logoContainer div { background-image: url(../images/logoBottom_03.png); background-repeat: no-repeat; width: 130px; height: 32px; position: absolute; bottom: -32px; left: 0px; z-index: 9; }
+
+nav { float: left; }
+    nav ul { float: left; margin-left: 40px; margin-top: 50px; }
+        nav ul li { float: left; margin-right: 35px; }
+            nav ul li:last-child { margin-right: 0px; }
+            nav ul li a { float: left; font-size: 16px; color: #ebe7e7; }
+
+
+
+.registerBox { color: #e3dfdf; float: right; margin-top: 15px; }
+    .registerBox .registerNow { font-size: 14px; text-decoration: underline; display: block; margin-left: 82px; margin-bottom: 7px; }
+    .registerBox .forgetPassword { font-size: 12px; text-decoration: none; display: block; margin-left: 82px; margin-top: 2px; }
+
+    .registerBox #loginForm { position: relative; }
+        .registerBox #loginForm .item { margin-bottom: 2px; float: left; }
+            .registerBox #loginForm .item label { float: left; width: 70px; text-align: right; font-size: 10px; color: #b5b5b5; margin-right: 10px; margin-top: 7px; }
+            .registerBox #loginForm .item .inputContainer { background-repeat: no-repeat; width: 211px; height: 28px; float: left; }
+                .registerBox #loginForm .item .inputContainer.up { background-image: url(../images/inputUp.png); }
+                .registerBox #loginForm .item .inputContainer.down { background-image: url(../images/inputDown.png); }
+                .registerBox #loginForm .item .inputContainer input { background: transparent; border: none; }
+        .registerBox #loginForm .submit { position: absolute; width: 36px; height: 36px; background-image: url(../images/buttonLogin.png); background-repeat: no-repeat; right: -16px; top: 11px; }
+
+
+
+#slider { height: 415px; }
+.sliderContainer { position: relative; overflow: hidden; }
+    .sliderContainer .sliderControl { position: absolute; bottom: 0px; width: 100%; z-index: 9; }
+        .sliderContainer .sliderControl .controlBlock { float: right; width: 110px; height: 25px; background-image: url(../images/sliderControl.png); background-repeat: no-repeat; text-align: center; margin-right: 100px; }
+            .sliderContainer .sliderControl .controlBlock .icon { background-image: url(../images/sliderIcon.png); background-repeat: no-repeat; display: inline-block; width: 15px; height: 15px; margin-left: 10px; margin-top: 5px; }
+            .sliderContainer .sliderControl .controlBlock .next { background-position: -34px 0px; }
+            .sliderContainer .sliderControl .controlBlock .prev { background-position: 0px 0px; margin-left: 0px; }
+            .sliderContainer .sliderControl .controlBlock .pause { background-position: -18px 0px; }
+            .sliderContainer .sliderControl .controlBlock .play { display: none; background-position: -52px 0px; }
+
+.slides-navigation { display: none; }
+
+.sliderContainer .item { }
+    .sliderContainer .item .wrapper { position: relative; }
+    .sliderContainer .item .title { position: absolute; background-image: url(../images/sliderTextBg.png); background-repeat: repeat; padding: 10px 20px; color: white; font-size: 36px; right: 0px; top: 200px; }
+    .sliderContainer .item .subtitle { position: absolute; background-image: url(../images/sliderTextBg.png); background-repeat: repeat; padding: 5px 10px; color: white; font-size: 20px; right: 0px; top: 290px; line-height: 25px; width: 50%; text-align: justify; }
+
+
+.cartBox { float: right; color: #e3dfdf; margin-top: 25px; }
+    .cartBox .left { float: left; margin-right: 20px; }
+        .cartBox .left .cart { font-size: 14px; font-weight: bold; float: right; }
+        .cartBox .left .user { float: left; }
+            .cartBox .left .user a { }
+
+        .cartBox .left .login { margin-left: 10px; color: #740610; float: left; font-size: 12px; margin-top: 10px; }
+            .cartBox .left .login a { margin-left: 10px; color: #e3dfdf; margin-right: 10px; }
+        .cartBox .left .register { margin-right: 10px; color: #740610; float: left; font-size: 12px; margin-top: 10px; /* font-weight: bold; */ }
+            .cartBox .left .register a { margin-left: 10px; color: #e3dfdf; margin-right: 10px; }
+
+        .cartBox .left .product { float: left; font-size: 12px; margin-top: 10px; }
+            .cartBox .left .product span { color: #ff3333; }
+    .cartBox .rightCart { float: right; margin-top: 10px; }
+
+
+
+.newProduct { margin-top: 20px; }
+    .newProduct .header { }
+        .newProduct .header table { width: 100%; }
+        .newProduct .header h2 { font-size: 18px; color: #070707; float: left; position: relative; z-index: 9; word-wrap: break-word; white-space: nowrap; }
+        .newProduct .header .dotted { background-image: url(../images/dotted_03.png); background-repeat: repeat; height: 2px; position: relative; z-index: 8; margin-bottom: 5px; }
+.dottedParent { width: 100%; vertical-align: bottom; }
+
+
+
+.newProductList { margin-top: 10px; float: left; }
+    .newProductList ul { float: left; width: 780px; }
+        .newProductList ul li { width: 380px; float: left; margin-right: 10px; margin-bottom: 20px; }
+    .newProductList .photo { float: left; margin-right: 10px; }
+    .newProductList .info { float: left; width: 190px; }
+    .newProductList .c1 { width: 70px; float: left; font-size: 13px; font-weight: bold; }
+    .newProductList .sep { float: left; font-size: 13px; margin-right: 10px; }
+    .newProductList .c2 { float: left; font-size: 13px; }
+    .newProductList .c3 { font-size: 13px; text-align: justify; line-height: 20px; }
+        .newProductList .c3 a { padding: 5px 10px; color: white; background-color: gray; float: right; display: inline-block; margin-top: 6px; margin-right: 10px; }
+
+
+
+.brandList { float: left; margin-left: 10px; }
+    .brandList h2 { font-size: 18px; }
+    .brandList ul { float: left; margin-top: 10px; width: 230px; }
+        .brandList ul li { float: left; margin-right: 15px; margin-bottom: 10px; }
+
+/*&&&-------------------- &&& ---------------------- &&& */
+
+/*&&&-------------------- Footer ---------------------- &&& */
+
+footer .c1 { float: left; }
+
+footer .c2 { float: left; margin-top: 20px; margin-left: 40px; }
+footer .c3 { float: right; margin-top: 20px;  max-width:200px;}
+
+footer .social { margin-top: 20px; float: left; }
+    footer .social li { margin-right: 10px; float: left; }
+        footer .social li a { border: 1px solid #723438; padding: 7px; display: block; }
+            footer .social li a img { display: block; }
+
+
+footer .bankLogo { float: left; width: 350px; margin-top: 10px; }
+    footer .bankLogo > li { float: left; width: 170px; margin-top: 10px; }
+        footer .bankLogo > li > ul { }
+            footer .bankLogo > li > ul li { float: left; margin-right: 10px; }
+
+footer small { color: white; font-size: 12px; display: block; margin-top: 10px; }
+
+footer .linkContainer { color: white; }
+    footer .linkContainer > li { float: left; margin-right: 40px; }
+        footer .linkContainer > li > a { font-size: 18px; font-weight: bold; border-bottom: solid 1px white; display: block; padding-bottom: 5px; }
+        footer .linkContainer > li > ul { font-size: 13px; margin-top: 5px; }
+            footer .linkContainer > li > ul li { margin-bottom: 3px; }
+                footer .linkContainer > li > ul li a { }
+
+footer .eBulten { width: 200px; }
+    footer .eBulten .title { font-size: 18px; font-weight: bold; border-bottom: solid 1px white; display: block; padding-bottom: 5px; color: white; /* float: left; */ line-height: 100%; }
+    footer .eBulten .inputContainer { border: solid 1px #6e0912; margin-top: 10px; background-image: url(../images/envelope.png); background-repeat: no-repeat; background-color: white; background-position: 10px center; }
+        footer .eBulten .inputContainer input { border: none; background-color: transparent; display: block;
+padding: 10px;
+padding-left: 35px; }
+    footer .eBulten .submitBtn { margin-top: 10px; float: right; }
+
+
+/*&&&-------------------- &&& ---------------------- &&& */

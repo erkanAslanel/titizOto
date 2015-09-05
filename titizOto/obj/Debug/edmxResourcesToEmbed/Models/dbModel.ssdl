@@ -1,0 +1,542 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="titizOtoModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="titizOtoModelStoreContainer">
+    <EntitySet Name="tbl_activation" EntityType="titizOtoModel.Store.tbl_activation" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_address" EntityType="titizOtoModel.Store.tbl_address" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_adminRole" EntityType="titizOtoModel.Store.tbl_adminRole" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_adminUser" EntityType="titizOtoModel.Store.tbl_adminUser" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_bank" EntityType="titizOtoModel.Store.tbl_bank" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_bankEft" EntityType="titizOtoModel.Store.tbl_bankEft" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_bankPos" EntityType="titizOtoModel.Store.tbl_bankPos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_bankPosOption" EntityType="titizOtoModel.Store.tbl_bankPosOption" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_brand" EntityType="titizOtoModel.Store.tbl_brand" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_business" EntityType="titizOtoModel.Store.tbl_business" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_carBrand" EntityType="titizOtoModel.Store.tbl_carBrand" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_cargo" EntityType="titizOtoModel.Store.tbl_cargo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_carModel" EntityType="titizOtoModel.Store.tbl_carModel" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_carModelProduct" EntityType="titizOtoModel.Store.tbl_carModelProduct" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_category" EntityType="titizOtoModel.Store.tbl_category" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_critear" EntityType="titizOtoModel.Store.tbl_critear" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_discount" EntityType="titizOtoModel.Store.tbl_discount" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_email" EntityType="titizOtoModel.Store.tbl_email" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_error" EntityType="titizOtoModel.Store.tbl_error" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_forgetPassword" EntityType="titizOtoModel.Store.tbl_forgetPassword" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_gallery" EntityType="titizOtoModel.Store.tbl_gallery" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_module" EntityType="titizOtoModel.Store.tbl_module" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_newsletterUser" EntityType="titizOtoModel.Store.tbl_newsletterUser" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_openContent" EntityType="titizOtoModel.Store.tbl_openContent" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_order" EntityType="titizOtoModel.Store.tbl_order" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_orderDetail" EntityType="titizOtoModel.Store.tbl_orderDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_page" EntityType="titizOtoModel.Store.tbl_page" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_payInfo" EntityType="titizOtoModel.Store.tbl_payInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_product" EntityType="titizOtoModel.Store.tbl_product" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_productCritear" EntityType="titizOtoModel.Store.tbl_productCritear" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_settings" EntityType="titizOtoModel.Store.tbl_settings" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_slider" EntityType="titizOtoModel.Store.tbl_slider" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_stock" EntityType="titizOtoModel.Store.tbl_stock" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_user" EntityType="titizOtoModel.Store.tbl_user" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_basket" EntityType="titizOtoModel.Store.tbl_basket" store:Type="Tables" Schema="titizDbUser" />
+    <EntitySet Name="tbl_trackInfo" EntityType="titizOtoModel.Store.tbl_trackInfo" store:Type="Tables" Schema="titizDbUser" />
+  </EntityContainer>
+  <EntityType Name="tbl_activation">
+    <Key>
+      <PropertyRef Name="activationId" />
+    </Key>
+    <Property Name="activationId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="userId" Type="int" Nullable="false" />
+    <Property Name="datetime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_address">
+    <Key>
+      <PropertyRef Name="addressId" />
+    </Key>
+    <Property Name="addressId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="isPersonal" Type="bit" Nullable="false" />
+    <Property Name="userId" Type="int" Nullable="false" />
+    <Property Name="statu" Type="bit" Nullable="false" />
+    <Property Name="tcNo" Type="nvarchar" MaxLength="500" />
+    <Property Name="city" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="district" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="postCode" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="phone" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="address" Type="nvarchar" Nullable="false" />
+    <Property Name="companyName" Type="nvarchar" MaxLength="500" />
+    <Property Name="taxOffice" Type="nvarchar" MaxLength="500" />
+    <Property Name="taxNo" Type="nvarchar" MaxLength="500" />
+    <Property Name="deliverPerson" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="sequence" Type="int" Nullable="false" />
+    <Property Name="isGuestUser" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_adminRole">
+    <Key>
+      <PropertyRef Name="roleId" />
+    </Key>
+    <Property Name="roleId" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tbl_adminUser">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="password" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="enterDate" Type="datetime" Nullable="false" />
+    <Property Name="adminRoleId" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="surname" Type="nvarchar" Nullable="false" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tbl_bank">
+    <Key>
+      <PropertyRef Name="bankId" />
+    </Key>
+    <Property Name="bankId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="color1" Type="nvarchar" MaxLength="500" />
+    <Property Name="color2" Type="nvarchar" MaxLength="500" />
+    <Property Name="color3" Type="nvarchar" MaxLength="500" />
+    <Property Name="logo" Type="nvarchar" MaxLength="500" />
+    <Property Name="statu" Type="bit" Nullable="false" />
+    <Property Name="sequence" Type="int" Nullable="false" />
+    <Property Name="paymentLogo" Type="nvarchar" MaxLength="500" />
+    <Property Name="langId" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_bankEft">
+    <Key>
+      <PropertyRef Name="bankEftId" />
+    </Key>
+    <Property Name="bankEftId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="bankId" Type="int" Nullable="false" />
+    <Property Name="branchCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="accountNo" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="iban" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="statu" Type="bit" Nullable="false" />
+    <Property Name="sequence" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_bankPos">
+    <Key>
+      <PropertyRef Name="bankPosId" />
+    </Key>
+    <Property Name="bankPosId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="bankId" Type="int" Nullable="false" />
+    <Property Name="statu" Type="bit" Nullable="false" />
+    <Property Name="isMainPos" Type="bit" Nullable="false" />
+    <Property Name="posTypeId" Type="int" Nullable="false" />
+    <Property Name="isPosShownOnTable" Type="bit" Nullable="false" />
+    <Property Name="posCode" Type="nchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_bankPosOption">
+    <Key>
+      <PropertyRef Name="bankPosOptionId" />
+    </Key>
+    <Property Name="bankPosOptionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="paymentCount" Type="int" Nullable="false" />
+    <Property Name="minBasketAmount" Type="decimal" Nullable="false" Precision="16" Scale="2" />
+    <Property Name="additionalAmount" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="statu" Type="bit" Nullable="false" />
+    <Property Name="bankPosId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_brand">
+    <Key>
+      <PropertyRef Name="brandId" />
+    </Key>
+    <Property Name="brandId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tbl_business">
+    <Key>
+      <PropertyRef Name="businessId" />
+    </Key>
+    <Property Name="businessId" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tbl_carBrand">
+    <Key>
+      <PropertyRef Name="carBrandId" />
+    </Key>
+    <Property Name="carBrandId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="url" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="statu" Type="bit" Nullable="false" />
+    <Property Name="sequence" Type="int" Nullable="false" />
+    <Property Name="isManuelUrl" Type="bit" Nullable="false" />
+    <Property Name="photo" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="photoCoordinate" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="langId" Type="int" Nullable="false" />
+    <Property Name="isMainPageShown" Type="bit" Nullable="false" />
+    <Property Name="metaKeyword" Type="nvarchar" MaxLength="500" />
+    <Property Name="metaDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="title" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tbl_cargo">
+    <Key>
+      <PropertyRef Name="cargoId" />
+    </Key>
+    <Property Name="cargoId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="price" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="freeCargoPrice" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="photo" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="photoCoordinate" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="statu" Type="bit" Nullable="false" />
+    <Property Name="detail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sequence" Type="int" Nullable="false" />
+    <Property Name="langId" Type="int" Nullable="false" />
+    <Property Name="isCargoPriceOnCustomer" Type="bit" Nullable="false" />
+    <Property Name="trackUrl" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tbl_carModel">
+    <Key>
+      <PropertyRef Name="carModelId" />
+    </Key>
+    <Property Name="carModelId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="carBrandId" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="url" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="statu" Type="bit" Nullable="false" />
+    <Property Name="sequence" Type="int" Nullable="false" />
+    <Property Name="isManuelUrl" Type="bit" Nullable="false" />
+    <Property Name="langId" Type="int" Nullable="false" />
+    <Property Name="metaKeyword" Type="nvarchar" MaxLength="500" />
+    <Property Name="metaDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="title" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tbl_carModelProduct">
+    <Key>
+      <PropertyRef Name="carModelProductId" />
+    </Key>
+    <Property Name="carModelProductId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="productId" Type="int" Nullable="false" />
+    <Property Name="carModelId" Type="int" Nullable="false" />
+    <Property Name="sequence" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_category">
+    <Key>
+      <PropertyRef Name="categoryId" />
+    </Key>
+    <Property Name="categoryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="langId" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="parentId" Type="int" Nullable="false" />
+    <Property Name="sequence" Type="int" Nullable="false" />
+    <Property Name="statu" Type="bit" Nullable="false" />
+    <Property Name="isMainMenuShown" Type="bit" Nullable="false" />
+    <Property Name="isFooterMenuShown" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_critear">
+    <Key>
+      <PropertyRef Name="critearId" />
+    </Key>
+    <Property Name="critearId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="parentId" Type="int" Nullable="false" />
+    <Property Name="sequence" Type="int" Nullable="false" />
+    <Property Name="statu" Type="bit" Nullable="false" />
+    <Property Name="isDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_discount">
+    <Key>
+      <PropertyRef Name="discountId" />
+    </Key>
+    <Property Name="discountId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="nchar" Nullable="false" MaxLength="50" />
+    <Property Name="description" Type="nvarchar" MaxLength="500" />
+    <Property Name="typeId" Type="int" Nullable="false" />
+    <Property Name="amountPercent" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="minBasketAmount" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="minBasketCount" Type="int" Nullable="false" />
+    <Property Name="startDate" Type="datetime" Nullable="false" />
+    <Property Name="endDate" Type="datetime" Nullable="false" />
+    <Property Name="userId" Type="int" Nullable="false" />
+    <Property Name="productList" Type="nvarchar" />
+    <Property Name="isOtherCombine" Type="bit" Nullable="false" />
+    <Property Name="statu" Type="bit" Nullable="false" />
+    <Property Name="repTime" Type="int" Nullable="false" />
+    <Property Name="isManuelGenerated" Type="bit" Nullable="false" />
+    <Property Name="exculudeProductList" Type="nvarchar" />
+  </EntityType>
+  <EntityType Name="tbl_email">
+    <Key>
+      <PropertyRef Name="emailId" />
+    </Key>
+    <Property Name="emailId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="emailTypeId" Type="int" Nullable="false" />
+    <Property Name="langId" Type="int" Nullable="false" />
+    <Property Name="description" Type="nvarchar" />
+    <Property Name="detail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tbl_error">
+    <Key>
+      <PropertyRef Name="errorId" />
+    </Key>
+    <Property Name="errorId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="errorText" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="saveDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_forgetPassword">
+    <Key>
+      <PropertyRef Name="forgetPasswordId" />
+    </Key>
+    <Property Name="forgetPasswordId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="userId" Type="int" Nullable="false" />
+    <Property Name="code" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="createTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_gallery">
+    <Key>
+      <PropertyRef Name="galleryId" />
+    </Key>
+    <Property Name="galleryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="productId" Type="int" Nullable="false" />
+    <Property Name="photo" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="photoCoordinate" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="sequence" Type="int" Nullable="false" />
+    <Property Name="statu" Type="bit" Nullable="false" />
+    <Property Name="guid" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="optionList" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_module">
+    <Key>
+      <PropertyRef Name="moduleId" />
+    </Key>
+    <Property Name="moduleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="htmlContent" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="tag" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="typeId" Type="int" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="1000" />
+    <Property Name="langId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_newsletterUser">
+    <Key>
+      <PropertyRef Name="newsletterUserId" />
+    </Key>
+    <Property Name="newsletterUserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="ipNo" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="createTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_openContent">
+    <Key>
+      <PropertyRef Name="openContentId" />
+    </Key>
+    <Property Name="openContentId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="categoryId" Type="int" Nullable="false" />
+    <Property Name="langId" Type="int" Nullable="false" />
+    <Property Name="statu" Type="bit" Nullable="false" />
+    <Property Name="sequence" Type="int" Nullable="false" />
+    <Property Name="title" Type="nvarchar" Nullable="false" />
+    <Property Name="detail" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_order">
+    <Key>
+      <PropertyRef Name="orderId" />
+    </Key>
+    <Property Name="orderId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="orderNo" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="cargoId" Type="int" Nullable="false" />
+    <Property Name="userId" Type="int" Nullable="false" />
+    <Property Name="trackInfoId" Type="int" Nullable="false" />
+    <Property Name="deliveryAddressId" Type="int" Nullable="false" />
+    <Property Name="billingAddressId" Type="int" Nullable="false" />
+    <Property Name="paymentTypeId" Type="int" Nullable="false" />
+    <Property Name="cargoPrice" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="orderStatu" Type="int" Nullable="false" />
+    <Property Name="orderMailStatu" Type="int" Nullable="false" />
+    <Property Name="totalProductPrice" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="discountCode" Type="nvarchar" MaxLength="500" />
+    <Property Name="discountAmount" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="transferDiscount" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="additionalPrice" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="totalCheckoutPrice" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="creditPaymentCount" Type="int" Nullable="false" />
+    <Property Name="isRegisteredOrder" Type="bit" Nullable="false" />
+    <Property Name="createDate" Type="datetime" Nullable="false" />
+    <Property Name="salesAgreement" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="preSalesAgreement" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="orderGuid" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="eftId" Type="int" Nullable="false" />
+    <Property Name="orderNote" Type="nvarchar(max)" />
+    <Property Name="isCargoOnCustomer" Type="bit" Nullable="false" />
+    <Property Name="deliveryAddressObj" Type="nvarchar(max)" />
+    <Property Name="billingAddressObj" Type="nvarchar(max)" />
+    <Property Name="shipmentNo" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_orderDetail">
+    <Key>
+      <PropertyRef Name="orderDetailId" />
+    </Key>
+    <Property Name="orderDetailId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="productId" Type="int" Nullable="false" />
+    <Property Name="quantity" Type="int" Nullable="false" />
+    <Property Name="productPrice" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="orderId" Type="int" Nullable="false" />
+    <Property Name="optionList" Type="nvarchar" MaxLength="50" />
+    <Property Name="productTotalPrice" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="nameWithOption" Type="nvarchar" Nullable="false" />
+    <Property Name="photo" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tbl_page">
+    <Key>
+      <PropertyRef Name="pageId" />
+    </Key>
+    <Property Name="pageId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="url" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="langId" Type="int" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="500" />
+    <Property Name="metaKeyword" Type="nvarchar" MaxLength="500" />
+    <Property Name="metaDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="categoryId" Type="int" Nullable="false" />
+    <Property Name="sequence" Type="int" Nullable="false" />
+    <Property Name="statu" Type="bit" Nullable="false" />
+    <Property Name="pageTypeId" Type="int" Nullable="false" />
+    <Property Name="redirectPageUrl" Type="nvarchar" MaxLength="500" />
+    <Property Name="isManuelUrl" Type="bit" Nullable="false" />
+    <Property Name="detail" Type="nvarchar(max)" />
+    <Property Name="isHelperUrl" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_payInfo">
+    <Key>
+      <PropertyRef Name="payInfoId" />
+    </Key>
+    <Property Name="payInfoId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="userId" Type="int" Nullable="false" />
+    <Property Name="payTime" Type="datetime" Nullable="false" />
+    <Property Name="processId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_product">
+    <Key>
+      <PropertyRef Name="productId" />
+    </Key>
+    <Property Name="productId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="isDeleted" Type="bit" Nullable="false" />
+    <Property Name="brandId" Type="int" Nullable="false" />
+    <Property Name="businessId" Type="int" Nullable="false" />
+    <Property Name="statu" Type="bit" Nullable="false" />
+    <Property Name="sequence" Type="int" Nullable="false" />
+    <Property Name="price" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="isTaxInclude" Type="bit" Nullable="false" />
+    <Property Name="taxPercent" Type="int" Nullable="false" />
+    <Property Name="discountPrice" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="isDiscountPriceActive" Type="bit" Nullable="false" />
+    <Property Name="shortDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="detail" Type="nvarchar(max)" />
+    <Property Name="metaKeyword" Type="nvarchar" MaxLength="500" />
+    <Property Name="metaDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="title" Type="nvarchar" MaxLength="500" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="url" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="isManuelUrl" Type="bit" Nullable="false" />
+    <Property Name="langId" Type="int" Nullable="false" />
+    <Property Name="isShowCase" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_productCritear">
+    <Key>
+      <PropertyRef Name="productCritearId" />
+    </Key>
+    <Property Name="productCritearId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="productId" Type="int" Nullable="false" />
+    <Property Name="critearId" Type="int" Nullable="false" />
+    <Property Name="sequence" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_settings">
+    <Key>
+      <PropertyRef Name="settingsId" />
+    </Key>
+    <Property Name="settingsId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="langId" Type="int" Nullable="false" />
+    <Property Name="mailUserName" Type="nvarchar" MaxLength="500" />
+    <Property Name="mailPassword" Type="nvarchar" MaxLength="500" />
+    <Property Name="mailPort" Type="nvarchar" MaxLength="500" />
+    <Property Name="mailSentName" Type="nvarchar" MaxLength="500" />
+    <Property Name="mailSentAddress" Type="nvarchar" MaxLength="500" />
+    <Property Name="mailReceiverAddress" Type="nvarchar" MaxLength="500" />
+    <Property Name="mailSmtpServer" Type="nvarchar" MaxLength="500" />
+    <Property Name="metaDescription" Type="nvarchar" />
+    <Property Name="metaDescriptionAdditional" Type="nvarchar" />
+    <Property Name="mainPageTitle" Type="nvarchar" MaxLength="500" />
+    <Property Name="allPageTitle" Type="nvarchar" MaxLength="500" />
+    <Property Name="metaKeyword" Type="nvarchar" />
+    <Property Name="registerIsActivationExist" Type="bit" Nullable="false" />
+    <Property Name="registerIsThankMessageSend" Type="bit" Nullable="false" />
+    <Property Name="mailIsEnableSSL" Type="bit" />
+    <Property Name="isTransferDiscount" Type="bit" />
+    <Property Name="transferDiscountType" Type="int" />
+    <Property Name="transferDiscountAmount" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="isTransferEnable" Type="bit" />
+    <Property Name="isCrediCardEnable" Type="bit" />
+    <Property Name="testAccountEmail" Type="nvarchar" MaxLength="500" />
+    <Property Name="testSuccessfulCard" Type="nvarchar" MaxLength="500" />
+    <Property Name="testValidCard" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tbl_slider">
+    <Key>
+      <PropertyRef Name="sliderId" />
+    </Key>
+    <Property Name="sliderId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="langId" Type="int" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="500" />
+    <Property Name="subTitle" Type="nvarchar" MaxLength="500" />
+    <Property Name="isUrlActive" Type="bit" Nullable="false" />
+    <Property Name="urlText" Type="nvarchar" MaxLength="500" />
+    <Property Name="statu" Type="bit" Nullable="false" />
+    <Property Name="sequence" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="photo" Type="nvarchar" Nullable="false" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tbl_stock">
+    <Key>
+      <PropertyRef Name="stockId" />
+    </Key>
+    <Property Name="stockId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="stockCount" Type="int" Nullable="false" />
+    <Property Name="productId" Type="int" Nullable="false" />
+    <Property Name="minCount" Type="int" Nullable="false" />
+    <Property Name="sequence" Type="int" Nullable="false" />
+    <Property Name="optionList" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_user">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="surname" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="password" Type="nvarchar" MaxLength="500" />
+    <Property Name="birthday" Type="datetime" />
+    <Property Name="gender" Type="int" />
+    <Property Name="userTypeId" Type="int" Nullable="false" />
+    <Property Name="registerStatuId" Type="int" Nullable="false" />
+    <Property Name="guid" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="createDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_basket">
+    <Key>
+      <PropertyRef Name="basketId" />
+    </Key>
+    <Property Name="basketId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="productId" Type="int" Nullable="false" />
+    <Property Name="quantity" Type="int" Nullable="false" />
+    <Property Name="guestCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="createTime" Type="datetime" Nullable="false" />
+    <Property Name="userId" Type="int" />
+    <Property Name="optionList" Type="nvarchar" MaxLength="50" />
+    <Property Name="discountCode" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_trackInfo">
+    <Key>
+      <PropertyRef Name="trackInfoId" />
+    </Key>
+    <Property Name="trackInfoId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="surname" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="500" />
+  </EntityType>
+</Schema>

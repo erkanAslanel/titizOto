@@ -1,0 +1,34 @@
+﻿@model titizOto.Models.tbl_address
+
+<table cellpadding="2" cellspacing="0" border="0">
+   
+    <tbody>
+
+        @if (Model.isPersonal)
+        {
+            <tr>
+                <td>@Resources.lang.addressDeliveredPerson </td>
+                <td>: (@Resources.lang.personal)@Model.deliverPerson</td>
+            </tr> 
+            <tr>
+                <td>@Resources.lang.address</td>
+                <td>: @Model.address @Model.district @Model.city</td>
+            </tr> 
+           
+        }
+
+        else
+        {
+            <tr>
+                <td>@Resources.lang.addressDeliveredPerson </td>
+                <td>: (@Resources.lang.corporate)@Model.deliverPerson</td>
+            </tr> 
+            <tr>
+                <td>@Resources.lang.address</td>
+                <td>: @Model.address @Model.district @Model.city</td>
+            </tr> 
+        }
+
+    </tbody>
+
+</table>

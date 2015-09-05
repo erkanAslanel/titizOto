@@ -1,0 +1,17 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="C:\Users\erkan\Documents\Visual Studio 2012\Projects\titizOto\titizOto\bin\titizOto.dll" #>
+<#@ import namespace="HelperAdmin" #>
+<#@ import namespace="titizOto.Models" #>
+<#@ import namespace="System.Reflection" #>
+<#@ import namespace="System.Collections.Generic" #>
+
+<#
+  TemplateHtmlGenerator helper= new TemplateHtmlGenerator();
+ 
+List<string> itemList= helper.getHtmlList(typeof(tbl_newsletterUserMeta));
+ foreach (string item in itemList)
+   {    #>
+   <#= "/*"  #>
+   <#= item  #>
+     <#= "*/"  #>
+ <#  } #>

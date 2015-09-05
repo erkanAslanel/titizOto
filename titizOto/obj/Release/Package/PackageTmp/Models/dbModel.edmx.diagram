@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a2148320f2d249d5b3230a7caabeffac" Name="Diagram1">
+        <EntityTypeShape EntityType="titizOtoModel.tbl_address" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="titizOtoModel.tbl_adminRole" Width="1.5" PointX="10.75" PointY="0.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="titizOtoModel.tbl_adminUser" Width="1.5" PointX="13" PointY="0.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="titizOtoModel.tbl_bank" Width="1.5" PointX="8.75" PointY="7.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="titizOtoModel.tbl_bankEft" Width="1.5" PointX="11" PointY="6.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="titizOtoModel.tbl_bankPos" Width="1.5" PointX="11" PointY="8" IsExpanded="false" />
+        <EntityTypeShape EntityType="titizOtoModel.tbl_brand" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="titizOtoModel.tbl_business" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="titizOtoModel.tbl_carBrand" Width="1.5" PointX="3.75" PointY="7.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="titizOtoModel.tbl_cargo" Width="1.5" PointX="6" PointY="10.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="titizOtoModel.tbl_carModel" Width="1.5" PointX="6" PointY="7.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="titizOtoModel.tbl_carModelProduct" Width="1.5" PointX="8.25" PointY="1.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="titizOtoModel.tbl_cart" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="titizOtoModel.tbl_category" Width="1.5" PointX="8.75" PointY="9.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="titizOtoModel.tbl_gallery" Width="1.5" PointX="8.25" PointY="3.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="titizOtoModel.tbl_order" Width="1.5" PointX="8.25" PointY="5.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="titizOtoModel.tbl_orderDetail" Width="1.5" PointX="10.5" PointY="5.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="titizOtoModel.tbl_page" Width="1.5" PointX="11" PointY="9.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="titizOtoModel.tbl_payInfo" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="titizOtoModel.tbl_product" Width="1.5" PointX="3" PointY="3.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="titizOtoModel.tbl_settings" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="titizOtoModel.tbl_slider" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="titizOtoModel.tbl_user" Width="1.5" PointX="3" PointY="5.375" IsExpanded="false" />
+        <AssociationConnector Association="titizOtoModel.FK_tbl_address_tbl_user" />
+        <AssociationConnector Association="titizOtoModel.FK_tbl_adminUser_tbl_adminRole" />
+        <AssociationConnector Association="titizOtoModel.FK_tbl_bankEft_tbl_bank" />
+        <AssociationConnector Association="titizOtoModel.FK_tbl_bankPos_tbl_bank" />
+        <AssociationConnector Association="titizOtoModel.FK_tbl_product_tbl_brand" />
+        <AssociationConnector Association="titizOtoModel.FK_tbl_product_tbl_business" />
+        <AssociationConnector Association="titizOtoModel.FK_tbl_carModel_tbl_carBrand" />
+        <AssociationConnector Association="titizOtoModel.FK_tbl_order_tbl_cargo" />
+        <AssociationConnector Association="titizOtoModel.FK_tbl_carModelProduct_tbl_carModel" />
+        <AssociationConnector Association="titizOtoModel.FK_tbl_carModelProduct_tbl_product" />
+        <AssociationConnector Association="titizOtoModel.FK_tbl_cart_tbl_product" />
+        <AssociationConnector Association="titizOtoModel.FK_tbl_cart_tbl_user" />
+        <AssociationConnector Association="titizOtoModel.FK_tbl_page_tbl_category" />
+        <AssociationConnector Association="titizOtoModel.FK_tbl_gallery_tbl_product" />
+        <AssociationConnector Association="titizOtoModel.FK_tbl_order_tbl_user" />
+        <AssociationConnector Association="titizOtoModel.FK_tbl_orderDetail_tbl_order" />
+        <EntityTypeShape EntityType="titizOtoModel.tbl_module" Width="1.5" PointX="10.75" PointY="2.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="titizOtoModel.tbl_critear" Width="1.5" PointX="3" PointY="1.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="titizOtoModel.tbl_productCritear" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="false" />
+        <AssociationConnector Association="titizOtoModel.FK_tbl_productCritear_tbl_critear" />
+        <AssociationConnector Association="titizOtoModel.FK_tbl_productCritear_tbl_product" />
+        <EntityTypeShape EntityType="titizOtoModel.tbl_stock" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="false" />
+        <AssociationConnector Association="titizOtoModel.FK_tbl_stock_tbl_product" />
+        <AssociationConnector Association="titizOtoModel.FK_tbl_stock_tbl_critear" />
+        <AssociationConnector Association="titizOtoModel.FK_tbl_gallery_tbl_critear" />
+        <EntityTypeShape EntityType="titizOtoModel.tbl_newsletterUser" Width="1.5" PointX="3.0985094081137836" PointY="23.8828006050935" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

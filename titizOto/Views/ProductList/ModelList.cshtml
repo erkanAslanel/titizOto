@@ -1,0 +1,18 @@
+﻿@model List<ViewModel.ProductList.brandList>
+
+ <div class="modelList">
+
+                    <ul class="level1">
+                        @foreach (var item in Model)
+                        {
+                            <li><i class="arrow"></i>
+
+                                <a href="@item.url">@item.brandName</a>
+
+                            </li>
+                        }
+
+                    </ul>
+
+                    <div class="clearfix"></div>
+                </div>

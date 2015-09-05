@@ -1,0 +1,71 @@
+﻿@model List<tbl_carBrand>
+  
+
+@{
+    ViewBag.Title = tbl_carBrand.getClassTitle() + " Sıralama";
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml"; 
+}
+
+@if (ViewBag.success != null)
+{ 
+    @Html.Raw(ViewBag.resultHtml)
+}
+
+
+@using (Html.BeginForm("GeneralSorting", "CarBrand", FormMethod.Post, new { @class = "mainForm" }))
+{  
+    @Html.ValidationSummary(null, new { @class = "validationInfo hideit" }) 
+    
+    <div class="title">
+        <h5>@tbl_carBrand.getClassTitle() Sıralama</h5>
+        <a></a>
+    </div> 
+
+    <!--Upload-->
+    @Html.AntiForgeryToken()
+
+   
+    <fieldset>
+        <div class="widget">
+
+            <!--Tabs-->
+            <ul class="tabs">
+                <li><a href="#tab1">Kategori Sıralama</a></li>
+
+            </ul>
+
+            <!--Column-->
+            <div class="tab_container">
+
+                <div id="tab1" class="tab_content">
+                     
+                     <ul id="sortable">
+                            
+                              @foreach (var item in Model)
+                              {  <li class="ui-state-default" data-id="@item.carBrandId"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>@item.name</li>
+                                  
+                              }
+                        </ul>
+
+
+                    @Html.Hidden("sortArray")
+
+                </div>
+
+
+            </div>
+
+            <div class="fix"></div>
+        </div>
+    </fieldset>  
+    
+    <div class="fix" style="height: 20px"></div>
+   
+    <!--Buttons-->
+    
+    <input type="submit" value="Kaydet" class="redBtn submitForm" />
+    
+    <a class="greyishBtn button floatright" href="@Url.Action("Index")">Geri Dön </a>    
+    
+}
+

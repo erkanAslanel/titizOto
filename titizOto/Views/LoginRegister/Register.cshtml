@@ -1,0 +1,136 @@
+﻿@model  ViewModel.LoginRegister.registerItem
+
+@using titizOto.App_GlobalResources
+
+<h2>@lang.loginRegisterPageRegister</h2>
+
+<form>
+
+    @if (Model.isMessageExist)
+    {
+        @Html.Raw(Model.message)
+    }
+
+    <div class="item mRight20">
+        @Html.LabelFor(a => a.name)
+
+        <div class="inputContainer">
+            @Html.TextBoxFor(a => a.name)
+        </div>
+        <div class="error">
+            @Html.ValidationMessageFor(a => a.name)
+        </div>
+    </div>
+
+    <div class="item">
+        @Html.LabelFor(a => a.surname)
+
+        <div class="inputContainer">
+            @Html.TextBoxFor(a => a.surname)
+        </div>
+        <div class="error">
+            @Html.ValidationMessageFor(a => a.surname)
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="item bigItem">
+        @Html.LabelFor(a => a.email)
+
+        <div class="inputContainer">
+            @Html.TextBoxFor(a => a.email)
+        </div>
+        <div class="error">
+            @Html.ValidationMessageFor(a => a.email)
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="item mRight20" style="width: 200px">
+        @Html.LabelFor(a => a.password)
+
+        <div class="inputContainer">
+            @Html.PasswordFor(a => a.password)
+        </div>
+        <div class="error">
+            @Html.ValidationMessageFor(a => a.password)
+        </div>
+    </div>
+
+    <div class="item" style="width: 200px">
+        @Html.LabelFor(a => a.passwordRep)
+
+        <div class="inputContainer">
+            @Html.PasswordFor(a => a.passwordRep)
+        </div>
+        <div class="error">
+            @Html.ValidationMessageFor(a => a.passwordRep)
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="item birthday mRight20">
+        @Html.Label(Resources.lang.formBirthday)
+
+        <div class="dropItem" style="width: 60px;">
+            @Html.DropDownList("day", new SelectList(Model.dayList, "item1", "item2", Model.day))
+            <div class="error">@Html.ValidationMessageFor(a => a.day)</div>
+        </div>
+
+        <div class="dropItem" style="width: 53px;">
+            @Html.DropDownList("month", new SelectList(Model.monthList, "item1", "item2", Model.month))
+            <div class="error">@Html.ValidationMessageFor(a => a.month)</div>
+        </div>
+
+        <div class="dropItem" style="width: 64px;">
+            @Html.DropDownList("year", new SelectList(Model.yearList, "item1", "item2", Model.year))
+            <div class="error">@Html.ValidationMessageFor(a => a.year)</div>
+        </div>
+        <div class="clearfix"></div>
+        @Html.ValidationMessage("validDate")
+
+    </div>
+
+    <div class="item">
+        @Html.LabelFor(a => a.gender)
+
+        <div class="radioItem">
+            <div class="subItem">
+                @Html.RadioButton("gender", 2, Model.gender == 2)<span>@Resources.lang.formWomen</span>
+            </div>
+            <div class="subItem">
+                @Html.RadioButton("gender", 1, Model.gender == 1) <span>@Resources.lang.formMen</span>
+            </div>
+            <div class="error">@Html.ValidationMessageFor(a => a.gender)</div>
+        </div>
+
+    </div>
+
+    <div class="clearfix"></div>
+    <div class="aggrement">
+        @Html.CheckBoxFor(a => a.isAggrementCheck) <span><a style="text-decoration:underline" href="@Model.aggrementUrl">
+            @Resources.lang.formUserDocument  </a>@Resources.lang.formUserDocumentRead </span>
+        <div class="error">@Html.ValidationMessageFor(a => a.isAggrementCheck)</div>
+        <div class="agreementContent dNone">
+            <div class="agreementContainer modelContainer">
+                <div class="detail">
+                    @Html.Raw(Model.agreementContent)
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="submitBtn">
+        <a class="btn btnMiddle redBg" data-lang="@ViewData["langCode"]">@Resources.lang.register</a>
+        <div class="loadingForm">
+            <img src="~/Content/images/productLoader.GIF" />
+        </div>
+    </div>
+
+</form>
+

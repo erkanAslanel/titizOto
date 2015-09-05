@@ -1,0 +1,58 @@
+﻿@model ViewModel.Checkout.Payment.transferInfo
+
+<form class="transfer">
+
+    @if (Model.isMessageExist)
+    {
+        @Html.Raw(Model.message)
+    }
+
+    <ul class="eftList">
+
+        @foreach (var item in Model.eftList)
+        {
+            <li> 
+                @Html.RadioButtonFor(a => a.selectedTransferId, item.bankEftId)
+
+                <div class="t1">@item.tbl_bank.name</div>
+                <div class="t2">
+                    @Html.LabelFor(a => item.name) :
+
+                    <p>@item.name</p>
+                </div>
+                <div class="t2">
+                    @Html.LabelFor(a => item.branchCode) :
+
+                    <p>@item.branchCode</p>
+                </div>
+                <div class="t2">
+                    @Html.LabelFor(a => item.accountNo) :
+
+                    <p>@item.accountNo</p>
+                </div>
+                <div class="t2">
+                    @Html.LabelFor(a => item.iban) :
+
+                    <p>@item.iban</p>
+                </div> 
+
+            </li>
+        }
+
+    </ul>
+
+    <label class="error mLeft20">@Html.ValidationMessageFor(a => a.selectedTransferId)</label>
+    <div class="clearfix"></div>
+
+    <div class="submit mTop40">
+        <a class="btn redBg clickDisable save" data-checkvalidation=".checkoutForm form">@Resources.lang.saveAndContinue</a>
+    </div>
+
+    @Html.AntiForgeryToken()
+</form>
+
+
+
+
+
+

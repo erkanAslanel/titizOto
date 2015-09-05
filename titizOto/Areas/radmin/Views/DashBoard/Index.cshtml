@@ -1,0 +1,130 @@
+﻿@model DashBoardStatistic
+
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+<div class="title">
+    <h5>Özet İstatistikler</h5>
+</div>
+<div class="clleft last">
+
+    @if (Model.orderList.Count > 0)
+    {
+        <div class="widget">
+            <div class="head">
+                <h5 class="iMoney">Bekleyen Siparişler</h5>
+            </div>
+
+            @foreach (var item in Model.orderList)
+            {
+		 
+                <div class="supTicket nobg floatleft mr20">
+                    <div class="issueSummary">
+                        <a href="@Url.Action("Detail", "Order", new { id=item.orderId })" class="floatleft">
+                            <img src="~/Areas/radmin/Content/images/user.png" />
+                        </a>
+                        <div class="ticketInfo">
+                            <ul>
+                                <li>Sipariş Durumu:</li>
+                                <li class="even"><strong class="green">#@item.orderNo </strong>@item.orderStatuStr</li>
+                                <li>Kullanıcı Adı Soyadı:</li>
+                                <li class="even"><a href="@Url.Action("Detail", "Order", new { id=item.orderId })" title="" target="_blank">@item.getOrderUserNameSurname()</a></li>
+                            </ul>
+                            <div class="fix"></div>
+                        </div>
+                        <div class="fix"></div>
+                    </div>
+                </div>
+            }
+
+
+
+        </div>
+    }
+
+
+
+
+</div>
+<div class="clleft">
+    <div class="widget">
+        <div class="head">
+            <h5 class="iChart8">Günlük İstatistikler</h5>
+        </div>
+        <table cellpadding="0" cellspacing="0" width="100%" class="tableStatic">
+            <thead>
+                <tr>
+                    <td width="21%">Toplam</td>
+                    <td>Açıklama</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td align="center"><a href="#" title="" class="webStatsLink"><span>@Model.dayOrder</span></a></td>
+                    <td><b>Günlük Sipariş Adeti</b></td>
+                </tr>
+                <tr>
+                    <td align="center"><a href="#" title="" class="webStatsLink"><span>@Model.dayUser</span></a></td>
+                    <td>Kullanıcı</td>
+                </tr>
+                <tr>
+                    <td align="center"><a href="#" title="" class="webStatsLink"><span>@Model.dayNewsletter</span></a></td>
+                    <td>Bülten Abonesi</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="clleft">
+    <div class="widget">
+        <div class="head">
+            <h5 class="iChart8">Özet İstatistikler</h5>
+        </div>
+        <table cellpadding="0" cellspacing="0" width="100%" class="tableStatic">
+            <thead>
+                <tr>
+                    <td width="21%">Toplam</td>
+                    <td>Açıklama</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td align="center"><a href="#" title="" class="webStatsLink"><span>@Model.allOrder</span></a></td>
+                    <td><b>Toplam Sipariş Adeti</b></td>
+                </tr>
+
+                <tr>
+                    <td align="center"><a href="#" title="" class="webStatsLink"><span>@Model.allProduct</span></a></td>
+                    <td>Ürün</td>
+                </tr>
+
+                <tr>
+                    <td align="center"><a href="#" title="" class="webStatsLink"><span>@Model.allCategory</span></a></td>
+                    <td>Kategori</td>
+                </tr>
+                <tr>
+                    <td align="center"><a href="#" title="" class="webStatsLink"><span>@Model.allPage</span></a></td>
+                    <td>Dinamik Sayfa</td>
+                </tr>
+                <tr>
+                    <td align="center"><a href="#" title="" class="webStatsLink"><span>@Model.allUser</span></a></td>
+                    <td>Kullanıcı</td>
+                </tr>
+                <tr>
+                    <td align="center"><a href="#" title="" class="webStatsLink"><span>@Model.allNewsletter</span></a></td>
+                    <td>Bülten Abonesi</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<div class="fix"></div>
+
+
+

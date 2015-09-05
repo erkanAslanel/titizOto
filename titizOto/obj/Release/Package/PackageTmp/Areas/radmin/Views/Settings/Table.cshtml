@@ -1,0 +1,52 @@
+﻿@model IEnumerable<tbl_settings>
+
+<div class="head">
+</div>
+<form>
+      @Html.Hidden("controlName", ViewContext.RouteData.Values["Controller"])
+       <table cellpadding="0" cellspacing="0" border="0" class="display" id="indexTable">
+        <thead>
+            <tr>
+                <th class="nosortable"></th>
+                <th>#</th>
+                <th>
+                    @Html.DisplayNameFor(model => model.langId)
+                </th>
+                <th>
+                
+                </th>
+
+       
+                <th>İşlem</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{ int index = 1;
+            }
+
+            @foreach (var item in Model)
+            {
+                <tr class="gradeA">
+                    <td class="center">
+                        @Html.CheckBox("selectedItem", new { value = item.settingsId })
+                    </td>
+                    <td class="center">@index</td>
+                    <td class="center">
+                        @Html.getLangName(modelItem => item.langId)
+                    </td>
+                    <td class="center">
+                    Site Ayarları
+                    </td>
+                    
+                    <td class="center editBtn" data-id="@item.settingsId">
+                        <a title="Düzenle" class="btn14 mr5" href="@Url.Action("Edit", new { id = item.settingsId })">
+                            <img  src="@Url.Content("~/Areas/radmin/Content/images/icons/dark/pencil.png")"/></a> 
+                    </td>
+                </tr>
+                
+                index = index + 1;
+            }
+
+        </tbody>
+    </table>
+    </form>

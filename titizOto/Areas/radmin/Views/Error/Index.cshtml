@@ -1,0 +1,32 @@
+﻿@model IEnumerable<tbl_error>
+
+@{
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml";
+    ViewBag.Title = tbl_error.getClassTitle() + " Yönetimi";
+}
+
+<div class="title">
+    <h5>@tbl_error.getClassTitle() Yönetimi</h5>
+</div>
+
+<div class="body alignLeft">
+
+    <div class="proccess floatright">
+        <select>
+            <option value="-1">İşlem Seçiniz</option>
+            <option>Sil</option> 
+        </select>
+    </div>
+  <a href="@Url.Action("DeleteAll")" title="" class="btnIconLeft mr10 mt5">
+        <img src="@Url.Content("~/Areas/radmin/Content/images/icons/dark/trash.png")" alt="" class="icon" /><span>Tümünü Sil</span></a>
+
+    <div class="fix"></div>
+</div>
+
+<div class="table">
+    @Html.Partial("Table", Model)
+</div>
+
+
+
+

@@ -1,0 +1,68 @@
+﻿@model List<ViewModel.MainPage.slider>
+
+<div class="sliderContainer">
+
+    <div id="slider">
+        <div class="slides-container">
+            @foreach (var item in Model)
+            {
+                <div class="item">
+                    @if (item.isHaveUrl)
+                    {
+                        <a href="@item.url">
+                            <img src="@item.photo" />
+                            <div class="wrapper">
+                                @if (!string.IsNullOrWhiteSpace(item.title))
+                                {
+                                    <div class="title">@item.title</div>
+                                }
+
+                                @if (!string.IsNullOrWhiteSpace(item.subTitle))
+                                {
+                                    <div class="subtitle">@item.subTitle</div>
+                                }
+
+
+                            </div>
+                        </a>
+                    }
+                    else
+                    {
+                        <img src="@item.photo" />
+                        <div class="wrapper">
+                            @if (!string.IsNullOrWhiteSpace(item.title))
+                            {
+                                <div class="title">@item.title</div>
+                            }
+
+                            @if (!string.IsNullOrWhiteSpace(item.subTitle))
+                            {
+                                <div class="subtitle">@item.subTitle</div>
+                            }
+
+
+                        </div>           
+                    }
+                </div> 
+            }
+        </div>
+
+        <nav class="slides-navigation">
+            <a href="#" class="next">Next</a>
+            <a href="#" class="prev">Previous</a>
+        </nav>
+    </div>
+
+    <div class="sliderControl">
+        <div class="wrapper">
+
+            <div class="controlBlock">
+                <a class="prev icon" rel="nofollow" href="#"></a>
+                <a class="pause icon" rel="nofollow" href="#"></a>
+                <a class="play icon" rel="nofollow" href="#"></a>
+                <a class="next icon" rel="nofollow" href="#"></a>
+            </div>
+        </div>
+
+    </div>
+</div>

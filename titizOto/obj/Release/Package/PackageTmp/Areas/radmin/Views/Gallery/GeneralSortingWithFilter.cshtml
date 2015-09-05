@@ -1,0 +1,74 @@
+﻿@model List<tbl_gallery>
+
+@{
+    ViewBag.Title = "GeneralSorting";
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+ 
+@{
+    ViewBag.Title = tbl_gallery.getClassTitle() + " Sıralama";
+    Layout = "~/Areas/radmin/Views/Shared/_LayoutPageAdmin.cshtml"; 
+}
+
+@if (ViewBag.success != null)
+{ 
+    @Html.Raw(ViewBag.resultHtml)
+}
+
+
+@using (Html.BeginForm("GeneralSortingWithFilter", "Gallery", FormMethod.Post, new { @class = "mainForm" }))
+{  
+    @Html.ValidationSummary(null, new { @class = "validationInfo hideit" }) 
+    
+    <div class="title">
+        <h5>Ürün Sıralama</h5>
+        <a></a>
+    </div> 
+
+    <!--Upload-->
+    @Html.AntiForgeryToken()
+
+   
+    <fieldset>
+        <div class="widget">
+
+            <!--Tabs-->
+            <ul class="tabs">
+                <li><a href="#tab1">@tbl_gallery.getClassTitle() Sıralama</a></li>
+
+            </ul>
+
+            <!--Column-->
+            <div class="tab_container">
+
+                <div id="tab1" class="tab_content">
+                     <ul id="sortable">
+                            
+                              @foreach (var item in Model)
+                              {  <li class="ui-state-default" data-id="@item.galleryId"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>@item.guid.Substring(0,7)</li>
+                                  
+                              }
+                        </ul>
+
+
+                    @Html.Hidden("sortArray")
+
+                </div>
+
+
+            </div>
+
+            <div class="fix"></div>
+        </div>
+    </fieldset>  
+    
+    <div class="fix" style="height: 20px"></div>
+   
+    <!--Buttons-->
+    
+    <input type="submit" value="Kaydet" class="redBtn submitForm" />
+    
+    <a class="greyishBtn button floatright" href="@Url.Action("IndexWithFilter", new { filterId = Model.FirstOrDefault().productId.ToString() })" >Geri Dön </a>    
+    
+}
+
