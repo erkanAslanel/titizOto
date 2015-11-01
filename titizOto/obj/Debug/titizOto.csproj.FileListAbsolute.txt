@@ -72,3 +72,41 @@ C:\Users\erkanaslanel\Documents\Visual Studio 2012\Projects\titizOto\titizOto\ob
 C:\Users\erkanaslanel\Documents\Visual Studio 2012\Projects\titizOto\titizOto\bin\Facebook.dll
 C:\Users\erkanaslanel\Documents\Visual Studio 2012\Projects\titizOto\titizOto\bin\Facebook.xml
 C:\Users\erkanaslanel\Documents\Visual Studio 2012\Projects\titizOto\titizOto\obj\Debug\titizOto.csprojResolveAssemblyReference.cache
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\titizOto.dll
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\titizOto.pdb
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\EntityFramework.dll
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\Facebook.dll
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\ImageResizer.dll
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\Newtonsoft.Json.dll
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\System.Net.Http.dll
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\System.Net.Http.Formatting.dll
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\System.Net.Http.WebRequest.dll
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\System.Web.Helpers.dll
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\System.Web.Http.dll
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\System.Web.Http.WebHost.dll
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\System.Web.Mvc.dll
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\System.Web.Razor.dll
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\System.Web.WebPages.Deployment.dll
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\System.Web.WebPages.dll
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\System.Web.WebPages.Razor.dll
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\EntityFramework.xml
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\Facebook.xml
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\ImageResizer.xml
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\Newtonsoft.Json.xml
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\System.Net.Http.xml
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\System.Net.Http.Formatting.xml
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\System.Net.Http.WebRequest.xml
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\System.Web.Helpers.xml
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\System.Web.Http.xml
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\System.Web.Http.WebHost.xml
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\System.Web.Mvc.xml
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\System.Web.Razor.xml
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\System.Web.WebPages.xml
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\System.Web.WebPages.Deployment.xml
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\bin\System.Web.WebPages.Razor.xml
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\obj\Debug\titizOto.csprojResolveAssemblyReference.cache
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\obj\Debug\titizOto.App_GlobalResources.lang.resources
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\obj\Debug\titizOto.csproj.GenerateResource.Cache
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\obj\Debug\titizOto.dll
+C:\Users\erkanaslanel\Documents\Git\TitizOtoGit\titizOto\obj\Debug\titizOto.pdb
