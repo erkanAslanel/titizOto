@@ -42,7 +42,7 @@ namespace titizOto.Controllers
             }
 
             //PrevAndNextUrl 
-            var productList = carModelItem.tbl_carModelProduct.Select(a => a.tbl_product).Where(a => a.statu && a.tbl_stock.Any(b => b.stockCount > 0)).OrderBy(a => a.sequence).ToList();
+            var productList = carModelItem.tbl_carModelProduct.Select(a => a.tbl_product).Where(a => a != null && a.statu && a.tbl_stock.Any(b => b.stockCount > 0)).OrderBy(a => a.sequence).ToList();
 
             var sequenceCurrenProduct = productList.IndexOf(productItem);
             helperPage = getPrevAndNextUrl(helperPage, sequenceCurrenProduct, productList, baseUrl);
@@ -56,7 +56,7 @@ namespace titizOto.Controllers
             }
 
             productShared pc = new productShared(db);
-            CultureInfo priceFormat= CultureInfo.CreateSpecificCulture(langCulture);
+            CultureInfo priceFormat = CultureInfo.CreateSpecificCulture(langCulture);
 
             //breadcrumb
             helperPage.breadCrumbItem = getProductDetailBreadCrumbProductList(parentName, parentUrl, carBrandItem.name, carBrandItem.url, carModelItem.name, carModelItem.url, productItem.name);
@@ -67,7 +67,7 @@ namespace titizOto.Controllers
 
 
             decimal price = pc.calcPriceProduct(productItem);
-            helperPage.price = price.ToString("F2",priceFormat) + " TL";
+            helperPage.price = price.ToString("F2", priceFormat) + " TL";
 
             var taxpriceItem = pc.getProductWithoutTaxPriceAndTaxPrice(productItem, priceFormat);
             helperPage.withoutTaxPrice = taxpriceItem.Item2;
@@ -117,7 +117,7 @@ namespace titizOto.Controllers
 
         }
 
-        public ActionResult OptionListByStr(string  amountStr)
+        public ActionResult OptionListByStr(string amountStr)
         {
             decimal decAmount = 0;
 
@@ -128,8 +128,8 @@ namespace titizOto.Controllers
         }
 
         public ActionResult OptionListByDecimal(decimal amount)
-        { 
-         
+        {
+
             var helperPage = getOptionList(amount);
             string viewHtml = RenderRazorViewToString("OptionList", helperPage);
             return Json(new { html = viewHtml });
