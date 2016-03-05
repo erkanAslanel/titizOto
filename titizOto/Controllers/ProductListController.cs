@@ -28,7 +28,7 @@ namespace titizOto.Controllers
             helperPage.breadCrumbItem = getIndexBreadCrumbProductList(item.name);
             helperPage.header = item.name;
 
-            var newProductList = db.tbl_product.Include("tbl_stock").Include("tbl_gallery").Include("tbl_carModelProduct.tbl_carModel.tbl_carBrand").Where(a => a.statu && a.tbl_stock.Any(b => b.stockCount > 0) && a.tbl_carModelProduct.Any(c => c.tbl_carModel != null) && a.tbl_carModelProduct.Any(c => c.tbl_carModel != null) && a.tbl_carModelProduct.Any(c => c.tbl_carModel.tbl_carBrand != null) && a.langId == langId).OrderByDescending(a => a.sequence).ToList();
+            var newProductList = db.tbl_product.Include("tbl_stock").Include("tbl_gallery").Include("tbl_carModelProduct.tbl_carModel.tbl_carBrand").Where(a => a.statu && a.isDeleted == false && a.tbl_stock.Any(b => b.stockCount > 0) && a.tbl_carModelProduct.Any(c => c.tbl_carModel != null) && a.tbl_carModelProduct.Any(c => c.tbl_carModel != null) && a.tbl_carModelProduct.Any(c => c.tbl_carModel.tbl_carBrand != null) && a.langId == langId).OrderByDescending(a => a.sequence).ToList();
 
             productShared pc = new productShared(db);
 
@@ -64,7 +64,7 @@ namespace titizOto.Controllers
             helperPage.brandWithModelList = getBrandWithModelList(carBrand, parentUrl, null);
 
             //productList
-            var productListWithBrandId = db.tbl_product.Include("tbl_stock").Include("tbl_gallery").Include("tbl_carModelProduct.tbl_carModel.tbl_carBrand").Where(a => a.statu && a.tbl_stock.Any(b => b.stockCount > 0) && a.tbl_carModelProduct.Any(c => c.tbl_carModel != null) && a.tbl_carModelProduct.Any(c => c.tbl_carModel != null) && a.tbl_carModelProduct.Any(c => c.tbl_carModel.tbl_carBrand != null) && a.tbl_carModelProduct.All(c => c.tbl_carModel.tbl_carBrand.carBrandId == carBrandId) && a.langId == langId).OrderBy(a => a.sequence).ToList();
+            var productListWithBrandId = db.tbl_product.Include("tbl_stock").Include("tbl_gallery").Include("tbl_carModelProduct.tbl_carModel.tbl_carBrand").Where(a => a.statu && a.isDeleted == false && a.tbl_stock.Any(b => b.stockCount > 0) && a.tbl_carModelProduct.Any(c => c.tbl_carModel != null) && a.tbl_carModelProduct.Any(c => c.tbl_carModel != null) && a.tbl_carModelProduct.Any(c => c.tbl_carModel.tbl_carBrand != null) && a.tbl_carModelProduct.All(c => c.tbl_carModel.tbl_carBrand.carBrandId == carBrandId) && a.langId == langId).OrderBy(a => a.sequence).ToList();
 
             productShared pc = new productShared(db);
             int productCount = productListWithBrandId.Count;
@@ -108,7 +108,7 @@ namespace titizOto.Controllers
 
 
             //productList
-            var productListWithModelId = db.tbl_product.Include("tbl_stock").Include("tbl_gallery").Include("tbl_carModelProduct.tbl_carModel.tbl_carBrand").Where(a => a.statu && a.tbl_stock.Any(b => b.stockCount > 0) && a.tbl_carModelProduct.Any(c => c.tbl_carModel != null) && a.tbl_carModelProduct.Any(c => c.tbl_carModel != null) && a.tbl_carModelProduct.Any(c => c.tbl_carModel.tbl_carBrand != null) && a.tbl_carModelProduct.All(c => c.tbl_carModel.carModelId == carModelId) && a.langId == langId).OrderBy(a => a.sequence).ToList();
+            var productListWithModelId = db.tbl_product.Include("tbl_stock").Include("tbl_gallery").Include("tbl_carModelProduct.tbl_carModel.tbl_carBrand").Where(a => a.statu && a.isDeleted == false && a.tbl_stock.Any(b => b.stockCount > 0) && a.tbl_carModelProduct.Any(c => c.tbl_carModel != null) && a.tbl_carModelProduct.Any(c => c.tbl_carModel != null) && a.tbl_carModelProduct.Any(c => c.tbl_carModel.tbl_carBrand != null) && a.tbl_carModelProduct.All(c => c.tbl_carModel.carModelId == carModelId) && a.langId == langId).OrderBy(a => a.sequence).ToList();
 
             productShared pc = new productShared(db);
             int productCount = productListWithModelId.Count;

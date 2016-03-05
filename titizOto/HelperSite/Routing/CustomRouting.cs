@@ -487,7 +487,7 @@ namespace HelperSite.Routing
                         // /tr/krom-aksesuar/bmw/x5/arkaKoltuk.html 
                         var brandItem = db.tbl_carBrand.Where(a => a.statu && a.url == c2Url && a.langId == langId).FirstOrDefault();
                         var modelItem = db.tbl_carModel.Where(a => a.statu && a.url == c3Url && a.langId == langId).FirstOrDefault();
-                        var productItem = db.tbl_product.Where(a => a.statu && a.url == c4Url && a.langId == langId).FirstOrDefault();
+                        var productItem = db.tbl_product.Where(a => a.statu && a.isDeleted == false && a.url == c4Url && a.langId == langId).FirstOrDefault();
 
                         if (brandItem != null && modelItem != null && productItem != null)
                         {

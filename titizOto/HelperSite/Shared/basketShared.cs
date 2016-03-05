@@ -191,7 +191,7 @@ namespace HelperSite.Shared
                 var productItem = item.tbl_product;
 
                 // delete Basket
-                if (productItem == null || productItem.statu == false)
+                if (productItem == null || productItem.statu == false || productItem.isDeleted)
                 {
                     deleteBasketById(item.basketId);
                     return new Tuple<List<basketItem>, basketActionResult>(null, basketActionResult.redirect);
